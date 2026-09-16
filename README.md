@@ -114,8 +114,8 @@ When adding new backend capabilities or business logic:
 
 ## 🤝 Community & Contact
 
-- **Lead Organizer**: Waruna Udara
-- **University**: University of Sri Jayewardenepura (USJ)
+- **Organization**: AWS Student Building Guild - University of Sri Jayewardenepura (USJ)
+- **University**: University of Sri Jayewardenepura (USJ), Sri Lanka
 - **GitHub**: [WarunaUdara/aws-sbg-official-website](https://github.com/WarunaUdara/aws-sbg-official-website)
 
 ---
