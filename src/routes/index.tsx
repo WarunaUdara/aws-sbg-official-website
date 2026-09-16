@@ -14,6 +14,7 @@ import { Button } from '@/components/ui/button'
 import { BuilderChipLogo } from '@/components/ui/BuilderChipLogo'
 import { AwsSmileLogo } from '@/components/ui/AwsSmileLogo'
 import { BuilderMosaic } from '@/components/common/BuilderMosaic'
+import { ShapeGrid } from '@/components/ui/ShapeGrid'
 import { MOCK_EVENTS } from '@/features/events/data'
 import { MOCK_PROJECTS } from '@/features/projects/data'
 import { SITE_CONFIG } from '@/lib/constants'
@@ -153,7 +154,21 @@ function HomePage() {
       <section className="pt-16">
         <Container size="lg">
           <div className="relative overflow-hidden bg-[#161F2E] border border-white/10 p-8 sm:p-12 md:p-14">
-            <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+            {/* Interactive ShapeGrid Animated Canvas Background */}
+            <div className="absolute inset-0 pointer-events-auto opacity-50">
+              <ShapeGrid
+                shape="square"
+                squareSize={36}
+                direction="right"
+                speed={0.3}
+                borderColor="rgba(255, 255, 255, 0.08)"
+                hoverFillColor="rgba(255, 153, 0, 0.22)"
+                hoverTrailAmount={4}
+                vignetteColor="#161F2E"
+              />
+            </div>
+
+            <div className="relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
               <div className="lg:col-span-8 space-y-4">
                 <div className="flex items-center gap-2">
                   <div className="w-2.5 h-2.5 bg-[#FF9900]" />

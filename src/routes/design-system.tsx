@@ -9,6 +9,7 @@ import { BuilderChipLogo } from '@/components/ui/BuilderChipLogo'
 import { AwsSmileLogo } from '@/components/ui/AwsSmileLogo'
 import { BuilderBrandBadge } from '@/components/ui/BuilderBrandBadge'
 import { BuilderMosaic } from '@/components/common/BuilderMosaic'
+import { ShapeGrid } from '@/components/ui/ShapeGrid'
 
 export const Route = createFileRoute('/design-system')({
   component: DesignSystemPage,
@@ -276,6 +277,50 @@ function DesignSystemPage() {
               </div>
               <div className="flex justify-center py-2">
                 <BuilderMosaic density="compact" />
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Section 5: React Bits ShapeGrid Animated Canvas */}
+        <section className="mb-20 space-y-6">
+          <div className="flex items-center gap-2 border-b border-white/10 pb-3">
+            <span className="w-2.5 h-2.5 bg-[#FF9900]" />
+            <h2 className="text-xl font-bold font-display text-white uppercase tracking-wider">
+              05. React Bits ShapeGrid Canvas
+            </h2>
+          </div>
+
+          <div className="p-6 bg-[#161F2E]/60 border border-white/10 space-y-4">
+            <div>
+              <span className="text-xs font-mono text-[#FF9900]">[ REACT BITS ANIMATED SQUARE CANVAS ]</span>
+              <h4 className="text-lg font-bold font-display text-white mt-1">Interactive Square Grid Backdrop</h4>
+              <p className="text-xs text-slate-300 font-sans mt-1 max-w-2xl">
+                Integrated from React Bits. Features configurable tile dimensions, animation velocity, diagonal drift, 
+                and mouse hover trails with fading opacities matching our 48px square architecture.
+              </p>
+            </div>
+
+            <div className="relative h-72 sm:h-80 w-full overflow-hidden border border-white/15 bg-[#0A0E17]">
+              <div className="absolute inset-0">
+                <ShapeGrid
+                  shape="square"
+                  squareSize={48}
+                  direction="diagonal"
+                  speed={0.4}
+                  borderColor="rgba(255, 153, 0, 0.15)"
+                  hoverFillColor="rgba(255, 153, 0, 0.3)"
+                  hoverTrailAmount={5}
+                  vignetteColor="#0A0E17"
+                />
+              </div>
+              <div className="relative z-10 h-full flex flex-col items-center justify-center pointer-events-none p-6 text-center">
+                <span className="text-xs font-mono text-[#FF9900] uppercase tracking-widest bg-black/60 px-3 py-1 border border-white/10 mb-2">
+                  Move Cursor Across Canvas
+                </span>
+                <p className="text-sm font-mono text-slate-300">
+                  squareSize: 48px • speed: 0.4 • direction: diagonal • trail: 5
+                </p>
               </div>
             </div>
           </div>
