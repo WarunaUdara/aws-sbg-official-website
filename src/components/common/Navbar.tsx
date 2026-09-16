@@ -22,14 +22,14 @@ export function Navbar() {
               <span className="font-bold text-sm sm:text-[15px] tracking-tight text-white group-hover:text-[#FF9900] transition-colors leading-tight font-display">
                 AWS Student Builder Group
               </span>
-              <span className="text-[10px] sm:text-[11px] font-mono text-slate-400 leading-tight">
+              <span className="text-[11px] sm:text-xs font-mono text-slate-300 leading-tight">
                 University of Sri Jayewardenepura
               </span>
             </div>
           </Link>
 
           {/* Center / Right Navigation Links (Unkey layout) */}
-          <nav className="hidden lg:flex items-center gap-6 text-xs text-slate-300 font-sans">
+          <nav className="hidden lg:flex items-center gap-7 text-sm text-slate-200 font-sans">
             {NAV_LINKS.map((link) => {
               const isActive = currentPath === link.href
               return (
@@ -37,7 +37,7 @@ export function Navbar() {
                   key={link.href}
                   to={link.href}
                   className={`transition-colors hover:text-white ${
-                    isActive ? "text-[#FF9900] font-semibold" : "text-slate-300"
+                    isActive ? "text-[#FF9900] font-semibold" : "text-slate-200"
                   }`}
                 >
                   {link.label}
@@ -53,7 +53,7 @@ export function Navbar() {
               href={SITE_CONFIG.links.whatsapp}
               target="_blank"
               rel="noreferrer"
-              className="flex items-center gap-1.5 px-3 py-1.5 border border-white/15 hover:border-white/30 bg-[#161F2E]/60 hover:bg-[#161F2E] text-xs font-mono text-slate-300 hover:text-white transition-all rounded-none"
+              className="flex items-center gap-1.5 px-3 py-1.5 border border-white/15 hover:border-white/30 bg-[#161F2E]/60 hover:bg-[#161F2E] text-xs font-mono text-slate-200 hover:text-white transition-all rounded-none"
               title="Join our WhatsApp Channel"
             >
               <WhatsAppIcon className="w-3.5 h-3.5 text-[#25D366]" />
@@ -65,7 +65,7 @@ export function Navbar() {
               href={SITE_CONFIG.links.meetup}
               target="_blank"
               rel="noreferrer"
-              className="flex items-center gap-1.5 px-3 py-1.5 border border-white/15 hover:border-white/30 bg-[#161F2E]/60 hover:bg-[#161F2E] text-xs font-mono text-slate-300 hover:text-white transition-all rounded-none"
+              className="flex items-center gap-1.5 px-3 py-1.5 border border-white/15 hover:border-white/30 bg-[#161F2E]/60 hover:bg-[#161F2E] text-xs font-mono text-slate-200 hover:text-white transition-all rounded-none"
               title="RSVP on Meetup"
             >
               <MeetupIcon className="w-3.5 h-3.5" />
@@ -77,7 +77,7 @@ export function Navbar() {
               href={SITE_CONFIG.links.github}
               target="_blank"
               rel="noreferrer"
-              className="p-2 border border-white/15 hover:border-white text-slate-300 hover:text-white transition-all bg-[#0A0E17] rounded-none"
+              className="p-2 border border-white/15 hover:border-white text-slate-200 hover:text-white transition-all bg-[#0A0E17] rounded-none"
               aria-label="GitHub Repository"
               title="GitHub Repository"
             >
@@ -96,7 +96,7 @@ export function Navbar() {
           {/* Mobile Menu Toggle */}
           <button
             onClick={() => setIsOpen(!isOpen)}
-            className="lg:hidden p-2 text-slate-400 hover:text-white focus:outline-none"
+            className="lg:hidden p-2 text-slate-300 hover:text-white focus:outline-none"
             aria-label="Toggle Navigation Menu"
           >
             {isOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6 text-white" />}
@@ -112,7 +112,7 @@ export function Navbar() {
                   key={link.href}
                   to={link.href}
                   onClick={() => setIsOpen(false)}
-                  className="px-3 py-2 text-sm text-slate-300 hover:text-white hover:bg-white/5 transition-colors"
+                  className="px-3 py-2 text-sm sm:text-base text-slate-200 hover:text-white hover:bg-white/5 transition-colors"
                 >
                   {link.label}
                 </Link>
@@ -124,7 +124,7 @@ export function Navbar() {
                 href={SITE_CONFIG.links.whatsapp}
                 target="_blank"
                 rel="noreferrer"
-                className="flex items-center gap-1.5 px-3 py-1.5 border border-white/15 bg-[#161F2E]/60 text-xs font-mono text-slate-300"
+                className="flex items-center gap-1.5 px-3 py-1.5 border border-white/15 bg-[#161F2E]/60 text-xs font-mono text-slate-200"
               >
                 <WhatsAppIcon className="w-3.5 h-3.5 text-[#25D366]" />
                 <span>WhatsApp</span>
@@ -133,7 +133,7 @@ export function Navbar() {
                 href={SITE_CONFIG.links.meetup}
                 target="_blank"
                 rel="noreferrer"
-                className="flex items-center gap-1.5 px-3 py-1.5 border border-white/15 bg-[#161F2E]/60 text-xs font-mono text-slate-300"
+                className="flex items-center gap-1.5 px-3 py-1.5 border border-white/15 bg-[#161F2E]/60 text-xs font-mono text-slate-200"
               >
                 <MeetupIcon className="w-3.5 h-3.5" />
                 <span>Meetup</span>
@@ -142,7 +142,7 @@ export function Navbar() {
                 href={SITE_CONFIG.links.github}
                 target="_blank"
                 rel="noreferrer"
-                className="flex items-center gap-1.5 px-3 py-1.5 border border-white/20 text-xs font-mono text-slate-300"
+                className="flex items-center gap-1.5 px-3 py-1.5 border border-white/20 text-xs font-mono text-slate-200"
               >
                 <GithubIcon className="w-3.5 h-3.5" />
                 <span>GitHub</span>

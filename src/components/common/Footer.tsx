@@ -8,13 +8,13 @@ import { SITE_CONFIG, NAV_LINKS } from "@/lib/constants"
 
 export function Footer() {
   return (
-    <footer className="w-full border-t border-white/10 bg-[#0A0E17] text-slate-400">
+    <footer className="w-full border-t border-white/10 bg-[#0A0E17] text-slate-300">
       {/* Top Banner Row with Brand Corners */}
       <div className="border-b border-white/10 bg-[#161F2E]/40">
         <Container size="lg" className="py-6 flex flex-col sm:flex-row items-center justify-between gap-4">
           <BuilderBrandBadge size="md" />
           <div className="flex items-center gap-3">
-            <span className="text-xs font-mono text-slate-400 hidden sm:inline">Affiliated with</span>
+            <span className="text-xs font-mono text-slate-300 hidden sm:inline">Affiliated with</span>
             <AwsSmileLogo size={46} color="#FFFFFF" />
           </div>
         </Container>
@@ -27,7 +27,7 @@ export function Footer() {
             <h4 className="text-xs font-mono font-bold uppercase tracking-widest text-[#FF9900]">
               Our Mission
             </h4>
-            <p className="text-sm text-slate-300 max-w-md leading-relaxed font-sans">
+            <p className="text-sm sm:text-base text-slate-200 max-w-md leading-relaxed font-sans">
               Democratizing cloud education at USJ through hands-on architectures, certification study cohorts, and industry mentorship.
             </p>
             <div className="flex flex-wrap items-center gap-2.5 pt-2">
@@ -79,7 +79,7 @@ export function Footer() {
             <h4 className="text-xs font-mono font-semibold text-white tracking-widest uppercase mb-4">
               Directory
             </h4>
-            <ul className="space-y-2 text-sm font-sans">
+            <ul className="space-y-2.5 text-sm sm:text-[15px] font-sans text-slate-200">
               {NAV_LINKS.map((link) => (
                 <li key={link.href}>
                   <Link
@@ -98,7 +98,7 @@ export function Footer() {
             <h4 className="text-xs font-mono font-semibold text-white tracking-widest uppercase mb-4">
               AWS Ecosystem
             </h4>
-            <ul className="space-y-2 text-sm font-sans">
+            <ul className="space-y-2.5 text-sm sm:text-[15px] font-sans text-slate-200">
               <li>
                 <a
                   href="https://aws.amazon.com/developer/community/students/"
@@ -107,7 +107,7 @@ export function Footer() {
                   className="flex items-center gap-1.5 hover:text-[#FF9900] transition-colors"
                 >
                   AWS Student Community
-                  <ExternalLink className="w-3 h-3 text-slate-500" />
+                  <ExternalLink className="w-3.5 h-3.5 text-slate-400" />
                 </a>
               </li>
               <li>
@@ -118,7 +118,7 @@ export function Footer() {
                   className="flex items-center gap-1.5 hover:text-[#FF9900] transition-colors"
                 >
                   AWS Skill Builder
-                  <ExternalLink className="w-3 h-3 text-slate-500" />
+                  <ExternalLink className="w-3.5 h-3.5 text-slate-400" />
                 </a>
               </li>
               <li>
@@ -129,7 +129,7 @@ export function Footer() {
                   className="flex items-center gap-1.5 hover:text-[#FF9900] transition-colors"
                 >
                   AWS Academy LMS
-                  <ExternalLink className="w-3 h-3 text-slate-500" />
+                  <ExternalLink className="w-3.5 h-3.5 text-slate-400" />
                 </a>
               </li>
               <li>
@@ -140,7 +140,7 @@ export function Footer() {
                   className="flex items-center gap-1.5 hover:text-[#FF9900] transition-colors"
                 >
                   USJ Official Portal
-                  <ExternalLink className="w-3 h-3 text-slate-500" />
+                  <ExternalLink className="w-3.5 h-3.5 text-slate-400" />
                 </a>
               </li>
             </ul>
@@ -148,11 +148,11 @@ export function Footer() {
         </div>
 
         {/* Bottom Legal & Sign-off */}
-        <div className="border-t border-white/10 pt-8 flex flex-col sm:flex-row items-center justify-between text-xs text-slate-500 font-mono gap-4">
+        <div className="border-t border-white/10 pt-8 flex flex-col sm:flex-row items-center justify-between text-xs sm:text-sm text-slate-400 font-mono gap-4">
           <p className="text-center sm:text-left">
             AWS Student Builder Group USJ • University of Sri Jayewardenepura
           </p>
-          <p className="text-center sm:text-right text-slate-500">
+          <p className="text-center sm:text-right text-slate-400">
             © {new Date().getFullYear()} AWS SBG USJ. Student-led community.
           </p>
         </div>
