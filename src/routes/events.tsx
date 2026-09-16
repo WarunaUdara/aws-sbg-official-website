@@ -6,6 +6,7 @@ import { EventCard } from '@/components/events/EventCard'
 import { Button } from '@/components/ui/button'
 import { MOCK_EVENTS } from '@/features/events/data'
 import type { EventCategory } from '@/features/events/types'
+import { cn } from '@/lib/utils'
 
 export const Route = createFileRoute('/events')({
   component: EventsPage,
@@ -97,12 +98,29 @@ function EventsPage() {
           </div>
         </div>
 
-        {/* Events Grid */}
+        {/* Connected Events Grid */}
         {filteredEvents.length > 0 ? (
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {filteredEvents.map((event) => (
-              <EventCard key={event.id} event={event} />
-            ))}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 border border-white/10 bg-[#0A0E17]">
+            {filteredEvents.map((event, i) => {
+              const isLastRowMobile = i === filteredEvents.length - 1
+              const isLastColTablet = i % 2 === 1 || i === filteredEvents.length - 1
+              const isLastColDesktop = i % 3 === 2 || i === filteredEvents.length - 1
+
+              return (
+                <EventCard
+                  key={event.id}
+                  event={event}
+                  bordered={false}
+                  className={cn(
+                    "border-white/10",
+                    !isLastRowMobile && "border-b",
+                    !isLastColTablet && "md:border-r",
+                    !isLastColDesktop && "lg:border-r",
+                    isLastColDesktop && "lg:border-r-0"
+                  )}
+                />
+              )
+            })}
           </div>
         ) : (
           <div className="text-center py-20 bg-[#161F2E]/40 rounded-none border border-white/10 p-8 space-y-3">

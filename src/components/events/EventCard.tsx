@@ -4,18 +4,26 @@ import { Button } from "@/components/ui/button"
 import { Card, CardHeader, CardTitle, CardDescription, CardContent, CardFooter } from "@/components/ui/card"
 import { LinkedinIcon } from "@/components/ui/icons"
 import type { CommunityEvent } from "@/features/events/types"
-import { formatDate } from "@/lib/utils"
+import { formatDate, cn } from "@/lib/utils"
 import { SITE_CONFIG } from "@/lib/constants"
 
 interface EventCardProps {
   event: CommunityEvent
+  className?: string
+  bordered?: boolean
 }
 
-export function EventCard({ event }: EventCardProps) {
+export function EventCard({ event, className, bordered = true }: EventCardProps) {
   const isUpcoming = event.status === "upcoming"
 
   return (
-    <Card className="flex flex-col h-full bg-[#161F2E]/90 border border-white/10 hover:border-[#FF9900]/50 transition-all duration-250 rounded-none group">
+    <Card
+      className={cn(
+        "flex flex-col h-full bg-[#0A0E17] hover:bg-[#161F2E]/40 transition-colors duration-200 rounded-none group",
+        bordered ? "border border-white/10 hover:border-[#FF9900]/50" : "border-0",
+        className
+      )}
+    >
       <CardHeader className="p-6 pb-4">
         <div className="flex items-center justify-between gap-2 mb-3">
           <Badge variant="aws" className="font-mono text-[10px] rounded-none uppercase">
