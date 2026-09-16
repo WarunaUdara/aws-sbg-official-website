@@ -60,8 +60,7 @@ The codebase is organized following modern clean architecture and domain-driven 
 
 ### Prerequisites
 
-- **Node.js**: `v20+` or `v22+` (recommended)
-- **npm** or **bun**
+- **Runtime & Package Manager**: **[Bun](https://bun.sh)** (strongly recommended for lightning-fast execution and package resolution) or **Node.js** `v20+` / `v22+` with `npm`.
 
 ### Installation
 
@@ -71,7 +70,7 @@ Clone the repository and install dependencies:
 git clone https://github.com/WarunaUdara/aws-sbg-official-website.git
 cd "AWS SBG USJ"
 
-npm install
+bun install  # (recommended) or npm install
 ```
 
 ### Development Server
@@ -79,7 +78,7 @@ npm install
 Start the local development server on `http://localhost:3000`:
 
 ```bash
-npm run dev
+bun dev  # (recommended) or npm run dev
 ```
 
 ### Production Build
@@ -87,13 +86,13 @@ npm run dev
 Compile optimized client and SSR bundles:
 
 ```bash
-npm run build
+bun run build  # (recommended) or npm run build
 ```
 
 Preview the production build locally:
 
 ```bash
-npm run preview
+bun run preview  # (recommended) or npm run preview
 ```
 
 ---
