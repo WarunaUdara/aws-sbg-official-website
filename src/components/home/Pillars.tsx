@@ -1,6 +1,7 @@
 import { Cpu, Award, Rocket, Compass } from "lucide-react"
 import { Container } from "@/components/common/Container"
 import { ShapeGrid } from "@/components/ui/ShapeGrid"
+import { cn } from "@/lib/utils"
 
 const PILLARS = [
   {
@@ -67,13 +68,26 @@ export function Pillars() {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 pointer-events-auto">
-          {PILLARS.map((pillar) => {
+        {/* Connected Feature Grid matching LearningTracks & BuilderRewards */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 border border-white/10 bg-[#0A0E17] pointer-events-auto">
+          {PILLARS.map((pillar, i) => {
             const Icon = pillar.icon
             return (
               <div
                 key={pillar.title}
-                className="aws-card-glow p-6 flex flex-col justify-between group border border-white/10 hover:border-[#FF9900]/60 transition-all"
+                className={cn(
+                  "p-6 sm:p-7 flex flex-col justify-between hover:bg-[#161F2E]/40 transition-colors group border-white/10",
+                  // Mobile (1 col): bottom border on 0,1,2
+                  i < 3 && "border-b",
+                  // Tablet (2 cols):
+                  i === 0 && "md:border-r md:border-b",
+                  i === 1 && "md:border-r-0 md:border-b",
+                  i === 2 && "md:border-r md:border-b-0",
+                  i === 3 && "md:border-r-0 md:border-b-0",
+                  // Desktop (4 cols):
+                  i < 3 && "lg:border-r lg:border-b-0",
+                  i === 3 && "lg:border-r-0 lg:border-b-0"
+                )}
               >
                 <div>
                   <div className="flex items-center justify-between mb-6 pb-3 border-b border-white/10">
@@ -85,11 +99,11 @@ export function Pillars() {
                     </span>
                   </div>
 
-                  <div className="p-3 w-fit bg-[#0A0E17] border border-[#FF9900]/30 text-[#FF9900] mb-4 group-hover:scale-105 transition-transform">
+                  <div className="p-3 w-fit bg-[#0A0E17] border border-white/10 group-hover:border-[#FF9900]/40 text-[#FF9900] mb-4 group-hover:scale-105 transition-all">
                     <Icon className="w-5 h-5" />
                   </div>
 
-                  <h3 className="text-lg font-bold text-white mb-2 font-display">
+                  <h3 className="text-lg font-bold text-white mb-2 font-display group-hover:text-[#FF9900] transition-colors">
                     {pillar.title}
                   </h3>
                   <p className="text-sm sm:text-[15px] text-slate-200 leading-relaxed font-sans">
