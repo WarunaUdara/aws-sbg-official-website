@@ -4,7 +4,12 @@ export const SITE_CONFIG = {
   university: "University of Sri Jayewardenepura",
   tagline: "Where Student Builders Architect the Cloud",
   description: "Build real cloud systems at USJ. Learn AWS, explore GenAI with Amazon Bedrock, and launch production projects with student developers.",
-  url: "https://github.com/University-Of-Sri-Jayewardenepura",
+  url: "https://aws-sbg-usj.pages.dev",
+  ogImage: "https://aws-sbg-usj.pages.dev/og-image.webp",
+  ogImageWidth: 1731,
+  ogImageHeight: 909,
+  ogImageType: "image/webp",
+  ogImageAlt: "AWS Student Builder Group USJ | University of Sri Jayewardenepura",
   githubStars: "1.2k",
   links: {
     github: "https://github.com/University-Of-Sri-Jayewardenepura",
