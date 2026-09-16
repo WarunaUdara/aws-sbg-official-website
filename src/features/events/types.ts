@@ -7,6 +7,7 @@ export interface Speaker {
   role: string
   company: string
   avatarUrl?: string
+  linkedinUrl?: string
 }
 
 export interface CommunityEvent {

@@ -2,6 +2,7 @@ import { Calendar, Clock, MapPin, Video, ArrowUpRight } from "lucide-react"
 import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
 import { Card, CardHeader, CardTitle, CardDescription, CardContent, CardFooter } from "@/components/ui/card"
+import { LinkedinIcon } from "@/components/ui/icons"
 import type { CommunityEvent } from "@/features/events/types"
 import { formatDate } from "@/lib/utils"
 import { SITE_CONFIG } from "@/lib/constants"
@@ -72,11 +73,28 @@ export function EventCard({ event }: EventCardProps) {
             <p className="text-[11px] font-mono text-slate-400 mb-1">
               Speakers & Leads:
             </p>
-            <div className="space-y-1">
+            <div className="space-y-1.5">
               {event.speakers.map((speaker) => (
-                <div key={speaker.name} className="text-xs text-slate-200">
-                  <span className="font-medium text-white">{speaker.name}</span>
-                  <span className="text-slate-400 text-[11px]"> • {speaker.role}</span>
+                <div key={speaker.name} className="text-xs text-slate-200 flex items-center flex-wrap gap-1">
+                  {speaker.linkedinUrl ? (
+                    <a
+                      href={speaker.linkedinUrl}
+                      target="_blank"
+                      rel="noreferrer"
+                      className="font-medium text-white hover:text-[#0077B5] transition-colors inline-flex items-center gap-1 group/spk"
+                      title={`${speaker.name} on LinkedIn`}
+                    >
+                      <span className="underline decoration-white/20 underline-offset-2 group-hover/spk:decoration-[#0077B5]">
+                        {speaker.name}
+                      </span>
+                      <LinkedinIcon className="w-3 h-3 text-[#0077B5] shrink-0 group-hover/spk:scale-110 transition-transform" />
+                    </a>
+                  ) : (
+                    <span className="font-medium text-white">{speaker.name}</span>
+                  )}
+                  <span className="text-slate-400 text-[11px]">
+                    • {speaker.role} {speaker.company ? `at ${speaker.company}` : ''}
+                  </span>
                 </div>
               ))}
             </div>

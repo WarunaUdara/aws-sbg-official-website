@@ -2,74 +2,26 @@ import type { CommunityEvent } from './types'
 
 export const MOCK_EVENTS: CommunityEvent[] = [
   {
-    id: 'aws-cloud-bootcamp-2026',
-    title: 'AWS Certified Cloud Practitioner Bootcamp',
-    description: 'An intensive, hands-on weekend bootcamp covering core AWS services, cloud economics, IAM security, and architectural best practices to prepare USJ students for CLF-C02 certification.',
-    category: 'Bootcamp',
+    id: 'aws-infrastructure-essentials',
+    title: 'Inaugural Session: AWS Infrastructure Essentials',
+    description: 'The official inaugural session of AWS Student Builder Group USJ. Dive deep into core AWS infrastructure fundamentals, VPC architecture, compute services, and real-world DevOps/SRE production best practices.',
+    category: 'Workshop',
     status: 'upcoming',
-    date: '2026-10-10',
-    time: '09:00 AM - 04:00 PM IST',
-    location: 'Faculty of Applied Sciences, USJ / Hybrid',
+    date: '2026-10-15',
+    time: '06:00 PM - 07:30 PM IST',
+    location: 'University of Sri Jayewardenepura / Hybrid',
     isVirtual: true,
     speakers: [
       {
-        name: 'Waruna Udara',
-        role: 'Event & Logistics Lead',
-        company: 'AWS SBG USJ',
+        name: 'Shamika Shehan Kosgolle',
+        role: 'Associate Architect DevOps & SRE',
+        company: 'Kaya',
+        linkedinUrl: 'https://www.linkedin.com/in/shamika-shehan-kosgolle-759440243/',
       },
-      {
-        name: 'AWS Solutions Architect Guest',
-        role: 'Senior Solutions Architect',
-        company: 'AWS User Group Sri Lanka',
-      }
     ],
-    tags: ['Cloud Practitioner', 'Hands-on Lab', 'Certification Prep', 'IAM', 'EC2', 'S3'],
-    capacity: 120,
-  },
-  {
-    id: 'serverless-cdk-mastery',
-    title: 'Building Production Serverless Apps with AWS CDK & TypeScript',
-    description: 'Learn Infrastructure as Code (IaC) by synthesizing real-world serverless microservices with AWS Lambda, API Gateway, and DynamoDB using AWS CDK.',
-    category: 'Workshop',
-    status: 'upcoming',
-    date: '2026-10-24',
-    time: '02:00 PM - 05:30 PM IST',
-    location: 'Computing Center Lab 02, USJ',
-    isVirtual: false,
-    speakers: [
-      {
-        name: 'Eranga',
-        role: 'Technical Lead',
-        company: 'AWS SBG USJ',
-      }
-    ],
-    tags: ['AWS CDK', 'TypeScript', 'Lambda', 'DynamoDB', 'IaC'],
-    capacity: 60,
-  },
-  {
-    id: 'genai-bedrock-hackathon',
-    title: 'AWS GenAI Builder Hackathon 2026',
-    description: 'A 24-hour inter-university builder hackathon focused on creating practical GenAI agents and RAG pipelines using Amazon Bedrock and Claude.',
-    category: 'Hackathon',
-    status: 'upcoming',
-    date: '2026-11-14',
-    time: '08:00 AM onwards',
-    location: 'Main Auditorium, USJ',
-    isVirtual: false,
-    speakers: [
-      {
-        name: 'Harishan Ambhihaipahan',
-        role: 'Student Builder Group Leader',
-        company: 'AWS SBG USJ',
-      },
-      {
-        name: 'Industry Panel',
-        role: 'Judges & Mentors',
-        company: 'AWS Partner Network Sri Lanka',
-      }
-    ],
-    tags: ['Generative AI', 'Amazon Bedrock', 'RAG', 'Hackathon', 'Prizes'],
-    capacity: 200,
+    tags: ['Inaugural Session', 'AWS Infrastructure', 'DevOps & SRE', 'VPC & Compute', 'Kaya', 'USJ Builders'],
+    capacity: 150,
+    registrationUrl: 'https://www.meetup.com/aws-sbg-at-univ-of-sri-jayewardenepura-mattegoda-campus/',
   },
   {
     id: 'intro-to-aws-student-builder',
@@ -90,5 +42,52 @@ export const MOCK_EVENTS: CommunityEvent[] = [
     ],
     tags: ['Free Tier', 'Getting Started', 'Community', 'Student Program'],
     recordingUrl: 'https://youtube.com',
-  }
+  },
+  {
+    id: 'aws-cloud-bootcamp-2026',
+    title: 'AWS Certified Cloud Practitioner Bootcamp',
+    description: 'An intensive, hands-on weekend bootcamp covering core AWS services, cloud economics, IAM security, and architectural best practices to prepare USJ students for CLF-C02 certification.',
+    category: 'Bootcamp',
+    status: 'completed',
+    date: '2026-07-10',
+    time: '09:00 AM - 04:00 PM IST',
+    location: 'Faculty of Applied Sciences, USJ / Hybrid',
+    isVirtual: true,
+    speakers: [
+      {
+        name: 'Waruna Udara',
+        role: 'Event & Logistics Lead',
+        company: 'AWS SBG USJ',
+      },
+      {
+        name: 'AWS Solutions Architect Guest',
+        role: 'Senior Solutions Architect',
+        company: 'AWS User Group Sri Lanka',
+      }
+    ],
+    tags: ['Cloud Practitioner', 'Hands-on Lab', 'Certification Prep', 'IAM', 'EC2', 'S3'],
+    capacity: 120,
+    recordingUrl: 'https://youtube.com',
+  },
+  {
+    id: 'serverless-cdk-mastery',
+    title: 'Building Production Serverless Apps with AWS CDK & TypeScript',
+    description: 'Learn Infrastructure as Code (IaC) by synthesizing real-world serverless microservices with AWS Lambda, API Gateway, and DynamoDB using AWS CDK.',
+    category: 'Workshop',
+    status: 'completed',
+    date: '2026-06-24',
+    time: '02:00 PM - 05:30 PM IST',
+    location: 'Computing Center Lab 02, USJ',
+    isVirtual: false,
+    speakers: [
+      {
+        name: 'Eranga',
+        role: 'Technical Lead',
+        company: 'AWS SBG USJ',
+      }
+    ],
+    tags: ['AWS CDK', 'TypeScript', 'Lambda', 'DynamoDB', 'IaC'],
+    capacity: 60,
+    recordingUrl: 'https://youtube.com',
+  },
 ]
