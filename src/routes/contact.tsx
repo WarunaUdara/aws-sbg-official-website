@@ -246,22 +246,40 @@ function ContactPage() {
               </p>
               <div className="space-y-2 pt-2">
                 <a
-                  href={SITE_CONFIG.links.discord}
+                  href={SITE_CONFIG.links.meetup}
                   target="_blank"
                   rel="noreferrer"
-                  className="block p-3 rounded-none bg-slate-950 border border-slate-800 hover:border-[#FF9900]/50 text-sm text-white transition-colors"
+                  className="block p-3 rounded-none bg-slate-950 border border-slate-800 hover:border-[#F64060]/60 text-sm text-white transition-colors"
                 >
-                  <span className="font-semibold text-[#5865F2] block text-xs font-mono">Discord Server</span>
-                  Technical discussions, code help & labs
+                  <span className="font-semibold text-[#F64060] block text-xs font-mono">Meetup Group</span>
+                  Campus workshops, RSVPs & hands-on sessions at Mattegoda / USJ
                 </a>
                 <a
                   href={SITE_CONFIG.links.whatsapp}
                   target="_blank"
                   rel="noreferrer"
-                  className="block p-3 rounded-none bg-slate-950 border border-slate-800 hover:border-[#FF9900]/50 text-sm text-white transition-colors"
+                  className="block p-3 rounded-none bg-slate-950 border border-slate-800 hover:border-emerald-500/60 text-sm text-white transition-colors"
                 >
-                  <span className="font-semibold text-emerald-400 block text-xs font-mono">WhatsApp Community</span>
-                  Instant event announcements & campus alerts
+                  <span className="font-semibold text-emerald-400 block text-xs font-mono">WhatsApp Channel</span>
+                  Instant event announcements, study group alerts & campus updates
+                </a>
+                <a
+                  href={SITE_CONFIG.links.linkedin}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="block p-3 rounded-none bg-slate-950 border border-slate-800 hover:border-[#0077B5]/60 text-sm text-white transition-colors"
+                >
+                  <span className="font-semibold text-[#0077B5] block text-xs font-mono">LinkedIn Organization</span>
+                  Professional networking, speaker spotlights & certification milestones
+                </a>
+                <a
+                  href={SITE_CONFIG.links.discord}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="block p-3 rounded-none bg-slate-950 border border-slate-800 hover:border-[#5865F2]/60 text-sm text-white transition-colors"
+                >
+                  <span className="font-semibold text-[#5865F2] block text-xs font-mono">Discord Server</span>
+                  Technical discussions, architecture reviews & peer code help
                 </a>
                 <a
                   href={SITE_CONFIG.links.github}
@@ -270,7 +288,7 @@ function ContactPage() {
                   className="block p-3 rounded-none bg-slate-950 border border-slate-800 hover:border-[#FF9900]/50 text-sm text-white transition-colors"
                 >
                   <span className="font-semibold text-slate-300 block text-xs font-mono">GitHub Organization</span>
-                  Open source workshops, CDK templates & projects
+                  Open source workshops, CDK templates & student projects
                 </a>
               </div>
             </div>

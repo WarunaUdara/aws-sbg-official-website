@@ -128,11 +128,14 @@ When adding new backend capabilities or business logic:
 
 ---
 
-## 🤝 Community & Contact
+## 🤝 Community & Official Channels
 
-- **Organization**: AWS Student Building Guild - University of Sri Jayewardenepura (USJ)
-- **University**: University of Sri Jayewardenepura (USJ), Sri Lanka
+- **Meetup Group**: [AWS SBG at Univ of Sri Jayewardenepura - Mattegoda Campus](https://www.meetup.com/aws-sbg-at-univ-of-sri-jayewardenepura-mattegoda-campus/)
+- **WhatsApp Channel**: [AWS SBG USJ Channel](https://whatsapp.com/channel/0029VbDAVOpAjPXPsgKZTW0p)
+- **LinkedIn**: [AWS SBG USJ Company Page](https://www.linkedin.com/company/aws-sbg-usj/)
 - **GitHub**: [WarunaUdara/aws-sbg-official-website](https://github.com/WarunaUdara/aws-sbg-official-website)
+- **Discord**: [AWS SBG USJ Community Discord](https://discord.gg/aws-sbg-usj)
+- **University**: University of Sri Jayewardenepura (USJ), Sri Lanka
 
 ---
 

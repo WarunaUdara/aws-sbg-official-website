@@ -5,6 +5,7 @@ import { Button } from "@/components/ui/button"
 import { Card, CardHeader, CardTitle, CardDescription, CardContent, CardFooter } from "@/components/ui/card"
 import type { CommunityEvent } from "@/features/events/types"
 import { formatDate } from "@/lib/utils"
+import { SITE_CONFIG } from "@/lib/constants"
 
 interface EventCardProps {
   event: CommunityEvent
@@ -86,10 +87,17 @@ export function EventCard({ event }: EventCardProps) {
 
       <CardFooter className="p-6 pt-0 mt-auto border-t border-white/10 pt-4">
         {isUpcoming ? (
-          <Button variant="glow" size="sm" className="w-full font-mono text-xs rounded-none">
-            RSVP / Register Session
-            <ArrowUpRight className="w-3.5 h-3.5 ml-1" />
-          </Button>
+          <a
+            href={event.registrationUrl || SITE_CONFIG.links.meetup}
+            target="_blank"
+            rel="noreferrer"
+            className="w-full block"
+          >
+            <Button variant="glow" size="sm" className="w-full font-mono text-xs rounded-none">
+              RSVP on Meetup
+              <ArrowUpRight className="w-3.5 h-3.5 ml-1" />
+            </Button>
+          </a>
         ) : (
           <Button variant="secondary" size="sm" className="w-full font-mono text-xs rounded-none" disabled={!event.recordingUrl}>
             {event.recordingUrl ? "Watch Recording" : "Session Completed"}

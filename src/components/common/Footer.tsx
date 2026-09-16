@@ -1,7 +1,7 @@
 import * as React from "react"
 import { Link } from "@tanstack/react-router"
 import { MessageSquare, ExternalLink, Shield } from "lucide-react"
-import { GithubIcon, LinkedinIcon } from "@/components/ui/icons"
+import { GithubIcon, LinkedinIcon, MeetupIcon, WhatsAppIcon } from "@/components/ui/icons"
 import { BuilderBrandBadge } from "@/components/ui/BuilderBrandBadge"
 import { AwsSmileLogo } from "@/components/ui/AwsSmileLogo"
 import { Container } from "./Container"
@@ -33,31 +33,54 @@ export function Footer() {
             <p className="text-sm text-slate-300 max-w-md leading-relaxed font-sans">
               AWS Student Builder Group at the University of Sri Jayewardenepura is an independent, student-run technical community fostering cloud architecture, serverless systems, GenAI pipelines, and peer builder culture.
             </p>
-            <div className="flex items-center gap-3 pt-2">
+            <div className="flex flex-wrap items-center gap-2.5 pt-2">
+              <a
+                href={SITE_CONFIG.links.meetup}
+                target="_blank"
+                rel="noreferrer"
+                className="p-2.5 bg-[#161F2E] border border-white/10 text-slate-300 hover:text-[#F64060] hover:border-[#F64060]/50 transition-colors"
+                aria-label="Meetup Group"
+                title="Meetup Group"
+              >
+                <MeetupIcon className="w-4 h-4" />
+              </a>
+              <a
+                href={SITE_CONFIG.links.whatsapp}
+                target="_blank"
+                rel="noreferrer"
+                className="p-2.5 bg-[#161F2E] border border-white/10 text-slate-300 hover:text-emerald-400 hover:border-emerald-400/50 transition-colors"
+                aria-label="WhatsApp Channel"
+                title="WhatsApp Channel"
+              >
+                <WhatsAppIcon className="w-4 h-4" />
+              </a>
+              <a
+                href={SITE_CONFIG.links.linkedin}
+                target="_blank"
+                rel="noreferrer"
+                className="p-2.5 bg-[#161F2E] border border-white/10 text-slate-300 hover:text-[#0077B5] hover:border-[#0077B5]/50 transition-colors"
+                aria-label="LinkedIn"
+                title="LinkedIn"
+              >
+                <LinkedinIcon className="w-4 h-4" />
+              </a>
               <a
                 href={SITE_CONFIG.links.github}
                 target="_blank"
                 rel="noreferrer"
                 className="p-2.5 bg-[#161F2E] border border-white/10 text-slate-300 hover:text-white hover:border-[#FF9900]/50 transition-colors"
                 aria-label="GitHub Repository"
+                title="GitHub"
               >
                 <GithubIcon className="w-4 h-4" />
-              </a>
-              <a
-                href={SITE_CONFIG.links.linkedin}
-                target="_blank"
-                rel="noreferrer"
-                className="p-2.5 bg-[#161F2E] border border-white/10 text-slate-300 hover:text-[#0077B5] hover:border-[#FF9900]/50 transition-colors"
-                aria-label="LinkedIn"
-              >
-                <LinkedinIcon className="w-4 h-4" />
               </a>
               <a
                 href={SITE_CONFIG.links.discord}
                 target="_blank"
                 rel="noreferrer"
-                className="p-2.5 bg-[#161F2E] border border-white/10 text-slate-300 hover:text-[#5865F2] hover:border-[#FF9900]/50 transition-colors"
+                className="p-2.5 bg-[#161F2E] border border-white/10 text-slate-300 hover:text-[#5865F2] hover:border-[#5865F2]/50 transition-colors"
                 aria-label="Discord / Community"
+                title="Discord"
               >
                 <MessageSquare className="w-4 h-4" />
               </a>

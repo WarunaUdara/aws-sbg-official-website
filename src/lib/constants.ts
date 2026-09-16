@@ -8,9 +8,10 @@ export const SITE_CONFIG = {
   githubStars: "1.2k",
   links: {
     github: "https://github.com/WarunaUdara/aws-sbg-official-website",
-    linkedin: "https://linkedin.com/company/aws-sbg-usj",
+    linkedin: "https://www.linkedin.com/company/aws-sbg-usj/",
+    meetup: "https://www.meetup.com/aws-sbg-at-univ-of-sri-jayewardenepura-mattegoda-campus/",
+    whatsapp: "https://whatsapp.com/channel/0029VbDAVOpAjPXPsgKZTW0p",
     discord: "https://discord.gg/aws-sbg-usj",
-    whatsapp: "https://chat.whatsapp.com/aws-sbg-usj",
     usj: "https://www.sjp.ac.lk/",
   },
   stats: [
