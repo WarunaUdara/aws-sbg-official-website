@@ -14,7 +14,7 @@ export const MOCK_EVENTS: CommunityEvent[] = [
     speakers: [
       {
         name: 'Waruna Udara',
-        role: 'AWS Community Builder & Lead Organizer',
+        role: 'Event & Logistics Lead',
         company: 'AWS SBG USJ',
       },
       {
@@ -38,7 +38,7 @@ export const MOCK_EVENTS: CommunityEvent[] = [
     isVirtual: false,
     speakers: [
       {
-        name: 'DevOps & Cloud Core Team',
+        name: 'Eranga',
         role: 'Technical Lead',
         company: 'AWS SBG USJ',
       }
@@ -57,6 +57,11 @@ export const MOCK_EVENTS: CommunityEvent[] = [
     location: 'Main Auditorium, USJ',
     isVirtual: false,
     speakers: [
+      {
+        name: 'Harishan Ambhihaipahan',
+        role: 'Chapter Leader',
+        company: 'AWS SBG USJ',
+      },
       {
         name: 'Industry Panel',
         role: 'Judges & Mentors',

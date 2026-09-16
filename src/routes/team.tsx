@@ -7,6 +7,14 @@ import { Card, CardHeader, CardTitle, CardDescription, CardContent, CardFooter }
 import { Button } from '@/components/ui/button'
 import { MOCK_TEAM } from '@/features/team/data'
 
+function getInitials(name: string) {
+  const parts = name.trim().split(/\s+/)
+  if (parts.length >= 2) {
+    return `${parts[0][0]}${parts[1][0]}`.toUpperCase()
+  }
+  return name.slice(0, 2).toUpperCase()
+}
+
 export const Route = createFileRoute('/team')({
   component: TeamPage,
 })
@@ -19,7 +27,7 @@ function TeamPage() {
         <div className="max-w-3xl mb-16 space-y-4">
           <div className="inline-flex items-center gap-2 px-2.5 py-1 rounded-none bg-[#FF9900]/10 border border-[#FF9900]/30 text-[#FF9900] text-xs font-mono uppercase tracking-wider">
             <Users className="w-3.5 h-3.5" />
-            <span>Guild Leadership & Mentors</span>
+            <span>Guild Leadership & Core Crew</span>
           </div>
           <h1 className="text-4xl sm:text-5xl font-extrabold text-white tracking-tight font-display">
             Meet the Team Behind <span className="aws-gradient-text">AWS SBG USJ</span>
@@ -32,26 +40,38 @@ function TeamPage() {
 
         {/* Team Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-20">
-          {MOCK_TEAM.map((member) => (
-            <Card key={member.id} className="flex flex-col h-full bg-[#161F2E]/80 border border-white/10 hover:border-[#FF9900]/40 transition-all duration-300 rounded-none">
-              <CardHeader>
-                <div className="flex items-center gap-4 mb-3">
-                  <div className="w-14 h-14 rounded-none bg-gradient-to-br from-slate-800 to-slate-900 border border-slate-700 flex items-center justify-center font-bold text-xl text-[#FF9900] shadow-inner font-mono">
-                    {member.name.split(' ').map((n) => n[0]).join('').slice(0, 2)}
+          {MOCK_TEAM.map((member) => {
+            const isLeader = member.role.toLowerCase().includes('chapter leader') || member.role.toLowerCase().includes('leader')
+            return (
+              <Card
+                key={member.id}
+                className={`flex flex-col h-full bg-[#161F2E]/80 border transition-all duration-300 rounded-none relative ${
+                  isLeader ? 'border-[#FF9900]/60 shadow-[0_0_20px_rgba(255,153,0,0.12)]' : 'border-white/10 hover:border-[#FF9900]/40'
+                }`}
+              >
+                {isLeader && (
+                  <div className="absolute -top-3 right-4 px-2.5 py-0.5 bg-[#FF9900] text-[#0A0E17] font-mono text-[10px] font-bold uppercase tracking-wider border border-[#FF9900] select-none">
+                    Guild Leader
                   </div>
-                  <div>
-                    <CardTitle className="text-lg text-white font-display">
-                      {member.name}
-                    </CardTitle>
-                    <p className="text-xs text-[#FF9900] font-mono">
-                      {member.role}
-                    </p>
-                    <p className="text-[11px] text-slate-400">
-                      {member.faculty}
-                    </p>
+                )}
+                <CardHeader>
+                  <div className="flex items-center gap-4 mb-3">
+                    <div className="w-14 h-14 rounded-none bg-gradient-to-br from-slate-800 to-slate-900 border border-slate-700 flex items-center justify-center font-bold text-xl text-[#FF9900] shadow-inner font-mono shrink-0">
+                      {getInitials(member.name)}
+                    </div>
+                    <div>
+                      <CardTitle className="text-lg text-white font-display">
+                        {member.name}
+                      </CardTitle>
+                      <p className="text-xs text-[#FF9900] font-mono">
+                        {member.role}
+                      </p>
+                      <p className="text-[11px] text-slate-400">
+                        {member.faculty}
+                      </p>
+                    </div>
                   </div>
-                </div>
-              </CardHeader>
+                </CardHeader>
 
               <CardContent className="flex-1 space-y-4">
                 <CardDescription className="text-xs sm:text-sm">
@@ -100,7 +120,7 @@ function TeamPage() {
                 )}
               </CardFooter>
             </Card>
-          ))}
+          )})}
         </div>
 
         {/* Join Leadership CTA */}
