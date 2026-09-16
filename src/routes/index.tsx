@@ -79,7 +79,7 @@ function HomePage() {
                   Want to Lead or Host a Cloud Session?
                 </h3>
                 <p className="text-sm sm:text-[15px] text-slate-200 leading-relaxed font-sans mb-4">
-                  AWS Student Builder Group USJ is 100% student-led. Whether you are building with Serverless, Bedrock GenAI, or DevOps, we welcome student speakers and workshop facilitators.
+                  We are 100% student-led. Share your cloud journey, architecture, or project with fellow USJ builders.
                 </p>
               </div>
               <div className="pt-4 border-t border-white/10">
@@ -98,7 +98,7 @@ function HomePage() {
       {/* Official "FROM STUDENTS TO BUILDERS" Banner Callout */}
       <section className="pt-16">
         <Container size="lg">
-          <div className="relative overflow-hidden bg-[#161F2E] border border-white/10 p-8 sm:p-12 md:p-14">
+          <div className="relative overflow-hidden bg-[#0A0E17] border border-white/10 p-8 sm:p-12 md:p-14">
             {/* Interactive ShapeGrid Animated Canvas Background */}
             <div className="absolute inset-0 pointer-events-auto opacity-50">
               <ShapeGrid
@@ -109,7 +109,7 @@ function HomePage() {
                 borderColor="rgba(255, 255, 255, 0.08)"
                 hoverFillColor="rgba(255, 153, 0, 0.22)"
                 hoverTrailAmount={4}
-                vignetteColor="#161F2E"
+                vignetteColor="#0A0E17"
               />
             </div>
 
@@ -121,17 +121,17 @@ function HomePage() {
                     Our Mission
                   </span>
                 </div>
-                <h2 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-white tracking-tight font-display leading-[1.2] text-balance">
-                  “Democratizing cloud education at USJ—building practical skills, fostering community, and preparing students for the future of technology.”
+                <h2 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-white tracking-tight font-display leading-[1.15] text-balance">
+                  Democratizing cloud education at USJ.
                 </h2>
-                <p className="text-slate-200 text-base sm:text-lg max-w-2xl font-sans leading-relaxed text-pretty">
-                  We empower USJ students to build cloud-native applications, earn AWS certifications, and gain real-world developer experience through free hands-on workshops and mentorship.
+                <p className="text-slate-200 text-base sm:text-lg max-w-xl font-sans leading-relaxed text-pretty">
+                  Practical cloud skills, official AWS certifications, and builder mentorship—100% free for all students.
                 </p>
                 <div className="pt-2 flex flex-wrap gap-4">
                   <Link to="/contact">
                     <Button variant="glow" size="md" className="font-mono text-xs">
                       <MessageCircle className="w-4 h-4 mr-1.5" />
-                      Join the Community
+                      Join Community
                     </Button>
                   </Link>
                   <a href={SITE_CONFIG.links.github} target="_blank" rel="noreferrer">
