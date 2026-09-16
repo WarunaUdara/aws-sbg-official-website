@@ -1,6 +1,7 @@
 import * as React from 'react'
 import { createFileRoute, Link } from '@tanstack/react-router'
-import { Users, Award, Github, Linkedin, ArrowRight } from 'lucide-react'
+import { Users, Award, ArrowRight } from 'lucide-react'
+import { GithubIcon, LinkedinIcon } from '@/components/ui/icons'
 import { Container } from '@/components/common/Container'
 import { Badge } from '@/components/ui/badge'
 import { Card, CardHeader, CardTitle, CardDescription, CardContent, CardFooter } from '@/components/ui/card'
@@ -84,7 +85,7 @@ function TeamPage() {
                     className="p-1.5 rounded-lg text-slate-400 hover:text-white hover:bg-slate-800 transition-colors"
                     aria-label="GitHub profile"
                   >
-                    <Github className="w-4 h-4" />
+                    <GithubIcon className="w-4 h-4" />
                   </a>
                 )}
                 {member.linkedin && (
@@ -95,7 +96,7 @@ function TeamPage() {
                     className="p-1.5 rounded-lg text-slate-400 hover:text-[#0077B5] hover:bg-slate-800 transition-colors"
                     aria-label="LinkedIn profile"
                   >
-                    <Linkedin className="w-4 h-4" />
+                    <LinkedinIcon className="w-4 h-4" />
                   </a>
                 )}
               </CardFooter>

@@ -1,5 +1,6 @@
 import * as React from "react"
-import { Github, ExternalLink, Star, Code2 } from "lucide-react"
+import { ExternalLink, Star, Code2 } from "lucide-react"
+import { GithubIcon } from "@/components/ui/icons"
 import { Badge } from "@/components/ui/badge"
 import { Card, CardHeader, CardTitle, CardDescription, CardContent, CardFooter } from "@/components/ui/card"
 import type { BuilderProject } from "@/features/projects/types"
@@ -71,7 +72,7 @@ export function ProjectCard({ project }: ProjectCardProps) {
             rel="noreferrer"
             className="text-xs inline-flex items-center gap-1 text-slate-400 hover:text-white transition-colors"
           >
-            <Github className="w-3.5 h-3.5" /> Source Code
+            <GithubIcon className="w-3.5 h-3.5" /> Source Code
           </a>
         )}
         {project.demoUrl && (

@@ -1,6 +1,7 @@
 import * as React from "react"
 import { Link } from "@tanstack/react-router"
-import { Cloud, Github, Linkedin, MessageSquare, ExternalLink, Heart } from "lucide-react"
+import { Cloud, MessageSquare, ExternalLink } from "lucide-react"
+import { GithubIcon, LinkedinIcon } from "@/components/ui/icons"
 import { Container } from "./Container"
 import { SITE_CONFIG, NAV_LINKS } from "@/lib/constants"
 
@@ -35,7 +36,7 @@ export function Footer() {
                 className="p-2 rounded-lg bg-slate-900 border border-slate-800 text-slate-400 hover:text-white hover:border-slate-700 transition-colors"
                 aria-label="GitHub Repository"
               >
-                <Github className="w-4 h-4" />
+                <GithubIcon className="w-4 h-4" />
               </a>
               <a
                 href={SITE_CONFIG.links.linkedin}
@@ -44,7 +45,7 @@ export function Footer() {
                 className="p-2 rounded-lg bg-slate-900 border border-slate-800 text-slate-400 hover:text-[#0077B5] hover:border-slate-700 transition-colors"
                 aria-label="LinkedIn"
               >
-                <Linkedin className="w-4 h-4" />
+                <LinkedinIcon className="w-4 h-4" />
               </a>
               <a
                 href={SITE_CONFIG.links.discord}
