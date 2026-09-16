@@ -18,11 +18,11 @@ function TeamPage() {
       <Container size="lg">
         {/* Page Header */}
         <div className="max-w-3xl mb-16 space-y-4">
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#FF9900]/10 border border-[#FF9900]/20 text-[#FF9900] text-xs font-semibold">
+          <div className="inline-flex items-center gap-2 px-2.5 py-1 rounded-none bg-[#FF9900]/10 border border-[#FF9900]/30 text-[#FF9900] text-xs font-mono uppercase tracking-wider">
             <Users className="w-3.5 h-3.5" />
             <span>Guild Leadership & Mentors</span>
           </div>
-          <h1 className="text-4xl sm:text-5xl font-extrabold text-white tracking-tight">
+          <h1 className="text-4xl sm:text-5xl font-extrabold text-white tracking-tight font-display">
             Meet the Team Behind <span className="aws-gradient-text">AWS SBG USJ</span>
           </h1>
           <p className="text-slate-400 text-base leading-relaxed">
@@ -34,17 +34,17 @@ function TeamPage() {
         {/* Team Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-20">
           {MOCK_TEAM.map((member) => (
-            <Card key={member.id} className="flex flex-col h-full hover:border-[#FF9900]/40 transition-all duration-300">
+            <Card key={member.id} className="flex flex-col h-full bg-[#161F2E]/80 border border-white/10 hover:border-[#FF9900]/40 transition-all duration-300 rounded-none">
               <CardHeader>
                 <div className="flex items-center gap-4 mb-3">
-                  <div className="w-14 h-14 rounded-xl bg-gradient-to-br from-slate-800 to-slate-900 border border-slate-700 flex items-center justify-center font-bold text-xl text-[#FF9900] shadow-inner">
+                  <div className="w-14 h-14 rounded-none bg-gradient-to-br from-slate-800 to-slate-900 border border-slate-700 flex items-center justify-center font-bold text-xl text-[#FF9900] shadow-inner font-mono">
                     {member.name.split(' ').map((n) => n[0]).join('').slice(0, 2)}
                   </div>
                   <div>
-                    <CardTitle className="text-lg text-white">
+                    <CardTitle className="text-lg text-white font-display">
                       {member.name}
                     </CardTitle>
-                    <p className="text-xs text-[#FF9900] font-medium">
+                    <p className="text-xs text-[#FF9900] font-mono">
                       {member.role}
                     </p>
                     <p className="text-[11px] text-slate-400">
@@ -62,12 +62,12 @@ function TeamPage() {
                 {/* Certifications */}
                 {member.certifications && member.certifications.length > 0 && (
                   <div>
-                    <p className="text-[10px] font-semibold text-slate-400 uppercase tracking-wider mb-1.5 flex items-center gap-1">
+                    <p className="text-[10px] font-mono text-slate-400 uppercase tracking-wider mb-1.5 flex items-center gap-1">
                       <Award className="w-3 h-3 text-[#FF9900]" /> Credentials
                     </p>
                     <div className="flex flex-wrap gap-1.5">
                       {member.certifications.map((cert) => (
-                        <Badge key={cert} variant="aws" className="text-[10px]">
+                        <Badge key={cert} variant="aws" className="text-[10px] rounded-none font-mono">
                           {cert}
                         </Badge>
                       ))}
@@ -82,7 +82,7 @@ function TeamPage() {
                     href={member.github}
                     target="_blank"
                     rel="noreferrer"
-                    className="p-1.5 rounded-lg text-slate-400 hover:text-white hover:bg-slate-800 transition-colors"
+                    className="p-1.5 rounded-none text-slate-400 hover:text-white hover:bg-slate-800 transition-colors border border-transparent hover:border-slate-700"
                     aria-label="GitHub profile"
                   >
                     <GithubIcon className="w-4 h-4" />
@@ -93,7 +93,7 @@ function TeamPage() {
                     href={member.linkedin}
                     target="_blank"
                     rel="noreferrer"
-                    className="p-1.5 rounded-lg text-slate-400 hover:text-[#0077B5] hover:bg-slate-800 transition-colors"
+                    className="p-1.5 rounded-none text-slate-400 hover:text-[#0077B5] hover:bg-slate-800 transition-colors border border-transparent hover:border-slate-700"
                     aria-label="LinkedIn profile"
                   >
                     <LinkedinIcon className="w-4 h-4" />
@@ -105,7 +105,7 @@ function TeamPage() {
         </div>
 
         {/* Join Leadership CTA */}
-        <div className="rounded-2xl border border-slate-800 bg-slate-900/30 p-8 text-center space-y-4 max-w-2xl mx-auto">
+        <div className="rounded-none border border-white/10 bg-[#161F2E]/60 p-8 text-center space-y-4 max-w-2xl mx-auto">
           <h3 className="text-xl font-bold text-white">
             Want to Lead, Speak, or Organize with Us?
           </h3>

@@ -10,12 +10,13 @@ export function Stats() {
           {SITE_CONFIG.stats.map((stat) => (
             <div
               key={stat.label}
-              className="p-6 rounded-xl bg-slate-900/40 border border-slate-800/80 backdrop-blur-sm"
+              className="p-6 rounded-none bg-[#161F2E]/60 border border-white/10 hover:border-[#FF9900]/40 backdrop-blur-sm transition-colors text-left"
             >
-              <div className="text-3xl sm:text-4xl lg:text-5xl font-black text-transparent bg-clip-text bg-gradient-to-r from-[#FF9900] to-[#FFA41C] mb-2 tracking-tight">
+              <div className="text-3xl sm:text-4xl lg:text-5xl font-black text-transparent bg-clip-text bg-gradient-to-r from-[#FF9900] to-[#FFA41C] mb-2 tracking-tight font-display">
                 {stat.value}
               </div>
-              <div className="text-xs sm:text-sm font-medium text-slate-400">
+              <div className="text-xs font-mono uppercase tracking-wider text-slate-400 flex items-center gap-1.5">
+                <span className="w-1.5 h-1.5 bg-[#FF9900] inline-block" />
                 {stat.label}
               </div>
             </div>

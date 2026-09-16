@@ -27,11 +27,11 @@ function ProjectsPage() {
       <Container size="lg">
         {/* Page Header */}
         <div className="max-w-3xl mb-12 space-y-4">
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#FF9900]/10 border border-[#FF9900]/20 text-[#FF9900] text-xs font-semibold">
+          <div className="inline-flex items-center gap-2 px-2.5 py-1 rounded-none bg-[#FF9900]/10 border border-[#FF9900]/30 text-[#FF9900] text-xs font-mono uppercase tracking-wider">
             <Code2 className="w-3.5 h-3.5" />
             <span>USJ Builder Ecosystem</span>
           </div>
-          <h1 className="text-4xl sm:text-5xl font-extrabold text-white tracking-tight">
+          <h1 className="text-4xl sm:text-5xl font-extrabold text-white tracking-tight font-display">
             Student Projects & <span className="aws-gradient-text">Architectures</span>
           </h1>
           <p className="text-slate-400 text-base leading-relaxed">
@@ -46,10 +46,10 @@ function ProjectsPage() {
             <button
               key={cat}
               onClick={() => setSelectedCategory(cat)}
-              className={`px-3.5 py-1.5 rounded-full text-xs font-medium whitespace-nowrap transition-all ${
+              className={`px-3.5 py-1.5 rounded-none text-xs font-mono uppercase tracking-wider whitespace-nowrap transition-all ${
                 selectedCategory === cat
                   ? 'bg-[#FF9900] text-slate-950 font-bold shadow-sm'
-                  : 'bg-slate-900 text-slate-400 hover:text-white border border-slate-800'
+                  : 'bg-[#161F2E] text-slate-400 hover:text-white border border-white/10 hover:border-slate-700'
               }`}
             >
               {cat}
@@ -65,7 +65,7 @@ function ProjectsPage() {
         </div>
 
         {/* Submit Your Project Callout */}
-        <div className="rounded-2xl border border-slate-800 bg-slate-900/40 p-8 sm:p-10 flex flex-col md:flex-row items-center justify-between gap-6">
+        <div className="rounded-none border border-white/10 bg-[#161F2E]/60 p-8 sm:p-10 flex flex-col md:flex-row items-center justify-between gap-6">
           <div className="space-y-2 text-center md:text-left">
             <h3 className="text-xl font-bold text-white flex items-center justify-center md:justify-start gap-2">
               <PlusCircle className="w-5 h-5 text-[#FF9900]" />
