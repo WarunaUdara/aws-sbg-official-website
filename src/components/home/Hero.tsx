@@ -1,5 +1,6 @@
 import * as React from "react"
 import { Link } from "@tanstack/react-router"
+import { Volume2, VolumeX } from "lucide-react"
 import { HERO_CONFIG, SITE_CONFIG } from "@/lib/constants"
 
 interface HeroProps {
@@ -12,17 +13,76 @@ interface HeroProps {
 
 export function Hero({ videoUrl = HERO_CONFIG.videoUrl }: HeroProps) {
   const [isVideoLoaded, setIsVideoLoaded] = React.useState<boolean>(false)
+  const [isMuted, setIsMuted] = React.useState<boolean>(false) // Default enabled
+  const videoRef = React.useRef<HTMLVideoElement>(null)
+
+  // Handle autoplay with audio; fall back gracefully if browser restricts unmuted autoplay
+  React.useEffect(() => {
+    const video = videoRef.current
+    if (!video) return
+
+    video.muted = isMuted
+
+    const playPromise = video.play()
+    if (playPromise !== undefined) {
+      playPromise.catch(() => {
+        // Browser autoplay policy restricted unmuted playback on initial load
+        // Fall back to muted so video starts playing immediately
+        video.muted = true
+        setIsMuted(true)
+        video.play().catch(() => {})
+      })
+    }
+  }, [])
+
+  const toggleSound = () => {
+    const video = videoRef.current
+    if (!video) return
+
+    const nextMuted = !isMuted
+    video.muted = nextMuted
+    setIsMuted(nextMuted)
+
+    if (video.paused) {
+      video.play().catch(() => {})
+    }
+  }
 
   return (
     <section className="relative min-h-[calc(100vh-4rem)] w-full flex flex-col justify-end overflow-hidden bg-[#0A0E17] text-white">
+      {/* ========================================================================= */}
+      {/* SOUND TOGGLE BUTTON (Default Enabled)                                     */}
+      {/* ========================================================================= */}
+      <div className="absolute top-6 right-4 sm:top-8 sm:right-8 z-30">
+        <button
+          onClick={toggleSound}
+          className="flex items-center gap-2 px-3.5 py-2 bg-[#0A0E17]/85 hover:bg-[#161F2E] border border-white/20 hover:border-[#FF9900]/60 text-xs font-mono text-white transition-all backdrop-blur-md cursor-pointer rounded-none shadow-lg group select-none"
+          aria-label={isMuted ? "Enable sound" : "Mute sound"}
+          title={isMuted ? "Click to enable sound" : "Click to mute sound"}
+        >
+          {isMuted ? (
+            <>
+              <VolumeX className="w-4 h-4 text-slate-400 group-hover:text-white" />
+              <span className="text-slate-300 group-hover:text-white">Sound: OFF</span>
+            </>
+          ) : (
+            <>
+              <Volume2 className="w-4 h-4 text-[#FF9900] animate-pulse" />
+              <span className="text-white font-bold">Sound: ON</span>
+              <span className="w-1.5 h-1.5 bg-emerald-400 inline-block ml-0.5" />
+            </>
+          )}
+        </button>
+      </div>
+
       {/* ========================================================================= */}
       {/* BACKGROUND VIDEO LAYER - Clean, Vibrant, Unobstructed                     */}
       {/* ========================================================================= */}
       {videoUrl ? (
         <video
+          ref={videoRef}
           autoPlay
           loop
-          muted
           playsInline
           preload="auto"
           onLoadedData={() => setIsVideoLoaded(true)}
