@@ -187,13 +187,13 @@ export function Hero({ videoUrl = HERO_CONFIG.videoUrl }: HeroProps) {
       ) : null}
 
       {/* Top subtle fade to keep navbar navigation readable */}
-      <div className="absolute inset-x-0 top-0 h-24 sm:h-28 bg-gradient-to-b from-[#0A0E17]/90 via-[#0A0E17]/30 to-transparent z-10 pointer-events-none" />
+      <div className="absolute inset-x-0 top-0 h-28 sm:h-36 hero-top-scrim z-10 pointer-events-none" />
 
       {/* ========================================================================= */}
       {/* BOTTOM DARK FADING OVERLAY FOR THE VIDEO                                 */}
-      {/* Seamless cinematic gradient fading smoothly into the next dark section   */}
+      {/* Mathematically eased multi-stop scrim gradient for ultra-smooth fading    */}
       {/* ========================================================================= */}
-      <div className="absolute inset-x-0 bottom-0 h-[430px] sm:h-96 lg:h-[480px] bg-gradient-to-t from-[#0A0E17] from-25% via-[#0A0E17]/95 via-60% to-transparent z-10 pointer-events-none" />
+      <div className="absolute inset-x-0 bottom-0 h-[72%] sm:h-[78%] lg:h-[84%] hero-bottom-scrim z-10 pointer-events-none" />
 
       {/* ========================================================================= */}
       {/* BOTTOM SECTION: HEADLINE, DESCRIPTION & DUAL ACTION CTAS                 */}
