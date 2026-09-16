@@ -53,10 +53,44 @@ function HomePage() {
             </Link>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          {/* Connected Upcoming Sessions Grid matching LearningTracks & BuilderRewards */}
+          <div className="grid grid-cols-1 md:grid-cols-2 border border-white/10 bg-[#0A0E17]">
             {upcomingEvents.map((event) => (
-              <EventCard key={event.id} event={event} />
+              <EventCard
+                key={event.id}
+                event={event}
+                bordered={false}
+                className="border-b md:border-b-0 md:border-r border-white/10"
+              />
             ))}
+
+            {/* Propose a Session / Community Workshop Callout */}
+            <div className="p-6 sm:p-8 flex flex-col justify-between hover:bg-[#161F2E]/30 transition-colors group">
+              <div>
+                <div className="flex items-center justify-between pb-3 mb-5 border-b border-white/10">
+                  <span className="text-[11px] font-mono font-bold text-[#FF9900] tracking-wider uppercase">
+                    Call for Speakers
+                  </span>
+                  <div className="p-2 bg-[#0A0E17] border border-white/10 text-[#FF9900] group-hover:border-[#FF9900] transition-colors">
+                    <Calendar className="w-4 h-4" />
+                  </div>
+                </div>
+                <h3 className="text-xl font-bold text-white mb-2 font-display group-hover:text-[#FF9900] transition-colors">
+                  Want to Lead or Host a Cloud Session?
+                </h3>
+                <p className="text-sm sm:text-[15px] text-slate-200 leading-relaxed font-sans mb-4">
+                  AWS Student Builder Group USJ is 100% student-led. Whether you are building with Serverless, Bedrock GenAI, or DevOps, we welcome student speakers and workshop facilitators.
+                </p>
+              </div>
+              <div className="pt-4 border-t border-white/10">
+                <Link to="/contact">
+                  <Button variant="glow" size="sm" className="font-mono text-xs rounded-none">
+                    Propose a Workshop
+                    <ArrowRight className="w-3.5 h-3.5 ml-1.5" />
+                  </Button>
+                </Link>
+              </div>
+            </div>
           </div>
         </Container>
       </section>
