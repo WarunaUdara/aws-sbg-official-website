@@ -1,6 +1,7 @@
-import { Gift, Award, Cloud, Sparkles, Check, ArrowRight } from "lucide-react"
+import { Gift, Award, Cloud, Sparkles, ArrowRight } from "lucide-react"
 import { Container } from "@/components/common/Container"
 import { SITE_CONFIG } from "@/lib/constants"
+import { cn } from "@/lib/utils"
 
 const REWARDS = [
   {
@@ -8,28 +9,24 @@ const REWARDS = [
     tag: "AWS Credits",
     title: "Promotional Cloud Credits",
     detail: "Get $30–$100 in AWS promotional credits to build architectures and host apps with zero personal expense.",
-    highlight: "Zero out-of-pocket cost",
   },
   {
     icon: Sparkles,
     tag: "Skill Builder",
     title: "12 Months Free Skill Builder",
     detail: "Free access to 600+ courses, interactive Cloud Quest 3D games, and guided sandbox labs.",
-    highlight: "600+ official courses",
   },
   {
     icon: Award,
     tag: "Certifications",
     title: "Exam Voucher Support",
     detail: "Study cohorts, practice tests, and subsidized exam voucher discounts for official AWS certifications.",
-    highlight: "Global AWS credentials",
   },
   {
     icon: Gift,
     tag: "Community Swag",
     title: "Swag & Digital Badges",
     detail: "Exclusive AWS stickers, apparel, and verifiable Credly digital badges to spotlight on LinkedIn.",
-    highlight: "Verifiable on LinkedIn",
   },
 ]
 
@@ -73,18 +70,30 @@ export function BuilderRewardsSection() {
           </div>
         </div>
 
-        {/* 4-Card Reward Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-          {REWARDS.map((reward) => {
+        {/* Connected Feature Grid matching LearningTracks */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 border border-white/10 bg-[#0A0E17]">
+          {REWARDS.map((reward, i) => {
             const Icon = reward.icon
             return (
               <div
                 key={reward.tag}
-                className="p-6 bg-[#111827] border border-white/10 hover:border-[#FF9900]/60 transition-all duration-300 flex flex-col justify-between group rounded-none"
+                className={cn(
+                  "p-6 sm:p-7 flex flex-col justify-between hover:bg-[#161F2E]/40 transition-colors group border-white/10",
+                  // Mobile (1 col): bottom border on 0,1,2
+                  i < 3 && "border-b",
+                  // Tablet (2 cols):
+                  i === 0 && "md:border-r md:border-b",
+                  i === 1 && "md:border-r-0 md:border-b",
+                  i === 2 && "md:border-r md:border-b-0",
+                  i === 3 && "md:border-r-0 md:border-b-0",
+                  // Desktop (4 cols):
+                  i < 3 && "lg:border-r lg:border-b-0",
+                  i === 3 && "lg:border-r-0 lg:border-b-0"
+                )}
               >
                 <div>
-                  <div className="flex items-center justify-between pb-3 mb-4 border-b border-white/10">
-                    <span className="text-[11px] font-mono font-bold text-[#FF9900]">
+                  <div className="flex items-center justify-between pb-3 mb-5 border-b border-white/10">
+                    <span className="text-[11px] font-mono font-bold text-[#FF9900] tracking-wider uppercase">
                       {reward.tag}
                     </span>
                     <div className="p-2 bg-[#0A0E17] border border-white/10 text-[#FF9900] group-hover:border-[#FF9900] transition-colors">
@@ -95,16 +104,9 @@ export function BuilderRewardsSection() {
                   <h3 className="text-lg font-bold text-white mb-2 font-display">
                     {reward.title}
                   </h3>
-                  <p className="text-xs text-slate-300 leading-relaxed font-sans mb-6">
+                  <p className="text-xs sm:text-sm text-slate-300 leading-relaxed font-sans">
                     {reward.detail}
                   </p>
-                </div>
-
-                <div className="pt-3 border-t border-white/10">
-                  <span className="text-[10px] font-mono text-emerald-400 font-semibold tracking-wider flex items-center gap-1.5">
-                    <Check className="w-3 h-3" />
-                    {reward.highlight}
-                  </span>
                 </div>
               </div>
             )
