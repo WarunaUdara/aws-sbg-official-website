@@ -86,17 +86,14 @@ export function Hero({ videoUrl = HERO_CONFIG.videoUrl }: HeroProps) {
           playsInline
           preload="auto"
           onLoadedData={() => setIsVideoLoaded(true)}
-          className={`absolute inset-0 w-full h-full object-cover z-0 pointer-events-none transition-opacity duration-700 ${
-            isVideoLoaded ? "opacity-85" : "opacity-0"
+          onCanPlay={() => setIsVideoLoaded(true)}
+          onPlaying={() => setIsVideoLoaded(true)}
+          className={`absolute inset-0 w-full h-full object-cover z-0 pointer-events-none transition-opacity duration-500 ${
+            isVideoLoaded ? "opacity-85" : "opacity-80"
           }`}
         >
-          <source src={videoUrl} type="video/mp4" />
-          <source
-            src={encodeURI(
-              "/hero/Every great builder has value to share. Comment ‘BTS’ to start building..mp4"
-            )}
-            type="video/mp4"
-          />
+          <source src="/hero/hero-bg-video.webm" type="video/webm" />
+          <source src="/hero/hero-bg-video.mp4" type="video/mp4" />
         </video>
       ) : null}
 

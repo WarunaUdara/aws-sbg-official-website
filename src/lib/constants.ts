@@ -32,7 +32,7 @@ export const SITE_CONFIG = {
 export const HERO_CONFIG = {
   // === BACKGROUND VIDEO URL ===
   // Served from public/hero/
-  videoUrl: "/hero/hero-bg.mp4",
+  videoUrl: "/hero/hero-bg-video.webm",
   // Video overlay opacity (0 to 1) to guarantee high text contrast
   videoOverlayOpacity: 0.65,
 
