@@ -1,52 +1,64 @@
 import * as React from "react"
-import { Cpu, Award, Rocket, Compass } from "lucide-react"
+import { Cpu, Award, Rocket, Compass, CheckSquare } from "lucide-react"
 import { Container } from "@/components/common/Container"
 
 const PILLARS = [
   {
     icon: Cpu,
+    tag: "[ LAB 01 ]",
     title: "Hands-on Cloud Labs",
     description:
-      "Move beyond theory. Dive deep into practical workshops covering AWS Lambda, ECS, S3, IAM, and infrastructure as code with AWS CDK.",
-    badge: "Practical Skills",
+      "Move beyond theory. Build on AWS Lambda, Amazon Bedrock, DynamoDB, and deploy Infrastructure as Code with AWS CDK and TypeScript.",
+    badge: "PRACTICAL",
   },
   {
     icon: Award,
-    title: "Certification Cohorts",
+    tag: "[ CERT 02 ]",
+    title: "Certification Sprints",
     description:
-      "Join peer study sprints for AWS Cloud Practitioner and Solutions Architect Associate, with practice exam guides and voucher discounts.",
-    badge: "Industry Credentials",
+      "Structured cohorts for AWS Certified Cloud Practitioner and Solutions Architect Associate with practice labs and voucher support.",
+    badge: "CREDENTIALS",
   },
   {
     icon: Rocket,
-    title: "Hackathons & Builds",
+    tag: "[ BUILD 03 ]",
+    title: "Builder Hackathons",
     description:
-      "Collaborate in inter-university cloud hackathons, ship full-stack applications, and create impactful solutions for Sri Lanka.",
-    badge: "Builder Culture",
+      "Collaborate in 24-hour cloud hackathons, create impactful real-world software, and compete for AWS student builder awards.",
+    badge: "INNOVATION",
   },
   {
     icon: Compass,
+    tag: "[ GUIDE 04 ]",
     title: "Industry Mentorship",
     description:
-      "Connect with AWS Community Builders, Solutions Architects, and alumni working at top tech firms globally and locally.",
-    badge: "Career Growth",
+      "Connect with AWS Community Builders, AWS User Group Sri Lanka architects, and engineering alumni working across global clouds.",
+    badge: "CAREER",
   },
 ]
 
 export function Pillars() {
   return (
-    <section className="py-20 border-y border-slate-900 bg-slate-950/50">
+    <section className="py-20 border-b border-white/10 bg-[#0A0E17]">
       <Container size="lg">
-        <div className="text-center max-w-2xl mx-auto mb-16 space-y-3">
-          <h2 className="text-xs font-bold text-[#FF9900] tracking-widest uppercase">
-            What We Do
-          </h2>
-          <h3 className="text-3xl sm:text-4xl font-extrabold text-white tracking-tight">
-            Designed for Builders, by Builders
-          </h3>
-          <p className="text-slate-400 text-sm sm:text-base">
-            Everything you need to master modern cloud engineering and build a competitive portfolio while at university.
-          </p>
+        <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">
+          <div className="space-y-3 max-w-xl">
+            <span className="text-xs font-mono font-bold text-[#FF9900] tracking-widest uppercase flex items-center gap-2">
+              <span className="w-2 h-2 bg-[#FF9900]" /> [ FOUNDATIONAL PILLARS ]
+            </span>
+            <h2 className="text-3xl sm:text-5xl font-black text-white tracking-tight font-display">
+              Engineered for Builders.
+            </h2>
+            <p className="text-slate-300 text-sm sm:text-base font-sans leading-relaxed">
+              Every initiative is designed to build technical depth, professional certifications,
+              and collaborative engineering portfolios while studying at USJ.
+            </p>
+          </div>
+
+          <div className="hidden md:flex items-center gap-2 font-mono text-xs text-slate-400 bg-[#161F2E] px-4 py-2 border border-white/10">
+            <span>GRID_ALIGN: TRUE</span>
+            <span className="text-[#FF9900]">● ACTIVE</span>
+          </div>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -55,21 +67,26 @@ export function Pillars() {
             return (
               <div
                 key={pillar.title}
-                className="aws-card-glow rounded-xl p-6 flex flex-col justify-between"
+                className="aws-card-glow p-6 flex flex-col justify-between group border border-white/10 hover:border-[#FF9900]/60 transition-all"
               >
                 <div>
-                  <div className="flex items-center justify-between mb-5">
-                    <div className="p-3 rounded-lg bg-[#FF9900]/10 text-[#FF9900] border border-[#FF9900]/20">
-                      <Icon className="w-6 h-6" />
-                    </div>
-                    <span className="text-[10px] font-semibold tracking-wider text-slate-400 uppercase bg-slate-800/80 px-2 py-1 rounded">
+                  <div className="flex items-center justify-between mb-6 pb-3 border-b border-white/10">
+                    <span className="text-xs font-mono text-[#FF9900] font-bold">
+                      {pillar.tag}
+                    </span>
+                    <span className="text-[10px] font-mono tracking-wider text-slate-300 uppercase bg-[#0A0E17] px-2 py-0.5 border border-white/10">
                       {pillar.badge}
                     </span>
                   </div>
-                  <h4 className="text-lg font-bold text-white mb-2">
+
+                  <div className="p-3 w-fit bg-[#0A0E17] border border-[#FF9900]/30 text-[#FF9900] mb-4 group-hover:scale-105 transition-transform">
+                    <Icon className="w-6 h-6" />
+                  </div>
+
+                  <h3 className="text-lg font-bold text-white mb-2 font-display">
                     {pillar.title}
-                  </h4>
-                  <p className="text-xs sm:text-sm text-slate-400 leading-relaxed">
+                  </h3>
+                  <p className="text-xs sm:text-sm text-slate-300 leading-relaxed font-sans">
                     {pillar.description}
                   </p>
                 </div>
