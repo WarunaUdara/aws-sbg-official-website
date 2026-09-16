@@ -64,6 +64,43 @@
   background-size: 24px 24px;
 }
 
+/* Halftone / Dither Dot Matrix pattern (inspired by Unkey / React Bits) */
+.bg-dot-matrix {
+  background-image: radial-gradient(rgba(255, 255, 255, 0.16) 1px, transparent 1px);
+  background-size: 8px 8px;
+}
+
+.bg-dot-matrix-fine {
+  background-image: radial-gradient(rgba(255, 255, 255, 0.12) 1px, transparent 1px);
+  background-size: 6px 6px;
+}
+
+.bg-dot-matrix-orange {
+  background-image: radial-gradient(rgba(255, 153, 0, 0.28) 1.5px, transparent 1.5px);
+  background-size: 10px 10px;
+}
+
+/* Diagonal Hashed / Technical Stripes */
+.bg-diagonal-stripes {
+  background-image: repeating-linear-gradient(
+    -45deg,
+    rgba(255, 255, 255, 0.04),
+    rgba(255, 255, 255, 0.04) 1px,
+    transparent 1px,
+    transparent 8px
+  );
+}
+
+.bg-diagonal-stripes-orange {
+  background-image: repeating-linear-gradient(
+    -45deg,
+    rgba(255, 153, 0, 0.08),
+    rgba(255, 153, 0, 0.08) 1px,
+    transparent 1px,
+    transparent 8px
+  );
+}
+
 /* Mosaic Squares & Structural Elements */
 .builder-mosaic-tile {
   width: 48px;

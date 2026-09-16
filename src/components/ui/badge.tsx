@@ -11,7 +11,7 @@ export function Badge({
   children,
   ...props
 }: BadgeProps) {
-  const base = "inline-flex items-center rounded-full px-2.5 py-0.5 text-xs font-semibold tracking-wide transition-colors"
+  const base = "inline-flex items-center rounded-none px-2.5 py-0.5 text-xs font-semibold tracking-wide transition-colors"
   
   const variants = {
     default: "bg-slate-800 text-slate-200 border border-slate-700",
