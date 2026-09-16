@@ -177,7 +177,7 @@ export function Hero({ videoUrl = HERO_CONFIG.videoUrl }: HeroProps) {
           onLoadedData={() => setIsVideoLoaded(true)}
           onCanPlay={() => setIsVideoLoaded(true)}
           onPlaying={() => setIsVideoLoaded(true)}
-          className={`absolute inset-0 w-full h-full object-cover z-0 pointer-events-none transition-opacity duration-500 ${
+          className={`absolute -top-6 sm:top-0 inset-x-0 w-full h-[88%] sm:h-full object-cover [object-position:center_18%] sm:[object-position:center_center] z-0 pointer-events-none transition-opacity duration-500 ${
             isVideoLoaded ? "opacity-85" : "opacity-80"
           }`}
         >
@@ -187,13 +187,13 @@ export function Hero({ videoUrl = HERO_CONFIG.videoUrl }: HeroProps) {
       ) : null}
 
       {/* Top subtle fade to keep navbar navigation readable */}
-      <div className="absolute inset-x-0 top-0 h-28 bg-gradient-to-b from-[#0A0E17]/90 via-[#0A0E17]/40 to-transparent z-10 pointer-events-none" />
+      <div className="absolute inset-x-0 top-0 h-24 sm:h-28 bg-gradient-to-b from-[#0A0E17]/90 via-[#0A0E17]/30 to-transparent z-10 pointer-events-none" />
 
       {/* ========================================================================= */}
       {/* BOTTOM DARK FADING OVERLAY FOR THE VIDEO                                 */}
       {/* Seamless cinematic gradient fading smoothly into the next dark section   */}
       {/* ========================================================================= */}
-      <div className="absolute inset-x-0 bottom-0 h-80 sm:h-96 lg:h-[480px] bg-gradient-to-t from-[#0A0E17] via-[#0A0E17]/85 to-transparent z-10 pointer-events-none" />
+      <div className="absolute inset-x-0 bottom-0 h-[430px] sm:h-96 lg:h-[480px] bg-gradient-to-t from-[#0A0E17] from-25% via-[#0A0E17]/95 via-60% to-transparent z-10 pointer-events-none" />
 
       {/* ========================================================================= */}
       {/* BOTTOM SECTION: HEADLINE, DESCRIPTION & DUAL ACTION CTAS                 */}
