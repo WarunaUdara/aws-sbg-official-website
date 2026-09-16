@@ -1,5 +1,5 @@
 import { Link } from "@tanstack/react-router"
-import { MessageSquare, ExternalLink } from "lucide-react"
+import { ExternalLink } from "lucide-react"
 import { GithubIcon, LinkedinIcon, MeetupIcon, WhatsAppIcon } from "@/components/ui/icons"
 import { BuilderBrandBadge } from "@/components/ui/BuilderBrandBadge"
 import { AwsSmileLogo } from "@/components/ui/AwsSmileLogo"
@@ -70,16 +70,6 @@ export function Footer() {
                 title="GitHub"
               >
                 <GithubIcon className="w-4 h-4" />
-              </a>
-              <a
-                href={SITE_CONFIG.links.discord}
-                target="_blank"
-                rel="noreferrer"
-                className="w-9 h-9 flex items-center justify-center bg-[#161F2E] border border-white/10 text-slate-300 hover:text-[#5865F2] hover:border-[#5865F2]/50 transition-colors rounded-none shrink-0"
-                aria-label="Discord / Community"
-                title="Discord"
-              >
-                <MessageSquare className="w-4 h-4" />
               </a>
             </div>
           </div>

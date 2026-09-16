@@ -87,9 +87,9 @@ function ContactPage() {
                     {feedbackMessage}
                   </p>
                   <div className="pt-4 flex flex-col sm:flex-row items-center justify-center gap-3">
-                    <a href={SITE_CONFIG.links.discord} target="_blank" rel="noreferrer">
+                    <a href={SITE_CONFIG.links.whatsapp} target="_blank" rel="noreferrer">
                       <Button variant="glow" size="sm" className="rounded-none">
-                        Join Discord Server
+                        Join WhatsApp Channel
                       </Button>
                     </a>
                     <Button
@@ -272,13 +272,13 @@ function ContactPage() {
                   Professional networking, speaker spotlights & certification milestones
                 </a>
                 <a
-                  href={SITE_CONFIG.links.discord}
+                  href={SITE_CONFIG.links.whatsapp}
                   target="_blank"
                   rel="noreferrer"
-                  className="block p-3 rounded-none bg-slate-950 border border-slate-800 hover:border-[#5865F2]/60 text-sm text-white transition-colors"
+                  className="block p-3 rounded-none bg-slate-950 border border-slate-800 hover:border-[#25D366]/60 text-sm text-white transition-colors"
                 >
-                  <span className="font-semibold text-[#5865F2] block text-xs font-mono">Discord Server</span>
-                  Technical discussions, architecture reviews & peer code help
+                  <span className="font-semibold text-[#25D366] block text-xs font-mono">WhatsApp Community Channel</span>
+                  Live announcements, workshop schedules, study groups & builder updates
                 </a>
                 <a
                   href={SITE_CONFIG.links.github}
