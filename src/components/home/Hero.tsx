@@ -1,6 +1,7 @@
 import * as React from "react"
 import { Link } from "@tanstack/react-router"
 import { Volume2, VolumeX, Calendar } from "lucide-react"
+import { ShinyText } from "@/components/ui/ShinyText"
 import { WhatsAppIcon } from "@/components/ui/icons"
 import { HERO_CONFIG, SITE_CONFIG } from "@/lib/constants"
 
@@ -209,7 +210,13 @@ export function Hero({ videoUrl = HERO_CONFIG.videoUrl }: HeroProps) {
 
             <h1 className="text-3xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-white font-display leading-[1.08] text-balance">
               Where Student Builders <br />
-              <span className="aws-gradient-text">Architect the Cloud.</span>
+              <ShinyText
+                text="Architect the Cloud."
+                color="#FF9900"
+                shineColor="#FFFFFF"
+                speed={3}
+                spread={120}
+              />
             </h1>
 
             <p className="text-base sm:text-lg text-slate-200 font-sans max-w-2xl leading-relaxed text-pretty">

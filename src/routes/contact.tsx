@@ -6,6 +6,7 @@ import { Button } from '@/components/ui/button'
 import { submitContactFn } from '@/server/functions/contact.functions'
 import { SITE_CONFIG } from '@/lib/constants'
 import { createSeoMeta } from '@/lib/seo'
+import { ShinyText } from '@/components/ui/ShinyText'
 
 export const Route = createFileRoute('/contact')({
   head: () =>
@@ -74,7 +75,14 @@ function ContactPage() {
             <span>Connect & Join</span>
           </div>
           <h1 className="text-4xl sm:text-5xl font-extrabold text-white tracking-tight font-display">
-            Join <span className="aws-gradient-text">AWS SBG USJ</span>
+            Join{' '}
+            <ShinyText
+              text="AWS SBG USJ"
+              color="#FF9900"
+              shineColor="#FFFFFF"
+              speed={3}
+              spread={120}
+            />
           </h1>
           <p className="text-slate-200 text-base sm:text-lg leading-relaxed">
             Ready to build on AWS? Register to join our community, access student workshops, or reach out regarding partnerships and speaking opportunities.

@@ -8,6 +8,7 @@ import { MOCK_PROJECTS } from '@/features/projects/data'
 import { SITE_CONFIG } from '@/lib/constants'
 import { cn } from '@/lib/utils'
 import { createSeoMeta } from '@/lib/seo'
+import { ShinyText } from '@/components/ui/ShinyText'
 
 export const Route = createFileRoute('/projects')({
   head: () =>
@@ -40,7 +41,14 @@ function ProjectsPage() {
             <span>USJ Builder Ecosystem</span>
           </div>
           <h1 className="text-4xl sm:text-5xl font-extrabold text-white tracking-tight font-display">
-            Student Projects & <span className="aws-gradient-text">Architectures</span>
+            Student Projects &{' '}
+            <ShinyText
+              text="Architectures"
+              color="#FF9900"
+              shineColor="#FFFFFF"
+              speed={3}
+              spread={120}
+            />
           </h1>
           <p className="text-slate-200 text-base sm:text-lg leading-relaxed">
             Real solutions designed and deployed on Amazon Web Services by undergraduate students

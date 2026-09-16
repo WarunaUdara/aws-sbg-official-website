@@ -8,6 +8,7 @@ import { MOCK_EVENTS } from '@/features/events/data'
 import type { EventCategory } from '@/features/events/types'
 import { cn } from '@/lib/utils'
 import { createSeoMeta } from '@/lib/seo'
+import { ShinyText } from '@/components/ui/ShinyText'
 
 export const Route = createFileRoute('/events')({
   head: () =>
@@ -55,7 +56,14 @@ function EventsPage() {
             <span>Community Learning & Programs</span>
           </div>
           <h1 className="text-4xl sm:text-5xl font-extrabold text-white tracking-tight font-display">
-            Events, Bootcamps & <span className="aws-gradient-text">Workshops</span>
+            Events, Bootcamps &{' '}
+            <ShinyText
+              text="Workshops"
+              color="#FF9900"
+              shineColor="#FFFFFF"
+              speed={3}
+              spread={120}
+            />
           </h1>
           <p className="text-slate-200 text-base sm:text-lg leading-relaxed">
             Hands-on workshops, cloud certification prep cohorts, and hackathons organized by AWS Student Builder Group USJ.

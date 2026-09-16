@@ -7,6 +7,7 @@ import { Button } from '@/components/ui/button'
 import { MOCK_TEAM } from '@/features/team/data'
 import { cn } from '@/lib/utils'
 import { createSeoMeta } from '@/lib/seo'
+import { ShinyText } from '@/components/ui/ShinyText'
 
 function getInitials(name: string) {
   const parts = name.trim().split(/\s+/)
@@ -38,7 +39,14 @@ function TeamPage() {
             <span>Student Leadership & Core Team</span>
           </div>
           <h1 className="text-4xl sm:text-5xl font-extrabold text-white tracking-tight font-display">
-            Meet the Team Behind <span className="aws-gradient-text">AWS SBG USJ</span>
+            Meet the Team Behind{' '}
+            <ShinyText
+              text="AWS SBG USJ"
+              color="#FF9900"
+              shineColor="#FFFFFF"
+              speed={3}
+              spread={120}
+            />
           </h1>
           <p className="text-slate-200 text-base sm:text-lg leading-relaxed">
             A student-led initiative bridging academic learning with real-world cloud engineering at the University of Sri Jayewardenepura.
