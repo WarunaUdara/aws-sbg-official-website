@@ -52,8 +52,7 @@ function EventsPage() {
             Events, Bootcamps & <span className="aws-gradient-text">Workshops</span>
           </h1>
           <p className="text-slate-400 text-base leading-relaxed">
-            Participate in hands-on workshops, cloud certification prep cohorts, and 
-            collaborative hackathons organized by the AWS Student Building Guild at USJ.
+            Hands-on workshops, cloud certification prep cohorts, and hackathons organized by AWS Student Builder Group USJ.
           </p>
         </div>
 

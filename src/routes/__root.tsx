@@ -18,12 +18,12 @@ export const Route = createRootRouteWithContext<{
       { charSet: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
       {
-        title: 'AWS SBG USJ | Official Student Building Guild - University of Sri Jayewardenepura',
+        title: 'AWS Student Builder Group USJ | University of Sri Jayewardenepura',
       },
       {
         name: 'description',
         content:
-          'Learn AWS by building real systems. Explore generative AI with Amazon Bedrock, architect serverless cloud infrastructure, and launch production grade projects with the student developer community at University of Sri Jayewardenepura.',
+          'Build real cloud systems at USJ. Learn AWS, explore GenAI with Amazon Bedrock, and launch production projects with student developers.',
       },
       {
         name: 'theme-color',

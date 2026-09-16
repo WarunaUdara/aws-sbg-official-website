@@ -21,11 +21,11 @@ const FACULTIES = [
 ]
 
 const INTEREST_AREAS = [
-  'Cloud Practitioner / SAA Certification',
+  'Cloud Foundations & Architecture',
   'Serverless & AWS CDK Development',
   'GenAI & Amazon Bedrock',
-  'DevOps & Containers',
-  'Guild Organization & Event Volunteer',
+  'Cloud DevOps & Containers',
+  'Event Organization & Volunteering',
 ]
 
 function ContactPage() {
@@ -66,11 +66,10 @@ function ContactPage() {
             <span>Connect & Join</span>
           </div>
           <h1 className="text-4xl sm:text-5xl font-extrabold text-white tracking-tight font-display">
-            Join the <span className="aws-gradient-text">Guild Community</span>
+            Join <span className="aws-gradient-text">AWS SBG USJ</span>
           </h1>
           <p className="text-slate-400 text-base leading-relaxed">
-            Ready to dive into cloud computing? Fill out the membership form to get added to our student developer roster,
-            or drop us an inquiry regarding partnerships, workshops, and speaking opportunities.
+            Ready to build on AWS? Register to join our community, access student workshops, or reach out regarding partnerships and speaking opportunities.
           </p>
         </div>
 

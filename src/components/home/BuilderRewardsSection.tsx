@@ -5,37 +5,37 @@ import { SITE_CONFIG } from "@/lib/constants"
 const REWARDS = [
   {
     icon: Cloud,
-    tag: "AWS CREDITS",
+    tag: "AWS Credits",
     title: "Promotional Cloud Credits",
-    detail: "Up to $30 - $100 in promotional AWS credits to build personal architectures, test services, and deploy production apps with zero personal expense.",
-    highlight: "ZERO OUT-OF-POCKET COST",
+    detail: "Get $30–$100 in AWS promotional credits to build architectures and host apps with zero personal expense.",
+    highlight: "Zero out-of-pocket cost",
   },
   {
     icon: Sparkles,
-    tag: "SKILL BUILDER",
+    tag: "Skill Builder",
     title: "12 Months Free Skill Builder",
-    detail: "Full access to official AWS Skill Builder courses, Cloud Quest 3D gamified learning, hands-on guided sandbox labs, and practice exams.",
-    highlight: "600+ OFFICIAL COURSES",
+    detail: "Free access to 600+ courses, interactive Cloud Quest 3D games, and guided sandbox labs.",
+    highlight: "600+ official courses",
   },
   {
     icon: Award,
-    tag: "CERTIFICATIONS",
-    title: "Exam Voucher Guidance",
-    detail: "Subsidized and discounted exam vouchers, study group cohorts, and direct mentorship for AWS Cloud Practitioner and Solutions Architect certifications.",
-    highlight: "GLOBAL AWS CREDENTIALS",
+    tag: "Certifications",
+    title: "Exam Voucher Support",
+    detail: "Study cohorts, practice tests, and subsidized exam voucher discounts for official AWS certifications.",
+    highlight: "Global AWS credentials",
   },
   {
     icon: Gift,
-    tag: "COMMUNITY SWAG",
+    tag: "Community Swag",
     title: "Swag & Digital Badges",
-    detail: "Exclusive AWS Student Builder Group stickers, apparel, and verifiable Credly digital badges to spotlight your skills to tech employers.",
-    highlight: "VERIFIABLE ON LINKEDIN",
+    detail: "Exclusive AWS stickers, apparel, and verifiable Credly digital badges to spotlight on LinkedIn.",
+    highlight: "Verifiable on LinkedIn",
   },
 ]
 
 export function BuilderRewardsSection() {
   return (
-    <section className="py-24 bg-[#0B101B] border-b border-white/10 relative overflow-hidden">
+    <section className="py-20 sm:py-24 bg-[#0B101B] border-b border-white/10 relative overflow-hidden">
       {/* Subtle coordinate dot pattern */}
       <div 
         className="absolute inset-0 pointer-events-none opacity-20"
@@ -46,17 +46,17 @@ export function BuilderRewardsSection() {
       />
 
       <Container size="lg" className="relative z-10">
-        <div className="flex flex-col lg:flex-row lg:items-end justify-between mb-16 gap-8">
+        <div className="flex flex-col lg:flex-row lg:items-end justify-between mb-14 gap-8">
           <div className="space-y-3 max-w-2xl">
             <div className="inline-flex items-center gap-2 text-xs font-mono uppercase tracking-wider text-[#FF9900]">
               <Gift className="w-3.5 h-3.5" />
-              <span>[ OFFICIAL AWS BUILDER BENEFITS ]</span>
+              <span>Member Perks</span>
             </div>
-            <h2 className="text-3xl sm:text-5xl font-black text-white tracking-tight font-display">
-              Student Rewards at USJ
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white tracking-tight font-display text-balance">
+              Student Builder Benefits
             </h2>
-            <p className="text-slate-300 text-sm sm:text-base font-sans leading-relaxed">
-              Every learner participating in our workshops, hackathons, and community sprints earns official recognition, cloud resources, and verifiable career milestones.
+            <p className="text-slate-300 text-sm sm:text-base font-sans leading-relaxed text-pretty">
+              Active members in our workshops, hackathons, and cohorts earn official AWS resources, exam discounts, and verifiable credentials.
             </p>
           </div>
 

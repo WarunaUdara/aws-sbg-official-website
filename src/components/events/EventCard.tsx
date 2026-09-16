@@ -69,8 +69,8 @@ export function EventCard({ event }: EventCardProps) {
         {/* Instructors */}
         {event.speakers.length > 0 && (
           <div className="pt-2 border-t border-white/10">
-            <p className="text-[10px] font-mono font-bold text-slate-400 uppercase tracking-wider mb-1">
-              INSTRUCTORS / SPEAKERS:
+            <p className="text-[11px] font-mono text-slate-400 mb-1">
+              Speakers & Leads:
             </p>
             <div className="space-y-1">
               {event.speakers.map((speaker) => (

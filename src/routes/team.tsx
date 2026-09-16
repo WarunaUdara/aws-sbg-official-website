@@ -27,21 +27,20 @@ function TeamPage() {
         <div className="max-w-3xl mb-16 space-y-4">
           <div className="inline-flex items-center gap-2 px-2.5 py-1 rounded-none bg-[#FF9900]/10 border border-[#FF9900]/30 text-[#FF9900] text-xs font-mono uppercase tracking-wider">
             <Users className="w-3.5 h-3.5" />
-            <span>Guild Leadership & Core Crew</span>
+            <span>Student Leadership & Core Team</span>
           </div>
           <h1 className="text-4xl sm:text-5xl font-extrabold text-white tracking-tight font-display">
             Meet the Team Behind <span className="aws-gradient-text">AWS SBG USJ</span>
           </h1>
           <p className="text-slate-400 text-base leading-relaxed">
-            A student-led initiative dedicated to bridging the gap between university academic curricula
-            and global cloud engineering best practices at the University of Sri Jayewardenepura.
+            A student-led initiative bridging academic learning with real-world cloud engineering at the University of Sri Jayewardenepura.
           </p>
         </div>
 
         {/* Team Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-20">
           {MOCK_TEAM.map((member) => {
-            const isLeader = member.role.toLowerCase().includes('chapter leader') || member.role.toLowerCase().includes('leader')
+            const isLeader = member.role.toLowerCase().includes('leader')
             return (
               <Card
                 key={member.id}
@@ -51,7 +50,7 @@ function TeamPage() {
               >
                 {isLeader && (
                   <div className="absolute -top-3 right-4 px-2.5 py-0.5 bg-[#FF9900] text-[#0A0E17] font-mono text-[10px] font-bold uppercase tracking-wider border border-[#FF9900] select-none">
-                    Guild Leader
+                    Group Leader
                   </div>
                 )}
                 <CardHeader>
@@ -134,7 +133,7 @@ function TeamPage() {
           </p>
           <Link to="/contact">
             <Button variant="glow" size="md">
-              Apply to Join the Core Crew
+              Join the Team
               <ArrowRight className="w-4 h-4 ml-1" />
             </Button>
           </Link>

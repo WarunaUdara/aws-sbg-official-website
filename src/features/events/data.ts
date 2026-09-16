@@ -59,7 +59,7 @@ export const MOCK_EVENTS: CommunityEvent[] = [
     speakers: [
       {
         name: 'Harishan Ambhihaipahan',
-        role: 'Chapter Leader',
+        role: 'Student Builder Group Leader',
         company: 'AWS SBG USJ',
       },
       {
@@ -74,7 +74,7 @@ export const MOCK_EVENTS: CommunityEvent[] = [
   {
     id: 'intro-to-aws-student-builder',
     title: 'Welcome to Cloud: Getting Started with AWS Free Tier & Student Credits',
-    description: 'Foundational kickoff session introducing first-year and sophomore students to cloud computing and the AWS Student Builder Guild.',
+    description: 'Foundational kickoff session introducing first-year and sophomore students to cloud computing and AWS Student Builder Group USJ.',
     category: 'Webinar',
     status: 'completed',
     date: '2026-08-20',

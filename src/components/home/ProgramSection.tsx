@@ -12,23 +12,23 @@ interface FAQItem {
 const FAQS: FAQItem[] = [
   {
     id: "who",
-    question: "Who can join an AWS Student Builder Group?",
-    answer: "Membership is open to any learner actively enrolled at the University of Sri Jayewardenepura (USJ) aged 18+ who is ready to build their future—across Applied Sciences, Computing, Technology, Engineering, Management, and Humanities. No prior cloud or coding experience is required."
+    question: "Who can join AWS Student Builder Group USJ?",
+    answer: "Any currently enrolled student at University of Sri Jayewardenepura. All faculties and experience levels are welcome—no prior cloud or coding background required."
   },
   {
     id: "why",
-    question: "Why should I join an AWS Student Builder Group?",
-    answer: "You will gain hands-on access to real AWS cloud architectures, mentorship from AWS Community Builders and cloud leaders, exam prep cohorts for AWS Cloud Practitioner and Solutions Architect certifications, hackathons, and exclusive technical guidance from AWS."
+    question: "What do members get?",
+    answer: "Free promotional AWS credits ($30–$100), 12 months of free AWS Skill Builder, study cohorts with exam voucher discounts, and direct mentorship from AWS architects."
   },
   {
     id: "lead",
-    question: "Can I lead a workshop, project, or campus session?",
-    answer: "Absolutely. AWS SBG USJ is entirely student-led. We actively recruit workshop mentors, technical writers, open-source maintainers, and event coordinators to shape cloud education on our campus."
+    question: "Can I lead a workshop or project?",
+    answer: "Yes! AWS SBG USJ is entirely student-led. We actively welcome student workshop speakers, project maintainers, and event coordinators."
   },
   {
     id: "evolution",
-    question: "How does AWS SBG USJ relate to AWS Cloud Clubs?",
-    answer: "AWS Student Builder Groups is the official next evolution of the global AWS Cloud Clubs program, integrating directly with the AWS Builder Center, AWS Educate, and official AWS certification pathways."
+    question: "How does this relate to AWS Cloud Clubs?",
+    answer: "AWS Student Builder Groups is the official next evolution of the global AWS Cloud Clubs program, directly connected with the AWS Builder Center."
   }
 ]
 
@@ -108,11 +108,6 @@ export function ProgramSection() {
                     className="w-52 h-52 object-contain drop-shadow-[0_0_28px_rgba(255,153,0,0.35)]"
                   />
                 </div>
-
-                {/* Subtitle coordinates */}
-                <div className="absolute bottom-2 right-2 text-[9px] font-mono text-slate-500">
-                  GRID: 7x7 • CORE: USJ
-                </div>
               </div>
             </div>
           </div>
@@ -125,22 +120,29 @@ export function ProgramSection() {
             <h3 className="text-2xl font-bold text-white tracking-tight font-display">
               About the program
             </h3>
-            <div className="text-slate-300 text-sm sm:text-base leading-relaxed space-y-4">
-              <p>
-                <strong className="text-white">AWS Student Builder Groups</strong> (formerly AWS Cloud Clubs) 
-                are vibrant, student-led communities on post-secondary school campuses worldwide. 
-                Students come together to explore cloud technology, build innovative software architectures, 
-                and master industry-grade cloud skills.
-              </p>
-              <p>
-                Membership is open to any learner actively enrolled in a post-secondary institution aged 18+ 
-                who is ready to build their future. Every group is led by Student Builder Group Leaders 
-                who are passionate about bringing their communities to life.
-              </p>
-              <p className="text-slate-400 text-sm">
-                With support from AWS, our USJ chapter organizes hands-on workshops, cloud certification prep cohorts, 
-                and project showcases that empower Sri Lankan undergraduates to graduate cloud-ready.
-              </p>
+            <p className="text-slate-300 text-sm sm:text-base leading-relaxed text-pretty">
+              <strong className="text-white">AWS Student Builder Groups</strong> are student-led university communities supported directly by AWS. Open to all students at University of Sri Jayewardenepura—no prior cloud or coding experience required.
+            </p>
+
+            <div className="space-y-3 pt-2">
+              <div className="flex items-start gap-3 text-sm text-slate-300">
+                <span className="w-1.5 h-1.5 bg-[#FF9900] mt-2 shrink-0" />
+                <div>
+                  <strong className="text-white font-medium">Hands-on Cloud Labs:</strong> Build production systems with Serverless, Bedrock GenAI, and AWS CDK.
+                </div>
+              </div>
+              <div className="flex items-start gap-3 text-sm text-slate-300">
+                <span className="w-1.5 h-1.5 bg-[#FF9900] mt-2 shrink-0" />
+                <div>
+                  <strong className="text-white font-medium">Certification Guidance:</strong> Study cohorts and subsidized exam vouchers for official AWS certifications.
+                </div>
+              </div>
+              <div className="flex items-start gap-3 text-sm text-slate-300">
+                <span className="w-1.5 h-1.5 bg-[#FF9900] mt-2 shrink-0" />
+                <div>
+                  <strong className="text-white font-medium">Industry Mentorship:</strong> Connect directly with AWS Community Heroes, Solutions Architects, and student peers.
+                </div>
+              </div>
             </div>
           </div>
 
@@ -174,7 +176,7 @@ export function ProgramSection() {
                     </button>
 
                     {isOpen && (
-                      <div className="pb-5 pr-8 text-xs sm:text-sm text-slate-400 leading-relaxed font-sans animate-in fade-in duration-200">
+                      <div className="pb-5 pr-8 text-xs sm:text-sm text-slate-300 leading-relaxed font-sans animate-in fade-in duration-200">
                         {faq.answer}
                       </div>
                     )}

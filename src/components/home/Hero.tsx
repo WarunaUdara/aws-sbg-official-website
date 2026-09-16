@@ -204,16 +204,16 @@ export function Hero({ videoUrl = HERO_CONFIG.videoUrl }: HeroProps) {
           <div className="lg:col-span-8 space-y-4">
             <div className="inline-flex items-center gap-2 px-2.5 py-1 bg-black/60 border border-white/20 text-xs font-mono uppercase tracking-wider text-[#FF9900]">
               <img src="/icons/sbg-icon-only.png" alt="AWS SBG" className="w-4 h-4 object-contain shrink-0" />
-              <span>AWS Student Builder Group • USJ Chapter</span>
+              <span>AWS Student Builder Group USJ</span>
             </div>
 
-            <h1 className="text-3xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-white font-display leading-[1.08]">
+            <h1 className="text-3xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-white font-display leading-[1.08] text-balance">
               Where Student Builders <br />
               <span className="aws-gradient-text">Architect the Cloud.</span>
             </h1>
 
-            <p className="text-sm sm:text-base text-slate-300 font-sans max-w-2xl leading-relaxed">
-              Learn AWS by building real systems. Explore generative AI with Amazon Bedrock, architect serverless cloud infrastructure, and launch production grade projects with the student developer community at University of Sri Jayewardenepura.
+            <p className="text-sm sm:text-base text-slate-300 font-sans max-w-2xl leading-relaxed text-pretty">
+              Build real cloud systems at USJ. Learn AWS, explore GenAI with Amazon Bedrock, and launch production projects with student developers.
             </p>
           </div>
 
@@ -236,7 +236,7 @@ export function Hero({ videoUrl = HERO_CONFIG.videoUrl }: HeroProps) {
               className="flex items-center gap-2 px-6 py-3.5 bg-[#0A0E17]/80 hover:bg-white/10 border border-white/25 hover:border-white text-white text-sm font-mono font-semibold tracking-wider uppercase transition-all active:scale-98 rounded-none cursor-pointer backdrop-blur-sm"
             >
               <Calendar className="w-4 h-4 text-[#FF9900]" />
-              <span>Workshops</span>
+              <span>View Workshops</span>
             </Link>
           </div>
         </div>

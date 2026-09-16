@@ -35,8 +35,8 @@ export function ProjectCard({ project }: ProjectCardProps) {
 
         {/* AWS Services Stack */}
         <div>
-          <p className="text-[10px] font-mono font-bold text-slate-400 uppercase tracking-wider mb-1.5 flex items-center gap-1">
-            <Code2 className="w-3.5 h-3.5 text-[#FF9900]" /> AWS ARCHITECTURE
+          <p className="text-[11px] font-mono text-slate-400 mb-1.5 flex items-center gap-1">
+            <Code2 className="w-3.5 h-3.5 text-[#FF9900]" /> AWS Architecture
           </p>
           <div className="flex flex-wrap gap-1.5">
             {project.awsServices.map((service) => (
@@ -52,13 +52,13 @@ export function ProjectCard({ project }: ProjectCardProps) {
 
         {/* Contributors */}
         <div className="pt-2 border-t border-white/10">
-          <p className="text-[10px] font-mono font-bold text-slate-400 uppercase tracking-wider mb-1">
-            STUDENT BUILDERS
+          <p className="text-[11px] font-mono text-slate-400 mb-1">
+            Builders
           </p>
           <div className="flex flex-wrap gap-x-3 text-xs text-slate-300 font-sans">
             {project.contributors.map((c) => (
               <span key={c.name} className="hover:text-white">
-                {c.name} <span className="text-slate-500 font-mono text-[11px]">[{c.role}]</span>
+                {c.name} <span className="text-slate-400 text-[11px]">• {c.role}</span>
               </span>
             ))}
           </div>

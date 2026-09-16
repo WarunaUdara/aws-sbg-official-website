@@ -1,9 +1,9 @@
 export const SITE_CONFIG = {
-  name: "AWS Student Building Guild - USJ",
+  name: "AWS Student Builder Group USJ",
   shortName: "AWS SBG USJ",
   university: "University of Sri Jayewardenepura",
   tagline: "Where Student Builders Architect the Cloud",
-  description: "Learn AWS by building real systems. Explore generative AI with Amazon Bedrock, architect serverless cloud infrastructure, and launch production grade projects with the student developer community at University of Sri Jayewardenepura.",
+  description: "Build real cloud systems at USJ. Learn AWS, explore GenAI with Amazon Bedrock, and launch production projects with student developers.",
   url: "https://github.com/WarunaUdara/aws-sbg-official-website",
   githubStars: "1.2k",
   links: {
@@ -15,9 +15,9 @@ export const SITE_CONFIG = {
     usj: "https://www.sjp.ac.lk/",
   },
   stats: [
-    { label: "Active Student Builders", value: "350+" },
-    { label: "Workshops & Bootcamps", value: "24+" },
-    { label: "AWS Certifications Pursued", value: "40+" },
+    { label: "Active Builders", value: "350+" },
+    { label: "Hands-on Workshops", value: "24+" },
+    { label: "Certifications Pursued", value: "40+" },
     { label: "Cloud Projects Built", value: "15+" },
   ],
 }
@@ -48,7 +48,7 @@ export const HERO_CONFIG = {
   // Bottom Left Headline & Description
   headline: "Where Student Builders\nArchitect the Cloud",
   description:
-    "Learn AWS by building real systems. Explore generative AI with Amazon Bedrock, architect serverless cloud infrastructure, and launch production grade projects with the student developer community at University of Sri Jayewardenepura.",
+    "Build real cloud systems at USJ. Learn AWS, explore GenAI with Amazon Bedrock, and launch production projects with student developers.",
 
   // Bottom Right CTA Action Buttons
   primaryCta: {

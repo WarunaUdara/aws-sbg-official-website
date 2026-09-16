@@ -27,10 +27,10 @@ export function Footer() {
           {/* Mission Column */}
           <div className="md:col-span-2 space-y-4">
             <h4 className="text-xs font-mono font-bold uppercase tracking-widest text-[#FF9900]">
-              [ OUR MISSION ]
+              Our Mission
             </h4>
             <p className="text-sm text-slate-300 max-w-md leading-relaxed font-sans">
-              To democratize cloud education at USJ—building practical skills, fostering community, and preparing students for the future of technology through hands-on architectures and mentorship.
+              Democratizing cloud education at USJ through hands-on architectures, certification study cohorts, and industry mentorship.
             </p>
             <div className="flex flex-wrap items-center gap-2.5 pt-2">
               <a
@@ -151,10 +151,10 @@ export function Footer() {
         {/* Bottom Legal & Sign-off */}
         <div className="border-t border-white/10 pt-8 flex flex-col sm:flex-row items-center justify-between text-xs text-slate-500 font-mono gap-4">
           <p className="text-center sm:text-left">
-            AWS Student Builder Group at University of Sri Jayewardenepura
+            AWS Student Builder Group USJ • University of Sri Jayewardenepura
           </p>
-          <p className="text-center sm:text-right text-[#FF9900]/80">
-            [ COORDINATE SYSTEM: 48px GRID • TANSTACK START ]
+          <p className="text-center sm:text-right text-slate-500">
+            © {new Date().getFullYear()} AWS SBG USJ. Student-led community.
           </p>
         </div>
       </Container>

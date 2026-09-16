@@ -7,61 +7,61 @@ const LEARNING_TRACKS = [
   {
     number: "01",
     title: "Cloud Foundations & Architecture",
-    level: "Beginner to Associate",
-    description: "Master core cloud fundamentals, IAM security governance, high availability VPC networking, and scalable storage on AWS.",
+    level: "Beginner",
+    description: "Master cloud fundamentals, IAM security, high-availability VPC networks, and scalable storage on AWS.",
     icon: Layers,
-    topics: ["IAM & Security Policies", "Amazon EC2 & Auto Scaling", "Amazon S3 & Storage Tiers", "VPC & Subnet Topologies"],
-    targetCert: "AWS Certified Cloud Practitioner (CLF-C02)",
-    badge: "FOUNDATION",
+    topics: ["IAM & Security Policies", "Amazon EC2 & Auto Scaling", "Amazon S3 Storage Tiers", "VPC & Subnet Networking"],
+    targetCert: "AWS Certified Cloud Practitioner",
+    badge: "Foundation",
   },
   {
     number: "02",
     title: "Serverless & Full-Stack Cloud Apps",
     level: "Intermediate",
-    description: "Write production Infrastructure as Code with AWS CDK and build event-driven microservices with zero idle server cost.",
+    description: "Build event-driven microservices and Infrastructure as Code with AWS Lambda, DynamoDB, and AWS CDK.",
     icon: Server,
-    topics: ["AWS Lambda & EventBridge", "Amazon DynamoDB Single-Table Design", "Amazon API Gateway", "AWS CDK (TypeScript & Python)"],
+    topics: ["AWS Lambda & EventBridge", "DynamoDB Single-Table Design", "Amazon API Gateway", "AWS CDK (TypeScript & Python)"],
     targetCert: "AWS Certified Developer Associate",
-    badge: "BUILDER",
+    badge: "Builder",
   },
   {
     number: "03",
     title: "Generative AI with Amazon Bedrock",
-    level: "Advanced AI",
-    description: "Architect production Retrieval Augmented Generation (RAG) pipelines, multi-agent workflows, and secure Bedrock foundation models.",
+    level: "Intermediate to Advanced",
+    description: "Build RAG pipelines, multi-agent workflows, and secure foundation model apps with Amazon Bedrock.",
     icon: Sparkles,
-    topics: ["Amazon Bedrock & Knowledge Bases", "Vector Databases & OpenSearch", "Prompt Engineering & Guardrails", "Multi-Agent Coordination"],
+    topics: ["Amazon Bedrock & Knowledge Bases", "Vector Databases & OpenSearch", "Prompt Engineering & Guardrails", "Multi-Agent Workflows"],
     targetCert: "AWS Certified AI Practitioner",
-    badge: "GENAI",
+    badge: "GenAI",
   },
   {
     number: "04",
     title: "Cloud DevOps & Modern CI/CD",
-    level: "Intermediate to Advanced",
-    description: "Automate containerized deployments with AWS Fargate, GitHub Actions, and production CloudWatch observability.",
+    level: "Advanced",
+    description: "Automate container deployments and observability with AWS Fargate, GitHub Actions, and Amazon CloudWatch.",
     icon: Terminal,
-    topics: ["Amazon ECS & AWS Fargate", "Automated CI/CD with GitHub Actions", "CloudWatch Metrics & Synthetics", "Domain Routing with Route 53"],
-    targetCert: "AWS Certified DevOps Engineer",
-    badge: "DEVOPS",
+    topics: ["Amazon ECS & AWS Fargate", "GitHub Actions CI/CD", "CloudWatch Metrics & Logs", "Route 53 DNS & Domains"],
+    targetCert: "AWS Certified Solutions Architect",
+    badge: "DevOps",
   },
 ]
 
 export function LearningTracks() {
   return (
-    <section className="py-24 bg-[#0A0E17] border-b border-white/10 relative">
+    <section className="py-20 sm:py-24 bg-[#0A0E17] border-b border-white/10 relative">
       <Container size="lg">
         {/* Section Header */}
-        <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">
+        <div className="flex flex-col md:flex-row md:items-end justify-between mb-14 gap-6">
           <div className="space-y-3 max-w-2xl">
             <div className="inline-flex items-center gap-2 text-xs font-mono uppercase tracking-wider text-[#FF9900]">
               <span className="w-2 h-2 bg-[#FF9900]" />
-              <span>[ CURATED STUDENT PATHWAYS ]</span>
+              <span>Learning Pathways</span>
             </div>
-            <h2 className="text-3xl sm:text-5xl font-black text-white tracking-tight font-display">
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white tracking-tight font-display text-balance">
               Hands-On Learning Tracks
             </h2>
-            <p className="text-slate-300 text-sm sm:text-base font-sans leading-relaxed">
-              Step-by-step technical roadmaps designed for USJ undergraduates. Move from introductory theory directly to building production architectures on AWS.
+            <p className="text-slate-300 text-sm sm:text-base font-sans leading-relaxed text-pretty">
+              Structured technical roadmaps designed for USJ undergraduates. Move from fundamentals directly into production code.
             </p>
           </div>
 
@@ -88,13 +88,13 @@ export function LearningTracks() {
                   <div className="flex items-center justify-between gap-4 pb-4 mb-5 border-b border-white/10">
                     <div className="flex items-center gap-3">
                       <span className="text-xs font-mono font-bold text-[#FF9900]">
-                        [ TRACK // {track.number} ]
+                        Track {track.number}
                       </span>
                       <span className="text-[11px] font-mono text-slate-400">
                         {track.level}
                       </span>
                     </div>
-                    <Badge variant="outline" className="text-[10px] font-mono rounded-none uppercase border-white/15 text-slate-300">
+                    <Badge variant="outline" className="text-[10px] font-mono rounded-none border-white/15 text-slate-300">
                       {track.badge}
                     </Badge>
                   </div>
@@ -109,7 +109,7 @@ export function LearningTracks() {
                         {track.title}
                       </h3>
                       <p className="text-xs text-slate-400 font-mono mt-1">
-                        🎯 Target: {track.targetCert}
+                        Target: {track.targetCert}
                       </p>
                     </div>
                   </div>
@@ -121,7 +121,7 @@ export function LearningTracks() {
                   {/* Key Technologies Pill Grid */}
                   <div className="space-y-2 mb-6">
                     <div className="text-[10px] font-mono text-slate-400 uppercase tracking-wider">
-                      Core Lab Competencies:
+                      Key Topics:
                     </div>
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
                       {track.topics.map((topic) => (
@@ -140,7 +140,7 @@ export function LearningTracks() {
                 {/* Bottom Action Row */}
                 <div className="pt-4 border-t border-white/10 flex items-center justify-between text-xs font-mono">
                   <span className="text-slate-400">
-                    Format: Hands-on Labs & Study Cohorts
+                    Hands-on Labs & Study Cohorts
                   </span>
                   <Link
                     to="/contact"

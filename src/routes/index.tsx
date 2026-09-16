@@ -39,7 +39,7 @@ function HomePage() {
           <div className="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-4">
             <div className="space-y-2 max-w-xl">
               <span className="text-xs font-mono font-bold text-[#FF9900] tracking-widest uppercase flex items-center gap-1.5">
-                <Calendar className="w-3.5 h-3.5" /> [ WORKSHOPS & SPRINTS ]
+                <Calendar className="w-3.5 h-3.5" /> Upcoming Workshops
               </span>
               <h2 className="text-3xl sm:text-4xl font-extrabold text-white tracking-tight font-display">
                 Upcoming Builder Sessions
@@ -70,13 +70,13 @@ function HomePage() {
           <div className="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-4">
             <div className="space-y-2 max-w-xl">
               <span className="text-xs font-mono font-bold text-[#FF9900] tracking-widest uppercase flex items-center gap-1.5">
-                <Sparkles className="w-3.5 h-3.5" /> [ STUDENT ARCHITECTURES ]
+                <Sparkles className="w-3.5 h-3.5" /> Student Projects
               </span>
               <h2 className="text-3xl sm:text-4xl font-extrabold text-white tracking-tight font-display">
                 Built by USJ Students
               </h2>
               <p className="text-slate-300 text-sm font-sans">
-                Explore cloud-native applications, AI assistants, and IoT systems engineered by our guild builders.
+                Explore cloud-native applications, AI assistants, and IoT systems engineered by USJ student builders.
               </p>
             </div>
             <Link to="/projects">
@@ -95,7 +95,7 @@ function HomePage() {
         </Container>
       </section>
 
-      {/* Official "FROM STUDENTS TO BUILDERS" Banner Callout (Derived from Brand Image 3) */}
+      {/* Official "FROM STUDENTS TO BUILDERS" Banner Callout */}
       <section className="pt-16">
         <Container size="lg">
           <div className="relative overflow-hidden bg-[#161F2E] border border-white/10 p-8 sm:p-12 md:p-14">
@@ -118,25 +118,25 @@ function HomePage() {
                 <div className="flex items-center gap-2">
                   <div className="w-2.5 h-2.5 bg-[#FF9900]" />
                   <span className="text-xs font-mono text-[#FF9900] font-bold uppercase tracking-wider">
-                    [ OUR MISSION • USJ CHAPTER ]
+                    Our Mission
                   </span>
                 </div>
-                <h2 className="text-2xl sm:text-4xl lg:text-5xl font-black text-white tracking-tight font-display leading-[1.15]">
-                  “To democratize cloud education at USJ—building skills, fostering community, and preparing students for the future of technology.”
+                <h2 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-white tracking-tight font-display leading-[1.2] text-balance">
+                  “Democratizing cloud education at USJ—building practical skills, fostering community, and preparing students for the future of technology.”
                 </h2>
-                <p className="text-slate-300 text-sm sm:text-base max-w-2xl font-sans leading-relaxed">
-                  We aim to create an inclusive environment where students can access cloud knowledge, gain hands-on experience, and grow together. Through workshops, mentorship, and real-world projects, we empower individuals to build practical skills and become future-ready tech leaders.
+                <p className="text-slate-300 text-sm sm:text-base max-w-2xl font-sans leading-relaxed text-pretty">
+                  We empower USJ students to build cloud-native applications, earn AWS certifications, and gain real-world developer experience through free hands-on workshops and mentorship.
                 </p>
                 <div className="pt-2 flex flex-wrap gap-4">
                   <Link to="/contact">
                     <Button variant="glow" size="md" className="font-mono text-xs">
                       <MessageCircle className="w-4 h-4 mr-1.5" />
-                      Apply for Guild Membership
+                      Join the Community
                     </Button>
                   </Link>
                   <a href={SITE_CONFIG.links.github} target="_blank" rel="noreferrer">
                     <Button variant="secondary" size="md" className="font-mono text-xs border-white/10">
-                      GitHub Repository
+                      View on GitHub
                     </Button>
                   </a>
                 </div>
