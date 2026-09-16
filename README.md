@@ -28,8 +28,9 @@ See [DESIGN_SYSTEM.md](./DESIGN_SYSTEM.md) for full architectural guidelines, to
 | **Primary Color** | `#FF9900` (AWS Builder Orange) | Hero fills, CTAs, builder chip glyph, active accents |
 | **Canvas Dark** | `#0A0E17` (Deep Slate Canvas) | Main canvas, high-contrast text on orange fills |
 | **Surface Dark** | `#161F2E` (Surface Navy) | Cards, mosaic tiles, brand anchor boxes |
-| **Primary Font** | **Space Grotesk** | Display headlines, navigation links, buttons, body copy |
-| **Secondary Font** | **JetBrains Mono** | Brand signatures, terminal headers, tags, metadata |
+| **Primary Font** | **Space Grotesk** | Display headlines, section titles (`.font-display`) |
+| **Secondary Font** | **Google Sans Flex** | Body copy, descriptions, navigation links, card content (`.font-secondary`, `.font-sans`) |
+| **Monospace Font** | **JetBrains Mono** | Brand signatures, terminal headers, tags, metadata (`.font-mono`) |
 | **Grid System** | `48px` × `48px` Coordinate Grid | Architectural backdrops (`.bg-builder-grid-dark`) |
 | **Iconography** | 7×7 Builder Chip Glyph (`BuilderChipLogo`) | 12-pin microprocessor brand emblem |
 

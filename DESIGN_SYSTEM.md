@@ -48,16 +48,23 @@ This system establishes the visual standards, token definitions, typography, geo
 ## 3. Typography System
 
 ### Primary Font: **Space Grotesk** (Sans-Serif)
-- **Role**: Display headlines, high-impact titles, navigation links, button text, and body copy.
+- **Role**: Display headlines, high-impact titles (`.font-display`).
+- **CSS Variable**: `--font-primary` / `--font-display`
 - **Characteristics**: Crisp geometric grotesque, architectural proportions, high legibility.
 - **Hierarchy Scale**:
   - `Display / Hero`: `text-5xl` to `text-7xl` (`font-bold` / `font-black`, leading tight: `1.05 - 1.1`, tracking tight: `-0.02em`)
   - `H1 / Section`: `text-3xl` to `text-4xl` (`font-extrabold`, leading: `1.15`)
   - `H2 / Component`: `text-xl` to `text-2xl` (`font-bold`)
-  - `Body`: `text-sm` to `text-base` (`font-normal`, leading relaxed: `1.6`, `max-w-xl` to `max-w-2xl` for measure)
 
-### Secondary Font: **JetBrains Mono** (Monospace)
-- **Role**: Brand signatures, section eyebrows, terminal headings (`Launching soon...`), code snippets, timestamps, tags, and technical metadata.
+### Secondary Font: **Google Sans Flex** (Sans-Serif)
+- **Role**: Body copy, descriptions, navigation links, button text, card content (`.font-secondary`, `.font-sans`).
+- **CSS Variable**: `--font-secondary` (mapped globally to `--font-sans` and root `body`)
+- **Variation Settings**: `font-optical-sizing: auto; font-variation-settings: "slnt" 0, "wdth" 100, "GRAD" 0, "ROND" 0;`
+- **Characteristics**: Ultra-clean, human-optimized legibility, variable axis responsiveness.
+
+### Monospace Font: **JetBrains Mono** (Monospace)
+- **Role**: Brand signatures, section eyebrows, terminal headings, code snippets, timestamps, tags, and technical metadata (`.font-mono`, `.font-code`).
+- **CSS Variable**: `--font-mono`
 - **Usage Rules**:
   - The organization signature: `AWS Student Builder Group at University of Sri Jayewardenepura` MUST always be rendered in monospace.
   - Section eyebrow tags (`[ CHAPTER 01 ]`, `[ UPCOMING WORKSHOPS ]`) use monospace uppercase with tracked spacing (`tracking-wider`).
