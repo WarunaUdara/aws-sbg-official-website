@@ -297,10 +297,14 @@ function ContactPage() {
                 <MapPin className="w-4 h-4 text-[#FF9900]" /> Location
               </h4>
               <p>University of Sri Jayewardenepura, Gangodawila, Nugegoda, Sri Lanka.</p>
-              <p className="flex items-center gap-1.5 pt-2 text-slate-300 font-mono">
+              <a
+                href={`mailto:${SITE_CONFIG.links.email}`}
+                className="inline-flex items-center gap-1.5 pt-2 text-slate-300 font-mono hover:text-[#FF9900] transition-colors"
+                title="Send email to AWS SBG USJ"
+              >
                 <Mail className="w-3.5 h-3.5 text-[#FF9900]" />
-                aws.sbg.usj@gmail.com
-              </p>
+                {SITE_CONFIG.links.email}
+              </a>
             </div>
           </div>
         </div>

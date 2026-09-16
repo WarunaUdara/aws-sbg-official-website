@@ -13,6 +13,7 @@ export const SITE_CONFIG = {
     whatsapp: "https://whatsapp.com/channel/0029VbDAVOpAjPXPsgKZTW0p",
     discord: "https://discord.gg/aws-sbg-usj",
     usj: "https://www.sjp.ac.lk/",
+    email: "awssbgusj@gmail.com",
   },
   stats: [
     { label: "Active Builders", value: "350+" },
