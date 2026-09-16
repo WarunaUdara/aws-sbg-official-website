@@ -11,6 +11,7 @@
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as ContactRouteImport } from './routes/contact'
+import { Route as DesignSystemRouteImport } from './routes/design-system'
 import { Route as EventsRouteImport } from './routes/events'
 import { Route as ProjectsRouteImport } from './routes/projects'
 import { Route as TeamRouteImport } from './routes/team'
@@ -23,6 +24,11 @@ const IndexRoute = IndexRouteImport.update({
 const ContactRoute = ContactRouteImport.update({
   id: '/contact',
   path: '/contact',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const DesignSystemRoute = DesignSystemRouteImport.update({
+  id: '/design-system',
+  path: '/design-system',
   getParentRoute: () => rootRouteImport,
 } as any)
 const EventsRoute = EventsRouteImport.update({
@@ -44,6 +50,7 @@ const TeamRoute = TeamRouteImport.update({
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/contact': typeof ContactRoute
+  '/design-system': typeof DesignSystemRoute
   '/events': typeof EventsRoute
   '/projects': typeof ProjectsRoute
   '/team': typeof TeamRoute
@@ -51,6 +58,7 @@ export interface FileRoutesByFullPath {
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/contact': typeof ContactRoute
+  '/design-system': typeof DesignSystemRoute
   '/events': typeof EventsRoute
   '/projects': typeof ProjectsRoute
   '/team': typeof TeamRoute
@@ -59,21 +67,31 @@ export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/contact': typeof ContactRoute
+  '/design-system': typeof DesignSystemRoute
   '/events': typeof EventsRoute
   '/projects': typeof ProjectsRoute
   '/team': typeof TeamRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/contact' | '/events' | '/projects' | '/team'
+  fullPaths:
+    '/' | '/contact' | '/design-system' | '/events' | '/projects' | '/team'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/contact' | '/events' | '/projects' | '/team'
-  id: '__root__' | '/' | '/contact' | '/events' | '/projects' | '/team'
+  to: '/' | '/contact' | '/design-system' | '/events' | '/projects' | '/team'
+  id:
+    | '__root__'
+    | '/'
+    | '/contact'
+    | '/design-system'
+    | '/events'
+    | '/projects'
+    | '/team'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   ContactRoute: typeof ContactRoute
+  DesignSystemRoute: typeof DesignSystemRoute
   EventsRoute: typeof EventsRoute
   ProjectsRoute: typeof ProjectsRoute
   TeamRoute: typeof TeamRoute
@@ -93,6 +111,13 @@ declare module '@tanstack/react-router' {
       path: '/contact'
       fullPath: '/contact'
       preLoaderRoute: typeof ContactRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/design-system': {
+      id: '/design-system'
+      path: '/design-system'
+      fullPath: '/design-system'
+      preLoaderRoute: typeof DesignSystemRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/events': {
@@ -122,6 +147,7 @@ declare module '@tanstack/react-router' {
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   ContactRoute: ContactRoute,
+  DesignSystemRoute: DesignSystemRoute,
   EventsRoute: EventsRoute,
   ProjectsRoute: ProjectsRoute,
   TeamRoute: TeamRoute,
