@@ -48,7 +48,7 @@ function EventsPage() {
           <h1 className="text-4xl sm:text-5xl font-extrabold text-white tracking-tight font-display">
             Events, Bootcamps & <span className="aws-gradient-text">Workshops</span>
           </h1>
-          <p className="text-slate-400 text-base leading-relaxed">
+          <p className="text-slate-200 text-base sm:text-lg leading-relaxed">
             Hands-on workshops, cloud certification prep cohorts, and hackathons organized by AWS Student Builder Group USJ.
           </p>
         </div>
@@ -61,7 +61,7 @@ function EventsPage() {
               className={`px-4 py-2 rounded-none text-xs sm:text-sm font-semibold transition-all ${
                 activeTab === 'upcoming'
                   ? 'bg-[#FF9900] text-slate-950 shadow-sm'
-                  : 'text-slate-400 hover:text-white'
+                  : 'text-slate-300 hover:text-white'
               }`}
             >
               Upcoming Events
@@ -71,7 +71,7 @@ function EventsPage() {
               className={`px-4 py-2 rounded-none text-xs sm:text-sm font-semibold transition-all ${
                 activeTab === 'past'
                   ? 'bg-[#FF9900] text-slate-950 shadow-sm'
-                  : 'text-slate-400 hover:text-white'
+                  : 'text-slate-300 hover:text-white'
               }`}
             >
               Past Recordings
@@ -80,7 +80,7 @@ function EventsPage() {
 
           {/* Category Filters */}
           <div className="flex items-center gap-2 overflow-x-auto py-1 scrollbar-none">
-            <Filter className="w-3.5 h-3.5 text-slate-500 hidden sm:block mr-1" />
+            <Filter className="w-3.5 h-3.5 text-slate-400 hidden sm:block mr-1" />
             {CATEGORIES.map((cat) => (
               <button
                 key={cat}
@@ -88,7 +88,7 @@ function EventsPage() {
                 className={`px-3 py-1.5 rounded-none text-xs font-mono uppercase tracking-wider whitespace-nowrap transition-all ${
                   selectedCategory === cat
                     ? 'bg-slate-200 text-slate-950 font-bold'
-                    : 'bg-[#161F2E] text-slate-400 hover:text-white border border-white/10'
+                    : 'bg-[#161F2E] text-slate-300 hover:text-white border border-white/10'
                 }`}
               >
                 {cat}
@@ -108,7 +108,7 @@ function EventsPage() {
           <div className="text-center py-20 bg-[#161F2E]/40 rounded-none border border-white/10 p-8 space-y-3">
             <Sparkles className="w-8 h-8 text-[#FF9900] mx-auto opacity-70" />
             <h3 className="text-lg font-bold text-white">No sessions found in this category</h3>
-            <p className="text-sm text-slate-400 max-w-sm mx-auto">
+            <p className="text-base text-slate-300 max-w-sm mx-auto">
               Check back soon or suggest a topic to our lead organizers in our WhatsApp community!
             </p>
             <Button

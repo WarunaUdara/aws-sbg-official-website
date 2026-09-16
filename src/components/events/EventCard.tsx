@@ -21,7 +21,7 @@ export function EventCard({ event }: EventCardProps) {
           <Badge variant="aws" className="font-mono text-[10px] rounded-none uppercase">
             {event.category}
           </Badge>
-          <div className="flex items-center gap-1.5 text-xs font-mono text-slate-400">
+          <div className="flex items-center gap-1.5 text-xs font-mono text-slate-300">
             {event.isVirtual ? (
               <span className="inline-flex items-center gap-1 text-emerald-400">
                 <Video className="w-3.5 h-3.5" /> VIRTUAL
@@ -38,12 +38,12 @@ export function EventCard({ event }: EventCardProps) {
           {event.title}
         </CardTitle>
 
-        <div className="flex flex-wrap items-center gap-y-1 gap-x-4 text-xs font-mono text-slate-400 pt-2 border-b border-white/5 pb-2">
+        <div className="flex flex-wrap items-center gap-y-1 gap-x-4 text-xs font-mono text-slate-300 pt-2 border-b border-white/5 pb-2">
           <span className="inline-flex items-center gap-1 text-[#FF9900]">
             <Calendar className="w-3.5 h-3.5" />
             {formatDate(event.date)}
           </span>
-          <span className="inline-flex items-center gap-1 text-slate-400">
+          <span className="inline-flex items-center gap-1 text-slate-300">
             <Clock className="w-3.5 h-3.5" />
             {event.time}
           </span>
@@ -51,7 +51,7 @@ export function EventCard({ event }: EventCardProps) {
       </CardHeader>
 
       <CardContent className="p-6 pt-0 flex-1 space-y-4 font-sans">
-        <CardDescription className="line-clamp-3 text-slate-300 text-xs sm:text-sm leading-relaxed">
+        <CardDescription className="line-clamp-3 text-slate-200 text-sm leading-relaxed">
           {event.description}
         </CardDescription>
 
@@ -60,7 +60,7 @@ export function EventCard({ event }: EventCardProps) {
           {event.tags.slice(0, 4).map((tag) => (
             <span
               key={tag}
-              className="text-[10px] font-mono bg-[#0A0E17] text-slate-300 border border-white/5 px-2 py-0.5"
+              className="text-xs font-mono bg-[#0A0E17] text-slate-200 border border-white/10 px-2 py-0.5"
             >
               #{tag}
             </span>
@@ -70,7 +70,7 @@ export function EventCard({ event }: EventCardProps) {
         {/* Instructors */}
         {event.speakers.length > 0 && (
           <div className="pt-2 border-t border-white/10">
-            <p className="text-[11px] font-mono text-slate-400 mb-1">
+            <p className="text-xs font-mono text-slate-300 mb-1">
               Speakers & Leads:
             </p>
             <div className="space-y-1.5">
@@ -92,7 +92,7 @@ export function EventCard({ event }: EventCardProps) {
                   ) : (
                     <span className="font-medium text-white">{speaker.name}</span>
                   )}
-                  <span className="text-slate-400 text-[11px]">
+                  <span className="text-slate-300 text-xs">
                     • {speaker.role} {speaker.company ? `at ${speaker.company}` : ''}
                   </span>
                 </div>

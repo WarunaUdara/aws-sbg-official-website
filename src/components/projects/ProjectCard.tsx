@@ -29,20 +29,20 @@ export function ProjectCard({ project }: ProjectCardProps) {
       </CardHeader>
 
       <CardContent className="p-6 pt-0 flex-1 space-y-4 font-sans">
-        <CardDescription className="line-clamp-3 text-slate-300 text-xs sm:text-sm leading-relaxed">
+        <CardDescription className="line-clamp-3 text-slate-200 text-sm sm:text-[15px] leading-relaxed">
           {project.description}
         </CardDescription>
 
         {/* AWS Services Stack */}
         <div>
-          <p className="text-[11px] font-mono text-slate-400 mb-1.5 flex items-center gap-1">
+          <p className="text-xs font-mono text-slate-300 mb-1.5 flex items-center gap-1">
             <Code2 className="w-3.5 h-3.5 text-[#FF9900]" /> AWS Architecture
           </p>
           <div className="flex flex-wrap gap-1.5">
             {project.awsServices.map((service) => (
               <span
                 key={service}
-                className="text-[10px] font-mono bg-[#0A0E17] text-[#FF9900] border border-white/10 px-2 py-0.5"
+                className="text-xs font-mono bg-[#0A0E17] text-[#FF9900] border border-white/10 px-2 py-0.5"
               >
                 {service}
               </span>
@@ -52,26 +52,26 @@ export function ProjectCard({ project }: ProjectCardProps) {
 
         {/* Contributors */}
         <div className="pt-2 border-t border-white/10">
-          <p className="text-[11px] font-mono text-slate-400 mb-1">
+          <p className="text-xs font-mono text-slate-300 mb-1">
             Builders
           </p>
-          <div className="flex flex-wrap gap-x-3 text-xs text-slate-300 font-sans">
+          <div className="flex flex-wrap gap-x-3 text-xs sm:text-sm text-slate-200 font-sans">
             {project.contributors.map((c) => (
               <span key={c.name} className="hover:text-white">
-                {c.name} <span className="text-slate-400 text-[11px]">• {c.role}</span>
+                {c.name} <span className="text-slate-400 text-xs">• {c.role}</span>
               </span>
             ))}
           </div>
         </div>
       </CardContent>
 
-      <CardFooter className="p-6 pt-0 mt-auto flex items-center justify-between gap-2 pt-4 border-t border-white/10 font-mono text-xs">
+      <CardFooter className="p-6 pt-0 mt-auto flex items-center justify-between gap-2 pt-4 border-t border-white/10 font-mono text-xs sm:text-sm">
         {project.githubUrl && (
           <a
             href={project.githubUrl}
             target="_blank"
             rel="noreferrer"
-            className="inline-flex items-center gap-1.5 text-slate-400 hover:text-white transition-colors"
+            className="inline-flex items-center gap-1.5 text-slate-300 hover:text-white transition-colors"
           >
             <GithubIcon className="w-3.5 h-3.5" /> Source
           </a>

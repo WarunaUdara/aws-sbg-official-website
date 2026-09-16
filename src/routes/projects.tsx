@@ -33,7 +33,7 @@ function ProjectsPage() {
           <h1 className="text-4xl sm:text-5xl font-extrabold text-white tracking-tight font-display">
             Student Projects & <span className="aws-gradient-text">Architectures</span>
           </h1>
-          <p className="text-slate-400 text-base leading-relaxed">
+          <p className="text-slate-200 text-base sm:text-lg leading-relaxed">
             Real solutions designed and deployed on Amazon Web Services by undergraduate students
             at the University of Sri Jayewardenepura.
           </p>
@@ -48,7 +48,7 @@ function ProjectsPage() {
               className={`px-3.5 py-1.5 rounded-none text-xs font-mono uppercase tracking-wider whitespace-nowrap transition-all ${
                 selectedCategory === cat
                   ? 'bg-[#FF9900] text-slate-950 font-bold shadow-sm'
-                  : 'bg-[#161F2E] text-slate-400 hover:text-white border border-white/10 hover:border-slate-700'
+                  : 'bg-[#161F2E] text-slate-300 hover:text-white border border-white/10 hover:border-slate-700'
               }`}
             >
               {cat}
@@ -70,7 +70,7 @@ function ProjectsPage() {
               <PlusCircle className="w-5 h-5 text-[#FF9900]" />
               Are you building with AWS at USJ?
             </h3>
-            <p className="text-sm text-slate-400 max-w-xl">
+            <p className="text-base text-slate-300 max-w-xl">
               Get your cloud project featured on the official AWS SBG USJ website, receive technical feedback,
               and inspire other student builders!
             </p>

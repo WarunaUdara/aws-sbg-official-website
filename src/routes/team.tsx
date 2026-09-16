@@ -32,7 +32,7 @@ function TeamPage() {
           <h1 className="text-4xl sm:text-5xl font-extrabold text-white tracking-tight font-display">
             Meet the Team Behind <span className="aws-gradient-text">AWS SBG USJ</span>
           </h1>
-          <p className="text-slate-400 text-base leading-relaxed">
+          <p className="text-slate-200 text-base sm:text-lg leading-relaxed">
             A student-led initiative bridging academic learning with real-world cloud engineering at the University of Sri Jayewardenepura.
           </p>
         </div>
@@ -65,7 +65,7 @@ function TeamPage() {
                       <p className="text-xs text-[#FF9900] font-mono">
                         {member.role}
                       </p>
-                      <p className="text-[11px] text-slate-400">
+                      <p className="text-xs text-slate-300">
                         {member.faculty}
                       </p>
                     </div>
@@ -73,14 +73,14 @@ function TeamPage() {
                 </CardHeader>
 
               <CardContent className="flex-1 space-y-4">
-                <CardDescription className="text-xs sm:text-sm">
+                <CardDescription className="text-sm leading-relaxed">
                   {member.bio}
                 </CardDescription>
 
                 {/* Certifications */}
                 {member.certifications && member.certifications.length > 0 && (
                   <div>
-                    <p className="text-[10px] font-mono text-slate-400 uppercase tracking-wider mb-1.5 flex items-center gap-1">
+                    <p className="text-xs font-mono text-slate-300 uppercase tracking-wider mb-1.5 flex items-center gap-1">
                       <Award className="w-3 h-3 text-[#FF9900]" /> Credentials
                     </p>
                     <div className="flex flex-wrap gap-1.5">
@@ -100,7 +100,7 @@ function TeamPage() {
                     href={member.github}
                     target="_blank"
                     rel="noreferrer"
-                    className="p-1.5 rounded-none text-slate-400 hover:text-white hover:bg-slate-800 transition-colors border border-transparent hover:border-slate-700"
+                    className="p-1.5 rounded-none text-slate-300 hover:text-white hover:bg-slate-800 transition-colors border border-transparent hover:border-slate-700"
                     aria-label="GitHub profile"
                   >
                     <GithubIcon className="w-4 h-4" />
@@ -111,7 +111,7 @@ function TeamPage() {
                     href={member.linkedin}
                     target="_blank"
                     rel="noreferrer"
-                    className="p-1.5 rounded-none text-slate-400 hover:text-[#0077B5] hover:bg-slate-800 transition-colors border border-transparent hover:border-slate-700"
+                    className="p-1.5 rounded-none text-slate-300 hover:text-[#0077B5] hover:bg-slate-800 transition-colors border border-transparent hover:border-slate-700"
                     aria-label="LinkedIn profile"
                   >
                     <LinkedinIcon className="w-4 h-4" />
@@ -127,7 +127,7 @@ function TeamPage() {
           <h3 className="text-xl font-bold text-white">
             Want to Lead, Speak, or Organize with Us?
           </h3>
-          <p className="text-sm text-slate-400">
+          <p className="text-base text-slate-300">
             We are always looking for enthusiastic student coordinators, workshop facilitators,
             and content creators to join our core crew.
           </p>

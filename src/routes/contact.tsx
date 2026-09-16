@@ -68,7 +68,7 @@ function ContactPage() {
           <h1 className="text-4xl sm:text-5xl font-extrabold text-white tracking-tight font-display">
             Join <span className="aws-gradient-text">AWS SBG USJ</span>
           </h1>
-          <p className="text-slate-400 text-base leading-relaxed">
+          <p className="text-slate-200 text-base sm:text-lg leading-relaxed">
             Ready to build on AWS? Register to join our community, access student workshops, or reach out regarding partnerships and speaking opportunities.
           </p>
         </div>
@@ -122,7 +122,7 @@ function ContactPage() {
 
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                     <div>
-                      <label className="block text-xs font-mono text-slate-300 mb-1.5 uppercase">
+                      <label className="block text-xs sm:text-sm font-mono text-slate-200 mb-1.5 uppercase font-medium">
                         Full Name *
                       </label>
                       <input
@@ -136,7 +136,7 @@ function ContactPage() {
                     </div>
 
                     <div>
-                      <label className="block text-xs font-mono text-slate-300 mb-1.5 uppercase">
+                      <label className="block text-xs sm:text-sm font-mono text-slate-200 mb-1.5 uppercase font-medium">
                         Email Address *
                       </label>
                       <input
@@ -152,7 +152,7 @@ function ContactPage() {
 
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                     <div>
-                      <label className="block text-xs font-mono text-slate-300 mb-1.5 uppercase">
+                      <label className="block text-xs sm:text-sm font-mono text-slate-200 mb-1.5 uppercase font-medium">
                         Student / Registration ID
                       </label>
                       <input
@@ -165,7 +165,7 @@ function ContactPage() {
                     </div>
 
                     <div>
-                      <label className="block text-xs font-mono text-slate-300 mb-1.5 uppercase">
+                      <label className="block text-xs sm:text-sm font-mono text-slate-200 mb-1.5 uppercase font-medium">
                         Faculty
                       </label>
                       <select
@@ -183,7 +183,7 @@ function ContactPage() {
                   </div>
 
                   <div>
-                    <label className="block text-xs font-mono text-slate-300 mb-1.5 uppercase">
+                    <label className="block text-xs sm:text-sm font-mono text-slate-200 mb-1.5 uppercase font-medium">
                       Primary Area of Interest
                     </label>
                     <select
@@ -200,7 +200,7 @@ function ContactPage() {
                   </div>
 
                   <div>
-                    <label className="block text-xs font-mono text-slate-300 mb-1.5 uppercase">
+                    <label className="block text-xs sm:text-sm font-mono text-slate-200 mb-1.5 uppercase font-medium">
                       Message / What do you want to build or learn? *
                     </label>
                     <textarea
@@ -240,7 +240,7 @@ function ContactPage() {
               <h3 className="text-lg font-bold text-white flex items-center gap-2 font-display">
                 <Users className="w-5 h-5 text-[#FF9900]" /> Community Channels
               </h3>
-              <p className="text-xs text-slate-400 leading-relaxed">
+              <p className="text-sm text-slate-300 leading-relaxed">
                 Connect directly with fellow students, ask cloud questions, share architectures, and stay notified about upcoming events.
               </p>
               <div className="space-y-2 pt-2">
@@ -248,7 +248,7 @@ function ContactPage() {
                   href={SITE_CONFIG.links.meetup}
                   target="_blank"
                   rel="noreferrer"
-                  className="block p-3 rounded-none bg-slate-950 border border-slate-800 hover:border-[#F64060]/60 text-sm text-white transition-colors"
+                  className="block p-3 rounded-none bg-slate-950 border border-slate-800 hover:border-[#F64060]/60 text-sm text-slate-200 transition-colors"
                 >
                   <span className="font-semibold text-[#F64060] block text-xs font-mono">Meetup Group</span>
                   Campus workshops, RSVPs & hands-on sessions at Mattegoda / USJ
@@ -257,7 +257,7 @@ function ContactPage() {
                   href={SITE_CONFIG.links.whatsapp}
                   target="_blank"
                   rel="noreferrer"
-                  className="block p-3 rounded-none bg-slate-950 border border-slate-800 hover:border-emerald-500/60 text-sm text-white transition-colors"
+                  className="block p-3 rounded-none bg-slate-950 border border-slate-800 hover:border-emerald-500/60 text-sm text-slate-200 transition-colors"
                 >
                   <span className="font-semibold text-emerald-400 block text-xs font-mono">WhatsApp Channel</span>
                   Instant event announcements, study group alerts & campus updates
@@ -266,7 +266,7 @@ function ContactPage() {
                   href={SITE_CONFIG.links.linkedin}
                   target="_blank"
                   rel="noreferrer"
-                  className="block p-3 rounded-none bg-slate-950 border border-slate-800 hover:border-[#0077B5]/60 text-sm text-white transition-colors"
+                  className="block p-3 rounded-none bg-slate-950 border border-slate-800 hover:border-[#0077B5]/60 text-sm text-slate-200 transition-colors"
                 >
                   <span className="font-semibold text-[#0077B5] block text-xs font-mono">LinkedIn Organization</span>
                   Professional networking, speaker spotlights & certification milestones
@@ -275,7 +275,7 @@ function ContactPage() {
                   href={SITE_CONFIG.links.whatsapp}
                   target="_blank"
                   rel="noreferrer"
-                  className="block p-3 rounded-none bg-slate-950 border border-slate-800 hover:border-[#25D366]/60 text-sm text-white transition-colors"
+                  className="block p-3 rounded-none bg-slate-950 border border-slate-800 hover:border-[#25D366]/60 text-sm text-slate-200 transition-colors"
                 >
                   <span className="font-semibold text-[#25D366] block text-xs font-mono">WhatsApp Community Channel</span>
                   Live announcements, workshop schedules, study groups & builder updates
@@ -284,22 +284,22 @@ function ContactPage() {
                   href={SITE_CONFIG.links.github}
                   target="_blank"
                   rel="noreferrer"
-                  className="block p-3 rounded-none bg-slate-950 border border-slate-800 hover:border-[#FF9900]/50 text-sm text-white transition-colors"
+                  className="block p-3 rounded-none bg-slate-950 border border-slate-800 hover:border-[#FF9900]/50 text-sm text-slate-200 transition-colors"
                 >
-                  <span className="font-semibold text-slate-300 block text-xs font-mono">GitHub Organization</span>
+                  <span className="font-semibold text-slate-200 block text-xs font-mono">GitHub Organization</span>
                   Open source workshops, CDK templates & student projects
                 </a>
               </div>
             </div>
 
-            <div className="rounded-none border border-white/10 bg-[#161F2E]/60 p-6 space-y-3 text-xs text-slate-400">
-              <h4 className="text-sm font-semibold text-white flex items-center gap-2 font-display">
+            <div className="rounded-none border border-white/10 bg-[#161F2E]/60 p-6 space-y-3 text-sm text-slate-300">
+              <h4 className="text-base font-semibold text-white flex items-center gap-2 font-display">
                 <MapPin className="w-4 h-4 text-[#FF9900]" /> Location
               </h4>
               <p>University of Sri Jayewardenepura, Gangodawila, Nugegoda, Sri Lanka.</p>
               <a
                 href={`mailto:${SITE_CONFIG.links.email}`}
-                className="inline-flex items-center gap-1.5 pt-2 text-slate-300 font-mono hover:text-[#FF9900] transition-colors"
+                className="inline-flex items-center gap-1.5 pt-2 text-slate-200 font-mono hover:text-[#FF9900] transition-colors"
                 title="Send email to AWS SBG USJ"
               >
                 <Mail className="w-3.5 h-3.5 text-[#FF9900]" />
