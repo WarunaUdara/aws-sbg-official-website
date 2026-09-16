@@ -114,7 +114,7 @@ export function Hero({ videoUrl = HERO_CONFIG.videoUrl }: HeroProps) {
           {/* Bottom Left: Headline & Body Copy */}
           <div className="lg:col-span-8 space-y-4">
             <div className="inline-flex items-center gap-2 px-2.5 py-1 bg-black/60 border border-white/20 text-xs font-mono uppercase tracking-wider text-[#FF9900]">
-              <span className="w-1.5 h-1.5 bg-[#FF9900] inline-block" />
+              <img src="/icons/icons8-aws-96.png" alt="AWS" className="w-4 h-4 object-contain shrink-0" />
               <span>AWS Student Builder Group • USJ Chapter</span>
             </div>
 

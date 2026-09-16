@@ -2,7 +2,6 @@ import * as React from "react"
 import { Link, useRouterState } from "@tanstack/react-router"
 import { Menu, X } from "lucide-react"
 import { NAV_LINKS, SITE_CONFIG } from "@/lib/constants"
-import { BuilderChipLogo } from "@/components/ui/BuilderChipLogo"
 import { GithubIcon } from "@/components/ui/icons"
 
 export function Navbar() {
@@ -17,7 +16,7 @@ export function Navbar() {
           {/* Left Brand Identity */}
           <Link to="/" className="flex items-center gap-3 group shrink-0">
             <div className="flex h-8 w-8 items-center justify-center bg-[#161F2E] border border-white/20 text-[#FF9900] group-hover:border-[#FF9900] transition-colors">
-              <BuilderChipLogo size={18} color="#FF9900" />
+              <img src="/icons/icons8-aws-96.png" alt="AWS" className="w-5 h-5 object-contain" />
             </div>
             <div className="flex items-baseline gap-1.5 font-display">
               <span className="font-extrabold text-lg tracking-tight text-white group-hover:text-[#FF9900] transition-colors">
