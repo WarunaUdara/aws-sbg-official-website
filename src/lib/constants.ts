@@ -5,6 +5,7 @@ export const SITE_CONFIG = {
   tagline: "Empowering Sri Lankan Student Builders with AWS Cloud & Modern Tech",
   description: "The official hub for student cloud architects, developers, and innovators at the University of Sri Jayewardenepura. Build, learn, and innovate with AWS.",
   url: "https://github.com/WarunaUdara/aws-sbg-official-website",
+  githubStars: "1.2k",
   links: {
     github: "https://github.com/WarunaUdara/aws-sbg-official-website",
     linkedin: "https://linkedin.com/company/aws-sbg-usj",
@@ -20,10 +21,48 @@ export const SITE_CONFIG = {
   ],
 }
 
+/**
+ * Hero Section Configuration
+ * --------------------------
+ * The user can change the videoUrl link here at any time.
+ * To use a local video: place your MP4/WebM in the /public folder (e.g. "/hero-bg.mp4")
+ * and set videoUrl: "/hero-bg.mp4".
+ */
+export const HERO_CONFIG = {
+  // === CHANGE YOUR BACKGROUND VIDEO URL HERE ===
+  videoUrl: "https://assets.mixkit.co/videos/preview/mixkit-digital-animation-of-screens-with-code-31913-large.mp4",
+  // Video overlay opacity (0 to 1) to guarantee high text contrast
+  videoOverlayOpacity: 0.65,
+
+  // Large vertical stacked verbs in background/focal area
+  verbs: [
+    { id: "deploy", text: "DEPLOY", active: false },
+    { id: "scale", text: "SCALE", active: false },
+    { id: "gateway", text: "GATEWAY", active: true, showArrow: true },
+    { id: "observe", text: "OBSERVE", active: false },
+    { id: "protect", text: "PROTECT", active: false },
+  ],
+
+  // Bottom Left Headline & Description
+  headline: "The Student Platform\nfor Modern Cloud Builders",
+  description:
+    "AWS SBG USJ unifies student developers and cloud architects at the University of Sri Jayewardenepura. Deploy serverless systems, innovate with GenAI, and launch your engineering career in one place.",
+
+  // Bottom Right CTA Action Buttons
+  primaryCta: {
+    label: "Start Building",
+    href: "/contact",
+  },
+  secondaryCta: {
+    label: "View on GitHub",
+    href: "https://github.com/WarunaUdara/aws-sbg-official-website",
+  },
+}
+
 export const NAV_LINKS = [
-  { label: "Home", href: "/" },
-  { label: "Events & Workshops", href: "/events" },
-  { label: "Student Projects", href: "/projects" },
+  { label: "Overview", href: "/" },
+  { label: "Workshops", href: "/events" },
+  { label: "Projects", href: "/projects" },
   { label: "Core Team", href: "/team" },
-  { label: "Join & Contact", href: "/contact" },
+  { label: "Design System", href: "/design-system" },
 ]

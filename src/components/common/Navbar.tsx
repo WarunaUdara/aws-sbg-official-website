@@ -1,58 +1,45 @@
 import * as React from "react"
 import { Link, useRouterState } from "@tanstack/react-router"
-import { Menu, X, ArrowUpRight, Palette } from "lucide-react"
+import { Menu, X, ChevronDown, MessageSquare } from "lucide-react"
 import { NAV_LINKS, SITE_CONFIG } from "@/lib/constants"
 import { Container } from "./Container"
-import { Button } from "@/components/ui/button"
 import { BuilderChipLogo } from "@/components/ui/BuilderChipLogo"
-import { AwsSmileLogo } from "@/components/ui/AwsSmileLogo"
+import { GithubIcon } from "@/components/ui/icons"
 
 export function Navbar() {
   const [isOpen, setIsOpen] = React.useState(false)
   const routerState = useRouterState()
   const currentPath = routerState.location.pathname
 
-  const allNavLinks = [
-    ...NAV_LINKS,
-    { label: "Design System", href: "/design-system" },
-  ]
-
   return (
-    <header className="sticky top-0 z-50 w-full border-b border-white/10 bg-[#0A0E17]/90 backdrop-blur-xl">
-      <Container size="lg">
-        <div className="flex h-18 items-center justify-between">
-          {/* Logo & Official Brand Mark */}
-          <Link to="/" className="flex items-center gap-3.5 group">
-            <div className="flex h-11 w-11 items-center justify-center bg-[#161F2E] border border-[#FF9900]/40 text-[#FF9900] group-hover:border-[#FF9900] transition-colors shadow-sm">
-              <BuilderChipLogo size={24} color="#FF9900" />
+    <header className="sticky top-0 z-50 w-full border-b border-white/10 bg-[#0A0E17]/95 backdrop-blur-md text-white">
+      <div className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="flex h-16 items-center justify-between gap-4">
+          {/* Left Brand Identity */}
+          <Link to="/" className="flex items-center gap-3 group shrink-0">
+            <div className="flex h-8 w-8 items-center justify-center bg-[#161F2E] border border-white/20 text-[#FF9900] group-hover:border-[#FF9900] transition-colors">
+              <BuilderChipLogo size={18} color="#FF9900" />
             </div>
-            <div>
-              <div className="flex items-center gap-2">
-                <span className="font-extrabold text-base sm:text-lg tracking-tight text-white group-hover:text-[#FF9900] transition-colors font-display">
-                  AWS SBG
-                </span>
-                <span className="bg-[#FF9900] px-1.5 py-0.2 text-[10px] font-mono font-bold tracking-wider text-[#0A0E17] uppercase">
-                  USJ
-                </span>
-              </div>
-              <p className="text-[11px] text-slate-400 font-mono hidden sm:block">
-                University of Sri Jayewardenepura
-              </p>
+            <div className="flex items-baseline gap-1.5 font-display">
+              <span className="font-extrabold text-lg tracking-tight text-white group-hover:text-[#FF9900] transition-colors">
+                aws-sbg
+              </span>
+              <span className="text-[11px] font-mono text-[#FF9900] font-semibold tracking-wider">
+                .usj
+              </span>
             </div>
           </Link>
 
-          {/* Desktop Navigation */}
-          <nav className="hidden md:flex items-center gap-1">
-            {allNavLinks.map((link) => {
+          {/* Center / Right Navigation Links (Unkey layout) */}
+          <nav className="hidden lg:flex items-center gap-6 text-xs text-slate-300 font-sans">
+            {NAV_LINKS.map((link) => {
               const isActive = currentPath === link.href
               return (
                 <Link
                   key={link.href}
                   to={link.href}
-                  className={`px-3 py-1.5 text-xs font-medium transition-all ${
-                    isActive
-                      ? "text-[#FF9900] bg-[#FF9900]/10 border-b-2 border-[#FF9900] font-semibold"
-                      : "text-slate-300 hover:text-white hover:bg-slate-800/40"
+                  className={`transition-colors hover:text-white ${
+                    isActive ? "text-[#FF9900] font-semibold" : "text-slate-300"
                   }`}
                 >
                   {link.label}
@@ -61,63 +48,101 @@ export function Navbar() {
             })}
           </nav>
 
-          {/* Right Action CTAs & AWS Badge */}
-          <div className="hidden md:flex items-center gap-4">
-            <div className="flex items-center px-3 py-1 bg-[#161F2E] border border-white/10 text-white">
-              <AwsSmileLogo size={38} color="#FFFFFF" />
-            </div>
-            <Link to="/contact">
-              <Button variant="glow" size="sm" className="font-mono text-xs">
-                Join Community
-                <ArrowUpRight className="w-3.5 h-3.5 ml-1" />
-              </Button>
+          {/* Right Action Units: Discord, GitHub Stars, Login, Sign Up */}
+          <div className="hidden sm:flex items-center gap-2.5 shrink-0">
+            {/* Discord Pill */}
+            <a
+              href={SITE_CONFIG.links.discord}
+              target="_blank"
+              rel="noreferrer"
+              className="px-3 py-1.5 border border-white/15 hover:border-white/40 text-xs font-mono text-slate-300 hover:text-white transition-all bg-[#0A0E17]"
+            >
+              Discord
+            </a>
+
+            {/* GitHub Stars Pill */}
+            <a
+              href={SITE_CONFIG.links.github}
+              target="_blank"
+              rel="noreferrer"
+              className="flex items-center gap-1.5 px-3 py-1.5 border border-white/15 hover:border-white/40 text-xs font-mono text-slate-300 hover:text-white transition-all bg-[#0A0E17]"
+            >
+              <GithubIcon className="w-3.5 h-3.5" />
+              <span>{SITE_CONFIG.githubStars || "★ Star"}</span>
+            </a>
+
+            {/* Login / Portal Link */}
+            <Link
+              to="/contact"
+              className="px-3.5 py-1.5 border border-white/20 hover:border-white text-xs font-sans font-medium text-white transition-all bg-transparent"
+            >
+              Login
+            </Link>
+
+            {/* Sign Up / Join CTA (Solid White Button) */}
+            <Link
+              to="/contact"
+              className="px-4 py-1.5 bg-white hover:bg-slate-200 text-[#0A0E17] text-xs font-sans font-bold tracking-tight transition-all shadow-sm"
+            >
+              Sign Up
             </Link>
           </div>
 
           {/* Mobile Menu Toggle */}
           <button
             onClick={() => setIsOpen(!isOpen)}
-            className="md:hidden p-2 rounded text-slate-400 hover:text-white hover:bg-slate-800 focus:outline-none"
-            aria-label="Toggle menu"
+            className="lg:hidden p-2 text-slate-400 hover:text-white focus:outline-none"
+            aria-label="Toggle Navigation Menu"
           >
-            {isOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+            {isOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6 text-white" />}
           </button>
         </div>
 
-        {/* Mobile Navigation Dropdown */}
+        {/* Mobile Navigation Drawer */}
         {isOpen && (
-          <div className="md:hidden border-t border-slate-800 py-4 px-2 space-y-2 bg-[#0A0E17]/98 backdrop-blur-2xl">
-            {allNavLinks.map((link) => {
-              const isActive = currentPath === link.href
-              return (
+          <div className="lg:hidden border-t border-white/10 py-4 px-2 space-y-3 bg-[#0A0E17]/98">
+            <div className="flex flex-col space-y-2">
+              {NAV_LINKS.map((link) => (
                 <Link
                   key={link.href}
                   to={link.href}
                   onClick={() => setIsOpen(false)}
-                  className={`block px-4 py-2.5 text-sm font-medium ${
-                    isActive
-                      ? "text-[#FF9900] bg-[#FF9900]/10 font-semibold"
-                      : "text-slate-300 hover:text-white hover:bg-slate-800/40"
-                  }`}
+                  className="px-3 py-2 text-sm text-slate-300 hover:text-white hover:bg-white/5 transition-colors"
                 >
                   {link.label}
                 </Link>
-              )
-            })}
-            <div className="pt-3 border-t border-slate-800 flex items-center justify-between">
-              <div className="flex items-center px-3 py-1 bg-[#161F2E] border border-white/10 text-white">
-                <AwsSmileLogo size={36} color="#FFFFFF" />
-              </div>
-              <Link to="/contact" onClick={() => setIsOpen(false)}>
-                <Button variant="glow" size="sm" className="font-mono text-xs">
-                  Join Community
-                  <ArrowUpRight className="w-3.5 h-3.5 ml-1" />
-                </Button>
+              ))}
+            </div>
+
+            <div className="pt-3 border-t border-white/10 flex flex-wrap items-center gap-2">
+              <a
+                href={SITE_CONFIG.links.discord}
+                target="_blank"
+                rel="noreferrer"
+                className="px-3 py-1.5 border border-white/20 text-xs font-mono text-slate-300"
+              >
+                Discord
+              </a>
+              <a
+                href={SITE_CONFIG.links.github}
+                target="_blank"
+                rel="noreferrer"
+                className="flex items-center gap-1.5 px-3 py-1.5 border border-white/20 text-xs font-mono text-slate-300"
+              >
+                <GithubIcon className="w-3.5 h-3.5" />
+                <span>GitHub</span>
+              </a>
+              <Link
+                to="/contact"
+                onClick={() => setIsOpen(false)}
+                className="px-4 py-1.5 bg-white text-black text-xs font-bold"
+              >
+                Sign Up / Join
               </Link>
             </div>
           </div>
         )}
-      </Container>
+      </div>
     </header>
   )
 }
