@@ -157,7 +157,7 @@ export function LearningTracks() {
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white tracking-tight font-display text-balance">
               Hands-on tracks. Built for builders.
             </h2>
-            <p className="text-slate-300 text-sm sm:text-base font-sans leading-relaxed text-pretty">
+            <p className="text-slate-200 text-base sm:text-lg font-sans leading-relaxed text-pretty">
               Four focused roadmaps designed for USJ undergraduates. Move directly from fundamentals into production code.
             </p>
           </div>
@@ -193,9 +193,9 @@ export function LearningTracks() {
                 )}
               >
                 {/* Top Monospace Caption */}
-                <div className="text-xs font-mono text-slate-400 mb-6 flex items-center justify-between">
+                <div className="text-xs font-mono text-slate-300 mb-6 flex items-center justify-between font-medium">
                   <span>{track.caption}</span>
-                  <span className="text-slate-600 font-mono text-[10px]">0{i + 1}</span>
+                  <span className="text-slate-500 font-mono text-[11px]">0{i + 1}</span>
                 </div>
 
                 {/* Center Technical Graphic */}
@@ -205,10 +205,10 @@ export function LearningTracks() {
 
                 {/* Bottom Bold Lead-in & Human-Optimized Prose */}
                 <div className="pt-4 border-t border-white/5 text-sm leading-relaxed">
-                  <span className="font-bold text-white block mb-1.5 font-display text-[15px]">
+                  <span className="font-bold text-white block mb-1.5 font-display text-base">
                     {track.lead}
                   </span>
-                  <span className="text-slate-400 text-xs sm:text-sm font-sans leading-relaxed">
+                  <span className="text-slate-200 text-sm sm:text-[15px] font-sans leading-relaxed">
                     {track.body}
                   </span>
                 </div>

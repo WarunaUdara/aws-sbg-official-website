@@ -62,7 +62,7 @@ export function Pillars() {
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white tracking-tight font-display text-balance">
             Why Join AWS Student Builder Group?
           </h2>
-          <p className="text-slate-300 text-sm sm:text-base font-sans leading-relaxed text-pretty">
+          <p className="text-slate-200 text-base sm:text-lg font-sans leading-relaxed text-pretty">
             Accelerate your cloud career with hands-on labs, industry mentorship, and an active community of student developers.
           </p>
         </div>
@@ -80,7 +80,7 @@ export function Pillars() {
                     <span className="text-xs font-mono text-[#FF9900] font-bold">
                       {pillar.number}
                     </span>
-                    <span className="text-[11px] font-mono tracking-wider text-slate-300 bg-[#0A0E17] px-2 py-0.5 border border-white/10">
+                    <span className="text-xs font-mono tracking-wider text-slate-200 bg-[#0A0E17] px-2 py-0.5 border border-white/15">
                       {pillar.badge}
                     </span>
                   </div>
@@ -92,7 +92,7 @@ export function Pillars() {
                   <h3 className="text-lg font-bold text-white mb-2 font-display">
                     {pillar.title}
                   </h3>
-                  <p className="text-xs sm:text-sm text-slate-300 leading-relaxed font-sans">
+                  <p className="text-sm sm:text-[15px] text-slate-200 leading-relaxed font-sans">
                     {pillar.description}
                   </p>
                 </div>

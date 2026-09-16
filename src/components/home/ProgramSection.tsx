@@ -43,15 +43,15 @@ export function ProgramSection() {
     <section className="py-24 bg-[#0A0E17] border-b border-white/10 relative overflow-hidden">
       <Container size="lg">
         {/* Breadcrumb Path inspired by AWS Builder Center */}
-        <div className="flex items-center gap-2 text-xs font-mono text-slate-400 mb-8 overflow-x-auto scrollbar-none">
+        <div className="flex items-center gap-2 text-xs font-mono text-slate-300 mb-8 overflow-x-auto scrollbar-none">
           <span className="hover:text-white transition-colors cursor-pointer">
             AWS Builder Center
           </span>
-          <ChevronRight className="w-3.5 h-3.5 text-slate-600 shrink-0" />
+          <ChevronRight className="w-3.5 h-3.5 text-slate-500 shrink-0" />
           <span className="hover:text-white transition-colors cursor-pointer">
             Community
           </span>
-          <ChevronRight className="w-3.5 h-3.5 text-slate-600 shrink-0" />
+          <ChevronRight className="w-3.5 h-3.5 text-slate-500 shrink-0" />
           <span className="text-[#FF9900] font-semibold shrink-0">
             AWS Student Builder Groups
           </span>
@@ -63,7 +63,7 @@ export function ProgramSection() {
             <h2 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-white tracking-tight leading-[1.08] font-display">
               AWS Student Builder Groups
             </h2>
-            <p className="text-lg sm:text-xl text-slate-300 font-medium">
+            <p className="text-lg sm:text-xl text-slate-200 font-medium">
               Connect with other students on campus. Build together on the cloud.
             </p>
 
@@ -120,24 +120,24 @@ export function ProgramSection() {
             <h3 className="text-2xl font-bold text-white tracking-tight font-display">
               About the program
             </h3>
-            <p className="text-slate-300 text-sm sm:text-base leading-relaxed text-pretty">
+            <p className="text-slate-200 text-base sm:text-[17px] leading-relaxed text-pretty">
               <strong className="text-white">AWS Student Builder Groups</strong> are student-led university communities supported directly by AWS. Open to all students at University of Sri Jayewardenepura—no prior cloud or coding experience required.
             </p>
 
-            <div className="space-y-3 pt-2">
-              <div className="flex items-start gap-3 text-sm text-slate-300">
+            <div className="space-y-3.5 pt-2">
+              <div className="flex items-start gap-3 text-sm sm:text-base text-slate-200">
                 <span className="w-1.5 h-1.5 bg-[#FF9900] mt-2 shrink-0" />
                 <div>
                   <strong className="text-white font-medium">Hands-on Cloud Labs:</strong> Build production systems with Serverless, Bedrock GenAI, and AWS CDK.
                 </div>
               </div>
-              <div className="flex items-start gap-3 text-sm text-slate-300">
+              <div className="flex items-start gap-3 text-sm sm:text-base text-slate-200">
                 <span className="w-1.5 h-1.5 bg-[#FF9900] mt-2 shrink-0" />
                 <div>
                   <strong className="text-white font-medium">Certification Guidance:</strong> Study cohorts and subsidized exam vouchers for official AWS certifications.
                 </div>
               </div>
-              <div className="flex items-start gap-3 text-sm text-slate-300">
+              <div className="flex items-start gap-3 text-sm sm:text-base text-slate-200">
                 <span className="w-1.5 h-1.5 bg-[#FF9900] mt-2 shrink-0" />
                 <div>
                   <strong className="text-white font-medium">Industry Mentorship:</strong> Connect directly with AWS Community Heroes, Solutions Architects, and student peers.
@@ -161,7 +161,7 @@ export function ProgramSection() {
                       onClick={() => toggleFaq(faq.id)}
                       className="w-full py-4 flex items-center justify-between text-left gap-4 cursor-pointer group"
                     >
-                      <span className={`text-sm sm:text-base font-semibold transition-colors ${
+                      <span className={`text-base sm:text-lg font-semibold transition-colors ${
                         isOpen ? "text-[#FF9900]" : "text-white group-hover:text-slate-200"
                       }`}>
                         {faq.question}
@@ -176,7 +176,7 @@ export function ProgramSection() {
                     </button>
 
                     {isOpen && (
-                      <div className="pb-5 pr-8 text-xs sm:text-sm text-slate-300 leading-relaxed font-sans animate-in fade-in duration-200">
+                      <div className="pb-5 pr-8 text-sm sm:text-base text-slate-200 leading-relaxed font-sans animate-in fade-in duration-200">
                         {faq.answer}
                       </div>
                     )}

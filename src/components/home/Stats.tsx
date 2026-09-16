@@ -26,7 +26,7 @@ export function Stats() {
                   />
                   <span>{suffix}</span>
                 </div>
-                <div className="text-xs font-mono uppercase tracking-wider text-slate-400 flex items-center gap-1.5">
+                <div className="text-xs sm:text-sm font-mono uppercase tracking-wider text-slate-200 font-medium flex items-center gap-1.5">
                   <span className="w-1.5 h-1.5 bg-[#FF9900] inline-block" />
                   {stat.label}
                 </div>

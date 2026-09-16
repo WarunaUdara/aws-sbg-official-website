@@ -212,7 +212,7 @@ export function Hero({ videoUrl = HERO_CONFIG.videoUrl }: HeroProps) {
               <span className="aws-gradient-text">Architect the Cloud.</span>
             </h1>
 
-            <p className="text-sm sm:text-base text-slate-300 font-sans max-w-2xl leading-relaxed text-pretty">
+            <p className="text-base sm:text-lg text-slate-200 font-sans max-w-2xl leading-relaxed text-pretty">
               Build real cloud systems at USJ. Learn AWS, explore GenAI with Amazon Bedrock, and launch production projects with student developers.
             </p>
           </div>

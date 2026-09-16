@@ -31,7 +31,7 @@ function HomePage() {
       <ProgramSection />
 
       {/* Featured Upcoming Events Section */}
-      <section className="py-20 bg-builder-grid-dark border-b border-white/10">
+      <section className="py-20 bg-[#0A0E17] border-b border-white/10">
         <Container size="lg">
           <div className="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-4">
             <div className="space-y-2 max-w-xl">
@@ -41,7 +41,7 @@ function HomePage() {
               <h2 className="text-3xl sm:text-4xl font-extrabold text-white tracking-tight font-display">
                 Upcoming Builder Sessions
               </h2>
-              <p className="text-slate-300 text-sm font-sans">
+              <p className="text-slate-200 text-base sm:text-lg font-sans">
                 Hands-on, free cloud sessions led by certified student architects and AWS community leaders.
               </p>
             </div>
@@ -90,7 +90,7 @@ function HomePage() {
                 <h2 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-white tracking-tight font-display leading-[1.2] text-balance">
                   “Democratizing cloud education at USJ—building practical skills, fostering community, and preparing students for the future of technology.”
                 </h2>
-                <p className="text-slate-300 text-sm sm:text-base max-w-2xl font-sans leading-relaxed text-pretty">
+                <p className="text-slate-200 text-base sm:text-lg max-w-2xl font-sans leading-relaxed text-pretty">
                   We empower USJ students to build cloud-native applications, earn AWS certifications, and gain real-world developer experience through free hands-on workshops and mentorship.
                 </p>
                 <div className="pt-2 flex flex-wrap gap-4">

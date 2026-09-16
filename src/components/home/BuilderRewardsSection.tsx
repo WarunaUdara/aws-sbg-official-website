@@ -32,16 +32,7 @@ const REWARDS = [
 
 export function BuilderRewardsSection() {
   return (
-    <section className="py-20 sm:py-24 bg-[#0B101B] border-b border-white/10 relative overflow-hidden">
-      {/* Subtle coordinate dot pattern */}
-      <div 
-        className="absolute inset-0 pointer-events-none opacity-20"
-        style={{
-          backgroundImage: "radial-gradient(rgba(255, 153, 0, 0.4) 1px, transparent 1px)",
-          backgroundSize: "24px 24px"
-        }}
-      />
-
+    <section className="py-20 sm:py-24 bg-[#0A0E17] border-b border-white/10 relative overflow-hidden">
       <Container size="lg" className="relative z-10">
         <div className="flex flex-col lg:flex-row lg:items-end justify-between mb-14 gap-8">
           <div className="space-y-3 max-w-2xl">
@@ -52,7 +43,7 @@ export function BuilderRewardsSection() {
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white tracking-tight font-display text-balance">
               Student Builder Benefits
             </h2>
-            <p className="text-slate-300 text-sm sm:text-base font-sans leading-relaxed text-pretty">
+            <p className="text-slate-200 text-base sm:text-lg font-sans leading-relaxed text-pretty">
               Active members in our workshops, hackathons, and cohorts earn official AWS resources, exam discounts, and verifiable credentials.
             </p>
           </div>
@@ -104,7 +95,7 @@ export function BuilderRewardsSection() {
                   <h3 className="text-lg font-bold text-white mb-2 font-display">
                     {reward.title}
                   </h3>
-                  <p className="text-xs sm:text-sm text-slate-300 leading-relaxed font-sans">
+                  <p className="text-sm sm:text-[15px] text-slate-200 leading-relaxed font-sans">
                     {reward.detail}
                   </p>
                 </div>
