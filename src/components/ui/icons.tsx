@@ -28,16 +28,19 @@ export function LinkedinIcon({ className = "w-4 h-4" }: { className?: string }) 
   )
 }
 
-export function MeetupIcon({ className = "w-4 h-4" }: { className?: string }) {
+export function MeetupIcon({
+  className = "w-4 h-4",
+  alt = "Meetup",
+}: {
+  className?: string
+  alt?: string
+}) {
   return (
-    <svg
-      className={className}
-      fill="currentColor"
-      viewBox="0 0 24 24"
-      aria-hidden="true"
-    >
-      <path d="M19.34 9.53a4.7 4.7 0 0 0-3.19-2.9 6.27 6.27 0 0 0-4.15.5 4.67 4.67 0 0 0-2.9 3.2 6.4 6.4 0 0 0 .5 4.15 4.7 4.7 0 0 0 3.2 2.9 6.27 6.27 0 0 0 4.14-.5 4.68 4.68 0 0 0 2.9-3.2 6.4 6.4 0 0 0-.5-4.15zm-4.7 5.07a2.53 2.53 0 0 1-1.63 1.15 2.82 2.82 0 0 1-2.12-.22 2.52 2.52 0 0 1-1.15-1.63 2.85 2.85 0 0 1 .23-2.13 2.52 2.52 0 0 1 1.62-1.14 2.8 2.8 0 0 1 2.13.22 2.53 2.53 0 0 1 1.14 1.63c.18.7.1 1.44-.22 2.12zM7.2 4.4a3.8 3.8 0 0 0-2.6 2.4 4.8 4.8 0 0 0 .3 3.2 3.8 3.8 0 0 0 2.4 2.6 4.8 4.8 0 0 0 3.2-.3 3.8 3.8 0 0 0-3.3-7.9zm13.1 8.8a3.8 3.8 0 0 0-2.6-2.4 4.8 4.8 0 0 0-3.2.3 3.8 3.8 0 0 0-2.4 2.6 4.8 4.8 0 0 0 .3 3.2 3.8 3.8 0 0 0 7.9-3.7z" />
-    </svg>
+    <img
+      src="/icons/meetup.svg"
+      alt={alt}
+      className={`inline-block object-contain shrink-0 ${className}`}
+    />
   )
 }
 
