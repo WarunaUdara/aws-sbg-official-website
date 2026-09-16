@@ -16,6 +16,22 @@ Built with **TanStack Start** (React 19, TanStack Router, TanStack Query, and Ta
 
 ---
 
+## 🎨 Official Design System & Guidelines
+
+See [DESIGN_SYSTEM.md](./DESIGN_SYSTEM.md) for full architectural guidelines, token definitions, and agent rules. Explore live components at the interactive `/design-system` route.
+
+| Category | Standard | Usage |
+|---|---|---|
+| **Primary Color** | `#FF9900` (AWS Builder Orange) | Hero fills, CTAs, builder chip glyph, active accents |
+| **Canvas Dark** | `#0A0E17` (Deep Slate Canvas) | Main canvas, high-contrast text on orange fills |
+| **Surface Dark** | `#161F2E` (Surface Navy) | Cards, mosaic tiles, brand anchor boxes |
+| **Primary Font** | **Space Grotesk** | Display headlines, navigation links, buttons, body copy |
+| **Secondary Font** | **JetBrains Mono** | Brand signatures, terminal headers, tags, metadata |
+| **Grid System** | `48px` × `48px` Coordinate Grid | Architectural backdrops (`.bg-builder-grid-dark`) |
+| **Iconography** | 7×7 Builder Chip Glyph (`BuilderChipLogo`) | 12-pin microprocessor brand emblem |
+
+---
+
 ## 📁 Architectural Project Structure
 
 The codebase is organized following modern clean architecture and domain-driven design principles:
