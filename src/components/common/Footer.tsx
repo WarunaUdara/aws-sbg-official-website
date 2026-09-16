@@ -27,10 +27,10 @@ export function Footer() {
           {/* Mission Column */}
           <div className="md:col-span-2 space-y-4">
             <h4 className="text-xs font-mono font-bold uppercase tracking-widest text-[#FF9900]">
-              [ FROM STUDENTS TO BUILDERS ]
+              [ OUR MISSION ]
             </h4>
             <p className="text-sm text-slate-300 max-w-md leading-relaxed font-sans">
-              AWS Student Builder Group at the University of Sri Jayewardenepura is an independent, student-run technical community fostering cloud architecture, serverless systems, GenAI pipelines, and peer builder culture.
+              To democratize cloud education at USJ—building practical skills, fostering community, and preparing students for the future of technology through hands-on architectures and mentorship.
             </p>
             <div className="flex flex-wrap items-center gap-2.5 pt-2">
               <a

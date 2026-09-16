@@ -119,13 +119,12 @@ export function Hero({ videoUrl = HERO_CONFIG.videoUrl }: HeroProps) {
             </div>
 
             <h1 className="text-3xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-white font-display leading-[1.08]">
-              The Developer Platform <br />
-              <span className="aws-gradient-text">for Modern Cloud APIs</span>
+              Where Student Builders <br />
+              <span className="aws-gradient-text">Architect the Cloud.</span>
             </h1>
 
             <p className="text-sm sm:text-base text-slate-300 font-sans max-w-2xl leading-relaxed">
-              AWS SBG USJ unifies student cloud infrastructure at the University of Sri Jayewardenepura. 
-              Deploy serverless APIs instantly, route global workloads with AWS, and master cloud engineering together.
+              Learn AWS by building real systems. Explore generative AI with Amazon Bedrock, architect serverless cloud infrastructure, and launch production grade projects with the student developer community at University of Sri Jayewardenepura.
             </p>
           </div>
 
@@ -136,7 +135,7 @@ export function Hero({ videoUrl = HERO_CONFIG.videoUrl }: HeroProps) {
               to="/contact"
               className="px-6 py-3.5 bg-white hover:bg-slate-200 text-[#0A0E17] text-sm font-sans font-bold tracking-tight transition-all shadow-md active:scale-98 rounded-none cursor-pointer"
             >
-              Start for free
+              Start Building
             </Link>
 
             {/* Secondary CTA (Dark Outlined Button) */}

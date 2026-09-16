@@ -171,15 +171,14 @@ function HomePage() {
                 <div className="flex items-center gap-2">
                   <div className="w-2.5 h-2.5 bg-[#FF9900]" />
                   <span className="text-xs font-mono text-[#FF9900] font-bold uppercase tracking-wider">
-                    [ COMMUNITY COHORT 2026 ]
+                    [ OUR MISSION • USJ CHAPTER ]
                   </span>
                 </div>
-                <h2 className="text-3xl sm:text-5xl font-black text-white tracking-tight font-display leading-[1.1]">
-                  FROM STUDENTS <br />
-                  <span className="text-[#FF9900]">TO BUILDERS.</span>
+                <h2 className="text-2xl sm:text-4xl lg:text-5xl font-black text-white tracking-tight font-display leading-[1.15]">
+                  “To democratize cloud education at USJ—building skills, fostering community, and preparing students for the future of technology.”
                 </h2>
-                <p className="text-slate-300 text-sm sm:text-base max-w-xl font-sans">
-                  Be part of our AWS Student Builder Group to learn, connect, and build together at the University of Sri Jayewardenepura.
+                <p className="text-slate-300 text-sm sm:text-base max-w-2xl font-sans leading-relaxed">
+                  We aim to create an inclusive environment where students can access cloud knowledge, gain hands-on experience, and grow together. Through workshops, mentorship, and real-world projects, we empower individuals to build practical skills and become future-ready tech leaders.
                 </p>
                 <div className="pt-2 flex flex-wrap gap-4">
                   <Link to="/contact">

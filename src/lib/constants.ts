@@ -2,8 +2,8 @@ export const SITE_CONFIG = {
   name: "AWS Student Building Guild - USJ",
   shortName: "AWS SBG USJ",
   university: "University of Sri Jayewardenepura",
-  tagline: "Empowering Sri Lankan Student Builders with AWS Cloud & Modern Tech",
-  description: "The official hub for student cloud architects, developers, and innovators at the University of Sri Jayewardenepura. Build, learn, and innovate with AWS.",
+  tagline: "Where Student Builders Architect the Cloud",
+  description: "Learn AWS by building real systems. Explore generative AI with Amazon Bedrock, architect serverless cloud infrastructure, and launch production grade projects with the student developer community at University of Sri Jayewardenepura.",
   url: "https://github.com/WarunaUdara/aws-sbg-official-website",
   githubStars: "1.2k",
   links: {
@@ -26,8 +26,8 @@ export const SITE_CONFIG = {
  * Hero Section Configuration
  * --------------------------
  * The user can change the videoUrl link here at any time.
- * To use a local video: place your MP4/WebM in the /public folder (e.g. "/hero-bg.mp4")
- * and set videoUrl: "/hero-bg.mp4".
+ * To use a local video: place your MP4/WebM in the /public folder (e.g. "/hero-bg-video.webm")
+ * and set videoUrl: "/hero-bg-video.webm".
  */
 export const HERO_CONFIG = {
   // === BACKGROUND VIDEO URL ===
@@ -46,9 +46,9 @@ export const HERO_CONFIG = {
   ],
 
   // Bottom Left Headline & Description
-  headline: "The Student Platform\nfor Modern Cloud Builders",
+  headline: "Where Student Builders\nArchitect the Cloud",
   description:
-    "AWS SBG USJ unifies student developers and cloud architects at the University of Sri Jayewardenepura. Deploy serverless systems, innovate with GenAI, and launch your engineering career in one place.",
+    "Learn AWS by building real systems. Explore generative AI with Amazon Bedrock, architect serverless cloud infrastructure, and launch production grade projects with the student developer community at University of Sri Jayewardenepura.",
 
   // Bottom Right CTA Action Buttons
   primaryCta: {

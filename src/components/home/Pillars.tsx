@@ -5,35 +5,35 @@ import { ShapeGrid } from "@/components/ui/ShapeGrid"
 const PILLARS = [
   {
     icon: Cpu,
-    tag: "[ LAB 01 ]",
-    title: "Hands-on Cloud Labs",
+    tag: "[ 01 • REAL ARCHITECTURES ]",
+    title: "Learn AWS Services",
     description:
-      "Move beyond theory. Build on AWS Lambda, Amazon Bedrock, DynamoDB, and deploy Infrastructure as Code with AWS CDK and TypeScript.",
+      "Get hands-on experience building scalable applications with Serverless, Bedrock, DynamoDB, and ECS. Move from theory directly to production code.",
     badge: "PRACTICAL",
   },
   {
-    icon: Award,
-    tag: "[ CERT 02 ]",
-    title: "Certification Sprints",
+    icon: Compass,
+    tag: "[ 02 • INDUSTRY MENTORSHIP ]",
+    title: "Network with Experts",
     description:
-      "Structured cohorts for AWS Certified Cloud Practitioner and Solutions Architect Associate with practice labs and voucher support.",
+      "Connect with AWS Community Heroes, Solutions Architects, and passionate student builders across Sri Lanka through direct technical AMAs and mentorship.",
+    badge: "COMMUNITY",
+  },
+  {
+    icon: Award,
+    tag: "[ 03 • CREDENTIAL SPRINTS ]",
+    title: "Earn Certifications",
+    description:
+      "Access structured study groups, practice labs, and exam voucher guidance for AWS Cloud Practitioner and Solutions Architect certifications.",
     badge: "CREDENTIALS",
   },
   {
     icon: Rocket,
-    tag: "[ BUILD 03 ]",
-    title: "Builder Hackathons",
+    tag: "[ 04 • CAMPUS INNOVATION ]",
+    title: "Launch Real-World Projects",
     description:
-      "Collaborate in 24-hour cloud hackathons, create impactful real-world software, and compete for AWS student builder awards.",
-    badge: "INNOVATION",
-  },
-  {
-    icon: Compass,
-    tag: "[ GUIDE 04 ]",
-    title: "Industry Mentorship",
-    description:
-      "Connect with AWS Community Builders, AWS User Group Sri Lanka architects, and engineering alumni working across global clouds.",
-    badge: "CAREER",
+      "Collaborate in cloud hackathons, architect campus-scale solutions for USJ, and graduate with a verifiable production portfolio on GitHub.",
+    badge: "PORTFOLIO",
   },
 ]
 
@@ -56,16 +56,16 @@ export function Pillars() {
 
       <Container size="lg" className="relative z-10 pointer-events-none">
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6 pointer-events-auto">
-          <div className="space-y-3 max-w-xl">
+          <div className="space-y-3 max-w-2xl">
             <span className="text-xs font-mono font-bold text-[#FF9900] tracking-widest uppercase flex items-center gap-2">
-              <span className="w-2 h-2 bg-[#FF9900]" /> [ FOUNDATIONAL PILLARS ]
+              <span className="w-2 h-2 bg-[#FF9900]" /> [ WHY JOIN AWS SBG USJ ]
             </span>
             <h2 className="text-3xl sm:text-5xl font-black text-white tracking-tight font-display">
-              Engineered for Builders.
+              Why Join AWS Student Builder Group?
             </h2>
             <p className="text-slate-300 text-sm sm:text-base font-sans leading-relaxed">
-              Every initiative is designed to build technical depth, professional certifications,
-              and collaborative engineering portfolios while studying at USJ.
+              Accelerate your cloud career through hands-on architectures, mentorship from industry experts,
+              and a thriving community of student developers.
             </p>
           </div>
 

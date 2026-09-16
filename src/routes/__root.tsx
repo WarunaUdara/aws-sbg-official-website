@@ -23,7 +23,7 @@ export const Route = createRootRouteWithContext<{
       {
         name: 'description',
         content:
-          'Official website of AWS Student Building Guild at the University of Sri Jayewardenepura. Fostering cloud architects, developer workshops, and student innovation.',
+          'Learn AWS by building real systems. Explore generative AI with Amazon Bedrock, architect serverless cloud infrastructure, and launch production grade projects with the student developer community at University of Sri Jayewardenepura.',
       },
       {
         name: 'theme-color',
