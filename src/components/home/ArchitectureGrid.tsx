@@ -1,6 +1,5 @@
-import * as React from "react"
 import { Container } from "@/components/common/Container"
-import { Shield, Globe, Lock, Cpu, BarChart3, Sliders, Zap } from "lucide-react"
+import { Shield, Globe, Lock, Cpu, BarChart3, Sliders } from "lucide-react"
 
 export function ArchitectureGrid() {
   // ASCII Binary Matrix for Card 1 (Auth + Keys)

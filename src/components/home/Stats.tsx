@@ -1,4 +1,3 @@
-import * as React from "react"
 import { Container } from "@/components/common/Container"
 import { SITE_CONFIG } from "@/lib/constants"
 

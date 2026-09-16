@@ -1,4 +1,3 @@
-import * as React from 'react'
 import { createFileRoute, Link } from '@tanstack/react-router'
 import { Users, Award, ArrowRight } from 'lucide-react'
 import { GithubIcon, LinkedinIcon } from '@/components/ui/icons'

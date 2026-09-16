@@ -1,4 +1,3 @@
-import * as React from "react"
 import { Calendar, Clock, MapPin, Video, ArrowUpRight } from "lucide-react"
 import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"

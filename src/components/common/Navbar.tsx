@@ -1,8 +1,7 @@
 import * as React from "react"
 import { Link, useRouterState } from "@tanstack/react-router"
-import { Menu, X, ChevronDown, MessageSquare } from "lucide-react"
+import { Menu, X } from "lucide-react"
 import { NAV_LINKS, SITE_CONFIG } from "@/lib/constants"
-import { Container } from "./Container"
 import { BuilderChipLogo } from "@/components/ui/BuilderChipLogo"
 import { GithubIcon } from "@/components/ui/icons"
 

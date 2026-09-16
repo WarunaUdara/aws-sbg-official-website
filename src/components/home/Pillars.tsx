@@ -1,5 +1,4 @@
-import * as React from "react"
-import { Cpu, Award, Rocket, Compass, CheckSquare } from "lucide-react"
+import { Cpu, Award, Rocket, Compass } from "lucide-react"
 import { Container } from "@/components/common/Container"
 import { ShapeGrid } from "@/components/ui/ShapeGrid"
 

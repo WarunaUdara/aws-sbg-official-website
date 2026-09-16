@@ -1,6 +1,6 @@
 import * as React from 'react'
 import { createFileRoute } from '@tanstack/react-router'
-import { MessageSquare, Send, CheckCircle2, Users, HelpCircle, Mail, MapPin } from 'lucide-react'
+import { MessageSquare, Send, CheckCircle2, Users, Mail, MapPin } from 'lucide-react'
 import { Container } from '@/components/common/Container'
 import { Button } from '@/components/ui/button'
 import { submitContactFn } from '@/server/functions/contact.functions'

@@ -1,6 +1,5 @@
-import * as React from "react"
 import { Link } from "@tanstack/react-router"
-import { MessageSquare, ExternalLink, Shield } from "lucide-react"
+import { MessageSquare, ExternalLink } from "lucide-react"
 import { GithubIcon, LinkedinIcon, MeetupIcon, WhatsAppIcon } from "@/components/ui/icons"
 import { BuilderBrandBadge } from "@/components/ui/BuilderBrandBadge"
 import { AwsSmileLogo } from "@/components/ui/AwsSmileLogo"

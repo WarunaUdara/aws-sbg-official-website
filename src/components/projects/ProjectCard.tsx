@@ -1,4 +1,3 @@
-import * as React from "react"
 import { ExternalLink, Star, Code2 } from "lucide-react"
 import { GithubIcon } from "@/components/ui/icons"
 import { Badge } from "@/components/ui/badge"

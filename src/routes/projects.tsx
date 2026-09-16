@@ -1,11 +1,10 @@
 import * as React from 'react'
 import { createFileRoute } from '@tanstack/react-router'
-import { Sparkles, Code2, PlusCircle } from 'lucide-react'
+import { Code2, PlusCircle } from 'lucide-react'
 import { Container } from '@/components/common/Container'
 import { ProjectCard } from '@/components/projects/ProjectCard'
 import { Button } from '@/components/ui/button'
 import { MOCK_PROJECTS } from '@/features/projects/data'
-import type { BuilderProject } from '@/features/projects/types'
 import { SITE_CONFIG } from '@/lib/constants'
 
 export const Route = createFileRoute('/projects')({
