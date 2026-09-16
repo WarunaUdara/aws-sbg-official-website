@@ -17,7 +17,7 @@ export function AwsSmileLogo({
 
   return (
     <img
-      src="/icons/icons8-aws-96.png"
+      src="/icons/aws-light.webp"
       width={pixelSize}
       height={pixelSize}
       alt={alt}

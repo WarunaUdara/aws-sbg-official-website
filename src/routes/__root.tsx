@@ -47,11 +47,11 @@ export const Route = createRootRouteWithContext<{
       {
         rel: 'icon',
         type: 'image/png',
-        href: '/icons/icons8-aws-96.png',
+        href: '/icons/sbg-icon-only.png',
       },
       {
         rel: 'apple-touch-icon',
-        href: '/icons/icons8-aws-96.png',
+        href: '/icons/sbg-icon-only.png',
       },
     ],
   }),
