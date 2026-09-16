@@ -2,6 +2,9 @@
 
 Official web application and builder portal for the **AWS Student Building Guild at the University of Sri Jayewardenepura (USJ)**.
 
+🌐 **Live Website**: [https://aws-sbg-usj.pages.dev](https://aws-sbg-usj.pages.dev)  
+🚀 **Hosted on**: Cloudflare Pages with Global Anycast CDN & Edge Caching
+
 Built with **TanStack Start** (React 19, TanStack Router, TanStack Query, and Tailwind CSS), architected from day one for extensibility, type-safety, and seamless addition of future backend business logic.
 
 ---
@@ -99,7 +102,7 @@ bun dev  # (recommended) or npm run dev
 
 ### Production Build
 
-Compile optimized client and SSR bundles:
+Compile optimized client bundles and static prerendered HTML:
 
 ```bash
 bun run build  # (recommended) or npm run build
@@ -110,6 +113,30 @@ Preview the production build locally:
 ```bash
 bun run preview  # (recommended) or npm run preview
 ```
+
+### Typecheck
+
+Run static type checking across the entire project:
+
+```bash
+bun run typecheck
+```
+
+### Cloudflare Pages Deployment
+
+Deploy directly using Wrangler:
+
+```bash
+bun run deploy
+```
+
+### 🔄 CI/CD Pipeline (GitHub Actions)
+
+Every pull request triggers automated typecheck and build validation. Pushes to `main` branch automatically deploy to production at `https://aws-sbg-usj.pages.dev` via `.github/workflows/deploy.yml` using `cloudflare/wrangler-action`.
+
+Required GitHub Repository Secrets:
+- `CLOUDFLARE_ACCOUNT_ID` (`5112766d695fe763ead05baa5c3be09b`)
+- `CLOUDFLARE_API_TOKEN` (Cloudflare Pages edit token)
 
 ---
 
