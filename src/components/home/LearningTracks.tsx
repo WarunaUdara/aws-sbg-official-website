@@ -2,45 +2,7 @@ import { Link } from "@tanstack/react-router"
 import { ArrowRight } from "lucide-react"
 import { Container } from "@/components/common/Container"
 import { cn } from "@/lib/utils"
-
-function FoundationsGraphic() {
-  return (
-    <div className="h-40 w-full flex items-center justify-center relative select-none">
-      <svg className="w-full h-32 overflow-visible" viewBox="0 0 240 120">
-        {/* Horizontal grid guide lines */}
-        <line x1="0" y1="20" x2="240" y2="20" stroke="rgba(255,255,255,0.06)" strokeDasharray="3 3" />
-        <line x1="0" y1="60" x2="240" y2="60" stroke="rgba(255,255,255,0.06)" strokeDasharray="3 3" />
-        <line x1="0" y1="100" x2="240" y2="100" stroke="rgba(255,255,255,0.06)" strokeDasharray="3 3" />
-
-        {/* Traces */}
-        <path d="M 40 60 H 80 V 30 H 140" fill="none" stroke="rgba(255,255,255,0.2)" strokeWidth="1.5" />
-        <path d="M 40 60 H 80 V 90 H 140" fill="none" stroke="rgba(255,255,255,0.2)" strokeWidth="1.5" />
-        <path d="M 40 60 H 180" fill="none" stroke="#FF9900" strokeWidth="1.5" />
-
-        {/* Ingest Node: IGW */}
-        <rect x="10" y="48" width="34" height="24" fill="#0A0E17" stroke="#FF9900" strokeWidth="1.5" />
-        <text x="27" y="64" fill="#FF9900" fontSize="9" fontFamily="monospace" textAnchor="middle" fontWeight="bold">IGW</text>
-
-        {/* Top Node: Public Subnet */}
-        <rect x="140" y="18" width="68" height="24" fill="#161F2E" stroke="rgba(255,255,255,0.2)" strokeWidth="1" />
-        <text x="174" y="34" fill="#94A3B8" fontSize="8.5" fontFamily="monospace" textAnchor="middle">public-1a</text>
-
-        {/* Mid Node: EC2 Instance (highlighted) */}
-        <rect x="160" y="48" width="58" height="24" fill="#FF9900" stroke="#FF9900" strokeWidth="1" />
-        <text x="189" y="64" fill="#0A0E17" fontSize="9" fontFamily="monospace" textAnchor="middle" fontWeight="bold">ec2-core</text>
-
-        {/* Bottom Node: Private Subnet */}
-        <rect x="140" y="78" width="68" height="24" fill="#161F2E" stroke="rgba(255,255,255,0.2)" strokeWidth="1" />
-        <text x="174" y="94" fill="#94A3B8" fontSize="8.5" fontFamily="monospace" textAnchor="middle">private-1b</text>
-
-        {/* Pulse dots */}
-        <circle cx="60" cy="60" r="2.5" fill="#FF9900" />
-        <circle cx="110" cy="30" r="2" fill="#94A3B8" />
-        <circle cx="110" cy="90" r="2" fill="#94A3B8" />
-      </svg>
-    </div>
-  )
-}
+import { MiniArchitectureVisualizer } from "./MiniArchitectureVisualizer"
 
 function ServerlessGraphic() {
   return (
@@ -157,7 +119,7 @@ function DevOpsGraphic() {
 const TRACKS = [
   {
     caption: "Cloud Architecture",
-    graphic: FoundationsGraphic,
+    graphic: MiniArchitectureVisualizer,
     lead: "Foundation first.",
     body: "Master core AWS compute, IAM policies, and VPC networking from scratch to architect resilient production systems.",
   },

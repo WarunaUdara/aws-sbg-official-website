@@ -3,7 +3,6 @@ import { ArrowRight, Calendar, Sparkles, MessageCircle } from 'lucide-react'
 import { Hero } from '@/components/home/Hero'
 import { Stats } from '@/components/home/Stats'
 import { Pillars } from '@/components/home/Pillars'
-import { CloudArchitectureVisualizer } from '@/components/home/CloudArchitectureVisualizer'
 import { LearningTracks } from '@/components/home/LearningTracks'
 import { BuilderRewardsSection } from '@/components/home/BuilderRewardsSection'
 import { ProgramSection } from '@/components/home/ProgramSection'
@@ -30,7 +29,6 @@ function HomePage() {
       <Hero />
       <Stats />
       <Pillars />
-      <CloudArchitectureVisualizer />
       <LearningTracks />
       <BuilderRewardsSection />
       <ProgramSection />

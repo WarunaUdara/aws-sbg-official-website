@@ -36,6 +36,8 @@ export interface CircuitBoardProps extends React.HTMLAttributes<HTMLDivElement> 
   nodeColor?: string
   pulseSpeed?: number
   traceWidth?: number
+  /** Compact miniature layout for dashboard cards */
+  compact?: boolean
   /** Force a specific theme variant. Defaults to auto-detect from system. */
   variant?: "light" | "dark" | "auto"
 }
@@ -53,6 +55,7 @@ export function CircuitBoard({
   nodeColor,
   pulseSpeed = 2,
   traceWidth = 2,
+  compact = false,
   variant = "auto",
   className,
   ...props
@@ -102,21 +105,35 @@ export function CircuitBoard({
     return new Map(nodes.map((node) => [node.id, node]))
   }, [nodes])
 
-  const getNodeSize = React.useCallback((size?: CircuitNode["size"]) => {
-    switch (size) {
-      case "sm":
-        return 28
-      case "lg":
-        return 48
-      default:
-        return 38
-    }
-  }, [])
+  const getNodeSize = React.useCallback(
+    (size?: CircuitNode["size"]) => {
+      if (compact) {
+        switch (size) {
+          case "sm":
+            return 20
+          case "lg":
+            return 32
+          default:
+            return 26
+        }
+      }
+      switch (size) {
+        case "sm":
+          return 28
+        case "lg":
+          return 48
+        default:
+          return 38
+      }
+    },
+    [compact]
+  )
 
   const calculatePath = React.useCallback(
     (from: CircuitNode, to: CircuitNode): string => {
-      const fromSize = getNodeSize(from.size) / 2 + 4
-      const toSize = getNodeSize(to.size) / 2 + 4
+      const offset = compact ? 2 : 4
+      const fromSize = getNodeSize(from.size) / 2 + offset
+      const toSize = getNodeSize(to.size) / 2 + offset
 
       const dx = to.x - from.x
       const dy = to.y - from.y
@@ -365,14 +382,25 @@ export function CircuitBoard({
               )}
 
               {/* Node Icon */}
-              <div className="relative z-10 flex items-center justify-center" style={{ color: statusColor }}>
+              <div
+                className={cn(
+                  "relative z-10 flex items-center justify-center",
+                  compact && "[&>svg]:w-3 [&>svg]:h-3"
+                )}
+                style={{ color: statusColor }}
+              >
                 {node.icon}
               </div>
 
               {/* Node Label */}
               {node.label && (
                 <div
-                  className="absolute -bottom-6 left-1/2 -translate-x-1/2 whitespace-nowrap text-[11px] font-mono tracking-tight font-medium px-1.5 py-0.5 bg-[#0A0E17]/90 border border-white/10 rounded-none text-slate-300 pointer-events-none transition-colors group-hover:text-white group-hover:border-white/25"
+                  className={cn(
+                    "absolute left-1/2 -translate-x-1/2 whitespace-nowrap font-mono tracking-tight font-medium bg-[#0A0E17]/90 border border-white/10 rounded-none text-slate-300 pointer-events-none transition-colors group-hover:text-white group-hover:border-white/25",
+                    compact
+                      ? "-bottom-5 text-[9px] px-1 py-0 leading-tight"
+                      : "-bottom-6 text-[11px] px-1.5 py-0.5"
+                  )}
                 >
                   {node.label}
                 </div>
