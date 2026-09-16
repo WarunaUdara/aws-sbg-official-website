@@ -1,9 +1,20 @@
 @import "tailwindcss";
 @import "lenis/dist/lenis.css";
 
+@theme {
+  --font-primary: 'Space Grotesk', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-secondary: 'Google Sans Flex', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-display: var(--font-primary);
+  --font-sans: var(--font-secondary);
+  --font-mono: 'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+}
+
 @layer base {
   :root {
-    --font-sans: 'Space Grotesk', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    --font-primary: 'Space Grotesk', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    --font-secondary: 'Google Sans Flex', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    --font-display: var(--font-primary);
+    --font-sans: var(--font-secondary);
     --font-mono: 'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
 
     /* Official Brand Colors */
@@ -18,7 +29,14 @@
   body {
     background-color: var(--builder-dark);
     color: #f8fafc;
-    font-family: var(--font-sans);
+    font-family: var(--font-secondary);
+    font-optical-sizing: auto;
+    font-style: normal;
+    font-variation-settings:
+      "slnt" 0,
+      "wdth" 100,
+      "GRAD" 0,
+      "ROND" 0;
     overflow-x: hidden;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
@@ -27,8 +45,31 @@
 
 /* Typography Utility Classes */
 .font-display {
-  font-family: var(--font-sans);
+  font-family: var(--font-display, var(--font-primary));
   letter-spacing: -0.02em;
+}
+
+.font-secondary,
+.google-sans-flex {
+  font-family: var(--font-secondary);
+  font-optical-sizing: auto;
+  font-style: normal;
+  font-variation-settings:
+    "slnt" 0,
+    "wdth" 100,
+    "GRAD" 0,
+    "ROND" 0;
+}
+
+.font-sans {
+  font-family: var(--font-secondary);
+  font-optical-sizing: auto;
+  font-style: normal;
+  font-variation-settings:
+    "slnt" 0,
+    "wdth" 100,
+    "GRAD" 0,
+    "ROND" 0;
 }
 
 .font-code {
