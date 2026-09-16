@@ -29,8 +29,9 @@ export const SITE_CONFIG = {
  * and set videoUrl: "/hero-bg.mp4".
  */
 export const HERO_CONFIG = {
-  // === CHANGE YOUR BACKGROUND VIDEO URL HERE ===
-  videoUrl: "https://assets.mixkit.co/videos/preview/mixkit-digital-animation-of-screens-with-code-31913-large.mp4",
+  // === BACKGROUND VIDEO URL ===
+  // Served from public/hero/
+  videoUrl: "/hero/hero-bg.mp4",
   // Video overlay opacity (0 to 1) to guarantee high text contrast
   videoOverlayOpacity: 0.65,
 

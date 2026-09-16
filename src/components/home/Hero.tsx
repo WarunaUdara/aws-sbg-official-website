@@ -39,10 +39,17 @@ export function Hero({ videoUrl = HERO_CONFIG.videoUrl }: HeroProps) {
           playsInline
           onLoadedData={() => setIsVideoLoaded(true)}
           className={`absolute inset-0 w-full h-full object-cover z-0 pointer-events-none transition-opacity duration-1000 ${
-            isVideoLoaded ? "opacity-35" : "opacity-0"
+            isVideoLoaded ? "opacity-45" : "opacity-0"
           }`}
-          src={videoUrl}
-        />
+        >
+          <source src={videoUrl} type="video/mp4" />
+          <source
+            src={encodeURI(
+              "/hero/Every great builder has value to share. Comment ‘BTS’ to start building..mp4"
+            )}
+            type="video/mp4"
+          />
+        </video>
       ) : null}
 
       {/* Fallback & Darkening Gradient Overlay */}
