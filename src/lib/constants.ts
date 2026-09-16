@@ -14,6 +14,7 @@ export const SITE_CONFIG = {
     discord: "https://discord.gg/aws-sbg-usj",
     usj: "https://www.sjp.ac.lk/",
     email: "awssbgusj@gmail.com",
+    awsAcademy: "https://www.awsacademy.com/vforcesite/LMS_Login",
   },
   stats: [
     { label: "Active Builders", value: "350+" },

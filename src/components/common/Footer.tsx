@@ -133,6 +133,17 @@ export function Footer() {
               </li>
               <li>
                 <a
+                  href={SITE_CONFIG.links.awsAcademy}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="flex items-center gap-1.5 hover:text-[#FF9900] transition-colors"
+                >
+                  AWS Academy LMS
+                  <ExternalLink className="w-3 h-3 text-slate-500" />
+                </a>
+              </li>
+              <li>
+                <a
                   href={SITE_CONFIG.links.usj}
                   target="_blank"
                   rel="noreferrer"
