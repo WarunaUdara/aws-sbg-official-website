@@ -21,17 +21,17 @@ export function BuilderMosaic({
         {...props}
       >
         <div className="w-12 h-12 bg-[#FF9900]" />
-        <div className="w-12 h-12 bg-[#161F2E]" />
+        <div className="w-12 h-12 bg-[#0A0E17]" />
         <div className="w-12 h-12 bg-[#FF9900]" />
-        <div className="w-12 h-12 bg-[#161F2E]" />
+        <div className="w-12 h-12 bg-[#0A0E17]" />
 
-        <div className="w-12 h-12 bg-[#161F2E]" />
+        <div className="w-12 h-12 bg-[#0A0E17]" />
         <div className="w-12 h-12 bg-[#FF9900]" />
-        <div className="w-12 h-12 bg-[#161F2E]" />
+        <div className="w-12 h-12 bg-[#0A0E17]" />
         <div className="w-12 h-12 bg-[#FF9900]" />
 
         <div className="w-12 h-12 bg-[#FF9900]" />
-        <div className="w-12 h-12 bg-[#161F2E]" />
+        <div className="w-12 h-12 bg-[#0A0E17]" />
         <div className="w-12 h-12 bg-[#FF9900]" />
         <div className="w-12 h-12 bg-[#FF9900]" />
       </div>
@@ -47,31 +47,31 @@ export function BuilderMosaic({
       {...props}
     >
       {/* Row 1 */}
-      <div className="w-10 h-10 sm:w-12 sm:h-12 bg-[#161F2E]" />
+      <div className="w-10 h-10 sm:w-12 sm:h-12 bg-[#0A0E17]" />
       <div className="w-10 h-10 sm:w-12 sm:h-12 bg-[#FF9900]" />
-      <div className="w-10 h-10 sm:w-12 sm:h-12 bg-[#161F2E]" />
+      <div className="w-10 h-10 sm:w-12 sm:h-12 bg-[#0A0E17]" />
       <div className="w-10 h-10 sm:w-12 sm:h-12 bg-[#FF9900]" />
-      <div className="w-10 h-10 sm:w-12 sm:h-12 bg-[#161F2E]" />
+      <div className="w-10 h-10 sm:w-12 sm:h-12 bg-[#0A0E17]" />
 
       {/* Row 2 */}
-      <div className="w-10 h-10 sm:w-12 sm:h-12 bg-[#161F2E]" />
-      <div className="w-10 h-10 sm:w-12 sm:h-12 bg-[#161F2E]" />
+      <div className="w-10 h-10 sm:w-12 sm:h-12 bg-[#0A0E17]" />
+      <div className="w-10 h-10 sm:w-12 sm:h-12 bg-[#0A0E17]" />
       <div className="w-10 h-10 sm:w-12 sm:h-12 bg-[#FF9900]" />
-      <div className="w-10 h-10 sm:w-12 sm:h-12 bg-[#161F2E]" />
+      <div className="w-10 h-10 sm:w-12 sm:h-12 bg-[#0A0E17]" />
       <div className="w-10 h-10 sm:w-12 sm:h-12 bg-[#FF9900]" />
 
       {/* Row 3 */}
       <div className="w-10 h-10 sm:w-12 sm:h-12 bg-[#FF9900]" />
-      <div className="w-10 h-10 sm:w-12 sm:h-12 bg-[#161F2E]" />
-      <div className="w-10 h-10 sm:w-12 sm:h-12 bg-[#161F2E]" />
+      <div className="w-10 h-10 sm:w-12 sm:h-12 bg-[#0A0E17]" />
+      <div className="w-10 h-10 sm:w-12 sm:h-12 bg-[#0A0E17]" />
       <div className="w-10 h-10 sm:w-12 sm:h-12 bg-[#FF9900]" />
-      <div className="w-10 h-10 sm:w-12 sm:h-12 bg-[#161F2E]" />
+      <div className="w-10 h-10 sm:w-12 sm:h-12 bg-[#0A0E17]" />
 
       {/* Row 4 */}
-      <div className="w-10 h-10 sm:w-12 sm:h-12 bg-[#161F2E]" />
+      <div className="w-10 h-10 sm:w-12 sm:h-12 bg-[#0A0E17]" />
       <div className="w-10 h-10 sm:w-12 sm:h-12 bg-[#FF9900]" />
       <div className="w-10 h-10 sm:w-12 sm:h-12 bg-[#FF9900]" />
-      <div className="w-10 h-10 sm:w-12 sm:h-12 bg-[#161F2E]" />
+      <div className="w-10 h-10 sm:w-12 sm:h-12 bg-[#0A0E17]" />
       <div className="w-10 h-10 sm:w-12 sm:h-12 bg-[#FF9900]" />
     </div>
   )
