@@ -3,6 +3,9 @@ import { createFileRoute, Link } from '@tanstack/react-router'
 import { ArrowRight, Calendar, Sparkles, MessageCircle, Gift, Award, Coins } from 'lucide-react'
 import { Hero } from '@/components/home/Hero'
 import { Stats } from '@/components/home/Stats'
+import { BuilderWorkflowTabs } from '@/components/home/BuilderWorkflowTabs'
+import { ArchitectureGrid } from '@/components/home/ArchitectureGrid'
+import { ProgramSection } from '@/components/home/ProgramSection'
 import { Pillars } from '@/components/home/Pillars'
 import { Container } from '@/components/common/Container'
 import { EventCard } from '@/components/events/EventCard'
@@ -27,6 +30,9 @@ function HomePage() {
     <div className="flex flex-col gap-0 pb-20 bg-[#0A0E17]">
       <Hero />
       <Stats />
+      <BuilderWorkflowTabs />
+      <ArchitectureGrid />
+      <ProgramSection />
       <Pillars />
 
       {/* Official Builder Rewards Section (Derived from Brand Image 1) */}
