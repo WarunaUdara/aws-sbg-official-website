@@ -1,0 +1,16 @@
+# Cloudflare Pages Headers Configuration
+
+# Immutable long-term caching for hashed build assets
+/assets/*
+  Cache-Control: public, max-age=31536000, immutable
+
+# Caching for hero video and media
+/hero/*
+  Cache-Control: public, max-age=604800, stale-while-revalidate=86400
+
+# Security headers for all HTML pages and responses
+/*
+  X-Content-Type-Options: nosniff
+  X-Frame-Options: SAMEORIGIN
+  Referrer-Policy: strict-origin-when-cross-origin
+  Permissions-Policy: camera=(), microphone=(), geolocation=()
