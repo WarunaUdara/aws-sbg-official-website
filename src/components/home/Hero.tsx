@@ -18,11 +18,15 @@ export function Hero({ videoUrl = HERO_CONFIG.videoUrl }: HeroProps) {
   const sectionRef = React.useRef<HTMLElement>(null)
   const isHeroInViewRef = React.useRef<boolean>(true)
 
+  // Default volume set to half (50%)
+  const DEFAULT_VOLUME = 0.5
+
   // Handle autoplay with audio; fall back gracefully if browser restricts unmuted autoplay
   React.useEffect(() => {
     const video = videoRef.current
     if (!video) return
 
+    video.volume = DEFAULT_VOLUME
     video.muted = isMuted
 
     const playPromise = video.play()
@@ -117,6 +121,7 @@ export function Hero({ videoUrl = HERO_CONFIG.videoUrl }: HeroProps) {
     if (!video) return
 
     const nextMuted = !isMuted
+    video.volume = DEFAULT_VOLUME
     video.muted = nextMuted
     setIsMuted(nextMuted)
 
@@ -165,6 +170,9 @@ export function Hero({ videoUrl = HERO_CONFIG.videoUrl }: HeroProps) {
           loop
           playsInline
           preload="auto"
+          onLoadedMetadata={(e) => {
+            e.currentTarget.volume = DEFAULT_VOLUME
+          }}
           onLoadedData={() => setIsVideoLoaded(true)}
           onCanPlay={() => setIsVideoLoaded(true)}
           onPlaying={() => setIsVideoLoaded(true)}
