@@ -39,7 +39,7 @@ export function MeetupIcon({
     <img
       src="/icons/meetup.svg"
       alt={alt}
-      className={`inline-block object-contain shrink-0 ${className}`}
+      className={`block object-contain shrink-0 ${className}`}
     />
   )
 }

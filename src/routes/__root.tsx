@@ -6,6 +6,7 @@ import {
   Scripts,
 } from '@tanstack/react-router'
 import type { QueryClient } from '@tanstack/react-query'
+import { ReactLenis } from 'lenis/react'
 import { Navbar } from '@/components/common/Navbar'
 import { Footer } from '@/components/common/Footer'
 import '@/styles/globals.css'
@@ -38,7 +39,11 @@ export const Route = createRootRouteWithContext<{
       {
         rel: 'preconnect',
         href: 'https://fonts.gstatic.com',
+      },
+      {
         crossOrigin: 'anonymous',
+        rel: 'preconnect',
+        href: 'https://fonts.gstatic.com',
       },
       {
         rel: 'stylesheet',
@@ -60,16 +65,18 @@ export const Route = createRootRouteWithContext<{
 
 function RootComponent() {
   return (
-    <html lang="en" className="dark scroll-smooth">
+    <html lang="en" className="dark">
       <head>
         <HeadContent />
       </head>
       <body className="min-h-screen bg-[#0b0f19] text-slate-100 flex flex-col font-sans selection:bg-[#FF9900]/30 selection:text-[#FF9900]">
-        <Navbar />
-        <main className="flex-1">
-          <Outlet />
-        </main>
-        <Footer />
+        <ReactLenis root options={{ lerp: 0.08, smoothWheel: true }}>
+          <Navbar />
+          <main className="flex-1">
+            <Outlet />
+          </main>
+          <Footer />
+        </ReactLenis>
         <ScrollRestoration />
         <Scripts />
       </body>

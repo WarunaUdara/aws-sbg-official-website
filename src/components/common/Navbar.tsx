@@ -15,15 +15,15 @@ export function Navbar() {
         <div className="flex h-16 items-center justify-between gap-4">
           {/* Left Brand Identity */}
           <Link to="/" className="flex items-center gap-3 group shrink-0">
-            <div className="flex h-9 w-9 items-center justify-center bg-[#161F2E] border border-white/20 group-hover:border-[#FF9900] transition-colors p-1">
-              <img src="/icons/sbg-icon-only.png" alt="AWS SBG USJ" className="w-full h-full object-contain" />
+            <div className="flex h-9 w-9 items-center justify-center bg-[#161F2E] border border-white/20 group-hover:border-[#FF9900] transition-colors p-1 shrink-0">
+              <img src="/icons/sbg-icon-only.png" alt="AWS Student Builder Group USJ" className="w-full h-full object-contain" />
             </div>
-            <div className="flex items-baseline gap-1.5 font-display">
-              <span className="font-extrabold text-lg tracking-tight text-white group-hover:text-[#FF9900] transition-colors">
-                aws-sbg
+            <div className="flex flex-col justify-center text-left">
+              <span className="font-bold text-sm sm:text-[15px] tracking-tight text-white group-hover:text-[#FF9900] transition-colors leading-tight font-display">
+                AWS Student Builder Group
               </span>
-              <span className="text-[11px] font-mono text-[#FF9900] font-semibold tracking-wider">
-                .usj
+              <span className="text-[10px] sm:text-[11px] font-mono text-slate-400 leading-tight">
+                University of Sri Jayewardenepura
               </span>
             </div>
           </Link>
@@ -53,10 +53,10 @@ export function Navbar() {
               href={SITE_CONFIG.links.whatsapp}
               target="_blank"
               rel="noreferrer"
-              className="flex items-center gap-1.5 px-3 py-1.5 border border-emerald-500/30 hover:border-emerald-400 bg-emerald-950/20 text-xs font-mono text-emerald-300 hover:text-white transition-all rounded-none"
+              className="flex items-center gap-1.5 px-3 py-1.5 border border-white/15 hover:border-white/30 bg-[#161F2E]/60 hover:bg-[#161F2E] text-xs font-mono text-slate-300 hover:text-white transition-all rounded-none"
               title="Join our WhatsApp Channel"
             >
-              <WhatsAppIcon className="w-3.5 h-3.5 text-emerald-400" />
+              <WhatsAppIcon className="w-3.5 h-3.5 text-[#25D366]" />
               <span>WhatsApp</span>
             </a>
 
@@ -65,10 +65,10 @@ export function Navbar() {
               href={SITE_CONFIG.links.meetup}
               target="_blank"
               rel="noreferrer"
-              className="flex items-center gap-1.5 px-3 py-1.5 border border-[#F64060]/30 hover:border-[#F64060] bg-[#F64060]/10 text-xs font-mono text-rose-300 hover:text-white transition-all rounded-none"
+              className="flex items-center gap-1.5 px-3 py-1.5 border border-white/15 hover:border-white/30 bg-[#161F2E]/60 hover:bg-[#161F2E] text-xs font-mono text-slate-300 hover:text-white transition-all rounded-none"
               title="RSVP on Meetup"
             >
-              <MeetupIcon className="w-3.5 h-3.5 text-[#F64060]" />
+              <MeetupIcon className="w-3.5 h-3.5" />
               <span>Meetup</span>
             </a>
 
@@ -124,18 +124,18 @@ export function Navbar() {
                 href={SITE_CONFIG.links.whatsapp}
                 target="_blank"
                 rel="noreferrer"
-                className="flex items-center gap-1.5 px-3 py-1.5 border border-emerald-500/30 text-xs font-mono text-emerald-300 bg-emerald-950/20"
+                className="flex items-center gap-1.5 px-3 py-1.5 border border-white/15 bg-[#161F2E]/60 text-xs font-mono text-slate-300"
               >
-                <WhatsAppIcon className="w-3.5 h-3.5 text-emerald-400" />
+                <WhatsAppIcon className="w-3.5 h-3.5 text-[#25D366]" />
                 <span>WhatsApp</span>
               </a>
               <a
                 href={SITE_CONFIG.links.meetup}
                 target="_blank"
                 rel="noreferrer"
-                className="flex items-center gap-1.5 px-3 py-1.5 border border-[#F64060]/30 text-xs font-mono text-rose-300 bg-[#F64060]/10"
+                className="flex items-center gap-1.5 px-3 py-1.5 border border-white/15 bg-[#161F2E]/60 text-xs font-mono text-slate-300"
               >
-                <MeetupIcon className="w-3.5 h-3.5 text-[#F64060]" />
+                <MeetupIcon className="w-3.5 h-3.5" />
                 <span>Meetup</span>
               </a>
               <a

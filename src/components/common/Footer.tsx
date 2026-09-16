@@ -15,9 +15,7 @@ export function Footer() {
           <BuilderBrandBadge size="md" />
           <div className="flex items-center gap-3">
             <span className="text-xs font-mono text-slate-400 hidden sm:inline">Affiliated with</span>
-            <div className="flex items-center px-3 py-1 bg-[#161F2E] border border-white/10 text-white">
-              <AwsSmileLogo size={42} color="#FFFFFF" />
-            </div>
+            <AwsSmileLogo size={46} color="#FFFFFF" />
           </div>
         </Container>
       </div>
@@ -37,7 +35,7 @@ export function Footer() {
                 href={SITE_CONFIG.links.meetup}
                 target="_blank"
                 rel="noreferrer"
-                className="p-2.5 bg-[#161F2E] border border-white/10 text-slate-300 hover:text-[#F64060] hover:border-[#F64060]/50 transition-colors"
+                className="w-9 h-9 flex items-center justify-center bg-[#161F2E] border border-white/10 text-slate-300 hover:text-[#F64060] hover:border-[#F64060]/50 transition-colors rounded-none shrink-0"
                 aria-label="Meetup Group"
                 title="Meetup Group"
               >
@@ -47,7 +45,7 @@ export function Footer() {
                 href={SITE_CONFIG.links.whatsapp}
                 target="_blank"
                 rel="noreferrer"
-                className="p-2.5 bg-[#161F2E] border border-white/10 text-slate-300 hover:text-emerald-400 hover:border-emerald-400/50 transition-colors"
+                className="w-9 h-9 flex items-center justify-center bg-[#161F2E] border border-white/10 text-slate-300 hover:text-[#25D366] hover:border-[#25D366]/50 transition-colors rounded-none shrink-0"
                 aria-label="WhatsApp Channel"
                 title="WhatsApp Channel"
               >
@@ -57,7 +55,7 @@ export function Footer() {
                 href={SITE_CONFIG.links.linkedin}
                 target="_blank"
                 rel="noreferrer"
-                className="p-2.5 bg-[#161F2E] border border-white/10 text-slate-300 hover:text-[#0077B5] hover:border-[#0077B5]/50 transition-colors"
+                className="w-9 h-9 flex items-center justify-center bg-[#161F2E] border border-white/10 text-slate-300 hover:text-[#0077B5] hover:border-[#0077B5]/50 transition-colors rounded-none shrink-0"
                 aria-label="LinkedIn"
                 title="LinkedIn"
               >
@@ -67,7 +65,7 @@ export function Footer() {
                 href={SITE_CONFIG.links.github}
                 target="_blank"
                 rel="noreferrer"
-                className="p-2.5 bg-[#161F2E] border border-white/10 text-slate-300 hover:text-white hover:border-[#FF9900]/50 transition-colors"
+                className="w-9 h-9 flex items-center justify-center bg-[#161F2E] border border-white/10 text-slate-300 hover:text-white hover:border-[#FF9900]/50 transition-colors rounded-none shrink-0"
                 aria-label="GitHub Repository"
                 title="GitHub"
               >
@@ -77,7 +75,7 @@ export function Footer() {
                 href={SITE_CONFIG.links.discord}
                 target="_blank"
                 rel="noreferrer"
-                className="p-2.5 bg-[#161F2E] border border-white/10 text-slate-300 hover:text-[#5865F2] hover:border-[#5865F2]/50 transition-colors"
+                className="w-9 h-9 flex items-center justify-center bg-[#161F2E] border border-white/10 text-slate-300 hover:text-[#5865F2] hover:border-[#5865F2]/50 transition-colors rounded-none shrink-0"
                 aria-label="Discord / Community"
                 title="Discord"
               >
