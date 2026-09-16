@@ -15,6 +15,8 @@ export function Hero({ videoUrl = HERO_CONFIG.videoUrl }: HeroProps) {
   const [isVideoLoaded, setIsVideoLoaded] = React.useState<boolean>(false)
   const [isMuted, setIsMuted] = React.useState<boolean>(false) // Default enabled
   const videoRef = React.useRef<HTMLVideoElement>(null)
+  const sectionRef = React.useRef<HTMLElement>(null)
+  const isHeroInViewRef = React.useRef<boolean>(true)
 
   // Handle autoplay with audio; fall back gracefully if browser restricts unmuted autoplay
   React.useEffect(() => {
@@ -35,6 +37,81 @@ export function Hero({ videoUrl = HERO_CONFIG.videoUrl }: HeroProps) {
     }
   }, [])
 
+  // 1. Stop video and disable sound when scrolling to the next section
+  // 2. Resume video (muted) when scrolling back into the hero section
+  React.useEffect(() => {
+    const section = sectionRef.current
+    const video = videoRef.current
+    if (!section || !video) return
+
+    let isInitialMount = true
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        for (const entry of entries) {
+          const isVisible = entry.isIntersecting && entry.intersectionRatio > 0.2
+
+          if (!isVisible) {
+            // Scrolled out of view / user moved to the next section
+            isHeroInViewRef.current = false
+            if (!video.paused) {
+              video.pause()
+            }
+            // Disable sound even if it was previously enabled
+            video.muted = true
+            setIsMuted(true)
+          } else {
+            // Scrolled back into hero section
+            isHeroInViewRef.current = true
+            if (!isInitialMount && !document.hidden) {
+              // Resumes playing muted because sound was disabled on scroll out
+              video.play().catch(() => {})
+            }
+          }
+        }
+        isInitialMount = false
+      },
+      {
+        threshold: [0, 0.1, 0.2, 0.3, 0.5],
+      }
+    )
+
+    observer.observe(section)
+
+    return () => {
+      observer.disconnect()
+    }
+  }, [])
+
+  // Stop video and disable sound when user leaves the tab to another non-relevant tab
+  React.useEffect(() => {
+    const handleVisibilityChange = () => {
+      const video = videoRef.current
+      if (!video) return
+
+      if (document.hidden) {
+        // User switched to another tab
+        if (!video.paused) {
+          video.pause()
+        }
+        // Disable sound even if it was previously enabled
+        video.muted = true
+        setIsMuted(true)
+      } else {
+        // User returned to this tab; only resume if the hero section is currently in view
+        if (isHeroInViewRef.current) {
+          // Resumes playing muted because sound was disabled on tab leave
+          video.play().catch(() => {})
+        }
+      }
+    }
+
+    document.addEventListener("visibilitychange", handleVisibilityChange)
+    return () => {
+      document.removeEventListener("visibilitychange", handleVisibilityChange)
+    }
+  }, [])
+
   const toggleSound = () => {
     const video = videoRef.current
     if (!video) return
@@ -49,7 +126,10 @@ export function Hero({ videoUrl = HERO_CONFIG.videoUrl }: HeroProps) {
   }
 
   return (
-    <section className="relative min-h-[calc(100vh-4rem)] w-full flex flex-col justify-end overflow-hidden bg-[#0A0E17] text-white">
+    <section
+      ref={sectionRef}
+      className="relative min-h-[calc(100vh-4rem)] w-full flex flex-col justify-end overflow-hidden bg-[#0A0E17] text-white"
+    >
       {/* ========================================================================= */}
       {/* SOUND TOGGLE BUTTON (Default Enabled)                                     */}
       {/* ========================================================================= */}
