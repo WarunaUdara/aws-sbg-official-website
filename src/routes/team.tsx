@@ -3,9 +3,9 @@ import { Users, Award, ArrowRight } from 'lucide-react'
 import { GithubIcon, LinkedinIcon } from '@/components/ui/icons'
 import { Container } from '@/components/common/Container'
 import { Badge } from '@/components/ui/badge'
-import { Card, CardHeader, CardTitle, CardDescription, CardContent, CardFooter } from '@/components/ui/card'
 import { Button } from '@/components/ui/button'
 import { MOCK_TEAM } from '@/features/team/data'
+import { cn } from '@/lib/utils'
 
 function getInitials(name: string) {
   const parts = name.trim().split(/\s+/)
@@ -37,31 +37,39 @@ function TeamPage() {
           </p>
         </div>
 
-        {/* Team Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-20">
-          {MOCK_TEAM.map((member) => {
+        {/* Connected Team Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 border border-white/10 bg-[#0A0E17] mb-20">
+          {MOCK_TEAM.map((member, i) => {
             const isLeader = member.role.toLowerCase().includes('leader')
+            const isLastRowMobile = i === MOCK_TEAM.length - 1
+            const isLastColTablet = i % 2 === 1 || i === MOCK_TEAM.length - 1
+            const isLastColDesktop = i % 3 === 2 || i === MOCK_TEAM.length - 1
+
             return (
-              <Card
+              <div
                 key={member.id}
-                className={`flex flex-col h-full bg-[#161F2E]/80 border transition-all duration-300 rounded-none relative ${
-                  isLeader ? 'border-[#FF9900]/60 shadow-[0_0_20px_rgba(255,153,0,0.12)]' : 'border-white/10 hover:border-[#FF9900]/40'
-                }`}
+                className={cn(
+                  "flex flex-col justify-between h-full bg-[#0A0E17] hover:bg-[#161F2E]/40 transition-colors duration-200 rounded-none relative border-white/10 p-6 group",
+                  !isLastRowMobile && "border-b",
+                  !isLastColTablet && "md:border-r",
+                  !isLastColDesktop && "lg:border-r",
+                  isLastColDesktop && "lg:border-r-0"
+                )}
               >
                 {isLeader && (
-                  <div className="absolute -top-3 right-4 px-2.5 py-0.5 bg-[#FF9900] text-[#0A0E17] font-mono text-[10px] font-bold uppercase tracking-wider border border-[#FF9900] select-none">
+                  <div className="absolute top-4 right-4 px-2.5 py-0.5 bg-[#FF9900] text-[#0A0E17] font-mono text-[10px] font-bold uppercase tracking-wider border border-[#FF9900] select-none">
                     Group Leader
                   </div>
                 )}
-                <CardHeader>
-                  <div className="flex items-center gap-4 mb-3">
-                    <div className="w-14 h-14 rounded-none bg-gradient-to-br from-slate-800 to-slate-900 border border-slate-700 flex items-center justify-center font-bold text-xl text-[#FF9900] shadow-inner font-mono shrink-0">
+                <div>
+                  <div className="flex items-center gap-4 mb-4">
+                    <div className="w-14 h-14 rounded-none bg-[#161F2E] border border-white/10 group-hover:border-[#FF9900]/40 flex items-center justify-center font-bold text-xl text-[#FF9900] font-mono shrink-0 transition-colors">
                       {getInitials(member.name)}
                     </div>
                     <div>
-                      <CardTitle className="text-lg text-white font-display">
+                      <h3 className="text-lg font-bold text-white font-display group-hover:text-[#FF9900] transition-colors">
                         {member.name}
-                      </CardTitle>
+                      </h3>
                       <p className="text-xs text-[#FF9900] font-mono">
                         {member.role}
                       </p>
@@ -70,56 +78,55 @@ function TeamPage() {
                       </p>
                     </div>
                   </div>
-                </CardHeader>
 
-              <CardContent className="flex-1 space-y-4">
-                <CardDescription className="text-sm leading-relaxed">
-                  {member.bio}
-                </CardDescription>
+                  <p className="text-sm text-slate-200 leading-relaxed font-sans mb-4">
+                    {member.bio}
+                  </p>
 
-                {/* Certifications */}
-                {member.certifications && member.certifications.length > 0 && (
-                  <div>
-                    <p className="text-xs font-mono text-slate-300 uppercase tracking-wider mb-1.5 flex items-center gap-1">
-                      <Award className="w-3 h-3 text-[#FF9900]" /> Credentials
-                    </p>
-                    <div className="flex flex-wrap gap-1.5">
-                      {member.certifications.map((cert) => (
-                        <Badge key={cert} variant="aws" className="text-[10px] rounded-none font-mono">
-                          {cert}
-                        </Badge>
-                      ))}
+                  {/* Certifications */}
+                  {member.certifications && member.certifications.length > 0 && (
+                    <div className="mb-4">
+                      <p className="text-xs font-mono text-slate-300 uppercase tracking-wider mb-1.5 flex items-center gap-1">
+                        <Award className="w-3 h-3 text-[#FF9900]" /> Credentials
+                      </p>
+                      <div className="flex flex-wrap gap-1.5">
+                        {member.certifications.map((cert) => (
+                          <Badge key={cert} variant="aws" className="text-[10px] rounded-none font-mono">
+                            {cert}
+                          </Badge>
+                        ))}
+                      </div>
                     </div>
-                  </div>
-                )}
-              </CardContent>
+                  )}
+                </div>
 
-              <CardFooter className="flex items-center justify-end gap-3 pt-3 border-t border-slate-800/80">
-                {member.github && (
-                  <a
-                    href={member.github}
-                    target="_blank"
-                    rel="noreferrer"
-                    className="p-1.5 rounded-none text-slate-300 hover:text-white hover:bg-slate-800 transition-colors border border-transparent hover:border-slate-700"
-                    aria-label="GitHub profile"
-                  >
-                    <GithubIcon className="w-4 h-4" />
-                  </a>
-                )}
-                {member.linkedin && (
-                  <a
-                    href={member.linkedin}
-                    target="_blank"
-                    rel="noreferrer"
-                    className="p-1.5 rounded-none text-slate-300 hover:text-[#0077B5] hover:bg-slate-800 transition-colors border border-transparent hover:border-slate-700"
-                    aria-label="LinkedIn profile"
-                  >
-                    <LinkedinIcon className="w-4 h-4" />
-                  </a>
-                )}
-              </CardFooter>
-            </Card>
-          )})}
+                <div className="flex items-center justify-end gap-3 pt-4 border-t border-white/10 mt-auto">
+                  {member.github && (
+                    <a
+                      href={member.github}
+                      target="_blank"
+                      rel="noreferrer"
+                      className="p-1.5 rounded-none text-slate-300 hover:text-white hover:bg-white/5 transition-colors border border-transparent hover:border-white/10"
+                      aria-label="GitHub profile"
+                    >
+                      <GithubIcon className="w-4 h-4" />
+                    </a>
+                  )}
+                  {member.linkedin && (
+                    <a
+                      href={member.linkedin}
+                      target="_blank"
+                      rel="noreferrer"
+                      className="p-1.5 rounded-none text-slate-300 hover:text-[#0077B5] hover:bg-white/5 transition-colors border border-transparent hover:border-[#0077B5]/30"
+                      aria-label="LinkedIn profile"
+                    >
+                      <LinkedinIcon className="w-4 h-4" />
+                    </a>
+                  )}
+                </div>
+              </div>
+            )
+          })}
         </div>
 
         {/* Join Leadership CTA */}
