@@ -1,109 +1,138 @@
 import * as React from "react"
 import { Link } from "@tanstack/react-router"
-import { ArrowRight, Terminal, Sparkles, Cpu, Layers } from "lucide-react"
-import { Button } from "@/components/ui/button"
-import { Container } from "@/components/common/Container"
-import { BuilderChipLogo } from "@/components/ui/BuilderChipLogo"
-import { AwsSmileLogo } from "@/components/ui/AwsSmileLogo"
-import { BuilderBrandBadge } from "@/components/ui/BuilderBrandBadge"
-import { BuilderMosaic } from "@/components/common/BuilderMosaic"
+import { ArrowRight, Play } from "lucide-react"
+import { HERO_CONFIG, SITE_CONFIG } from "@/lib/constants"
+import { GithubIcon } from "@/components/ui/icons"
 
-export function Hero() {
+interface HeroProps {
+  /**
+   * Optional custom video URL. Defaults to HERO_CONFIG.videoUrl from constants.ts.
+   * You can pass an external MP4/WebM URL or a local path like "/hero-bg.mp4"
+   */
+  videoUrl?: string
+}
+
+export function Hero({ videoUrl = HERO_CONFIG.videoUrl }: HeroProps) {
+  // Verbs matching the reference design layout
+  const [activeVerb, setActiveVerb] = React.useState<string>("GATEWAY")
+  const [isVideoLoaded, setIsVideoLoaded] = React.useState<boolean>(false)
+
+  const verbs = [
+    { id: "DEPLOY", label: "DEPLOY", dimClass: "text-white/20 hover:text-white/60" },
+    { id: "SCALE", label: "SCALE", dimClass: "text-white/35 hover:text-white/70" },
+    { id: "GATEWAY", label: "GATEWAY", dimClass: "text-white/30 hover:text-white/70" },
+    { id: "OBSERVE", label: "OBSERVE", dimClass: "text-white/25 hover:text-white/60" },
+    { id: "PROTECT", label: "PROTECT", dimClass: "text-white/15 hover:text-white/50" },
+  ]
+
   return (
-    <section className="relative pt-12 pb-20 md:pt-20 md:pb-28 overflow-hidden bg-builder-grid-dark border-b border-white/10">
-      {/* Subtle ambient light behind center */}
-      <div className="absolute top-1/4 left-1/2 -translate-x-1/2 w-[600px] h-[350px] bg-[#FF9900]/10 blur-[100px] pointer-events-none" />
+    <section className="relative min-h-[calc(100vh-4rem)] w-full flex flex-col justify-between overflow-hidden bg-[#0A0E17] text-white select-none">
+      {/* ========================================================================= */}
+      {/* BACKGROUND VIDEO LAYER                                                    */}
+      {/* Change video URL in src/lib/constants.ts -> HERO_CONFIG.videoUrl         */}
+      {/* ========================================================================= */}
+      {videoUrl ? (
+        <video
+          autoPlay
+          loop
+          muted
+          playsInline
+          onLoadedData={() => setIsVideoLoaded(true)}
+          className={`absolute inset-0 w-full h-full object-cover z-0 pointer-events-none transition-opacity duration-1000 ${
+            isVideoLoaded ? "opacity-35" : "opacity-0"
+          }`}
+          src={videoUrl}
+        />
+      ) : null}
 
-      <Container size="lg" className="relative z-10">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-          {/* Left Content Column */}
-          <div className="lg:col-span-7 space-y-6 text-left">
-            {/* Terminal Eyebrow */}
-            <div className="inline-flex items-center gap-2 px-3 py-1 bg-[#161F2E] border border-[#FF9900]/30 text-[#FF9900] text-xs font-mono tracking-wider uppercase">
-              <Terminal className="w-3.5 h-3.5" />
-              <span>[ CHAPTER: USJ // FROM STUDENTS TO BUILDERS ]</span>
-            </div>
+      {/* Fallback & Darkening Gradient Overlay */}
+      <div className="absolute inset-0 bg-[#0A0E17]/65 z-10 pointer-events-none" />
+      <div className="absolute inset-0 bg-gradient-to-t from-[#0A0E17] via-transparent to-black/40 z-10 pointer-events-none" />
+      
+      {/* Subtle Coordinate Grid (from design system) */}
+      <div className="absolute inset-0 bg-builder-grid-dark opacity-40 z-10 pointer-events-none" />
 
-            {/* Display Headline */}
-            <div className="space-y-2">
-              <h1 className="text-4xl sm:text-6xl lg:text-7xl font-black tracking-tight text-white font-display leading-[1.05]">
-                FROM STUDENTS <br />
-                <span className="aws-gradient-text">TO BUILDERS.</span>
-              </h1>
-              <p className="text-base sm:text-lg text-slate-300 max-w-xl font-sans leading-relaxed pt-2">
-                The official student engineering community at the{" "}
-                <span className="text-white font-semibold">University of Sri Jayewardenepura</span>. 
-                Learn cloud architecture, ship serverless apps, and build on AWS with hands-on labs and certifications.
-              </p>
-            </div>
+      {/* ========================================================================= */}
+      {/* CENTER / UPPER HERO: MASSIVE STACKED ACTION VERBS (Reference Layout)     */}
+      {/* ========================================================================= */}
+      <div className="relative z-20 w-full max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8 pt-12 sm:pt-16 md:pt-20 flex justify-center lg:justify-end">
+        <div className="flex flex-col items-start font-display font-black text-4xl sm:text-6xl md:text-7xl lg:text-8xl tracking-wider leading-[1.08] lg:pr-12">
+          {verbs.map((item) => {
+            const isActive = activeVerb === item.id
+            return (
+              <button
+                key={item.id}
+                onClick={() => setActiveVerb(item.id)}
+                onMouseEnter={() => setActiveVerb(item.id)}
+                className="flex items-center gap-3 sm:gap-5 transition-all duration-200 text-left focus:outline-none cursor-pointer group"
+              >
+                {/* Active Indicator Arrow (Electric Blue / AWS Orange Accent) */}
+                <span
+                  className={`transition-all duration-200 font-sans ${
+                    isActive
+                      ? "opacity-100 text-[#3B82F6] scale-105 inline-block"
+                      : "opacity-0 -translate-x-2 text-transparent w-0 overflow-hidden"
+                  }`}
+                >
+                  &rarr;
+                </span>
 
-            {/* CTAs */}
-            <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-4 pt-3">
-              <Link to="/events">
-                <Button variant="glow" size="lg" className="w-full sm:w-auto font-mono text-sm">
-                  Explore Workshops
-                  <ArrowRight className="w-4 h-4 ml-2" />
-                </Button>
-              </Link>
-              <Link to="/contact">
-                <Button variant="outline" size="lg" className="w-full sm:w-auto font-mono text-sm border-white/20 hover:border-[#FF9900]">
-                  Join Guild Community
-                </Button>
-              </Link>
-            </div>
+                {/* Verb Label */}
+                <span
+                  className={
+                    isActive
+                      ? "text-white font-extrabold tracking-tight drop-shadow-[0_0_35px_rgba(255,255,255,0.3)]"
+                      : `${item.dimClass} font-semibold transition-colors`
+                  }
+                >
+                  {item.label}
+                </span>
+              </button>
+            )
+          })}
+        </div>
+      </div>
 
-            {/* Monospace Signature Bar */}
-            <div className="pt-6 border-t border-white/10 flex items-center gap-4">
-              <div className="w-8 h-8 bg-[#FF9900] flex items-center justify-center shrink-0">
-                <BuilderChipLogo size={18} color="#0A0E17" />
-              </div>
-              <p className="text-xs font-mono text-slate-400">
-                AWS Student Builder Group at University of Sri Jayewardenepura
-              </p>
-            </div>
+      {/* ========================================================================= */}
+      {/* BOTTOM SECTION: HEADLINE, DESCRIPTION & DUAL ACTION CTAS                 */}
+      {/* ========================================================================= */}
+      <div className="relative z-20 w-full max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8 pb-12 sm:pb-16 pt-16 md:pt-24">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-end justify-between">
+          {/* Bottom Left: Headline & Body Copy */}
+          <div className="lg:col-span-8 space-y-4">
+            <h1 className="text-3xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-white font-display leading-[1.1]">
+              The Developer Platform <br />
+              <span className="text-white">for Modern Cloud APIs</span>
+            </h1>
+
+            <p className="text-sm sm:text-base text-slate-400 font-sans max-w-2xl leading-relaxed">
+              AWS SBG USJ unifies student cloud infrastructure. Deploy serverless APIs instantly, 
+              route global workloads through modern AWS architectures, and understand cloud usage in one place.
+            </p>
           </div>
 
-          {/* Right Architectural Mosaic Column */}
-          <div className="lg:col-span-5 flex flex-col items-center lg:items-end">
-            <div className="relative p-4 sm:p-6 bg-[#161F2E]/80 border border-white/10 backdrop-blur-md shadow-2xl space-y-4 max-w-md w-full">
-              {/* Header inside frame */}
-              <div className="flex items-center justify-between border-b border-white/10 pb-3">
-                <div className="flex items-center gap-2">
-                  <div className="w-3 h-3 bg-[#FF9900]" />
-                  <span className="text-xs font-mono uppercase text-slate-300 tracking-wider">
-                    BUILDER_CENTER.SYS
-                  </span>
-                </div>
-                <div className="flex items-center px-2 py-0.5 bg-[#0A0E17] border border-white/10">
-                  <AwsSmileLogo size={32} color="#FFFFFF" />
-                </div>
-              </div>
+          {/* Bottom Right: Dual CTA Buttons (Matching Unkey Layout) */}
+          <div className="lg:col-span-4 flex items-center lg:justify-end gap-3.5">
+            {/* Primary CTA (Solid White Button) */}
+            <Link
+              to="/contact"
+              className="px-6 py-3 bg-white hover:bg-slate-200 text-[#0A0E17] text-sm font-sans font-bold tracking-tight transition-all shadow-md active:scale-98"
+            >
+              Start for free
+            </Link>
 
-              {/* Stepped Pixel Mosaic Visual */}
-              <div className="py-2 flex justify-center">
-                <BuilderMosaic density="compact" />
-              </div>
-
-              {/* Core Team & Rewards Callout */}
-              <div className="p-3.5 bg-[#0A0E17] border border-[#FF9900]/30 space-y-2">
-                <div className="flex items-center justify-between text-xs font-mono text-[#FF9900]">
-                  <span>[ CORE-TEAM ]</span>
-                  <span>AWS CREDITS + CERTS</span>
-                </div>
-                <p className="text-xs text-slate-300 font-sans">
-                  Earn AWS Skill Builder vouchers, credits, and guidance from certified peer architects.
-                </p>
-              </div>
-
-              {/* Monospace Micro-Coordinates */}
-              <div className="flex items-center justify-between text-[10px] font-mono text-slate-500 pt-1">
-                <span>GRID: 48px × 48px</span>
-                <span>STATUS: OPERATIONAL</span>
-              </div>
-            </div>
+            {/* Secondary CTA (Dark Outlined Button) */}
+            <a
+              href={SITE_CONFIG.links.github}
+              target="_blank"
+              rel="noreferrer"
+              className="flex items-center gap-2 px-6 py-3 bg-transparent hover:bg-white/10 border border-white/30 hover:border-white text-white text-sm font-sans font-medium transition-all active:scale-98"
+            >
+              View on GitHub
+            </a>
           </div>
         </div>
-      </Container>
+      </div>
     </section>
   )
 }
