@@ -4,14 +4,10 @@ import { Calendar, Filter, Sparkles } from 'lucide-react'
 import { Container } from '@/components/common/Container'
 import { EventCard } from '@/components/events/EventCard'
 import { Button } from '@/components/ui/button'
-import { getEventsFn } from '@/server/functions/events.functions'
+import { MOCK_EVENTS } from '@/features/events/data'
 import type { EventCategory } from '@/features/events/types'
 
 export const Route = createFileRoute('/events')({
-  loader: async () => {
-    const events = await getEventsFn()
-    return { events }
-  },
   component: EventsPage,
 })
 
@@ -25,9 +21,10 @@ const CATEGORIES: ('All' | EventCategory)[] = [
 ]
 
 function EventsPage() {
-  const { events } = Route.useLoaderData()
   const [selectedCategory, setSelectedCategory] = React.useState<'All' | EventCategory>('All')
   const [activeTab, setActiveTab] = React.useState<'upcoming' | 'past'>('upcoming')
+
+  const events = MOCK_EVENTS
 
   const filteredEvents = events.filter((event) => {
     const matchesCategory =
@@ -112,7 +109,7 @@ function EventsPage() {
             <Sparkles className="w-8 h-8 text-[#FF9900] mx-auto opacity-70" />
             <h3 className="text-lg font-bold text-white">No sessions found in this category</h3>
             <p className="text-sm text-slate-400 max-w-sm mx-auto">
-              Check back soon or suggest a topic to our lead organizers in the community Discord!
+              Check back soon or suggest a topic to our lead organizers in our WhatsApp community!
             </p>
             <Button
               variant="outline"
