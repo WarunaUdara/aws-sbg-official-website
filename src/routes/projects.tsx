@@ -6,6 +6,7 @@ import { ProjectCard } from '@/components/projects/ProjectCard'
 import { Button } from '@/components/ui/button'
 import { MOCK_PROJECTS } from '@/features/projects/data'
 import { SITE_CONFIG } from '@/lib/constants'
+import { cn } from '@/lib/utils'
 
 export const Route = createFileRoute('/projects')({
   component: ProjectsPage,
@@ -56,11 +57,28 @@ function ProjectsPage() {
           ))}
         </div>
 
-        {/* Projects Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-16">
-          {filteredProjects.map((project) => (
-            <ProjectCard key={project.id} project={project} />
-          ))}
+        {/* Connected Projects Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 border border-white/10 bg-[#0A0E17] mb-16">
+          {filteredProjects.map((project, i) => {
+            const isLastRowMobile = i === filteredProjects.length - 1
+            const isLastColTablet = i % 2 === 1 || i === filteredProjects.length - 1
+            const isLastColDesktop = i % 3 === 2 || i === filteredProjects.length - 1
+
+            return (
+              <ProjectCard
+                key={project.id}
+                project={project}
+                bordered={false}
+                className={cn(
+                  "border-white/10",
+                  !isLastRowMobile && "border-b",
+                  !isLastColTablet && "md:border-r",
+                  !isLastColDesktop && "lg:border-r",
+                  isLastColDesktop && "lg:border-r-0"
+                )}
+              />
+            )
+          })}
         </div>
 
         {/* Submit Your Project Callout */}

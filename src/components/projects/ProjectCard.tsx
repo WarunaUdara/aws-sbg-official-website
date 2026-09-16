@@ -3,14 +3,23 @@ import { GithubIcon } from "@/components/ui/icons"
 import { Badge } from "@/components/ui/badge"
 import { Card, CardHeader, CardTitle, CardDescription, CardContent, CardFooter } from "@/components/ui/card"
 import type { BuilderProject } from "@/features/projects/types"
+import { cn } from "@/lib/utils"
 
 interface ProjectCardProps {
   project: BuilderProject
+  className?: string
+  bordered?: boolean
 }
 
-export function ProjectCard({ project }: ProjectCardProps) {
+export function ProjectCard({ project, className, bordered = true }: ProjectCardProps) {
   return (
-    <Card className="flex flex-col h-full bg-[#161F2E]/90 border border-white/10 hover:border-[#FF9900]/50 transition-all duration-250 rounded-none group">
+    <Card
+      className={cn(
+        "flex flex-col h-full bg-[#0A0E17] hover:bg-[#161F2E]/40 transition-colors duration-200 rounded-none group",
+        bordered ? "border border-white/10 hover:border-[#FF9900]/50" : "border-0",
+        className
+      )}
+    >
       <CardHeader className="p-6 pb-4">
         <div className="flex items-center justify-between gap-2 mb-2">
           <Badge variant="aws" className="font-mono text-[10px] rounded-none uppercase">
