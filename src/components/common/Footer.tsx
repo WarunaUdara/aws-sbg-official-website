@@ -102,14 +102,6 @@ export function Footer() {
                   </Link>
                 </li>
               ))}
-              <li>
-                <Link
-                  to="/design-system"
-                  className="hover:text-[#FF9900] text-amber-400/90 transition-colors font-mono text-xs"
-                >
-                  &gt; Design System
-                </Link>
-              </li>
             </ul>
           </div>
 

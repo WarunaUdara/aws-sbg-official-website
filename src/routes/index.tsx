@@ -1,16 +1,15 @@
 import { createFileRoute, Link } from '@tanstack/react-router'
-import { ArrowRight, Calendar, Sparkles, MessageCircle, Gift } from 'lucide-react'
+import { ArrowRight, Calendar, Sparkles, MessageCircle } from 'lucide-react'
 import { Hero } from '@/components/home/Hero'
 import { Stats } from '@/components/home/Stats'
-import { BuilderWorkflowTabs } from '@/components/home/BuilderWorkflowTabs'
-import { ArchitectureGrid } from '@/components/home/ArchitectureGrid'
-import { ProgramSection } from '@/components/home/ProgramSection'
 import { Pillars } from '@/components/home/Pillars'
+import { LearningTracks } from '@/components/home/LearningTracks'
+import { BuilderRewardsSection } from '@/components/home/BuilderRewardsSection'
+import { ProgramSection } from '@/components/home/ProgramSection'
 import { Container } from '@/components/common/Container'
 import { EventCard } from '@/components/events/EventCard'
 import { ProjectCard } from '@/components/projects/ProjectCard'
 import { Button } from '@/components/ui/button'
-import { BuilderChipLogo } from '@/components/ui/BuilderChipLogo'
 import { BuilderMosaic } from '@/components/common/BuilderMosaic'
 import { ShapeGrid } from '@/components/ui/ShapeGrid'
 import { MOCK_EVENTS } from '@/features/events/data'
@@ -29,62 +28,10 @@ function HomePage() {
     <div className="flex flex-col gap-0 pb-20 bg-[#0A0E17]">
       <Hero />
       <Stats />
-      <BuilderWorkflowTabs />
-      <ArchitectureGrid />
-      <ProgramSection />
       <Pillars />
-
-      {/* Official Builder Rewards Section (Derived from Brand Image 1) */}
-      <section className="py-16 border-b border-white/10 bg-[#FF9900] text-[#0A0E17]">
-        <Container size="lg">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
-            <div className="lg:col-span-8 space-y-4">
-              <span className="text-xs font-mono font-bold uppercase tracking-widest text-[#0A0E17]/80 flex items-center gap-2">
-                <Gift className="w-4 h-4" /> [ AWS BUILDER CENTER REWARDS ]
-              </span>
-              <h2 className="text-3xl sm:text-5xl font-black tracking-tight font-display text-[#0A0E17]">
-                Introducing Student Rewards at USJ
-              </h2>
-              <p className="text-base sm:text-lg text-[#0A0E17]/90 font-sans max-w-2xl leading-relaxed">
-                Unlock official AWS credits, premium Skill Builder subscriptions, and certification exam vouchers through our student community milestones.
-              </p>
-
-              {/* Reward Highlights */}
-              <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 pt-4">
-                <div className="p-4 bg-[#0A0E17] text-white space-y-1">
-                  <div className="text-xs font-mono text-[#FF9900] font-bold">12 MONTHS</div>
-                  <div className="text-sm font-bold font-display">Free Skill Builder Premium</div>
-                </div>
-                <div className="p-4 bg-[#0A0E17] text-white space-y-1">
-                  <div className="text-xs font-mono text-[#FF9900] font-bold">UP TO $30</div>
-                  <div className="text-sm font-bold font-display">AWS Cloud Credits</div>
-                </div>
-                <div className="p-4 bg-[#0A0E17] text-white space-y-1">
-                  <div className="text-xs font-mono text-[#FF9900] font-bold">OFFICIAL VOUCHERS</div>
-                  <div className="text-sm font-bold font-display">AWS Certification Exams</div>
-                </div>
-              </div>
-            </div>
-
-            {/* Right Anchored Brand Box */}
-            <div className="lg:col-span-4 flex flex-col items-center lg:items-end justify-center">
-              <div className="p-6 bg-[#0A0E17] text-white border border-[#0A0E17] space-y-4 max-w-xs w-full text-center">
-                <div className="w-12 h-12 bg-[#FF9900] flex items-center justify-center mx-auto text-[#0A0E17]">
-                  <BuilderChipLogo size={32} color="#0A0E17" />
-                </div>
-                <p className="text-xs font-mono text-slate-300 leading-snug">
-                  AWS Student Builder Group at University of Sri Jayewardenepura
-                </p>
-                <Link to="/contact">
-                  <Button variant="glow" size="sm" className="w-full font-mono text-xs">
-                    Claim Student Access
-                  </Button>
-                </Link>
-              </div>
-            </div>
-          </div>
-        </Container>
-      </section>
+      <LearningTracks />
+      <BuilderRewardsSection />
+      <ProgramSection />
 
       {/* Featured Upcoming Events Section */}
       <section className="py-20 bg-builder-grid-dark border-b border-white/10">

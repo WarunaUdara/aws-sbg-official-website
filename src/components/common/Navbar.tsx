@@ -2,7 +2,7 @@ import * as React from "react"
 import { Link, useRouterState } from "@tanstack/react-router"
 import { Menu, X } from "lucide-react"
 import { NAV_LINKS, SITE_CONFIG } from "@/lib/constants"
-import { GithubIcon } from "@/components/ui/icons"
+import { GithubIcon, MeetupIcon, WhatsAppIcon } from "@/components/ui/icons"
 
 export function Navbar() {
   const [isOpen, setIsOpen] = React.useState(false)
@@ -15,8 +15,8 @@ export function Navbar() {
         <div className="flex h-16 items-center justify-between gap-4">
           {/* Left Brand Identity */}
           <Link to="/" className="flex items-center gap-3 group shrink-0">
-            <div className="flex h-8 w-8 items-center justify-center bg-[#161F2E] border border-white/20 text-[#FF9900] group-hover:border-[#FF9900] transition-colors">
-              <img src="/icons/icons8-aws-96.png" alt="AWS" className="w-5 h-5 object-contain" />
+            <div className="flex h-9 w-9 items-center justify-center bg-[#161F2E] border border-white/20 group-hover:border-[#FF9900] transition-colors p-1">
+              <img src="/icons/sbg-icon-only.png" alt="AWS SBG USJ" className="w-full h-full object-contain" />
             </div>
             <div className="flex items-baseline gap-1.5 font-display">
               <span className="font-extrabold text-lg tracking-tight text-white group-hover:text-[#FF9900] transition-colors">
@@ -46,43 +46,50 @@ export function Navbar() {
             })}
           </nav>
 
-          {/* Right Action Units: Discord, GitHub Stars, Login, Sign Up */}
+          {/* Right Action Units: WhatsApp, Meetup, GitHub, Join Us */}
           <div className="hidden sm:flex items-center gap-2.5 shrink-0">
-            {/* Discord Pill */}
+            {/* WhatsApp Channel */}
             <a
-              href={SITE_CONFIG.links.discord}
+              href={SITE_CONFIG.links.whatsapp}
               target="_blank"
               rel="noreferrer"
-              className="px-3 py-1.5 border border-white/15 hover:border-white/40 text-xs font-mono text-slate-300 hover:text-white transition-all bg-[#0A0E17]"
+              className="flex items-center gap-1.5 px-3 py-1.5 border border-emerald-500/30 hover:border-emerald-400 bg-emerald-950/20 text-xs font-mono text-emerald-300 hover:text-white transition-all rounded-none"
+              title="Join our WhatsApp Channel"
             >
-              Discord
+              <WhatsAppIcon className="w-3.5 h-3.5 text-emerald-400" />
+              <span>WhatsApp</span>
             </a>
 
-            {/* GitHub Stars Pill */}
+            {/* Meetup Group */}
+            <a
+              href={SITE_CONFIG.links.meetup}
+              target="_blank"
+              rel="noreferrer"
+              className="flex items-center gap-1.5 px-3 py-1.5 border border-[#F64060]/30 hover:border-[#F64060] bg-[#F64060]/10 text-xs font-mono text-rose-300 hover:text-white transition-all rounded-none"
+              title="RSVP on Meetup"
+            >
+              <MeetupIcon className="w-3.5 h-3.5 text-[#F64060]" />
+              <span>Meetup</span>
+            </a>
+
+            {/* GitHub Repo */}
             <a
               href={SITE_CONFIG.links.github}
               target="_blank"
               rel="noreferrer"
-              className="flex items-center gap-1.5 px-3 py-1.5 border border-white/15 hover:border-white/40 text-xs font-mono text-slate-300 hover:text-white transition-all bg-[#0A0E17]"
+              className="p-2 border border-white/15 hover:border-white text-slate-300 hover:text-white transition-all bg-[#0A0E17] rounded-none"
+              aria-label="GitHub Repository"
+              title="GitHub Repository"
             >
               <GithubIcon className="w-3.5 h-3.5" />
-              <span>{SITE_CONFIG.githubStars || "★ Star"}</span>
             </a>
 
-            {/* Login / Portal Link */}
+            {/* Join Us CTA */}
             <Link
               to="/contact"
-              className="px-3.5 py-1.5 border border-white/20 hover:border-white text-xs font-sans font-medium text-white transition-all bg-transparent"
+              className="px-4 py-1.5 bg-[#FF9900] hover:bg-[#FF9900]/90 text-[#0A0E17] text-xs font-mono font-bold tracking-wider uppercase transition-all rounded-none"
             >
-              Login
-            </Link>
-
-            {/* Sign Up / Join CTA (Solid White Button) */}
-            <Link
-              to="/contact"
-              className="px-4 py-1.5 bg-white hover:bg-slate-200 text-[#0A0E17] text-xs font-sans font-bold tracking-tight transition-all shadow-sm"
-            >
-              Sign Up
+              Join Us
             </Link>
           </div>
 
@@ -114,12 +121,22 @@ export function Navbar() {
 
             <div className="pt-3 border-t border-white/10 flex flex-wrap items-center gap-2">
               <a
-                href={SITE_CONFIG.links.discord}
+                href={SITE_CONFIG.links.whatsapp}
                 target="_blank"
                 rel="noreferrer"
-                className="px-3 py-1.5 border border-white/20 text-xs font-mono text-slate-300"
+                className="flex items-center gap-1.5 px-3 py-1.5 border border-emerald-500/30 text-xs font-mono text-emerald-300 bg-emerald-950/20"
               >
-                Discord
+                <WhatsAppIcon className="w-3.5 h-3.5 text-emerald-400" />
+                <span>WhatsApp</span>
+              </a>
+              <a
+                href={SITE_CONFIG.links.meetup}
+                target="_blank"
+                rel="noreferrer"
+                className="flex items-center gap-1.5 px-3 py-1.5 border border-[#F64060]/30 text-xs font-mono text-rose-300 bg-[#F64060]/10"
+              >
+                <MeetupIcon className="w-3.5 h-3.5 text-[#F64060]" />
+                <span>Meetup</span>
               </a>
               <a
                 href={SITE_CONFIG.links.github}
@@ -133,9 +150,9 @@ export function Navbar() {
               <Link
                 to="/contact"
                 onClick={() => setIsOpen(false)}
-                className="px-4 py-1.5 bg-white text-black text-xs font-bold"
+                className="px-4 py-1.5 bg-[#FF9900] text-[#0A0E17] text-xs font-mono font-bold uppercase tracking-wider"
               >
-                Sign Up / Join
+                Join Us
               </Link>
             </div>
           </div>

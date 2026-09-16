@@ -63,8 +63,8 @@ export const HERO_CONFIG = {
 
 export const NAV_LINKS = [
   { label: "Overview", href: "/" },
-  { label: "Workshops", href: "/events" },
-  { label: "Projects", href: "/projects" },
-  { label: "Core Team", href: "/team" },
-  { label: "Design System", href: "/design-system" },
+  { label: "Workshops & Events", href: "/events" },
+  { label: "Student Projects", href: "/projects" },
+  { label: "Leadership", href: "/team" },
+  { label: "Contact", href: "/contact" },
 ]

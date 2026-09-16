@@ -3,7 +3,7 @@ import { SITE_CONFIG } from "@/lib/constants"
 
 export function Stats() {
   return (
-    <section className="py-14 bg-gradient-to-b from-[#0b0f19] to-slate-950">
+    <section className="py-12 bg-[#0A0E17] border-b border-white/10">
       <Container size="lg">
         <div className="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
           {SITE_CONFIG.stats.map((stat) => (

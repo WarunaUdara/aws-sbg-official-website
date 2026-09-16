@@ -1,5 +1,4 @@
 import * as React from "react"
-import { BuilderChipLogo } from "./BuilderChipLogo"
 import { cn } from "@/lib/utils"
 
 export interface BuilderBrandBadgeProps extends React.HTMLAttributes<HTMLDivElement> {
@@ -14,12 +13,6 @@ export function BuilderBrandBadge({
   ...props
 }: BuilderBrandBadgeProps) {
   const isOrange = variant === "orange"
-
-  const iconSizes = {
-    sm: 20,
-    md: 28,
-    lg: 36,
-  }
 
   const boxSizes = {
     sm: "w-10 h-10",
@@ -51,9 +44,10 @@ export function BuilderBrandBadge({
             : "bg-[#161F2E] border-[#FF9900]/30 text-[#FF9900]"
         )}
       >
-        <BuilderChipLogo
-          size={iconSizes[size]}
-          color={isOrange ? "#0A0E17" : "#FF9900"}
+        <img
+          src="/icons/sbg-icon-only.png"
+          alt="AWS SBG Logo"
+          className="w-full h-full object-contain p-1"
         />
       </div>
 

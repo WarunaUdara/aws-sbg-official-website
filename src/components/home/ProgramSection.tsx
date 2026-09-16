@@ -1,6 +1,5 @@
 import * as React from "react"
 import { Container } from "@/components/common/Container"
-import { BuilderChipLogo } from "@/components/ui/BuilderChipLogo"
 import { ExternalLink, Plus, Minus, ChevronRight } from "lucide-react"
 import { Link } from "@tanstack/react-router"
 
@@ -101,12 +100,12 @@ export function ProgramSection() {
                   backgroundSize: "14.2857% 14.2857%" // Exactly 7x7 grid squares!
                 }}
               >
-                {/* 7x7 Official Silicon Microprocessor Builder Chip in AWS Orange */}
+                {/* Official AWS Student Builder Group Rebranded Icon */}
                 <div className="relative z-10 p-4">
-                  <BuilderChipLogo 
-                    size={168} 
-                    color="#FF9900" 
-                    className="drop-shadow-[0_0_24px_rgba(255,153,0,0.35)]" 
+                  <img
+                    src="/icons/sbg-icon-only.png"
+                    alt="AWS Student Builder Groups"
+                    className="w-44 h-44 object-contain drop-shadow-[0_0_28px_rgba(255,153,0,0.35)]"
                   />
                 </div>
 

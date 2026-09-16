@@ -1,6 +1,7 @@
 import * as React from "react"
 import { Link } from "@tanstack/react-router"
-import { Volume2, VolumeX } from "lucide-react"
+import { Volume2, VolumeX, Calendar } from "lucide-react"
+import { WhatsAppIcon } from "@/components/ui/icons"
 import { HERO_CONFIG, SITE_CONFIG } from "@/lib/constants"
 
 interface HeroProps {
@@ -202,7 +203,7 @@ export function Hero({ videoUrl = HERO_CONFIG.videoUrl }: HeroProps) {
           {/* Bottom Left: Headline & Body Copy */}
           <div className="lg:col-span-8 space-y-4">
             <div className="inline-flex items-center gap-2 px-2.5 py-1 bg-black/60 border border-white/20 text-xs font-mono uppercase tracking-wider text-[#FF9900]">
-              <img src="/icons/icons8-aws-96.png" alt="AWS" className="w-4 h-4 object-contain shrink-0" />
+              <img src="/icons/sbg-icon-only.png" alt="AWS SBG" className="w-4 h-4 object-contain shrink-0" />
               <span>AWS Student Builder Group • USJ Chapter</span>
             </div>
 
@@ -216,25 +217,27 @@ export function Hero({ videoUrl = HERO_CONFIG.videoUrl }: HeroProps) {
             </p>
           </div>
 
-          {/* Bottom Right: Dual CTA Buttons (Matching Unkey Layout) */}
-          <div className="lg:col-span-4 flex items-center lg:justify-end gap-3.5">
-            {/* Primary CTA (Solid White Button) */}
-            <Link
-              to="/contact"
-              className="px-6 py-3.5 bg-white hover:bg-slate-200 text-[#0A0E17] text-sm font-sans font-bold tracking-tight transition-all shadow-md active:scale-98 rounded-none cursor-pointer"
-            >
-              Start Building
-            </Link>
-
-            {/* Secondary CTA (Dark Outlined Button) */}
+          {/* Bottom Right: Dual Student Action CTAs */}
+          <div className="lg:col-span-4 flex flex-wrap items-center lg:justify-end gap-3.5">
+            {/* Primary CTA (WhatsApp Channel) */}
             <a
-              href={SITE_CONFIG.links.github}
+              href={SITE_CONFIG.links.whatsapp}
               target="_blank"
               rel="noreferrer"
-              className="flex items-center gap-2 px-6 py-3.5 bg-[#0A0E17]/60 hover:bg-white/10 border border-white/25 hover:border-white text-white text-sm font-sans font-medium transition-all active:scale-98 rounded-none cursor-pointer backdrop-blur-sm"
+              className="flex items-center gap-2 px-6 py-3.5 bg-[#FF9900] hover:bg-[#FF9900]/90 text-[#0A0E17] text-sm font-mono font-bold tracking-wider uppercase transition-all shadow-lg active:scale-98 rounded-none cursor-pointer"
             >
-              View on GitHub
+              <WhatsAppIcon className="w-4 h-4 text-[#0A0E17]" />
+              <span>Join WhatsApp</span>
             </a>
+
+            {/* Secondary CTA (Explore Workshops) */}
+            <Link
+              to="/events"
+              className="flex items-center gap-2 px-6 py-3.5 bg-[#0A0E17]/80 hover:bg-white/10 border border-white/25 hover:border-white text-white text-sm font-mono font-semibold tracking-wider uppercase transition-all active:scale-98 rounded-none cursor-pointer backdrop-blur-sm"
+            >
+              <Calendar className="w-4 h-4 text-[#FF9900]" />
+              <span>Workshops</span>
+            </Link>
           </div>
         </div>
       </div>

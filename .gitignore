@@ -50,5 +50,7 @@ Thumbs.db
 .serverless/
 .aws-sam/
 cdk.out/
-__unconfig*
-todos.json
+# Temporary Notes & Information Requests
+TODO_AND_INFO_NEEDS.md
+*.tmp.md
+COMMUNITY_INPUT.md
