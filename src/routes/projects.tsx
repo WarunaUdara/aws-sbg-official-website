@@ -7,8 +7,16 @@ import { Button } from '@/components/ui/button'
 import { MOCK_PROJECTS } from '@/features/projects/data'
 import { SITE_CONFIG } from '@/lib/constants'
 import { cn } from '@/lib/utils'
+import { createSeoMeta } from '@/lib/seo'
 
 export const Route = createFileRoute('/projects')({
+  head: () =>
+    createSeoMeta({
+      title: 'Student Projects | AWS Student Builder Group USJ',
+      description:
+        'Open-source cloud architectures, CDK modules, and serverless applications built by University of Sri Jayewardenepura students.',
+      path: '/projects',
+    }),
   component: ProjectsPage,
 })
 

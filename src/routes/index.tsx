@@ -13,8 +13,13 @@ import { BuilderMosaic } from '@/components/common/BuilderMosaic'
 import { ShapeGrid } from '@/components/ui/ShapeGrid'
 import { MOCK_EVENTS } from '@/features/events/data'
 import { SITE_CONFIG } from '@/lib/constants'
+import { createSeoMeta } from '@/lib/seo'
 
 export const Route = createFileRoute('/')({
+  head: () =>
+    createSeoMeta({
+      path: '/',
+    }),
   component: HomePage,
 })
 

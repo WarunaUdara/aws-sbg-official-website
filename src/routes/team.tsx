@@ -6,6 +6,7 @@ import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
 import { MOCK_TEAM } from '@/features/team/data'
 import { cn } from '@/lib/utils'
+import { createSeoMeta } from '@/lib/seo'
 
 function getInitials(name: string) {
   const parts = name.trim().split(/\s+/)
@@ -16,6 +17,13 @@ function getInitials(name: string) {
 }
 
 export const Route = createFileRoute('/team')({
+  head: () =>
+    createSeoMeta({
+      title: 'Core Team & Mentors | AWS Student Builder Group USJ',
+      description:
+        'Meet the student leaders, cloud architects, and community mentors guiding AWS Student Builder Group at University of Sri Jayewardenepura.',
+      path: '/team',
+    }),
   component: TeamPage,
 })
 

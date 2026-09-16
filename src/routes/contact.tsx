@@ -5,8 +5,16 @@ import { Container } from '@/components/common/Container'
 import { Button } from '@/components/ui/button'
 import { submitContactFn } from '@/server/functions/contact.functions'
 import { SITE_CONFIG } from '@/lib/constants'
+import { createSeoMeta } from '@/lib/seo'
 
 export const Route = createFileRoute('/contact')({
+  head: () =>
+    createSeoMeta({
+      title: 'Join AWS SBG USJ | University of Sri Jayewardenepura',
+      description:
+        'Join AWS Student Builder Group USJ. Connect with student architects, access free AWS credits, certification cohorts, and campus workshops.',
+      path: '/contact',
+    }),
   component: ContactPage,
 })
 

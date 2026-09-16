@@ -7,8 +7,16 @@ import { Button } from '@/components/ui/button'
 import { MOCK_EVENTS } from '@/features/events/data'
 import type { EventCategory } from '@/features/events/types'
 import { cn } from '@/lib/utils'
+import { createSeoMeta } from '@/lib/seo'
 
 export const Route = createFileRoute('/events')({
+  head: () =>
+    createSeoMeta({
+      title: 'Workshops & Events | AWS Student Builder Group USJ',
+      description:
+        'Explore upcoming hands-on cloud architecture labs, AWS certification study cohorts, and expert workshops at University of Sri Jayewardenepura.',
+      path: '/events',
+    }),
   component: EventsPage,
 })
 
