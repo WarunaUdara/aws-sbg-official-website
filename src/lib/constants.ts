@@ -66,6 +66,6 @@ export const NAV_LINKS = [
   { label: "Overview", href: "/" },
   { label: "Workshops & Events", href: "/events" },
   { label: "Student Projects", href: "/projects" },
-  { label: "Leadership", href: "/team" },
+  { label: "Team", href: "/team" },
   { label: "Contact", href: "/contact" },
 ]
