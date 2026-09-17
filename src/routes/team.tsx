@@ -78,18 +78,31 @@ function TeamPage() {
                   </div>
                 )}
                 <div>
-                  <div className="flex items-center gap-4 mb-4">
-                    <div className="w-14 h-14 rounded-none bg-[#161F2E] border border-white/10 group-hover:border-[#FF9900]/40 flex items-center justify-center font-bold text-xl text-[#FF9900] font-mono shrink-0 transition-colors">
-                      {getInitials(member.name)}
+                  <div className="flex items-center gap-5 mb-5">
+                    <div className="w-20 h-20 rounded-none bg-[#161F2E] border border-white/10 group-hover:border-[#FF9900]/40 flex items-center justify-center overflow-hidden shrink-0 transition-colors">
+                      {member.avatarUrl ? (
+                        <img
+                          src={member.avatarUrl}
+                          alt={member.name}
+                          className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                          onError={(e) => {
+                            (e.currentTarget as HTMLElement).style.display = 'none'
+                          }}
+                        />
+                      ) : (
+                        <span className="font-bold text-2xl text-[#FF9900] font-mono">
+                          {getInitials(member.name)}
+                        </span>
+                      )}
                     </div>
                     <div>
-                      <h3 className="text-lg font-bold text-white font-display group-hover:text-[#FF9900] transition-colors">
+                      <h3 className="text-xl font-bold text-white font-display group-hover:text-[#FF9900] transition-colors">
                         {member.name}
                       </h3>
-                      <p className="text-xs text-[#FF9900] font-mono">
+                      <p className="text-xs text-[#FF9900] font-mono mt-0.5">
                         {member.role}
                       </p>
-                      <p className="text-xs text-slate-300">
+                      <p className="text-xs text-slate-300 mt-0.5">
                         {member.faculty}
                       </p>
                     </div>
