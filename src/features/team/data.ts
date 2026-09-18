@@ -9,6 +9,7 @@ export const MOCK_TEAM: TeamMember[] = [
     avatarUrl: '/team/harishan.jpg',
     bio: 'Leading AWS Student Builder Group USJ. Spearheading cloud community initiatives, builder workshops, industry partnerships, and student developer enablement across the university.',
     linkedin: 'https://www.linkedin.com/in/harishan-ambihaipahan/',
+    github: 'https://github.com/HarishanA21',
   },
   {
     id: 'waruna-udara',
@@ -25,6 +26,7 @@ export const MOCK_TEAM: TeamMember[] = [
     name: 'Eranga',
     role: 'Technical Lead',
     faculty: 'Faculty of Computing ',
+    avatarUrl: '/team/erangha.jpg',
     bio: 'Architecting hands-on workshop technical labs, cloud code repositories, and guiding student builders through serverless, DevOps, and Amazon Bedrock architectures.',
     certifications: ['AWS Certified Developer Associate', 'AWS Solutions Architect'],
     github: 'https://github.com',
@@ -45,6 +47,7 @@ export const MOCK_TEAM: TeamMember[] = [
     name: 'Vishishta',
     role: 'Media & Communication Lead',
     faculty: 'Faculty of Computing',
+    avatarUrl: '/team/vishishta.jpg',
     bio: 'Managing brand communications, creative digital media, event coverage, and storytelling across digital channels for the USJ builder community.',
     certifications: ['AWS Cloud Practitioner'],
     linkedin: 'https://www.linkedin.com/in/vishishta-dilsara-14059a348/',
