@@ -11,7 +11,6 @@ import { EventCard } from '@/components/events/EventCard'
 import { Button } from '@/components/ui/button'
 import { BuilderMosaic } from '@/components/common/BuilderMosaic'
 import { ShapeGrid } from '@/components/ui/ShapeGrid'
-import { FloatingCloudIcons } from '@/components/home/FloatingCloudIcons'
 import { MOCK_EVENTS } from '@/features/events/data'
 import { SITE_CONFIG } from '@/lib/constants'
 import { createSeoMeta } from '@/lib/seo'
@@ -29,7 +28,6 @@ function HomePage() {
 
   return (
     <div className="relative isolate flex flex-col gap-0 pb-20 bg-[#0D0D0D]">
-      <FloatingCloudIcons targetId="builder-cta" />
       <Hero />
       <Stats />
       <Pillars />

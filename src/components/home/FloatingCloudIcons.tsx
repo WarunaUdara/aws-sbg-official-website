@@ -1,183 +1,186 @@
 import * as React from "react"
 
-interface FloatingCloudIcon {
+export interface CloudServiceIcon {
   slug: string
   label: string
-  originX: number
-  originY: number
-  originRotation: number
-  destinationX: number
-  destinationY: number
-  destinationRotation: number
+  x: number // resting horizontal percentage [0..100]
+  y: number // resting vertical percentage [0..100]
+  rotation: number // resting rotation in degrees
+  mobile: boolean // whether shown on small mobile displays
 }
 
-interface FloatingCloudIconsProps {
-  targetId: string
-}
+export const CLOUD_SERVICE_ICONS: CloudServiceIcon[] = [
+  // ==========================================
+  // ZONE 1: TOP (above the central CTA card)
+  // ==========================================
+  { slug: "amazon-s3", label: "Amazon S3", x: 14, y: 12, rotation: 6, mobile: true },
+  { slug: "aws-lambda", label: "AWS Lambda", x: 32, y: 16, rotation: -8, mobile: true },
+  { slug: "amazon-bedrock", label: "Amazon Bedrock", x: 50, y: 8, rotation: 4, mobile: false },
+  { slug: "amazon-dynamodb", label: "Amazon DynamoDB", x: 68, y: 15, rotation: -6, mobile: true },
+  { slug: "amazon-cloudfront", label: "Amazon CloudFront", x: 86, y: 11, rotation: 7, mobile: true },
 
-interface LayoutState {
-  ready: boolean
-  progress: number
-  viewportWidth: number
-  viewportHeight: number
-  targetCenterX: number
-  targetCenterY: number
-  targetWidth: number
-  targetHeight: number
-}
+  // ==========================================
+  // ZONE 2: LEFT (to the left of central card)
+  // ==========================================
+  { slug: "amazon-ec2", label: "Amazon EC2", x: 7, y: 30, rotation: -9, mobile: true },
+  { slug: "amazon-vpc", label: "Amazon VPC", x: 20, y: 38, rotation: 8, mobile: false },
+  { slug: "amazon-aurora", label: "Amazon Aurora", x: 8, y: 52, rotation: -5, mobile: false },
+  { slug: "amazon-api-gateway", label: "Amazon API Gateway", x: 21, y: 66, rotation: 7, mobile: false },
+  { slug: "amazon-cloudwatch", label: "Amazon CloudWatch", x: 7, y: 76, rotation: -8, mobile: true },
 
-export const FLOATING_CLOUD_ICONS: FloatingCloudIcon[] = [
-  { slug: "amazon-ec2", label: "Amazon EC2", originX: 0.08, originY: 0.25, originRotation: -8, destinationX: -1.08, destinationY: -0.62, destinationRotation: -12 },
-  { slug: "amazon-s3", label: "Amazon S3", originX: 0.19, originY: 0.11, originRotation: 7, destinationX: -0.82, destinationY: -0.92, destinationRotation: 8 },
-  { slug: "amazon-dynamodb", label: "Amazon DynamoDB", originX: 0.32, originY: 0.28, originRotation: -5, destinationX: -0.45, destinationY: -1.16, destinationRotation: -6 },
-  { slug: "amazon-rds", label: "Amazon RDS", originX: 0.44, originY: 0.14, originRotation: 9, destinationX: -0.08, destinationY: -1.32, destinationRotation: 10 },
-  { slug: "amazon-aurora", label: "Amazon Aurora", originX: 0.58, originY: 0.25, originRotation: -6, destinationX: 0.3, destinationY: -1.22, destinationRotation: -8 },
-  { slug: "amazon-bedrock", label: "Amazon Bedrock", originX: 0.72, originY: 0.12, originRotation: 6, destinationX: 0.67, destinationY: -0.98, destinationRotation: 7 },
-  { slug: "amazon-cloudfront", label: "Amazon CloudFront", originX: 0.9, originY: 0.26, originRotation: -9, destinationX: 1.04, destinationY: -0.6, destinationRotation: -10 },
-  { slug: "amazon-cloudwatch", label: "Amazon CloudWatch", originX: 0.96, originY: 0.48, originRotation: 8, destinationX: 1.2, destinationY: -0.1, destinationRotation: 8 },
-  { slug: "amazon-vpc", label: "Amazon VPC", originX: 0.06, originY: 0.54, originRotation: 5, destinationX: -1.2, destinationY: 0.08, destinationRotation: 5 },
-  { slug: "amazon-ecs", label: "Amazon ECS", originX: 0.17, originY: 0.71, originRotation: -7, destinationX: -1.06, destinationY: 0.66, destinationRotation: -8 },
-  { slug: "amazon-eks", label: "Amazon EKS", originX: 0.3, originY: 0.84, originRotation: 6, destinationX: -0.78, destinationY: 1.04, destinationRotation: 6 },
-  { slug: "aws-lambda", label: "AWS Lambda", originX: 0.46, originY: 0.74, originRotation: -10, destinationX: -0.43, destinationY: 1.25, destinationRotation: -12 },
-  { slug: "amazon-api-gateway", label: "Amazon API Gateway", originX: 0.62, originY: 0.88, originRotation: 8, destinationX: 0.02, destinationY: 1.36, destinationRotation: 9 },
-  { slug: "amazon-cognito", label: "Amazon Cognito", originX: 0.78, originY: 0.74, originRotation: -7, destinationX: 0.43, destinationY: 1.26, destinationRotation: -8 },
-  { slug: "amazon-eventbridge", label: "Amazon EventBridge", originX: 0.93, originY: 0.84, originRotation: 9, destinationX: 0.78, destinationY: 1.02, destinationRotation: 10 },
-  { slug: "amazon-sqs", label: "Amazon SQS", originX: 0.04, originY: 0.86, originRotation: -6, destinationX: 1.12, destinationY: 0.66, destinationRotation: -7 },
-  { slug: "amazon-sns", label: "Amazon SNS", originX: 0.12, originY: 0.38, originRotation: 8, destinationX: 1.24, destinationY: 0.08, destinationRotation: 9 },
-  { slug: "aws-step-functions", label: "AWS Step Functions", originX: 0.86, originY: 0.61, originRotation: -8, destinationX: -1.17, destinationY: 0.28, destinationRotation: -9 },
-  { slug: "aws-codepipeline", label: "AWS CodePipeline", originX: 0.39, originY: 0.08, originRotation: 6, destinationX: 0.98, destinationY: 0.84, destinationRotation: 7 },
-  { slug: "aws-amplify", label: "AWS Amplify", originX: 0.69, originY: 0.8, originRotation: -6, destinationX: -0.98, destinationY: 0.88, destinationRotation: -7 },
+  // ==========================================
+  // ZONE 3: RIGHT (to the right of central card)
+  // ==========================================
+  { slug: "amazon-rds", label: "Amazon RDS", x: 80, y: 30, rotation: -7, mobile: false },
+  { slug: "amazon-eks", label: "Amazon EKS", x: 93, y: 38, rotation: 9, mobile: true },
+  { slug: "amazon-eventbridge", label: "Amazon EventBridge", x: 81, y: 52, rotation: -6, mobile: false },
+  { slug: "aws-step-functions", label: "AWS Step Functions", x: 92, y: 66, rotation: 8, mobile: false },
+  { slug: "amazon-sqs", label: "Amazon SQS", x: 80, y: 76, rotation: -7, mobile: true },
+
+  // ==========================================
+  // ZONE 4: BOTTOM (below the central CTA card)
+  // ==========================================
+  { slug: "amazon-ecs", label: "Amazon ECS", x: 14, y: 90, rotation: 6, mobile: false },
+  { slug: "amazon-cognito", label: "Amazon Cognito", x: 32, y: 86, rotation: -8, mobile: true },
+  { slug: "amazon-sns", label: "Amazon SNS", x: 50, y: 91, rotation: 5, mobile: false },
+  { slug: "aws-amplify", label: "AWS Amplify", x: 68, y: 86, rotation: -7, mobile: true },
+  { slug: "aws-codepipeline", label: "AWS CodePipeline", x: 86, y: 90, rotation: 6, mobile: true },
 ]
 
-const clamp = (value: number, min: number, max: number) => Math.min(Math.max(value, min), max)
-const lerp = (from: number, to: number, progress: number) => from + (to - from) * progress
-
-export function getFloatingCloudRadii(targetWidth: number, targetHeight: number) {
-  return {
-    x: clamp(targetWidth * 0.38, 150, 300),
-    y: clamp(targetHeight * 1.6, 88, 132),
-  }
+interface FloatingCloudIconsProps {
+  containerRef?: React.RefObject<HTMLElement | null>
 }
 
-export function getFloatingCloudDestination(
-  icon: FloatingCloudIcon,
-  targetCenterX: number,
-  targetCenterY: number,
-  targetWidth: number,
-  targetHeight: number,
-) {
-  const radii = getFloatingCloudRadii(targetWidth, targetHeight)
-
-  return {
-    x: targetCenterX + clamp(icon.destinationX, -1, 1) * radii.x,
-    y: targetCenterY + clamp(icon.destinationY, -1, 1) * radii.y,
-  }
-}
-
-export function FloatingCloudIcons({ targetId }: FloatingCloudIconsProps) {
-  const [layout, setLayout] = React.useState<LayoutState>({
-    ready: false,
-    progress: 0,
-    viewportWidth: 0,
-    viewportHeight: 0,
-    targetCenterX: 0,
-    targetCenterY: 0,
-    targetWidth: 0,
-    targetHeight: 0,
-  })
+export function FloatingCloudIcons({ containerRef }: FloatingCloudIconsProps) {
+  const localRef = React.useRef<HTMLDivElement>(null)
+  const iconRefs = React.useRef<(HTMLDivElement | null)[]>([])
+  const currentProgressRef = React.useRef(0)
+  const targetProgressRef = React.useRef(0)
+  const animationFrameRef = React.useRef<number | null>(null)
 
   React.useEffect(() => {
     const motionQuery = window.matchMedia("(prefers-reduced-motion: reduce)")
     let prefersReducedMotion = motionQuery.matches
-    let frame = 0
 
-    const measure = () => {
-      frame = 0
-      const target = document.getElementById(targetId)
-      if (!target) return
+    const handleMotionChange = (e: MediaQueryListEvent) => {
+      prefersReducedMotion = e.matches
+    }
+    motionQuery.addEventListener("change", handleMotionChange)
 
-      const viewportWidth = window.innerWidth
-      const viewportHeight = window.innerHeight
-      const targetRect = target.getBoundingClientRect()
-      const targetCenterY = targetRect.top + targetRect.height / 2
-      const focusDistance = Math.abs(targetCenterY - viewportHeight * 0.5)
-      const progress = prefersReducedMotion
-        ? 0
-        : clamp(1 - (focusDistance - viewportHeight * 0.12) / (viewportHeight * 0.68), 0, 1)
+    const updateScrollProgress = () => {
+      const container = containerRef?.current || localRef.current?.parentElement
+      if (!container) return
 
-      setLayout({
-        ready: true,
-        progress,
-        viewportWidth,
-        viewportHeight,
-        targetCenterX: targetRect.left + targetRect.width / 2,
-        targetCenterY: targetCenterY + window.scrollY,
-        targetWidth: targetRect.width,
-        targetHeight: targetRect.height,
+      const rect = container.getBoundingClientRect()
+      const vh = window.innerHeight
+      const containerCenter = rect.top + rect.height / 2
+      const viewportCenter = vh / 2
+
+      // Measure distance from viewport center
+      const distFromCenter = containerCenter - viewportCenter
+      // Influence window is roughly 50% of (viewport + container height)
+      const influenceRange = (vh + rect.height) * 0.5
+
+      if (prefersReducedMotion) {
+        targetProgressRef.current = 0
+        return
+      }
+
+      // Progress is 1 when centered; falls to 0 as it scrolls away
+      const normalized = 1 - Math.min(Math.max(Math.abs(distFromCenter) / influenceRange, 0), 1)
+      targetProgressRef.current = normalized
+    }
+
+    const animate = (time: number) => {
+      // Damped spring-like interpolation (0.075 lerp factor) for silky smooth, non-sudden movement
+      const diff = targetProgressRef.current - currentProgressRef.current
+      currentProgressRef.current += diff * 0.075
+
+      const p = prefersReducedMotion ? 0 : currentProgressRef.current
+
+      // Subtle max displacement towards center (32px max shift)
+      const maxShift = 32
+
+      iconRefs.current.forEach((el, index) => {
+        if (!el) return
+        const icon = CLOUD_SERVICE_ICONS[index]
+        if (!icon) return
+
+        // Direction vector towards container center (50, 50)
+        const dx = 50 - icon.x
+        const dy = 50 - icon.y
+        const dist = Math.sqrt(dx * dx + dy * dy) || 1
+        const ux = dx / dist
+        const uy = dy / dist
+
+        // Subtle attraction shift
+        const shiftX = ux * maxShift * p
+        const shiftY = uy * maxShift * p
+
+        // Subtle ambient floating motion (around 3px oscillation)
+        const ambientX = prefersReducedMotion ? 0 : Math.cos(time * 0.0012 + index * 0.8) * 2
+        const ambientY = prefersReducedMotion ? 0 : Math.sin(time * 0.0016 + index * 0.8) * 3
+
+        const rot = icon.rotation + (1 - p) * (ux * 3)
+        const scale = 0.95 + p * 0.08
+
+        el.style.transform = `translate3d(calc(-50% + ${shiftX + ambientX}px), calc(-50% + ${shiftY + ambientY}px), 0) rotate(${rot}deg) scale(${scale})`
       })
+
+      animationFrameRef.current = window.requestAnimationFrame(animate)
     }
 
-    const scheduleMeasure = () => {
-      if (frame === 0) frame = window.requestAnimationFrame(measure)
-    }
-
-    const handleMotionPreference = (event: MediaQueryListEvent) => {
-      prefersReducedMotion = event.matches
-      scheduleMeasure()
-    }
-
-    motionQuery.addEventListener("change", handleMotionPreference)
-    window.addEventListener("scroll", scheduleMeasure, { passive: true })
-    window.addEventListener("resize", scheduleMeasure)
-    scheduleMeasure()
+    window.addEventListener("scroll", updateScrollProgress, { passive: true })
+    window.addEventListener("resize", updateScrollProgress)
+    updateScrollProgress()
+    animationFrameRef.current = window.requestAnimationFrame(animate)
 
     return () => {
-      motionQuery.removeEventListener("change", handleMotionPreference)
-      window.removeEventListener("scroll", scheduleMeasure)
-      window.removeEventListener("resize", scheduleMeasure)
-      if (frame !== 0) window.cancelAnimationFrame(frame)
+      motionQuery.removeEventListener("change", handleMotionChange)
+      window.removeEventListener("scroll", updateScrollProgress)
+      window.removeEventListener("resize", updateScrollProgress)
+      if (animationFrameRef.current) {
+        window.cancelAnimationFrame(animationFrameRef.current)
+      }
     }
-  }, [targetId])
+  }, [containerRef])
 
-  if (!layout.ready) return null
-
-  // Keep the destination as a compact halo around the actual CTA row. The
-  // target is intentionally based on the CTA's own dimensions rather than
-  // the viewport, so icons cannot drift into adjacent content sections.
   return (
-    <div className="floating-cloud-icons absolute inset-0 z-10 pointer-events-none overflow-hidden" aria-hidden="true">
-      {FLOATING_CLOUD_ICONS.map((icon) => {
-        const originX = icon.originX * layout.viewportWidth
-        const originY = icon.originY * layout.viewportHeight
-        const destination = getFloatingCloudDestination(
-          icon,
-          layout.targetCenterX,
-          layout.targetCenterY,
-          layout.targetWidth,
-          layout.targetHeight,
-        )
-        const x = lerp(originX, destination.x, layout.progress)
-        const y = lerp(originY, destination.y, layout.progress)
-        const rotation = lerp(icon.originRotation, icon.destinationRotation, layout.progress)
-        const scale = lerp(0.84, 1, layout.progress)
-
-        return (
+    <div
+      ref={localRef}
+      className="floating-cloud-icons pointer-events-none absolute inset-0 z-0 overflow-hidden select-none"
+      aria-hidden="true"
+    >
+      {CLOUD_SERVICE_ICONS.map((icon, index) => (
+        <div
+          key={icon.slug}
+          ref={(el) => {
+            iconRefs.current[index] = el
+          }}
+          className={`floating-cloud-icon absolute flex items-center justify-center p-2 sm:p-2.5 rounded-xl bg-[#111622]/80 border border-white/10 shadow-xl shadow-black/40 backdrop-blur-md transition-shadow hover:border-white/30 group pointer-events-auto ${
+            icon.mobile ? "flex" : "hidden sm:flex"
+          }`}
+          style={{
+            left: `${icon.x}%`,
+            top: `${icon.y}%`,
+            willChange: "transform",
+          }}
+          title={icon.label}
+        >
           <img
-            key={icon.slug}
             src={`/icons/aws-services/${icon.slug}.svg`}
-            alt=""
-            className="floating-cloud-icon absolute h-12 w-12 select-none object-contain sm:h-14 sm:w-14 lg:h-16 lg:w-16"
-            data-icon-name={icon.label}
-            style={{
-              transform: `translate3d(${x}px, ${y}px, 0) translate(-50%, -50%) rotate(${rotation}deg) scale(${scale})`,
-              willChange: "transform",
-            }}
+            alt={icon.label}
+            className="w-7 h-7 sm:w-8 sm:h-8 lg:w-9 lg:h-9 object-contain drop-shadow"
             draggable={false}
             loading="lazy"
             decoding="async"
           />
-        )
-      })}
+          {/* Tooltip on hover */}
+          <span className="absolute -bottom-8 left-1/2 -translate-x-1/2 px-2 py-0.5 bg-black/90 border border-white/20 text-[10px] font-mono text-slate-200 whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none rounded shadow-lg z-30">
+            {icon.label}
+          </span>
+        </div>
+      ))}
     </div>
   )
 }
