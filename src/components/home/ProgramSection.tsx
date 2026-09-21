@@ -42,82 +42,86 @@ export function ProgramSection() {
   }
 
   return (
-    <div className="w-full flex flex-col">
-      {/* ========================================================================= */}
-      {/* FULL-WIDTH CTA SECTION WITH SURROUNDING FLOATING CLOUD ICONS              */}
-      {/* (Gravity attraction on scroll down, repulsion on scroll up)               */}
-      {/* ========================================================================= */}
-      <section
-        ref={ctaSectionRef}
-        className="relative w-full min-h-[580px] sm:min-h-[660px] py-24 sm:py-32 bg-[#0A0E17] border-b border-white/10 overflow-hidden flex items-center justify-center px-4 sm:px-6"
-      >
-        {/* Strictly contained inside the CTA section - cannot escape */}
-        <FloatingCloudIcons containerRef={ctaSectionRef} />
+    <section ref={ctaSectionRef} className="py-24 bg-[#0D0D0D] border-b border-white/10 relative overflow-hidden">
+      {/* Floating Cloud Icons - strictly contained within this section */}
+      <FloatingCloudIcons containerRef={ctaSectionRef} />
 
-        {/* Central Focus Card (Render.com inspired layout) */}
-        <div className="relative z-20 w-full max-w-2xl mx-auto text-center p-8 sm:p-12 md:p-14 bg-[#0D131F]/90 border border-white/15 backdrop-blur-xl shadow-2xl">
-          {/* Rebranded SBG Chip Badge */}
-          <div className="flex justify-center mb-5">
-            <div className="p-3 bg-black/60 border border-white/15 flex items-center justify-center shadow-lg">
-              <img
-                src="/icons/sbg-icon-only.png"
-                alt="AWS SBG"
-                className="w-10 h-10 object-contain drop-shadow-[0_0_18px_rgba(255,153,0,0.5)]"
-              />
+      <Container size="lg" className="relative z-10">
+        {/* Breadcrumb Path inspired by AWS Builder Center */}
+        <div className="flex items-center gap-2 text-xs font-mono text-slate-300 mb-8 overflow-x-auto scrollbar-none">
+          <span className="hover:text-white transition-colors cursor-pointer">
+            AWS Builder Center
+          </span>
+          <ChevronRight className="w-3.5 h-3.5 text-slate-500 shrink-0" />
+          <span className="hover:text-white transition-colors cursor-pointer">
+            Community
+          </span>
+          <ChevronRight className="w-3.5 h-3.5 text-slate-500 shrink-0" />
+          <span className="text-[#FF9900] font-semibold shrink-0">
+            AWS Student Builder Groups
+          </span>
+        </div>
+
+        {/* Top Hero Layout: Header & Actions Left, Coordinate Grid Chip Right */}
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center border-b border-white/15 pb-16 mb-16">
+          <div className="lg:col-span-7 space-y-6">
+            <h2 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-white tracking-tight leading-[1.08] font-display">
+              AWS Student Builder Groups
+            </h2>
+            <p className="text-lg sm:text-xl text-slate-200 font-medium">
+              Connect with other students on campus. Build together on the cloud.
+            </p>
+
+            <div id="builder-cta" className="flex scroll-mt-24 flex-wrap items-center gap-4 pt-2">
+              <Link
+                to="/contact"
+                className="px-6 py-3.5 bg-white hover:bg-slate-200 text-black font-mono text-xs sm:text-sm font-bold tracking-wider uppercase transition-colors inline-flex items-center gap-2 rounded-none"
+              >
+                Join a Student Group
+              </Link>
+              <a
+                href="https://aws.amazon.com/developer/community/students/"
+                target="_blank"
+                rel="noreferrer"
+                className="px-6 py-3.5 border border-white/20 hover:border-white text-white font-mono text-xs sm:text-sm font-semibold tracking-wider transition-colors inline-flex items-center gap-2 rounded-none"
+              >
+                <span>AWS Global Program</span>
+                <ExternalLink className="w-4 h-4 text-slate-400" />
+              </a>
             </div>
           </div>
 
-          {/* Breadcrumb Path inspired by AWS Builder Center */}
-          <div className="flex items-center justify-center gap-2 text-xs font-mono text-slate-300 mb-5 overflow-x-auto scrollbar-none">
-            <span className="hover:text-white transition-colors cursor-pointer">
-              AWS Builder Center
-            </span>
-            <ChevronRight className="w-3.5 h-3.5 text-slate-500 shrink-0" />
-            <span className="hover:text-white transition-colors cursor-pointer">
-              Community
-            </span>
-            <ChevronRight className="w-3.5 h-3.5 text-slate-500 shrink-0" />
-            <span className="text-[#FF9900] font-semibold shrink-0">
-              AWS Student Builder Groups
-            </span>
-          </div>
-
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white tracking-tight leading-[1.1] font-display mb-4 text-balance">
-            AWS Student Builder Groups
-          </h2>
-
-          <p className="text-base sm:text-lg text-slate-200 font-sans max-w-lg mx-auto mb-8 leading-relaxed text-pretty">
-            Connect with other students on campus. Build together on the cloud.
-          </p>
-
-          <div id="builder-cta" className="flex flex-wrap items-center justify-center gap-4">
-            <Link
-              to="/contact"
-              className="px-6 py-3.5 bg-white hover:bg-slate-200 text-black font-mono text-xs sm:text-sm font-bold tracking-wider uppercase transition-all shadow-lg active:scale-98 inline-flex items-center gap-2 rounded-none"
-            >
-              Join a Student Group
-            </Link>
-            <a
-              href="https://aws.amazon.com/developer/community/students/"
-              target="_blank"
-              rel="noreferrer"
-              className="px-6 py-3.5 border border-white/20 hover:border-white text-white font-mono text-xs sm:text-sm font-semibold tracking-wider uppercase transition-all inline-flex items-center gap-2 bg-[#0A0E17]/60 backdrop-blur-sm active:scale-98 rounded-none"
-            >
-              <span>AWS Global Program</span>
-              <ExternalLink className="w-4 h-4 text-slate-400" />
-            </a>
+          {/* Coordinate Grid with 7x7 Builder Chip Logo */}
+          <div className="lg:col-span-5 flex justify-center lg:justify-end">
+            <div className="relative p-6 sm:p-8 bg-[#0D131F] border border-white/15 w-full max-w-md">
+              {/* Square Coordinate Grid Background */}
+              <div 
+                className="w-full aspect-square border border-white/10 relative flex items-center justify-center"
+                style={{
+                  backgroundImage: `
+                    linear-gradient(to right, rgba(255, 255, 255, 0.08) 1px, transparent 1px),
+                    linear-gradient(to bottom, rgba(255, 255, 255, 0.08) 1px, transparent 1px)
+                  `,
+                  backgroundSize: "14.2857% 14.2857%" // Exactly 7x7 grid squares!
+                }}
+              >
+                {/* Official AWS Student Builder Group Rebranded Icon with Name */}
+                <div className="relative z-10 p-4 flex items-center justify-center">
+                  <img
+                    src="/icons/sbg-icon-and-name.png"
+                    alt="AWS Student Builder Groups"
+                    className="w-52 h-52 object-contain drop-shadow-[0_0_28px_rgba(255,153,0,0.35)]"
+                  />
+                </div>
+              </div>
+            </div>
           </div>
         </div>
-      </section>
 
-      {/* ========================================================================= */}
-      {/* BOTTOM SECTION: TWO-COLUMN ABOUT & FAQS                                    */}
-      {/* ========================================================================= */}
-      <section className="py-24 bg-[#0D0D0D] border-b border-white/10">
-        <Container size="lg">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12">
-            {/* Left Column: About the Program */}
-            <div className="lg:col-span-6 space-y-6">
+        {/* Bottom Section: Two-Column About & FAQs */}
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12">
+          {/* Left Column: About the Program */}
+          <div className="lg:col-span-6 space-y-6">
             <h3 className="text-2xl font-bold text-white tracking-tight font-display">
               About the program
             </h3>
@@ -189,6 +193,5 @@ export function ProgramSection() {
         </div>
       </Container>
     </section>
-  </div>
-)
+  )
 }
