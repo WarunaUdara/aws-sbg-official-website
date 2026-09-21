@@ -22,9 +22,11 @@ interface LayoutState {
   viewportHeight: number
   targetCenterX: number
   targetCenterY: number
+  targetWidth: number
+  targetHeight: number
 }
 
-const ICONS: FloatingCloudIcon[] = [
+export const FLOATING_CLOUD_ICONS: FloatingCloudIcon[] = [
   { slug: "amazon-ec2", label: "Amazon EC2", originX: 0.08, originY: 0.25, originRotation: -8, destinationX: -1.08, destinationY: -0.62, destinationRotation: -12 },
   { slug: "amazon-s3", label: "Amazon S3", originX: 0.19, originY: 0.11, originRotation: 7, destinationX: -0.82, destinationY: -0.92, destinationRotation: 8 },
   { slug: "amazon-dynamodb", label: "Amazon DynamoDB", originX: 0.32, originY: 0.28, originRotation: -5, destinationX: -0.45, destinationY: -1.16, destinationRotation: -6 },
@@ -50,6 +52,28 @@ const ICONS: FloatingCloudIcon[] = [
 const clamp = (value: number, min: number, max: number) => Math.min(Math.max(value, min), max)
 const lerp = (from: number, to: number, progress: number) => from + (to - from) * progress
 
+export function getFloatingCloudRadii(targetWidth: number, targetHeight: number) {
+  return {
+    x: clamp(targetWidth * 0.38, 150, 300),
+    y: clamp(targetHeight * 1.6, 88, 132),
+  }
+}
+
+export function getFloatingCloudDestination(
+  icon: FloatingCloudIcon,
+  targetCenterX: number,
+  targetCenterY: number,
+  targetWidth: number,
+  targetHeight: number,
+) {
+  const radii = getFloatingCloudRadii(targetWidth, targetHeight)
+
+  return {
+    x: targetCenterX + clamp(icon.destinationX, -1, 1) * radii.x,
+    y: targetCenterY + clamp(icon.destinationY, -1, 1) * radii.y,
+  }
+}
+
 export function FloatingCloudIcons({ targetId }: FloatingCloudIconsProps) {
   const [layout, setLayout] = React.useState<LayoutState>({
     ready: false,
@@ -58,6 +82,8 @@ export function FloatingCloudIcons({ targetId }: FloatingCloudIconsProps) {
     viewportHeight: 0,
     targetCenterX: 0,
     targetCenterY: 0,
+    targetWidth: 0,
+    targetHeight: 0,
   })
 
   React.useEffect(() => {
@@ -86,6 +112,8 @@ export function FloatingCloudIcons({ targetId }: FloatingCloudIconsProps) {
         viewportHeight,
         targetCenterX: targetRect.left + targetRect.width / 2,
         targetCenterY: targetCenterY + window.scrollY,
+        targetWidth: targetRect.width,
+        targetHeight: targetRect.height,
       })
     }
 
@@ -113,18 +141,23 @@ export function FloatingCloudIcons({ targetId }: FloatingCloudIconsProps) {
 
   if (!layout.ready) return null
 
-  const radiusX = Math.min(layout.viewportWidth * 0.42, 520)
-  const radiusY = Math.min(layout.viewportHeight * 0.28, 240)
-
+  // Keep the destination as a compact halo around the actual CTA row. The
+  // target is intentionally based on the CTA's own dimensions rather than
+  // the viewport, so icons cannot drift into adjacent content sections.
   return (
     <div className="floating-cloud-icons absolute inset-0 z-10 pointer-events-none overflow-hidden" aria-hidden="true">
-      {ICONS.map((icon) => {
+      {FLOATING_CLOUD_ICONS.map((icon) => {
         const originX = icon.originX * layout.viewportWidth
         const originY = icon.originY * layout.viewportHeight
-        const destinationX = layout.targetCenterX + icon.destinationX * radiusX
-        const destinationY = layout.targetCenterY + icon.destinationY * radiusY
-        const x = lerp(originX, destinationX, layout.progress)
-        const y = lerp(originY, destinationY, layout.progress)
+        const destination = getFloatingCloudDestination(
+          icon,
+          layout.targetCenterX,
+          layout.targetCenterY,
+          layout.targetWidth,
+          layout.targetHeight,
+        )
+        const x = lerp(originX, destination.x, layout.progress)
+        const y = lerp(originY, destination.y, layout.progress)
         const rotation = lerp(icon.originRotation, icon.destinationRotation, layout.progress)
         const scale = lerp(0.84, 1, layout.progress)
 
