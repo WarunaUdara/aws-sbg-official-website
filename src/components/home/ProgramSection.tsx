@@ -67,7 +67,7 @@ export function ProgramSection() {
               Connect with other students on campus. Build together on the cloud.
             </p>
 
-            <div className="flex flex-wrap items-center gap-4 pt-2">
+            <div id="builder-cta" className="flex scroll-mt-24 flex-wrap items-center gap-4 pt-2">
               <Link
                 to="/contact"
                 className="px-6 py-3.5 bg-white hover:bg-slate-200 text-black font-mono text-xs sm:text-sm font-bold tracking-wider uppercase transition-colors inline-flex items-center gap-2"
