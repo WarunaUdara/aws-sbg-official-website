@@ -56,11 +56,14 @@ export const Route = createRootRouteWithContext<{
 
 function RootComponent() {
   return (
-    <html lang="en" className="dark">
+    <html lang="en" className="dark" suppressHydrationWarning>
       <head>
         <HeadContent />
       </head>
-      <body className="min-h-screen bg-[#0D0D0D] text-slate-100 flex flex-col font-sans selection:bg-[#FF9900]/30 selection:text-[#FF9900]">
+      <body
+        className="min-h-screen bg-[#0D0D0D] text-slate-100 flex flex-col font-sans selection:bg-[#FF9900]/30 selection:text-[#FF9900]"
+        suppressHydrationWarning
+      >
         <ReactLenis root options={{ lerp: 0.08, smoothWheel: true }}>
           <Navbar />
           <main className="flex-1">
