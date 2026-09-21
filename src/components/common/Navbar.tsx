@@ -10,12 +10,12 @@ export function Navbar() {
   const currentPath = routerState.location.pathname
 
   return (
-    <header className="sticky top-0 z-50 w-full border-b border-white/10 bg-[#0A0E17]/95 backdrop-blur-md text-white">
+    <header className="sticky top-0 z-50 w-full border-b border-white/10 bg-[#0D0D0D]/95 backdrop-blur-md text-white">
       <div className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex h-16 items-center justify-between gap-4">
           {/* Left Brand Identity */}
           <Link to="/" className="flex items-center gap-3 group shrink-0">
-            <div className="flex h-9 w-9 items-center justify-center bg-[#161F2E] border border-white/20 group-hover:border-[#FF9900] transition-colors p-1 shrink-0">
+            <div className="flex h-9 w-9 items-center justify-center bg-[#151515] border border-white/20 group-hover:border-[#FF9900] transition-colors p-1 shrink-0">
               <img src="/icons/sbg-icon-only.png" alt="AWS Student Builder Group USJ" className="w-full h-full object-contain" />
             </div>
             <div className="flex flex-col justify-center text-left">
@@ -36,7 +36,8 @@ export function Navbar() {
                 <Link
                   key={link.href}
                   to={link.href}
-                  className={`transition-colors hover:text-white ${
+                  aria-current={isActive ? "page" : undefined}
+                  className={`rounded-[2px] transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#FF9900] hover:text-white ${
                     isActive ? "text-[#FF9900] font-semibold" : "text-slate-200"
                   }`}
                 >
@@ -53,7 +54,7 @@ export function Navbar() {
               href={SITE_CONFIG.links.whatsapp}
               target="_blank"
               rel="noreferrer"
-              className="flex items-center gap-1.5 px-3 py-1.5 border border-white/15 hover:border-white/30 bg-[#161F2E]/60 hover:bg-[#161F2E] text-xs font-mono text-slate-200 hover:text-white transition-all rounded-none"
+              className="flex items-center gap-1.5 px-3 py-1.5 border border-white/15 hover:border-white/30 bg-[#151515]/60 hover:bg-[#151515] text-xs font-mono text-slate-200 hover:text-white transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#FF9900] rounded-[2px]"
               title="Join our WhatsApp Channel"
             >
               <WhatsAppIcon className="w-3.5 h-3.5 text-[#25D366]" />
@@ -65,7 +66,7 @@ export function Navbar() {
               href={SITE_CONFIG.links.meetup}
               target="_blank"
               rel="noreferrer"
-              className="flex items-center gap-1.5 px-3 py-1.5 border border-white/15 hover:border-white/30 bg-[#161F2E]/60 hover:bg-[#161F2E] text-xs font-mono text-slate-200 hover:text-white transition-all rounded-none"
+              className="flex items-center gap-1.5 px-3 py-1.5 border border-white/15 hover:border-white/30 bg-[#151515]/60 hover:bg-[#151515] text-xs font-mono text-slate-200 hover:text-white transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#FF9900] rounded-[2px]"
               title="RSVP on Meetup"
             >
               <MeetupIcon className="w-3.5 h-3.5" />
@@ -77,7 +78,7 @@ export function Navbar() {
               href={SITE_CONFIG.links.github}
               target="_blank"
               rel="noreferrer"
-              className="p-2 border border-white/15 hover:border-white text-slate-200 hover:text-white transition-all bg-[#0A0E17] rounded-none"
+              className="p-2 border border-white/15 hover:border-white text-slate-200 hover:text-white transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#FF9900] bg-[#0D0D0D] rounded-[2px]"
               aria-label="GitHub Repository"
               title="GitHub Repository"
             >
@@ -87,7 +88,7 @@ export function Navbar() {
             {/* Join Us CTA */}
             <Link
               to="/contact"
-              className="px-4 py-1.5 bg-[#FF9900] hover:bg-[#FF9900]/90 text-[#0A0E17] text-xs font-mono font-bold tracking-wider uppercase transition-all rounded-none"
+              className="px-4 py-1.5 bg-[#FF9900] hover:bg-[#FF9900]/90 text-[#0D0D0D] text-xs font-mono font-bold tracking-wider uppercase transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#FF9900] rounded-[2px]"
             >
               Join Us
             </Link>
@@ -96,8 +97,10 @@ export function Navbar() {
           {/* Mobile Menu Toggle */}
           <button
             onClick={() => setIsOpen(!isOpen)}
-            className="lg:hidden p-2 text-slate-300 hover:text-white focus:outline-none"
+            className="lg:hidden p-2 text-slate-300 hover:text-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#FF9900]"
             aria-label="Toggle Navigation Menu"
+            aria-expanded={isOpen}
+            aria-controls="mobile-navigation"
           >
             {isOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6 text-white" />}
           </button>
@@ -105,14 +108,15 @@ export function Navbar() {
 
         {/* Mobile Navigation Drawer */}
         {isOpen && (
-          <div className="lg:hidden border-t border-white/10 py-4 px-2 space-y-3 bg-[#0A0E17]/98">
+          <div id="mobile-navigation" className="lg:hidden border-t border-white/10 py-4 px-2 space-y-3 bg-[#0D0D0D]/98">
             <div className="flex flex-col space-y-2">
               {NAV_LINKS.map((link) => (
                 <Link
                   key={link.href}
                   to={link.href}
                   onClick={() => setIsOpen(false)}
-                  className="px-3 py-2 text-sm sm:text-base text-slate-200 hover:text-white hover:bg-white/5 transition-colors"
+                  aria-current={currentPath === link.href ? "page" : undefined}
+                  className="px-3 py-2 text-sm sm:text-base text-slate-200 hover:text-white hover:bg-white/5 transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#FF9900]"
                 >
                   {link.label}
                 </Link>
@@ -124,7 +128,7 @@ export function Navbar() {
                 href={SITE_CONFIG.links.whatsapp}
                 target="_blank"
                 rel="noreferrer"
-                className="flex items-center gap-1.5 px-3 py-1.5 border border-white/15 bg-[#161F2E]/60 text-xs font-mono text-slate-200"
+                className="flex items-center gap-1.5 px-3 py-1.5 border border-white/15 bg-[#151515]/60 text-xs font-mono text-slate-200"
               >
                 <WhatsAppIcon className="w-3.5 h-3.5 text-[#25D366]" />
                 <span>WhatsApp</span>
@@ -133,7 +137,7 @@ export function Navbar() {
                 href={SITE_CONFIG.links.meetup}
                 target="_blank"
                 rel="noreferrer"
-                className="flex items-center gap-1.5 px-3 py-1.5 border border-white/15 bg-[#161F2E]/60 text-xs font-mono text-slate-200"
+                className="flex items-center gap-1.5 px-3 py-1.5 border border-white/15 bg-[#151515]/60 text-xs font-mono text-slate-200"
               >
                 <MeetupIcon className="w-3.5 h-3.5" />
                 <span>Meetup</span>
@@ -150,7 +154,7 @@ export function Navbar() {
               <Link
                 to="/contact"
                 onClick={() => setIsOpen(false)}
-                className="px-4 py-1.5 bg-[#FF9900] text-[#0A0E17] text-xs font-mono font-bold uppercase tracking-wider"
+                className="px-4 py-1.5 bg-[#FF9900] text-[#0D0D0D] text-xs font-mono font-bold uppercase tracking-wider"
               >
                 Join Us
               </Link>

@@ -27,7 +27,7 @@ function HomePage() {
   const upcomingEvents = MOCK_EVENTS.filter((e) => e.status === 'upcoming').slice(0, 2)
 
   return (
-    <div className="flex flex-col gap-0 pb-20 bg-[#0A0E17]">
+    <div className="flex flex-col gap-0 pb-20 bg-[#0D0D0D]">
       <Hero />
       <Stats />
       <Pillars />
@@ -36,7 +36,7 @@ function HomePage() {
       <ProgramSection />
 
       {/* Featured Upcoming Events Section */}
-      <section className="py-20 bg-[#0A0E17] border-b border-white/10">
+      <section className="py-20 bg-[#0D0D0D] border-b border-white/10">
         <Container size="lg">
           <div className="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-4">
             <div className="space-y-2 max-w-xl">
@@ -59,7 +59,7 @@ function HomePage() {
           </div>
 
           {/* Connected Upcoming Sessions Grid matching LearningTracks & BuilderRewards */}
-          <div className="grid grid-cols-1 md:grid-cols-2 border border-white/10 bg-[#0A0E17]">
+          <div className="grid grid-cols-1 md:grid-cols-2 border border-white/10 bg-[#0D0D0D]">
             {upcomingEvents.map((event) => (
               <EventCard
                 key={event.id}
@@ -70,13 +70,13 @@ function HomePage() {
             ))}
 
             {/* Propose a Session / Community Workshop Callout */}
-            <div className="p-6 sm:p-8 flex flex-col justify-between hover:bg-[#161F2E]/30 transition-colors group">
+            <div className="p-6 sm:p-8 flex flex-col justify-between hover:bg-[#151515]/30 transition-colors group">
               <div>
                 <div className="flex items-center justify-between pb-3 mb-5 border-b border-white/10">
                   <span className="text-[11px] font-mono font-bold text-[#FF9900] tracking-wider uppercase">
                     Call for Speakers
                   </span>
-                  <div className="p-2 bg-[#0A0E17] border border-white/10 text-[#FF9900] group-hover:border-[#FF9900] transition-colors">
+                  <div className="p-2 bg-[#0D0D0D] border border-white/10 text-[#FF9900] group-hover:border-[#FF9900] transition-colors">
                     <Calendar className="w-4 h-4" />
                   </div>
                 </div>
@@ -103,7 +103,7 @@ function HomePage() {
       {/* Official "FROM STUDENTS TO BUILDERS" Banner Callout */}
       <section className="pt-16">
         <Container size="lg">
-          <div className="relative overflow-hidden bg-[#0A0E17] border border-white/10 p-8 sm:p-12 md:p-14">
+          <div className="relative overflow-hidden bg-[#0D0D0D] border border-white/10 p-8 sm:p-12 md:p-14">
             {/* Interactive ShapeGrid Animated Canvas Background */}
             <div className="absolute inset-0 pointer-events-auto opacity-50">
               <ShapeGrid
@@ -114,7 +114,7 @@ function HomePage() {
                 borderColor="rgba(255, 255, 255, 0.08)"
                 hoverFillColor="rgba(255, 153, 0, 0.22)"
                 hoverTrailAmount={4}
-                vignetteColor="#0A0E17"
+                vignetteColor="#0D0D0D"
               />
             </div>
 

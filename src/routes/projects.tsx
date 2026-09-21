@@ -62,10 +62,10 @@ function ProjectsPage() {
             <button
               key={cat}
               onClick={() => setSelectedCategory(cat)}
-              className={`px-3.5 py-1.5 rounded-none text-xs font-mono uppercase tracking-wider whitespace-nowrap transition-all ${
+              className={`px-3.5 py-1.5 rounded-none text-xs font-mono uppercase tracking-wider whitespace-nowrap transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#FF9900] ${
                 selectedCategory === cat
                   ? 'bg-[#FF9900] text-slate-950 font-bold shadow-sm'
-                  : 'bg-[#161F2E] text-slate-300 hover:text-white border border-white/10 hover:border-slate-700'
+                  : 'bg-[#151515] text-slate-300 hover:text-white border border-white/10 hover:border-slate-700'
               }`}
             >
               {cat}
@@ -74,7 +74,7 @@ function ProjectsPage() {
         </div>
 
         {/* Connected Projects Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 border border-white/10 bg-[#0A0E17] mb-16">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 border border-white/10 bg-[#0D0D0D] mb-16">
           {filteredProjects.map((project, i) => {
             const isLastRowMobile = i === filteredProjects.length - 1
             const isLastColTablet = i % 2 === 1 || i === filteredProjects.length - 1
@@ -98,7 +98,7 @@ function ProjectsPage() {
         </div>
 
         {/* Submit Your Project Callout */}
-        <div className="rounded-none border border-white/10 bg-[#161F2E]/60 p-8 sm:p-10 flex flex-col md:flex-row items-center justify-between gap-6">
+        <div className="rounded-none border border-white/10 bg-[#151515]/60 p-8 sm:p-10 flex flex-col md:flex-row items-center justify-between gap-6">
           <div className="space-y-2 text-center md:text-left">
             <h3 className="text-xl font-bold text-white flex items-center justify-center md:justify-start gap-2">
               <PlusCircle className="w-5 h-5 text-[#FF9900]" />

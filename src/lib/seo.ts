@@ -35,7 +35,7 @@ export function createSeoMeta(options: SeoOptions = {}) {
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
       { title },
       { name: 'description', content: description },
-      { name: 'theme-color', content: '#0A0E17' },
+      { name: 'theme-color', content: '#0D0D0D' },
 
       // Open Graph Protocol (Facebook, LinkedIn, Slack, Discord, WhatsApp)
       { property: 'og:type', content: type },

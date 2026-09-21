@@ -92,7 +92,7 @@ function ContactPage() {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12">
           {/* Form Column */}
           <div className="lg:col-span-7">
-            <div className="rounded-none border border-white/10 bg-[#161F2E]/80 backdrop-blur-xl p-8 sm:p-10 shadow-xl">
+            <div className="rounded-none border border-white/10 bg-[#151515]/80 backdrop-blur-xl p-8 sm:p-10 shadow-xl">
               {status === 'success' ? (
                 <div className="text-center py-12 space-y-4">
                   <div className="w-16 h-16 rounded-none bg-emerald-500/10 border border-emerald-500/30 text-emerald-400 flex items-center justify-center mx-auto">
@@ -252,7 +252,7 @@ function ContactPage() {
 
           {/* Info / Channels Column */}
           <div className="lg:col-span-5 space-y-6">
-            <div className="rounded-none border border-white/10 bg-[#161F2E]/60 p-6 space-y-4">
+            <div className="rounded-none border border-white/10 bg-[#151515]/60 p-6 space-y-4">
               <h3 className="text-lg font-bold text-white flex items-center gap-2 font-display">
                 <Users className="w-5 h-5 text-[#FF9900]" /> Community Channels
               </h3>
@@ -308,7 +308,7 @@ function ContactPage() {
               </div>
             </div>
 
-            <div className="rounded-none border border-white/10 bg-[#161F2E]/60 p-6 space-y-3 text-sm text-slate-300">
+            <div className="rounded-none border border-white/10 bg-[#151515]/60 p-6 space-y-3 text-sm text-slate-300">
               <h4 className="text-base font-semibold text-white flex items-center gap-2 font-display">
                 <MapPin className="w-4 h-4 text-[#FF9900]" /> Location
               </h4>

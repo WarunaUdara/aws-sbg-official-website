@@ -8,14 +8,14 @@ export interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElemen
 
 export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
   ({ className, variant = "primary", size = "md", children, ...props }, ref) => {
-    const baseStyles = "inline-flex items-center justify-center font-medium rounded-none transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2 disabled:opacity-50 disabled:pointer-events-none cursor-pointer"
+    const baseStyles = "inline-flex items-center justify-center font-medium rounded-[2px] transition-colors transition-transform duration-200 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 disabled:opacity-50 disabled:pointer-events-none cursor-pointer active:scale-[0.96]"
     
     const variants = {
-      primary: "bg-[#FF9900] hover:bg-[#e68a00] text-slate-950 font-semibold focus:ring-[#FF9900] shadow-sm hover:shadow-md active:scale-[0.98]",
-      glow: "bg-gradient-to-r from-[#FF9900] to-[#FFA41C] text-slate-950 font-bold shadow-[0_0_20px_rgba(255,153,0,0.35)] hover:shadow-[0_0_25px_rgba(255,153,0,0.6)] hover:scale-[1.02] active:scale-[0.98]",
-      secondary: "bg-slate-800 hover:bg-slate-700 text-slate-100 border border-slate-700 focus:ring-slate-500 active:scale-[0.98]",
-      outline: "border border-slate-700 hover:border-[#FF9900] text-slate-200 hover:text-[#FF9900] bg-transparent focus:ring-[#FF9900] active:scale-[0.98]",
-      ghost: "text-slate-300 hover:text-white hover:bg-slate-800/60 focus:ring-slate-700",
+      primary: "bg-[#FF9900] hover:bg-[#e68a00] text-[#0D0D0D] font-semibold focus-visible:outline-[#FF9900]",
+      glow: "bg-[#FF9900] hover:bg-[#FFB84D] text-[#0D0D0D] font-bold focus-visible:outline-[#FF9900]",
+      secondary: "bg-[#151515] hover:bg-[#1D1D1D] text-slate-100 border border-white/15 focus-visible:outline-white/60",
+      outline: "border border-white/20 hover:border-[#FF9900] text-slate-200 hover:text-[#FF9900] bg-transparent focus-visible:outline-[#FF9900]",
+      ghost: "text-slate-300 hover:text-white hover:bg-white/10 focus-visible:outline-white/60",
     }
 
     const sizes = {

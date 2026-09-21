@@ -15,7 +15,7 @@ export function ProjectCard({ project, className, bordered = true }: ProjectCard
   return (
     <Card
       className={cn(
-        "flex flex-col h-full bg-[#0A0E17] hover:bg-[#161F2E]/40 transition-colors duration-200 rounded-none group",
+        "flex flex-col h-full bg-[#0D0D0D] hover:bg-[#151515]/40 transition-colors duration-200 rounded-none group",
         bordered ? "border border-white/10 hover:border-[#FF9900]/50" : "border-0",
         className
       )}
@@ -26,7 +26,7 @@ export function ProjectCard({ project, className, bordered = true }: ProjectCard
             {project.category}
           </Badge>
           {project.stars && (
-            <div className="flex items-center gap-1 text-xs font-mono text-amber-400 font-medium bg-[#0A0E17] px-2 py-0.5 border border-white/5">
+            <div className="flex items-center gap-1 text-xs font-mono text-amber-400 font-medium bg-[#0D0D0D] px-2 py-0.5 border border-white/5">
               <Star className="w-3.5 h-3.5 fill-amber-400" />
               <span>{project.stars}</span>
             </div>
@@ -51,7 +51,7 @@ export function ProjectCard({ project, className, bordered = true }: ProjectCard
             {project.awsServices.map((service) => (
               <span
                 key={service}
-                className="text-xs font-mono bg-[#0A0E17] text-[#FF9900] border border-white/10 px-2 py-0.5"
+                className="text-xs font-mono bg-[#0D0D0D] text-[#FF9900] border border-white/10 px-2 py-0.5"
               >
                 {service}
               </span>

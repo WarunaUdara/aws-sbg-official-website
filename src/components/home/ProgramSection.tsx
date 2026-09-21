@@ -40,7 +40,7 @@ export function ProgramSection() {
   }
 
   return (
-    <section className="py-24 bg-[#0A0E17] border-b border-white/10 relative overflow-hidden">
+    <section className="py-24 bg-[#0D0D0D] border-b border-white/10 relative overflow-hidden">
       <Container size="lg">
         {/* Breadcrumb Path inspired by AWS Builder Center */}
         <div className="flex items-center gap-2 text-xs font-mono text-slate-300 mb-8 overflow-x-auto scrollbar-none">

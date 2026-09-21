@@ -75,7 +75,7 @@ function EventsPage() {
           <div className="flex items-center gap-2 p-1 bg-slate-900 rounded-none border border-slate-800 self-start">
             <button
               onClick={() => setActiveTab('upcoming')}
-              className={`px-4 py-2 rounded-none text-xs sm:text-sm font-semibold transition-all ${
+              className={`px-4 py-2 rounded-none text-xs sm:text-sm font-semibold transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#FF9900] ${
                 activeTab === 'upcoming'
                   ? 'bg-[#FF9900] text-slate-950 shadow-sm'
                   : 'text-slate-300 hover:text-white'
@@ -85,7 +85,7 @@ function EventsPage() {
             </button>
             <button
               onClick={() => setActiveTab('past')}
-              className={`px-4 py-2 rounded-none text-xs sm:text-sm font-semibold transition-all ${
+              className={`px-4 py-2 rounded-none text-xs sm:text-sm font-semibold transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#FF9900] ${
                 activeTab === 'past'
                   ? 'bg-[#FF9900] text-slate-950 shadow-sm'
                   : 'text-slate-300 hover:text-white'
@@ -102,10 +102,10 @@ function EventsPage() {
               <button
                 key={cat}
                 onClick={() => setSelectedCategory(cat)}
-                className={`px-3 py-1.5 rounded-none text-xs font-mono uppercase tracking-wider whitespace-nowrap transition-all ${
+                className={`px-3 py-1.5 rounded-none text-xs font-mono uppercase tracking-wider whitespace-nowrap transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#FF9900] ${
                   selectedCategory === cat
                     ? 'bg-slate-200 text-slate-950 font-bold'
-                    : 'bg-[#161F2E] text-slate-300 hover:text-white border border-white/10'
+                    : 'bg-[#151515] text-slate-300 hover:text-white border border-white/10'
                 }`}
               >
                 {cat}
@@ -116,7 +116,7 @@ function EventsPage() {
 
         {/* Connected Events Grid */}
         {filteredEvents.length > 0 ? (
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 border border-white/10 bg-[#0A0E17]">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 border border-white/10 bg-[#0D0D0D]">
             {filteredEvents.map((event, i) => {
               const isLastRowMobile = i === filteredEvents.length - 1
               const isLastColTablet = i % 2 === 1 || i === filteredEvents.length - 1
@@ -139,7 +139,7 @@ function EventsPage() {
             })}
           </div>
         ) : (
-          <div className="text-center py-20 bg-[#161F2E]/40 rounded-none border border-white/10 p-8 space-y-3">
+          <div className="text-center py-20 bg-[#151515]/40 rounded-none border border-white/10 p-8 space-y-3">
             <Sparkles className="w-8 h-8 text-[#FF9900] mx-auto opacity-70" />
             <h3 className="text-lg font-bold text-white">No sessions found in this category</h3>
             <p className="text-base text-slate-300 max-w-sm mx-auto">

@@ -1,6 +1,6 @@
 import * as React from "react"
 import { Link } from "@tanstack/react-router"
-import { Volume2, VolumeX, Calendar } from "lucide-react"
+import { Pause, Play, Volume2, VolumeX, Calendar } from "lucide-react"
 import { ShinyText } from "@/components/ui/ShinyText"
 import { WhatsAppIcon } from "@/components/ui/icons"
 import { HERO_CONFIG, SITE_CONFIG } from "@/lib/constants"
@@ -15,10 +15,12 @@ interface HeroProps {
 
 export function Hero({ videoUrl = HERO_CONFIG.videoUrl }: HeroProps) {
   const [isVideoLoaded, setIsVideoLoaded] = React.useState<boolean>(false)
-  const [isMuted, setIsMuted] = React.useState<boolean>(false) // Default enabled
+  const [isMuted, setIsMuted] = React.useState<boolean>(true)
+  const [isPaused, setIsPaused] = React.useState<boolean>(false)
   const videoRef = React.useRef<HTMLVideoElement>(null)
   const sectionRef = React.useRef<HTMLElement>(null)
   const isHeroInViewRef = React.useRef<boolean>(true)
+  const isPlaybackPausedRef = React.useRef<boolean>(false)
 
   // Default volume set to half (50%)
   const DEFAULT_VOLUME = 0.5
@@ -69,7 +71,7 @@ export function Hero({ videoUrl = HERO_CONFIG.videoUrl }: HeroProps) {
           } else {
             // Scrolled back into hero section
             isHeroInViewRef.current = true
-            if (!isInitialMount && !document.hidden) {
+            if (!isInitialMount && !document.hidden && !isPlaybackPausedRef.current) {
               // Resumes playing muted because sound was disabled on scroll out
               video.play().catch(() => {})
             }
@@ -105,7 +107,7 @@ export function Hero({ videoUrl = HERO_CONFIG.videoUrl }: HeroProps) {
         setIsMuted(true)
       } else {
         // User returned to this tab; only resume if the hero section is currently in view
-        if (isHeroInViewRef.current) {
+        if (isHeroInViewRef.current && !isPlaybackPausedRef.current) {
           // Resumes playing muted because sound was disabled on tab leave
           video.play().catch(() => {})
         }
@@ -132,18 +134,43 @@ export function Hero({ videoUrl = HERO_CONFIG.videoUrl }: HeroProps) {
     }
   }
 
+  const togglePlayback = () => {
+    const video = videoRef.current
+    if (!video) return
+
+    if (video.paused) {
+      isPlaybackPausedRef.current = false
+      setIsPaused(false)
+      video.play().catch(() => {})
+      return
+    }
+
+    isPlaybackPausedRef.current = true
+    setIsPaused(true)
+    video.pause()
+  }
+
   return (
     <section
       ref={sectionRef}
-      className="relative min-h-[calc(100vh-4rem)] w-full flex flex-col justify-end overflow-hidden bg-[#0A0E17] text-white"
+      className="blueprint-grid relative min-h-[calc(100vh-4rem)] w-full flex flex-col justify-end overflow-hidden bg-[#0D0D0D] text-white"
     >
       {/* ========================================================================= */}
       {/* SOUND TOGGLE BUTTON (Default Enabled)                                     */}
       {/* ========================================================================= */}
-      <div className="absolute top-6 right-4 sm:top-8 sm:right-8 z-30">
+      <div className="absolute top-6 right-4 sm:top-8 sm:right-8 z-30 flex items-center gap-2">
+        <button
+          onClick={togglePlayback}
+          className="flex items-center gap-2 px-3.5 py-2 bg-[#0D0D0D]/85 hover:bg-[#151515] border border-white/20 hover:border-[#FF9900]/60 text-xs font-mono text-white transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#FF9900] backdrop-blur-md cursor-pointer rounded-[2px] select-none"
+          aria-label={isPaused ? "Play background video" : "Pause background video"}
+          title={isPaused ? "Play background video" : "Pause background video"}
+        >
+          {isPaused ? <Play className="w-4 h-4" /> : <Pause className="w-4 h-4" />}
+          <span className="hidden sm:inline">{isPaused ? "Play" : "Pause"}</span>
+        </button>
         <button
           onClick={toggleSound}
-          className="flex items-center gap-2 px-3.5 py-2 bg-[#0A0E17]/85 hover:bg-[#161F2E] border border-white/20 hover:border-[#FF9900]/60 text-xs font-mono text-white transition-all backdrop-blur-md cursor-pointer rounded-none shadow-lg group select-none"
+          className="flex items-center gap-2 px-3.5 py-2 bg-[#0D0D0D]/85 hover:bg-[#151515] border border-white/20 hover:border-[#FF9900]/60 text-xs font-mono text-white transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#FF9900] backdrop-blur-md cursor-pointer rounded-[2px] group select-none"
           aria-label={isMuted ? "Enable sound" : "Mute sound"}
           title={isMuted ? "Click to enable sound" : "Click to mute sound"}
         >
@@ -231,16 +258,16 @@ export function Hero({ videoUrl = HERO_CONFIG.videoUrl }: HeroProps) {
               href={SITE_CONFIG.links.whatsapp}
               target="_blank"
               rel="noreferrer"
-              className="flex items-center gap-2 px-6 py-3.5 bg-[#FF9900] hover:bg-[#FF9900]/90 text-[#0A0E17] text-sm font-mono font-bold tracking-wider uppercase transition-all shadow-lg active:scale-98 rounded-none cursor-pointer"
+              className="flex items-center gap-2 px-6 py-3.5 bg-[#FF9900] hover:bg-[#FF9900]/90 text-[#0D0D0D] text-sm font-mono font-bold tracking-wider uppercase transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#FF9900] active:scale-[0.96] rounded-[2px] cursor-pointer"
             >
-              <WhatsAppIcon className="w-4 h-4 text-[#0A0E17]" />
+              <WhatsAppIcon className="w-4 h-4 text-[#0D0D0D]" />
               <span>Join WhatsApp</span>
             </a>
 
             {/* Secondary CTA (Explore Workshops) */}
             <Link
               to="/events"
-              className="flex items-center gap-2 px-6 py-3.5 bg-[#0A0E17]/80 hover:bg-white/10 border border-white/25 hover:border-white text-white text-sm font-mono font-semibold tracking-wider uppercase transition-all active:scale-98 rounded-none cursor-pointer backdrop-blur-sm"
+              className="flex items-center gap-2 px-6 py-3.5 bg-[#0D0D0D]/80 hover:bg-white/10 border border-white/25 hover:border-white text-white text-sm font-mono font-semibold tracking-wider uppercase transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#FF9900] active:scale-[0.96] rounded-none cursor-pointer backdrop-blur-sm"
             >
               <Calendar className="w-4 h-4 text-[#FF9900]" />
               <span>View Workshops</span>

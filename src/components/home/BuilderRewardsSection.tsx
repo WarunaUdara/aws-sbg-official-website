@@ -32,7 +32,7 @@ const REWARDS = [
 
 export function BuilderRewardsSection() {
   return (
-    <section className="py-20 sm:py-24 bg-[#0A0E17] border-b border-white/10 relative overflow-hidden">
+    <section className="py-20 sm:py-24 bg-[#0D0D0D] border-b border-white/10 relative overflow-hidden">
       <Container size="lg" className="relative z-10">
         <div className="flex flex-col lg:flex-row lg:items-end justify-between mb-14 gap-8">
           <div className="space-y-3 max-w-2xl">
@@ -53,7 +53,7 @@ export function BuilderRewardsSection() {
               href={SITE_CONFIG.links.whatsapp}
               target="_blank"
               rel="noreferrer"
-              className="px-5 py-3 bg-[#FF9900] hover:bg-[#FF9900]/90 text-[#0A0E17] font-mono text-xs font-bold tracking-wider uppercase transition-colors inline-flex items-center gap-2 rounded-none"
+              className="px-5 py-3 bg-[#FF9900] hover:bg-[#FF9900]/90 text-[#0D0D0D] font-mono text-xs font-bold tracking-wider uppercase transition-colors inline-flex items-center gap-2 rounded-none"
             >
               <span>Join WhatsApp Channel</span>
               <ArrowRight className="w-3.5 h-3.5" />
@@ -62,14 +62,14 @@ export function BuilderRewardsSection() {
         </div>
 
         {/* Connected Feature Grid matching LearningTracks */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 border border-white/10 bg-[#0A0E17]">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 border border-white/10 bg-[#0D0D0D]">
           {REWARDS.map((reward, i) => {
             const Icon = reward.icon
             return (
               <div
                 key={reward.tag}
                 className={cn(
-                  "p-6 sm:p-7 flex flex-col justify-between hover:bg-[#161F2E]/40 transition-colors group border-white/10",
+                  "p-6 sm:p-7 flex flex-col justify-between hover:bg-[#151515]/40 transition-colors group border-white/10",
                   // Mobile (1 col): bottom border on 0,1,2
                   i < 3 && "border-b",
                   // Tablet (2 cols):
@@ -87,7 +87,7 @@ export function BuilderRewardsSection() {
                     <span className="text-[11px] font-mono font-bold text-[#FF9900] tracking-wider uppercase">
                       {reward.tag}
                     </span>
-                    <div className="p-2 bg-[#0A0E17] border border-white/10 text-[#FF9900] group-hover:border-[#FF9900] transition-colors">
+                    <div className="p-2 bg-[#0D0D0D] border border-white/10 text-[#FF9900] group-hover:border-[#FF9900] transition-colors">
                       <Icon className="w-4 h-4" />
                     </div>
                   </div>

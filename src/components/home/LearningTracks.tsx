@@ -18,7 +18,7 @@ function ServerlessGraphic() {
         <span className="text-emerald-400">active</span>
       </div>
       {/* Active Highlighted Row in AWS Orange */}
-      <div className="flex items-center justify-between py-1.5 px-2 bg-[#FF9900] text-[#0A0E17] font-semibold">
+      <div className="flex items-center justify-between py-1.5 px-2 bg-[#FF9900] text-[#0D0D0D] font-semibold">
         <span>order_worker</span>
         <span>eventbridge</span>
         <span>active</span>
@@ -53,13 +53,13 @@ function GenAIGraphic() {
 
         {/* Central glowing FM core */}
         <rect x="58" y="44" width="44" height="40" fill="#FF9900" />
-        <text x="80" y="68" fill="#0A0E17" fontSize="8.5" fontFamily="monospace" textAnchor="middle" fontWeight="bold">BEDROCK</text>
+        <text x="80" y="68" fill="#0D0D0D" fontSize="8.5" fontFamily="monospace" textAnchor="middle" fontWeight="bold">BEDROCK</text>
 
         {/* Corner anchor node squares */}
-        <rect x="11" y="6" width="8" height="8" fill="#0A0E17" stroke="#00A4E4" strokeWidth="1" />
-        <rect x="141" y="6" width="8" height="8" fill="#0A0E17" stroke="#00A4E4" strokeWidth="1" />
-        <rect x="11" y="114" width="8" height="8" fill="#0A0E17" stroke="#00A4E4" strokeWidth="1" />
-        <rect x="141" y="114" width="8" height="8" fill="#0A0E17" stroke="#00A4E4" strokeWidth="1" />
+        <rect x="11" y="6" width="8" height="8" fill="#0D0D0D" stroke="#00A4E4" strokeWidth="1" />
+        <rect x="141" y="6" width="8" height="8" fill="#0D0D0D" stroke="#00A4E4" strokeWidth="1" />
+        <rect x="11" y="114" width="8" height="8" fill="#0D0D0D" stroke="#00A4E4" strokeWidth="1" />
+        <rect x="141" y="114" width="8" height="8" fill="#0D0D0D" stroke="#00A4E4" strokeWidth="1" />
       </svg>
     </div>
   )
@@ -145,7 +145,7 @@ const TRACKS = [
 
 export function LearningTracks() {
   return (
-    <section className="py-20 sm:py-24 bg-[#0A0E17] border-b border-white/10 relative">
+    <section className="py-20 sm:py-24 bg-[#0D0D0D] border-b border-white/10 relative">
       <Container size="lg">
         {/* Section Header */}
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-6">
@@ -164,7 +164,7 @@ export function LearningTracks() {
 
           <Link
             to="/events"
-            className="inline-flex items-center gap-2 px-4 py-2.5 bg-[#161F2E] border border-white/15 hover:border-[#FF9900]/60 text-xs font-mono text-white transition-all w-fit rounded-none self-start md:self-end"
+            className="inline-flex items-center gap-2 px-4 py-2.5 bg-[#151515] border border-white/15 hover:border-[#FF9900]/60 text-xs font-mono text-white transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#FF9900] w-fit rounded-none self-start md:self-end"
           >
             <span>View Workshop Schedule</span>
             <ArrowRight className="w-3.5 h-3.5 text-[#FF9900]" />
@@ -172,14 +172,14 @@ export function LearningTracks() {
         </div>
 
         {/* Unkey-Style Connected Feature Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 border border-white/10 bg-[#0A0E17]">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 border border-white/10 bg-[#0D0D0D]">
           {TRACKS.map((track, i) => {
             const Graphic = track.graphic
             return (
               <div
                 key={track.caption}
                 className={cn(
-                  "p-6 sm:p-7 flex flex-col justify-between hover:bg-[#161F2E]/30 transition-colors group border-white/10",
+                  "p-6 sm:p-7 flex flex-col justify-between hover:bg-[#151515]/30 transition-colors group border-white/10",
                   // Mobile (1 col): bottom border on 0,1,2
                   i < 3 && "border-b",
                   // Tablet (2 cols):

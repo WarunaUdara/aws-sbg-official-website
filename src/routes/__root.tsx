@@ -60,7 +60,7 @@ function RootComponent() {
       <head>
         <HeadContent />
       </head>
-      <body className="min-h-screen bg-[#0A0E17] text-slate-100 flex flex-col font-sans selection:bg-[#FF9900]/30 selection:text-[#FF9900]">
+      <body className="min-h-screen bg-[#0D0D0D] text-slate-100 flex flex-col font-sans selection:bg-[#FF9900]/30 selection:text-[#FF9900]">
         <ReactLenis root options={{ lerp: 0.08, smoothWheel: true }}>
           <Navbar />
           <main className="flex-1">

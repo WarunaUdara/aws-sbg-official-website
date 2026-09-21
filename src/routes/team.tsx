@@ -54,7 +54,7 @@ function TeamPage() {
         </div>
 
         {/* Connected Team Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 border border-white/10 bg-[#0A0E17] mb-20">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 border border-white/10 bg-[#0D0D0D] mb-20">
           {MOCK_TEAM.map((member, i) => {
             const isLeader = member.role.toLowerCase().includes('leader')
             const isLastRowMobile = i === MOCK_TEAM.length - 1
@@ -65,7 +65,7 @@ function TeamPage() {
               <div
                 key={member.id}
                 className={cn(
-                  "flex flex-col justify-between h-full bg-[#0A0E17] hover:bg-[#161F2E]/40 transition-colors duration-200 rounded-none relative border-white/10 p-6 group",
+                  "flex flex-col justify-between h-full bg-[#0D0D0D] hover:bg-[#151515]/40 transition-colors duration-200 rounded-none relative border-white/10 p-6 group",
                   !isLastRowMobile && "border-b",
                   !isLastColTablet && "md:border-r",
                   !isLastColDesktop && "lg:border-r",
@@ -73,13 +73,13 @@ function TeamPage() {
                 )}
               >
                 {isLeader && (
-                  <div className="absolute top-4 right-4 px-2.5 py-0.5 bg-[#FF9900] text-[#0A0E17] font-mono text-[10px] font-bold uppercase tracking-wider border border-[#FF9900] select-none">
+                  <div className="absolute top-4 right-4 px-2.5 py-0.5 bg-[#FF9900] text-[#0D0D0D] font-mono text-[10px] font-bold uppercase tracking-wider border border-[#FF9900] select-none">
                     Group Leader
                   </div>
                 )}
                 <div>
                   <div className="flex items-center gap-4 mb-4">
-                    <div className="w-14 h-14 rounded-none bg-[#161F2E] border border-white/10 group-hover:border-[#FF9900]/40 flex items-center justify-center font-bold text-xl text-[#FF9900] font-mono shrink-0 transition-colors">
+                    <div className="w-14 h-14 rounded-none bg-[#151515] border border-white/10 group-hover:border-[#FF9900]/40 flex items-center justify-center font-bold text-xl text-[#FF9900] font-mono shrink-0 transition-colors">
                       {getInitials(member.name)}
                     </div>
                     <div>
@@ -146,7 +146,7 @@ function TeamPage() {
         </div>
 
         {/* Join Leadership CTA */}
-        <div className="rounded-none border border-white/10 bg-[#161F2E]/60 p-8 text-center space-y-4 max-w-2xl mx-auto">
+        <div className="rounded-none border border-white/10 bg-[#151515]/60 p-8 text-center space-y-4 max-w-2xl mx-auto">
           <h3 className="text-xl font-bold text-white">
             Want to Lead, Speak, or Organize with Us?
           </h3>
