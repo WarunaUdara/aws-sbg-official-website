@@ -1,3 +1,4 @@
+import * as React from 'react'
 import { createFileRoute, Link } from '@tanstack/react-router'
 import { ArrowRight, Calendar, MessageCircle } from 'lucide-react'
 import { Hero } from '@/components/home/Hero'
@@ -11,6 +12,7 @@ import { EventCard } from '@/components/events/EventCard'
 import { Button } from '@/components/ui/button'
 import { BuilderMosaic } from '@/components/common/BuilderMosaic'
 import { ShapeGrid } from '@/components/ui/ShapeGrid'
+import { FloatingCloudIcons } from '@/components/home/FloatingCloudIcons'
 import { MOCK_EVENTS } from '@/features/events/data'
 import { SITE_CONFIG } from '@/lib/constants'
 import { createSeoMeta } from '@/lib/seo'
@@ -25,6 +27,7 @@ export const Route = createFileRoute('/')({
 
 function HomePage() {
   const upcomingEvents = MOCK_EVENTS.filter((e) => e.status === 'upcoming').slice(0, 2)
+  const ctaBannerRef = React.useRef<HTMLDivElement>(null)
 
   return (
     <div className="relative isolate flex flex-col gap-0 pb-20 bg-[#0D0D0D]">
@@ -103,9 +106,12 @@ function HomePage() {
       {/* Official "FROM STUDENTS TO BUILDERS" Banner Callout */}
       <section className="pt-16">
         <Container size="lg">
-          <div className="relative overflow-hidden bg-[#0D0D0D] border border-white/10 p-8 sm:p-12 md:p-14">
+          <div ref={ctaBannerRef} className="relative overflow-hidden bg-[#0D0D0D] border border-white/10 p-8 sm:p-12 md:p-14 min-h-[380px]">
+            {/* Floating Cloud Icons - strictly contained in this CTA banner */}
+            <FloatingCloudIcons containerRef={ctaBannerRef} />
+
             {/* Interactive ShapeGrid Animated Canvas Background */}
-            <div className="absolute inset-0 pointer-events-auto opacity-50">
+            <div className="absolute inset-0 pointer-events-auto opacity-30 z-0">
               <ShapeGrid
                 shape="square"
                 squareSize={36}

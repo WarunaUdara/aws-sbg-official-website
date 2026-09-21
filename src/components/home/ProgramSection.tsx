@@ -2,7 +2,6 @@ import * as React from "react"
 import { Container } from "@/components/common/Container"
 import { ExternalLink, Plus, Minus, ChevronRight } from "lucide-react"
 import { Link } from "@tanstack/react-router"
-import { FloatingCloudIcons } from "@/components/home/FloatingCloudIcons"
 
 interface FAQItem {
   id: string
@@ -35,18 +34,14 @@ const FAQS: FAQItem[] = [
 
 export function ProgramSection() {
   const [openFaq, setOpenFaq] = React.useState<string | null>("who")
-  const ctaSectionRef = React.useRef<HTMLElement>(null)
 
   const toggleFaq = (id: string) => {
     setOpenFaq((prev) => (prev === id ? null : id))
   }
 
   return (
-    <section ref={ctaSectionRef} className="py-24 bg-[#0D0D0D] border-b border-white/10 relative overflow-hidden">
-      {/* Floating Cloud Icons - strictly contained within this section */}
-      <FloatingCloudIcons containerRef={ctaSectionRef} />
-
-      <Container size="lg" className="relative z-10">
+    <section className="py-24 bg-[#0D0D0D] border-b border-white/10 relative overflow-hidden">
+      <Container size="lg">
         {/* Breadcrumb Path inspired by AWS Builder Center */}
         <div className="flex items-center gap-2 text-xs font-mono text-slate-300 mb-8 overflow-x-auto scrollbar-none">
           <span className="hover:text-white transition-colors cursor-pointer">

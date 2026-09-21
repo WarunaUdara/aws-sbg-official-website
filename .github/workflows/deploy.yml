@@ -17,6 +17,8 @@ jobs:
   build-and-validate:
     name: Build & Validate
     runs-on: ubuntu-latest
+    permissions:
+      contents: read
     steps:
       - name: Checkout Repository
         uses: actions/checkout@v5
@@ -95,7 +97,6 @@ jobs:
     permissions:
       contents: read
       deployments: write
-      pull-requests: write
     steps:
       - name: Checkout Repository
         uses: actions/checkout@v5
