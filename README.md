@@ -28,7 +28,7 @@ See [DESIGN_SYSTEM.md](./DESIGN_SYSTEM.md) for full architectural guidelines, to
 | **Primary Color** | `#FF9900` (AWS Builder Orange) | Hero fills, CTAs, builder chip glyph, active accents |
 | **Canvas Dark** | `#0D0D0D` (Obsidian Canvas) | Main canvas, high-contrast text on orange fills |
 | **Surface Dark** | `#151515` (Graphite Surface) | Cards, mosaic tiles, brand anchor boxes |
-| **Primary Font** | **Roobert Mono Light** | Display headlines, section titles (`.font-display`) |
+| **Primary Font** | **Roobert Regular** | Display headlines, section titles (`.font-display`) |
 | **Secondary Font** | **Google Sans Flex** | Body copy, descriptions, navigation links, card content (`.font-secondary`, `.font-sans`) |
 | **Monospace Font** | **JetBrains Mono** | Brand signatures, terminal headers, tags, metadata (`.font-mono`) |
 | **Grid System** | `48px` × `48px` Coordinate Grid | Architectural backdrops (`.bg-builder-grid-dark`) |

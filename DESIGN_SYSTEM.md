@@ -49,14 +49,14 @@ This system establishes the visual standards, token definitions, typography, geo
 
 ## 3. Typography System
 
-### Primary Font: **Roobert Mono Light** (Display Sans)
+### Primary Font: **Roobert Regular** (Display Sans)
 - **Role**: Display headlines, high-impact titles (`.font-display`).
 - **CSS Variable**: `--font-primary` / `--font-display`
-- **Source**: `public/RoobertMonoTRIAL-Light-BF67243fd27eae5.otf`, loaded as `Roobert Mono`.
-- **Characteristics**: Light, technical, wide display rhythm with a calm editorial silhouette.
+- **Source**: `public/RoobertTRIAL-Regular-BF67243fd53fdf2.otf`, loaded as `Roobert`.
+- **Characteristics**: Clean, technical, wide display rhythm with a calm editorial silhouette.
 - **Hierarchy Scale**:
-  - `Display / Hero`: `text-5xl` to `text-7xl` (`font-light`, leading `1.08`, tracking `-0.035em`)
-  - `H1 / Section`: `text-3xl` to `text-4xl` (`font-light` or `font-normal`, leading `1.1`)
+  - `Display / Hero`: `text-5xl` to `text-7xl` (`font-normal`, leading `1.08`, tracking `-0.035em`)
+  - `H1 / Section`: `text-3xl` to `text-4xl` (`font-normal`, leading `1.1`)
   - `H2 / Component`: `text-xl` to `text-2xl` (`font-medium`)
 
 ### Secondary Font: **Google Sans Flex** (Sans-Serif)

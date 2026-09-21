@@ -2,15 +2,15 @@
 @import "lenis/dist/lenis.css";
 
 @font-face {
-  font-family: "Roobert Mono";
-  src: url("/RoobertMonoTRIAL-Light-BF67243fd27eae5.otf") format("opentype");
+  font-family: "Roobert";
+  src: url("/RoobertTRIAL-Regular-BF67243fd53fdf2.otf") format("opentype");
   font-style: normal;
-  font-weight: 300;
+  font-weight: 400;
   font-display: swap;
 }
 
 @theme {
-  --font-primary: 'Roobert Mono', 'Space Grotesk', system-ui, sans-serif;
+  --font-primary: 'Roobert', system-ui, sans-serif;
   --font-secondary: 'Google Sans Flex', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
   --font-display: var(--font-primary);
   --font-sans: var(--font-secondary);
@@ -19,7 +19,7 @@
 
 @layer base {
   :root {
-    --font-primary: 'Roobert Mono', 'Space Grotesk', system-ui, sans-serif;
+    --font-primary: 'Roobert', system-ui, sans-serif;
     --font-secondary: 'Google Sans Flex', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
     --font-display: var(--font-primary);
     --font-sans: var(--font-secondary);
@@ -54,7 +54,7 @@
 /* Typography Utility Classes */
 .font-display {
   font-family: var(--font-display, var(--font-primary));
-  font-weight: 300;
+  font-weight: 400;
   letter-spacing: -0.035em;
   line-height: 1.08;
   font-synthesis: none;
