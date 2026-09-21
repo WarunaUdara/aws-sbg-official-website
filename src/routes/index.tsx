@@ -104,12 +104,12 @@ function HomePage() {
       </section>
 
       {/* Official "FROM STUDENTS TO BUILDERS" Banner Callout */}
-      <section className="pt-16">
-        <Container size="lg">
-          <div ref={ctaBannerRef} className="relative overflow-hidden bg-[#0D0D0D] border border-white/10 p-8 sm:p-12 md:p-14 min-h-[380px]">
-            {/* Floating Cloud Icons - strictly contained in this CTA banner */}
-            <FloatingCloudIcons containerRef={ctaBannerRef} />
+      <section ref={ctaBannerRef} className="relative py-20 sm:py-28 overflow-hidden">
+        {/* Floating Cloud Icons - outside the CTA card, surrounding it in the section */}
+        <FloatingCloudIcons containerRef={ctaBannerRef} />
 
+        <Container size="lg" className="relative z-10">
+          <div className="relative overflow-hidden bg-[#0D0D0D] border border-white/10 p-8 sm:p-12 md:p-14 shadow-2xl">
             {/* Interactive ShapeGrid Animated Canvas Background */}
             <div className="absolute inset-0 pointer-events-auto opacity-30 z-0">
               <ShapeGrid

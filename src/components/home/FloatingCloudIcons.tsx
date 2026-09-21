@@ -9,46 +9,38 @@ export interface CloudServiceIcon {
   mobile: boolean // whether shown on small mobile displays
 }
 
-export const CLOUD_SERVICE_ICONS: CloudServiceIcon[] = [
+/**
+ * 12 most famous, industry-standard AWS service icons positioned
+ * in the outer perimeter surrounding the central CTA card.
+ */
+export const FAMOUS_AWS_ICONS: CloudServiceIcon[] = [
   // ==============================================================
-  // TOP MARGIN (above text and coordinate grid chip)
+  // TOP ZONE (outside card, across top margin)
   // ==============================================================
-  { slug: "amazon-s3", label: "Amazon S3", x: 8, y: 5, rotation: 6, mobile: true },
-  { slug: "aws-lambda", label: "AWS Lambda", x: 25, y: 3, rotation: -7, mobile: true },
-  { slug: "amazon-bedrock", label: "Amazon Bedrock", x: 44, y: 5, rotation: 4, mobile: false },
-  { slug: "amazon-dynamodb", label: "Amazon DynamoDB", x: 62, y: 3, rotation: -6, mobile: true },
-  { slug: "amazon-cloudfront", label: "Amazon CloudFront", x: 82, y: 4, rotation: 7, mobile: true },
-  { slug: "amazon-ec2", label: "Amazon EC2", x: 94, y: 7, rotation: -8, mobile: true },
+  { slug: "amazon-s3", label: "Amazon S3", x: 18, y: 7, rotation: -6, mobile: true },
+  { slug: "aws-lambda", label: "AWS Lambda", x: 38, y: 4, rotation: 7, mobile: true },
+  { slug: "amazon-bedrock", label: "Amazon Bedrock", x: 62, y: 4, rotation: -5, mobile: true },
+  { slug: "amazon-dynamodb", label: "Amazon DynamoDB", x: 82, y: 7, rotation: 6, mobile: true },
 
   // ==============================================================
-  // LEFT MARGIN (to the far left of text content)
+  // LEFT ZONE (outside card, along left margin)
   // ==============================================================
-  { slug: "amazon-vpc", label: "Amazon VPC", x: 2, y: 38, rotation: 8, mobile: false },
-  { slug: "amazon-aurora", label: "Amazon Aurora", x: 3, y: 68, rotation: -6, mobile: false },
+  { slug: "amazon-ec2", label: "Amazon EC2", x: 4, y: 38, rotation: -8, mobile: true },
+  { slug: "amazon-rds", label: "Amazon RDS", x: 5, y: 66, rotation: 7, mobile: false },
 
   // ==============================================================
-  // CENTER CHANNEL (gap between left text and right grid chip)
+  // RIGHT ZONE (outside card, along right margin)
   // ==============================================================
-  { slug: "amazon-rds", label: "Amazon RDS", x: 53, y: 22, rotation: -5, mobile: false },
-  { slug: "amazon-api-gateway", label: "Amazon API Gateway", x: 52, y: 52, rotation: 6, mobile: false },
-  { slug: "aws-step-functions", label: "AWS Step Functions", x: 54, y: 80, rotation: -7, mobile: false },
+  { slug: "amazon-cloudfront", label: "Amazon CloudFront", x: 95, y: 38, rotation: 8, mobile: true },
+  { slug: "amazon-ecs", label: "Amazon ECS", x: 94, y: 66, rotation: -7, mobile: false },
 
   // ==============================================================
-  // RIGHT MARGIN (to the far right of coordinate grid chip)
+  // BOTTOM ZONE (outside card, across bottom margin)
   // ==============================================================
-  { slug: "amazon-eks", label: "Amazon EKS", x: 97, y: 38, rotation: 8, mobile: false },
-  { slug: "amazon-eventbridge", label: "Amazon EventBridge", x: 95, y: 68, rotation: -6, mobile: true },
-
-  // ==============================================================
-  // BOTTOM MARGIN (below buttons and coordinate grid chip)
-  // ==============================================================
-  { slug: "amazon-cloudwatch", label: "Amazon CloudWatch", x: 6, y: 94, rotation: -6, mobile: true },
-  { slug: "amazon-cognito", label: "Amazon Cognito", x: 22, y: 95, rotation: 5, mobile: false },
-  { slug: "amazon-sns", label: "Amazon SNS", x: 38, y: 94, rotation: -7, mobile: false },
-  { slug: "amazon-ecs", label: "Amazon ECS", x: 44, y: 78, rotation: 6, mobile: false },
-  { slug: "amazon-sqs", label: "Amazon SQS", x: 68, y: 95, rotation: 7, mobile: true },
-  { slug: "aws-amplify", label: "AWS Amplify", x: 82, y: 93, rotation: -5, mobile: true },
-  { slug: "aws-codepipeline", label: "AWS CodePipeline", x: 95, y: 94, rotation: 6, mobile: true },
+  { slug: "amazon-api-gateway", label: "Amazon API Gateway", x: 18, y: 93, rotation: 6, mobile: false },
+  { slug: "amazon-cloudwatch", label: "Amazon CloudWatch", x: 38, y: 95, rotation: -7, mobile: true },
+  { slug: "amazon-cognito", label: "Amazon Cognito", x: 62, y: 95, rotation: 5, mobile: false },
+  { slug: "aws-amplify", label: "AWS Amplify", x: 82, y: 93, rotation: -6, mobile: true },
 ]
 
 interface FloatingCloudIconsProps {
@@ -78,25 +70,25 @@ export function FloatingCloudIcons({ containerRef }: FloatingCloudIconsProps) {
     motionQuery.addEventListener("change", handleMotionChange)
 
     const applyTransforms = (p: number) => {
-      // Maximum displacement towards container center: subtle 26px
-      const maxShift = 26
+      // Subtle 24px inward displacement towards CTA card center
+      const maxShift = 24
 
       iconRefs.current.forEach((el, index) => {
         if (!el) return
-        const icon = CLOUD_SERVICE_ICONS[index]
+        const icon = FAMOUS_AWS_ICONS[index]
         if (!icon) return
 
-        // Direction vector towards container center (50, 50)
+        // Direction vector towards CTA center (50, 50)
         const dx = 50 - icon.x
         const dy = 50 - icon.y
         const dist = Math.sqrt(dx * dx + dy * dy) || 1
         const ux = dx / dist
         const uy = dy / dist
 
-        // Subtle attraction shift along the vector
+        // Attraction shift along vector towards center
         const shiftX = ux * maxShift * p
         const shiftY = uy * maxShift * p
-        const rot = icon.rotation + (1 - p) * (ux * 2.5)
+        const rot = icon.rotation + (1 - p) * (ux * 2)
 
         el.style.transform = `translate3d(calc(-50% + ${shiftX}px), calc(-50% + ${shiftY}px), 0) rotate(${rot}deg)`
       })
@@ -111,16 +103,16 @@ export function FloatingCloudIcons({ containerRef }: FloatingCloudIconsProps) {
 
       const diff = targetProgressRef.current - currentProgressRef.current
 
-      // When the difference is negligible, snap to target and STOP animation loop completely
+      // When difference is tiny, settle and STOP loop immediately (0% idle CPU)
       if (Math.abs(diff) < 0.001) {
         currentProgressRef.current = targetProgressRef.current
         applyTransforms(currentProgressRef.current)
         isAnimatingRef.current = false
         rafIdRef.current = null
-        return // Loop stops when scroll stops! Zero CPU when idle.
+        return
       }
 
-      // Smooth damping easing
+      // Smooth damping interpolation
       currentProgressRef.current += diff * 0.12
       applyTransforms(currentProgressRef.current)
 
@@ -143,14 +135,13 @@ export function FloatingCloudIcons({ containerRef }: FloatingCloudIconsProps) {
 
       // Measure distance from viewport center
       const distFromCenter = containerCenter - viewportCenter
-      // Influence range around viewport center
       const influenceRange = (vh + rect.height) * 0.55
 
-      // Progress: 1 when centered; falls to 0 as user scrolls away
+      // Progress: 1 when CTA is centered; drops to 0 as user scrolls away
       const normalized = 1 - Math.min(Math.max(Math.abs(distFromCenter) / influenceRange, 0), 1)
       targetProgressRef.current = normalized
 
-      // Only run requestAnimationFrame while active, then stop when settled
+      // Only animate while active
       if (!isAnimatingRef.current) {
         isAnimatingRef.current = true
         rafIdRef.current = window.requestAnimationFrame(tick)
@@ -160,7 +151,6 @@ export function FloatingCloudIcons({ containerRef }: FloatingCloudIconsProps) {
     window.addEventListener("scroll", updateScrollProgress, { passive: true })
     window.addEventListener("resize", updateScrollProgress)
 
-    // Initial position setup
     updateScrollProgress()
 
     return () => {
@@ -179,7 +169,7 @@ export function FloatingCloudIcons({ containerRef }: FloatingCloudIconsProps) {
       className="floating-cloud-icons pointer-events-none absolute inset-0 z-0 overflow-hidden select-none"
       aria-hidden="true"
     >
-      {CLOUD_SERVICE_ICONS.map((icon, index) => (
+      {FAMOUS_AWS_ICONS.map((icon, index) => (
         <img
           key={icon.slug}
           ref={(el) => {
@@ -187,7 +177,7 @@ export function FloatingCloudIcons({ containerRef }: FloatingCloudIconsProps) {
           }}
           src={`/icons/aws-services/${icon.slug}.svg`}
           alt={icon.label}
-          className={`floating-cloud-icon absolute w-10 h-10 sm:w-12 sm:h-12 lg:w-14 lg:h-14 object-contain rounded-none select-none drop-shadow-md ${
+          className={`floating-cloud-icon absolute w-10 h-10 sm:w-12 sm:h-12 lg:w-14 lg:h-14 object-contain rounded-none select-none drop-shadow-xl ${
             icon.mobile ? "block" : "hidden sm:block"
           }`}
           style={{
