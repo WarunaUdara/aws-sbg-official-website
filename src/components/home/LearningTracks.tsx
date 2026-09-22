@@ -1,8 +1,31 @@
-import { Link } from "@tanstack/react-router"
-import { ArrowRight } from "lucide-react"
 import { Container } from "@/components/common/Container"
 import { cn } from "@/lib/utils"
 import { MiniArchitectureVisualizer } from "./MiniArchitectureVisualizer"
+
+const PATHWAY_TILE_ROWS = [5, 4, 2]
+
+function PathwayCornerTiles() {
+  return (
+    <div
+      aria-hidden="true"
+      className="pointer-events-none absolute right-0 top-0 hidden flex-col items-end opacity-80 lg:flex"
+    >
+      {PATHWAY_TILE_ROWS.map((tileCount, rowIndex) => (
+        <div key={tileCount} className={cn("flex", rowIndex > 0 && "-mt-px")}>
+          {Array.from({ length: tileCount }).map((_, tileIndex) => (
+            <span
+              key={`${rowIndex}-${tileIndex}`}
+              className={cn(
+                "size-16 shrink-0 border border-white/10",
+                tileIndex > 0 && "-ml-px"
+              )}
+            />
+          ))}
+        </div>
+      ))}
+    </div>
+  )
+}
 
 function ServerlessGraphic() {
   return (
@@ -146,10 +169,11 @@ const TRACKS = [
 export function LearningTracks() {
   return (
     <section className="py-20 sm:py-24 bg-[#0D0D0D] border-b border-white/10 relative">
+      <PathwayCornerTiles />
       <Container size="lg">
         {/* Section Header */}
-        <div className="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-6">
-          <div className="space-y-3 max-w-2xl">
+        <div className="relative mb-12">
+          <div className="relative z-10 max-w-2xl space-y-3">
             <div className="inline-flex items-center gap-2 text-xs font-mono uppercase tracking-wider text-[#FF9900]">
               <span className="w-2 h-2 bg-[#FF9900]" />
               <span>Learning Pathways</span>
@@ -162,13 +186,6 @@ export function LearningTracks() {
             </p>
           </div>
 
-          <Link
-            to="/events"
-            className="inline-flex items-center gap-2 px-4 py-2.5 bg-[#151515] border border-white/15 hover:border-[#FF9900]/60 text-xs font-mono text-white transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#FF9900] w-fit rounded-none self-start md:self-end"
-          >
-            <span>View Workshop Schedule</span>
-            <ArrowRight className="w-3.5 h-3.5 text-[#FF9900]" />
-          </Link>
         </div>
 
         {/* Unkey-Style Connected Feature Grid */}
