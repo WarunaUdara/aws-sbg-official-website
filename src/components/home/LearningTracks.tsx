@@ -8,14 +8,17 @@ function PathwayCornerTiles() {
   return (
     <div
       aria-hidden="true"
-      className="pointer-events-none absolute right-0 top-0 hidden flex-col items-end border-r border-b border-white/10 opacity-80 lg:flex"
+      className="pointer-events-none absolute right-0 top-0 hidden flex-col items-end opacity-80 lg:flex"
     >
       {PATHWAY_TILE_ROWS.map((tileCount, rowIndex) => (
-        <div key={tileCount} className="flex">
+        <div key={tileCount} className={cn("flex", rowIndex > 0 && "-mt-px")}>
           {Array.from({ length: tileCount }).map((_, tileIndex) => (
             <span
               key={`${rowIndex}-${tileIndex}`}
-              className="size-16 shrink-0 border-l border-t border-white/10"
+              className={cn(
+                "size-16 shrink-0 border border-white/10",
+                tileIndex > 0 && "-ml-px"
+              )}
             />
           ))}
         </div>
