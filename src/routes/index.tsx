@@ -104,7 +104,7 @@ function HomePage() {
       </section>
 
       {/* Official "FROM STUDENTS TO BUILDERS" Banner Callout */}
-      <section ref={ctaBannerRef} className="relative py-20 sm:py-28 overflow-hidden">
+      <section ref={ctaBannerRef} className="relative py-28 sm:py-36 lg:py-44 overflow-hidden">
         {/* Floating Cloud Icons - outside the CTA card, surrounding it in the section */}
         <FloatingCloudIcons containerRef={ctaBannerRef} />
 
