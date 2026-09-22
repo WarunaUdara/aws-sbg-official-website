@@ -8,7 +8,7 @@ function PathwayCornerTiles() {
   return (
     <div
       aria-hidden="true"
-      className="pointer-events-none absolute right-0 top-0 hidden flex-col items-end opacity-80 lg:flex"
+      className="pointer-events-none absolute right-0 top-20 hidden flex-col items-end opacity-80 sm:top-24 lg:flex"
     >
       {PATHWAY_TILE_ROWS.map((tileCount, rowIndex) => (
         <div key={tileCount} className="flex">
@@ -166,6 +166,7 @@ const TRACKS = [
 export function LearningTracks() {
   return (
     <section className="py-20 sm:py-24 bg-[#0D0D0D] border-b border-white/10 relative">
+      <PathwayCornerTiles />
       <Container size="lg">
         {/* Section Header */}
         <div className="relative mb-12">
@@ -182,7 +183,6 @@ export function LearningTracks() {
             </p>
           </div>
 
-          <PathwayCornerTiles />
         </div>
 
         {/* Unkey-Style Connected Feature Grid */}
