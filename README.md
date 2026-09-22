@@ -13,7 +13,7 @@ Built with **TanStack Start** (React 19, TanStack Router, TanStack Query, and Ta
 
 - **⚡ Modern Full-Stack React**: Powered by TanStack Start with SSR (Server-Side Rendering) and client hydration.
 - **🛣️ Type-Safe File Routing**: TanStack Router with auto-generated route trees, nested layouts, and loaders.
-- **🎨 AWS Builder Design System**: Styled with Tailwind CSS v4, AWS smile orange (`#FF9900`) accents, dark slate aesthetic, and accessible UI components.
+- **🎨 AWS Builder Design System**: Styled with Tailwind CSS v4, AWS smile orange (`#FF9900`) accents, an obsidian blueprint canvas, and accessible UI components.
 - **🧩 Domain-Driven Architecture**: Modular feature folders (`events`, `projects`, `team`, `newsletter`) cleanly separating presentation from domain logic.
 - **🛡️ Extensible Server Functions**: Type-safe server mutations and data loaders using `createServerFn()` from `@tanstack/react-start`, ready to wire up with AWS DynamoDB, SES, and Cognito.
 
@@ -26,9 +26,9 @@ See [DESIGN_SYSTEM.md](./DESIGN_SYSTEM.md) for full architectural guidelines, to
 | Category | Standard | Usage |
 |---|---|---|
 | **Primary Color** | `#FF9900` (AWS Builder Orange) | Hero fills, CTAs, builder chip glyph, active accents |
-| **Canvas Dark** | `#0A0E17` (Deep Slate Canvas) | Main canvas, high-contrast text on orange fills |
-| **Surface Dark** | `#161F2E` (Surface Navy) | Cards, mosaic tiles, brand anchor boxes |
-| **Primary Font** | **Space Grotesk** | Display headlines, section titles (`.font-display`) |
+| **Canvas Dark** | `#0D0D0D` (Obsidian Canvas) | Main canvas, high-contrast text on orange fills |
+| **Surface Dark** | `#151515` (Graphite Surface) | Cards, mosaic tiles, brand anchor boxes |
+| **Primary Font** | **Roobert Regular** | Display headlines, section titles (`.font-display`) |
 | **Secondary Font** | **Google Sans Flex** | Body copy, descriptions, navigation links, card content (`.font-secondary`, `.font-sans`) |
 | **Monospace Font** | **JetBrains Mono** | Brand signatures, terminal headers, tags, metadata (`.font-mono`) |
 | **Grid System** | `48px` × `48px` Coordinate Grid | Architectural backdrops (`.bg-builder-grid-dark`) |

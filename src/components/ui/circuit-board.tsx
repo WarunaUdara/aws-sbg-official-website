@@ -328,7 +328,7 @@ export function CircuitBoard({
           return (
             <motion.div
               key={node.id}
-              className="absolute flex items-center justify-center rounded-none bg-[#0A0E17]/95 border z-20 group cursor-pointer"
+              className="absolute flex items-center justify-center rounded-none bg-[#0D0D0D]/95 border z-20 group cursor-pointer"
               style={{
                 left: node.x - size / 2,
                 top: node.y - size / 2,
@@ -396,7 +396,7 @@ export function CircuitBoard({
               {node.label && (
                 <div
                   className={cn(
-                    "absolute left-1/2 -translate-x-1/2 whitespace-nowrap font-mono tracking-tight font-medium bg-[#0A0E17]/90 border border-white/10 rounded-none text-slate-300 pointer-events-none transition-colors group-hover:text-white group-hover:border-white/25",
+                    "absolute left-1/2 -translate-x-1/2 whitespace-nowrap font-mono tracking-tight font-medium bg-[#0D0D0D]/90 border border-white/10 rounded-none text-slate-300 pointer-events-none transition-colors group-hover:text-white group-hover:border-white/25",
                     compact
                       ? "-bottom-5 text-[9px] px-1 py-0 leading-tight"
                       : "-bottom-6 text-[11px] px-1.5 py-0.5"
@@ -529,7 +529,7 @@ export function CircuitNode({
   return (
     <motion.div
       className={cn(
-        "relative flex items-center justify-center rounded-none border bg-[#0A0E17]/95",
+        "relative flex items-center justify-center rounded-none border bg-[#0D0D0D]/95",
         sizeClasses[size],
         className
       )}

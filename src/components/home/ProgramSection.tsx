@@ -40,7 +40,7 @@ export function ProgramSection() {
   }
 
   return (
-    <section className="py-24 bg-[#0A0E17] border-b border-white/10 relative overflow-hidden">
+    <section className="py-24 bg-[#0D0D0D] border-b border-white/10 relative overflow-hidden">
       <Container size="lg">
         {/* Breadcrumb Path inspired by AWS Builder Center */}
         <div className="flex items-center gap-2 text-xs font-mono text-slate-300 mb-8 overflow-x-auto scrollbar-none">
@@ -67,10 +67,10 @@ export function ProgramSection() {
               Connect with other students on campus. Build together on the cloud.
             </p>
 
-            <div className="flex flex-wrap items-center gap-4 pt-2">
+            <div id="builder-cta" className="flex scroll-mt-24 flex-wrap items-center gap-4 pt-2">
               <Link
                 to="/contact"
-                className="px-6 py-3.5 bg-white hover:bg-slate-200 text-black font-mono text-xs sm:text-sm font-bold tracking-wider uppercase transition-colors inline-flex items-center gap-2"
+                className="px-6 py-3.5 bg-white hover:bg-slate-200 text-black font-mono text-xs sm:text-sm font-bold tracking-wider uppercase transition-colors inline-flex items-center gap-2 rounded-none"
               >
                 Join a Student Group
               </Link>
@@ -78,7 +78,7 @@ export function ProgramSection() {
                 href="https://aws.amazon.com/developer/community/students/"
                 target="_blank"
                 rel="noreferrer"
-                className="px-6 py-3.5 border border-white/20 hover:border-white text-white font-mono text-xs sm:text-sm font-semibold tracking-wider transition-colors inline-flex items-center gap-2"
+                className="px-6 py-3.5 border border-white/20 hover:border-white text-white font-mono text-xs sm:text-sm font-semibold tracking-wider transition-colors inline-flex items-center gap-2 rounded-none"
               >
                 <span>AWS Global Program</span>
                 <ExternalLink className="w-4 h-4 text-slate-400" />

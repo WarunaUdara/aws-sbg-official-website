@@ -21,7 +21,7 @@ function TeamAvatar({ name, avatarUrl }: { name: string; avatarUrl?: string }) {
   const [hasError, setHasError] = React.useState(false)
 
   return (
-    <div className="w-20 h-20 rounded-none bg-[#161F2E] border border-white/10 group-hover:border-[#FF9900]/40 flex items-center justify-center overflow-hidden shrink-0 transition-colors">
+    <div className="w-20 h-20 rounded-none bg-[#151515] border border-white/10 group-hover:border-[#FF9900]/40 flex items-center justify-center overflow-hidden shrink-0 transition-colors">
       {avatarUrl && !hasError ? (
         <img
           src={avatarUrl}
@@ -83,8 +83,8 @@ function TeamPage() {
         <div className="border border-white/10 bg-white/10 space-y-px mb-20">
           {/* Group Leader Hero Card */}
           {leader && (
-            <div className="group relative bg-[#0A0E17] hover:bg-[#161F2E]/40 transition-colors duration-200 p-6 sm:p-8">
-              <div className="absolute top-4 right-4 px-2.5 py-0.5 bg-[#FF9900] text-[#0A0E17] font-mono text-[10px] font-bold uppercase tracking-wider border border-[#FF9900] select-none">
+            <div className="group relative bg-[#0D0D0D] hover:bg-[#151515]/40 transition-colors duration-200 p-6 sm:p-8">
+              <div className="absolute top-4 right-4 px-2.5 py-0.5 bg-[#FF9900] text-[#0D0D0D] font-mono text-[10px] font-bold uppercase tracking-wider border border-[#FF9900] select-none">
                 Group Leader
               </div>
 
@@ -153,7 +153,7 @@ function TeamPage() {
             {coreMembers.map((member) => (
               <div
                 key={member.id}
-                className="flex flex-col justify-between bg-[#0A0E17] hover:bg-[#161F2E]/40 transition-colors duration-200 p-6 group"
+                className="flex flex-col justify-between bg-[#0D0D0D] hover:bg-[#151515]/40 transition-colors duration-200 p-6 group"
               >
                 <div>
                   <div className="flex items-center gap-5 mb-5">
@@ -227,7 +227,7 @@ function TeamPage() {
         </div>
 
         {/* Join Leadership CTA */}
-        <div className="rounded-none border border-white/10 bg-[#161F2E]/60 p-8 text-center space-y-4 max-w-2xl mx-auto">
+        <div className="rounded-none border border-white/10 bg-[#151515]/60 p-8 text-center space-y-4 max-w-2xl mx-auto">
           <h3 className="text-xl font-bold text-white font-display">
             Want to Lead, Speak, or Organize with Us?
           </h3>

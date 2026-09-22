@@ -173,7 +173,7 @@ export function MiniArchitectureVisualizer() {
                   setActiveIdx(idx)
                 }}
                 className={cn(
-                  "h-1 transition-all duration-300 rounded-none cursor-pointer",
+                  "h-1 transition-[width,background-color] duration-300 rounded-none cursor-pointer",
                   isActive
                     ? "bg-[#FF9900] w-3.5"
                     : "bg-white/20 hover:bg-white/40 w-1.5"

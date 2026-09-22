@@ -40,7 +40,7 @@ const PILLARS = [
 
 export function Pillars() {
   return (
-    <section className="py-20 sm:py-24 border-b border-white/10 bg-[#0A0E17] relative overflow-hidden">
+    <section className="py-20 sm:py-24 border-b border-white/10 bg-[#0D0D0D] relative overflow-hidden">
       {/* Interactive ShapeGrid Animated Canvas Background */}
       <div className="absolute inset-0 pointer-events-auto opacity-75">
         <ShapeGrid
@@ -51,7 +51,7 @@ export function Pillars() {
           borderColor="rgba(255, 153, 0, 0.12)"
           hoverFillColor="rgba(255, 153, 0, 0.28)"
           hoverTrailAmount={5}
-          vignetteColor="#0A0E17"
+          vignetteColor="#0D0D0D"
         />
       </div>
 
@@ -69,14 +69,14 @@ export function Pillars() {
         </div>
 
         {/* Connected Feature Grid matching LearningTracks & BuilderRewards */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 border border-white/10 bg-[#0A0E17] pointer-events-auto">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 border border-white/10 bg-[#0D0D0D] pointer-events-auto">
           {PILLARS.map((pillar, i) => {
             const Icon = pillar.icon
             return (
               <div
                 key={pillar.title}
                 className={cn(
-                  "p-6 sm:p-7 flex flex-col justify-between hover:bg-[#161F2E]/40 transition-colors group border-white/10",
+                  "p-6 sm:p-7 flex flex-col justify-between hover:bg-[#151515]/40 transition-colors group border-white/10",
                   // Mobile (1 col): bottom border on 0,1,2
                   i < 3 && "border-b",
                   // Tablet (2 cols):
@@ -94,12 +94,12 @@ export function Pillars() {
                     <span className="text-xs font-mono text-[#FF9900] font-bold">
                       {pillar.number}
                     </span>
-                    <span className="text-xs font-mono tracking-wider text-slate-200 bg-[#0A0E17] px-2 py-0.5 border border-white/15">
+                    <span className="text-xs font-mono tracking-wider text-slate-200 bg-[#0D0D0D] px-2 py-0.5 border border-white/15">
                       {pillar.badge}
                     </span>
                   </div>
 
-                  <div className="p-3 w-fit bg-[#0A0E17] border border-white/10 group-hover:border-[#FF9900]/40 text-[#FF9900] mb-4 group-hover:scale-105 transition-all">
+                  <div className="p-3 w-fit bg-[#0D0D0D] border border-white/10 group-hover:border-[#FF9900]/40 text-[#FF9900] mb-4 group-hover:scale-105 transition-transform transition-colors">
                     <Icon className="w-5 h-5" />
                   </div>
 

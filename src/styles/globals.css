@@ -1,8 +1,16 @@
 @import "tailwindcss";
 @import "lenis/dist/lenis.css";
 
+@font-face {
+  font-family: "Roobert";
+  src: url("/RoobertTRIAL-Regular-BF67243fd53fdf2.otf") format("opentype");
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+}
+
 @theme {
-  --font-primary: 'Space Grotesk', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-primary: 'Roobert', system-ui, sans-serif;
   --font-secondary: 'Google Sans Flex', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
   --font-display: var(--font-primary);
   --font-sans: var(--font-secondary);
@@ -11,7 +19,7 @@
 
 @layer base {
   :root {
-    --font-primary: 'Space Grotesk', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    --font-primary: 'Roobert', system-ui, sans-serif;
     --font-secondary: 'Google Sans Flex', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
     --font-display: var(--font-primary);
     --font-sans: var(--font-secondary);
@@ -20,10 +28,10 @@
     /* Official Brand Colors */
     --builder-orange: #FF9900;
     --builder-orange-light: #FFB84D;
-    --builder-dark: #0A0E17;
-    --builder-surface: #161F2E;
-    --builder-surface-hover: #1E2B3E;
-    --builder-border: rgba(255, 153, 0, 0.20);
+    --builder-dark: #0D0D0D;
+    --builder-surface: #151515;
+    --builder-surface-hover: #1D1D1D;
+    --builder-border: rgba(255, 255, 255, 0.14);
   }
 
   body {
@@ -46,7 +54,10 @@
 /* Typography Utility Classes */
 .font-display {
   font-family: var(--font-display, var(--font-primary));
-  letter-spacing: -0.02em;
+  font-weight: 400;
+  letter-spacing: -0.035em;
+  line-height: 1.08;
+  font-synthesis: none;
 }
 
 .font-secondary,
@@ -84,11 +95,21 @@
 
 /* Modular Architectural Square Grid Backgrounds */
 .bg-builder-grid-dark {
-  background-color: #0A0E17;
+  background-color: #0D0D0D;
   background-image: 
-    linear-gradient(to right, rgba(255, 255, 255, 0.07) 1px, transparent 1px),
-    linear-gradient(to bottom, rgba(255, 255, 255, 0.07) 1px, transparent 1px);
+    linear-gradient(to right, rgba(255, 255, 255, 0.055) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.055) 1px, transparent 1px);
   background-size: 48px 48px;
+}
+
+.blueprint-grid {
+  background-color: var(--builder-dark);
+  background-image:
+    linear-gradient(to right, rgba(255, 255, 255, 0.045) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.045) 1px, transparent 1px),
+    linear-gradient(to right, rgba(255, 153, 0, 0.07) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 153, 0, 0.07) 1px, transparent 1px);
+  background-size: 48px 48px, 48px 48px, 240px 240px, 240px 240px;
 }
 
 .bg-builder-grid-orange {
@@ -152,11 +173,11 @@
 
 .builder-block-orange {
   background-color: #FF9900;
-  color: #0A0E17;
+  color: #0D0D0D;
 }
 
 .builder-block-dark {
-  background-color: #161F2E;
+  background-color: #151515;
   color: #FFFFFF;
 }
 
@@ -170,15 +191,14 @@
 /* Architectural Card Glow with crisp 1px border */
 .aws-card-glow {
   position: relative;
-  background: rgba(22, 31, 46, 0.85);
-  border: 1px solid rgba(255, 153, 0, 0.18);
-  backdrop-filter: blur(12px);
-  transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+  background: rgba(21, 21, 21, 0.92);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  transition: border-color 0.25s ease, background-color 0.25s ease, transform 0.25s ease;
 }
 
 .aws-card-glow:hover {
-  border-color: rgba(255, 153, 0, 0.45);
-  box-shadow: 0 12px 30px -10px rgba(255, 153, 0, 0.2);
+  border-color: rgba(255, 153, 0, 0.55);
+  background-color: rgba(29, 29, 29, 0.96);
   transform: translateY(-2px);
 }
 
@@ -187,7 +207,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: #161F2E;
+  background-color: #151515;
   border: 1px solid rgba(255, 153, 0, 0.3);
 }
 
@@ -195,29 +215,57 @@
 .hero-bottom-scrim {
   background: linear-gradient(
     to top,
-    #0A0E17 0%,
-    #0A0E17 18%,
-    rgba(10, 14, 23, 0.98) 28%,
-    rgba(10, 14, 23, 0.94) 38%,
-    rgba(10, 14, 23, 0.86) 48%,
-    rgba(10, 14, 23, 0.74) 58%,
-    rgba(10, 14, 23, 0.58) 68%,
-    rgba(10, 14, 23, 0.40) 78%,
-    rgba(10, 14, 23, 0.24) 86%,
-    rgba(10, 14, 23, 0.12) 92%,
-    rgba(10, 14, 23, 0.04) 97%,
-    rgba(10, 14, 23, 0) 100%
+    #0D0D0D 0%,
+    #0D0D0D 18%,
+    rgba(13, 13, 13, 0.98) 28%,
+    rgba(13, 13, 13, 0.94) 38%,
+    rgba(13, 13, 13, 0.86) 48%,
+    rgba(13, 13, 13, 0.74) 58%,
+    rgba(13, 13, 13, 0.58) 68%,
+    rgba(13, 13, 13, 0.40) 78%,
+    rgba(13, 13, 13, 0.24) 86%,
+    rgba(13, 13, 13, 0.12) 92%,
+    rgba(13, 13, 13, 0.04) 97%,
+    rgba(13, 13, 13, 0) 100%
   );
 }
 
 .hero-top-scrim {
   background: linear-gradient(
     to bottom,
-    rgba(10, 14, 23, 0.92) 0%,
-    rgba(10, 14, 23, 0.75) 30%,
-    rgba(10, 14, 23, 0.40) 60%,
-    rgba(10, 14, 23, 0.14) 85%,
-    rgba(10, 14, 23, 0) 100%
+    rgba(13, 13, 13, 0.92) 0%,
+    rgba(13, 13, 13, 0.75) 30%,
+    rgba(13, 13, 13, 0.40) 60%,
+    rgba(13, 13, 13, 0.14) 85%,
+    rgba(13, 13, 13, 0) 100%
   );
 }
 
+.floating-cloud-icons {
+  contain: layout style;
+}
+
+.floating-cloud-icon {
+  filter: drop-shadow(0 8px 18px rgba(0, 0, 0, 0.35));
+  opacity: 0.9;
+  transition: opacity 180ms ease, border-color 180ms ease, box-shadow 180ms ease;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+  }
+
+  .floating-cloud-icon {
+    transition: none;
+  }
+}

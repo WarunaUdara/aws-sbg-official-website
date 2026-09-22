@@ -5,9 +5,9 @@ import { cn } from "@/lib/utils"
 
 export function Stats() {
   return (
-    <section className="py-12 bg-[#0A0E17] border-b border-white/10">
+    <section className="py-12 bg-[#0D0D0D] border-b border-white/10">
       <Container size="lg">
-        <div className="grid grid-cols-2 md:grid-cols-4 border border-white/10 bg-[#0A0E17]">
+        <div className="grid grid-cols-2 md:grid-cols-4 border border-white/10 bg-[#0D0D0D]">
           {SITE_CONFIG.stats.map((stat, i) => {
             const numericValue = parseInt(stat.value.replace(/\D/g, ""), 10) || 0
             const suffix = stat.value.replace(/\d/g, "")
@@ -16,7 +16,7 @@ export function Stats() {
               <div
                 key={stat.label}
                 className={cn(
-                  "p-6 sm:p-7 text-left hover:bg-[#161F2E]/40 transition-colors border-white/10 group",
+                  "p-6 sm:p-7 text-left hover:bg-[#151515]/40 transition-colors border-white/10 group",
                   // Mobile (2 cols, 2 rows):
                   i === 0 && "border-r border-b",
                   i === 1 && "border-b",

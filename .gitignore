@@ -50,6 +50,27 @@ Thumbs.db
 .serverless/
 .aws-sam/
 cdk.out/
+
+# Local AI tool outputs and caches
+.codex/
+codex/
+codex-out/
+*.codex
+.claude/
+CLAUDE.md
+claude-out/
+graphify-out/
+.graphify/
+*.graphify
+.codegraph/
+codegraph/
+codegraph-out/
+.cursor/
+.cursorrules
+.chat/
+agent-output/
+.system_generated/
+
 # Temporary Notes & Information Requests
 TODO_AND_INFO_NEEDS.md
 *.tmp.md

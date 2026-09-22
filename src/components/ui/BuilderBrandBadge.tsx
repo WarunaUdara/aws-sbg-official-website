@@ -40,8 +40,8 @@ export function BuilderBrandBadge({
           "flex items-center justify-center shrink-0 border transition-transform",
           boxSizes[size],
           isOrange
-            ? "bg-[#FF9900] border-[#FF9900] text-[#0A0E17]"
-            : "bg-[#161F2E] border-[#FF9900]/30 text-[#FF9900]"
+            ? "bg-[#FF9900] border-[#FF9900] text-[#0D0D0D]"
+            : "bg-[#151515] border-[#FF9900]/30 text-[#FF9900]"
         )}
       >
         <img
@@ -53,10 +53,10 @@ export function BuilderBrandBadge({
 
       {/* Official Monospace Signature */}
       <div className={cn("font-mono font-medium", textSizes[size])}>
-        <div className={isOrange ? "text-[#0A0E17] font-semibold" : "text-white font-semibold"}>
+        <div className={isOrange ? "text-[#0D0D0D] font-semibold" : "text-white font-semibold"}>
           AWS Student Builder Group
         </div>
-        <div className={isOrange ? "text-[#0A0E17]/80" : "text-slate-400"}>
+        <div className={isOrange ? "text-[#0D0D0D]/80" : "text-slate-400"}>
           at University of Sri Jayewardenepura
         </div>
       </div>

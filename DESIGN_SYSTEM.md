@@ -12,6 +12,8 @@ This system establishes the visual standards, token definitions, typography, geo
 - **Core Identity**: Technical, architectural, modular, high-contrast, energetic, and clean.
 - **Architectural Motifs**:
   - **The Coordinate Grid**: Thin, crisp 1px lines dividing surfaces into modular square cells (like engineering grid paper and AWS architectural diagrams).
+  - **Obsidian Surfaces**: A nearly black canvas and graphite panels keep the interface calm; orange is reserved for action, status, and orientation.
+  - **Editorial Restraint**: Square geometry, hairline rules, flat surfaces, and generous negative space provide the visual discipline of the supplied Render reference without copying its branding.
   - **Builder Blocks & Mosaics**: Stepped square tiles (orange and deep slate) creating dynamic pixelated silhouettes and structural accents.
   - **The Builder Chip Logo**: A 7x7 modular microprocessor glyph with 3 pins per side and a hollow square core, symbolizing student cloud builders crafting hardware & software.
   - **Technical Monospace Signatures**: Clean monospace font for organizational sign-offs, metadata, and status badges.
@@ -25,9 +27,9 @@ This system establishes the visual standards, token definitions, typography, geo
 |---|---|---|---|
 | `builder-orange` | `#FF9900` | `oklch(0.72 0.18 55.0)` | Primary brand color, full-bleed hero fills, prominent CTAs, chip glyph, active accents |
 | `builder-orange-light` | `#FFB84D` | `oklch(0.80 0.14 62.0)` | Hover states, glowing edges, gradient highlights |
-| `builder-dark` | `#0A0E17` | `oklch(0.14 0.02 260.0)` | Primary dark canvas background, high-contrast text on orange surfaces |
-| `builder-surface` | `#161F2E` | `oklch(0.22 0.03 255.0)` | Surface cards, dark mosaic blocks, anchored badge blocks |
-| `builder-surface-hover` | `#1E2B3E` | `oklch(0.26 0.04 255.0)` | Card hover states, secondary button backgrounds |
+| `builder-dark` | `#0D0D0D` | `oklch(0.14 0 0)` | Primary obsidian canvas background |
+| `builder-surface` | `#151515` | `oklch(0.20 0 0)` | Surface cards, dark mosaic blocks, anchored badge blocks |
+| `builder-surface-hover` | `#1D1D1D` | `oklch(0.25 0 0)` | Card hover states, secondary button backgrounds |
 
 ### Monochrome & Neutral Tokens
 | Token Name | Hex Code | Usage |
@@ -41,20 +43,21 @@ This system establishes the visual standards, token definitions, typography, geo
 |---|---|---|
 | `builder-grid-dark` | `rgba(255, 255, 255, 0.08)` | 1px grid coordinate lines on dark surfaces |
 | `builder-grid-orange` | `rgba(0, 0, 0, 0.12)` | 1px grid coordinate lines on orange surfaces |
-| `builder-border-subtle`| `rgba(255, 153, 0, 0.20)` | Card borders, container dividers, technical frames |
+| `builder-border-subtle`| `rgba(255, 255, 255, 0.14)` | Card borders, container dividers, technical frames |
 
 ---
 
 ## 3. Typography System
 
-### Primary Font: **Space Grotesk** (Sans-Serif)
+### Primary Font: **Roobert Regular** (Display Sans)
 - **Role**: Display headlines, high-impact titles (`.font-display`).
 - **CSS Variable**: `--font-primary` / `--font-display`
-- **Characteristics**: Crisp geometric grotesque, architectural proportions, high legibility.
+- **Source**: `public/RoobertTRIAL-Regular-BF67243fd53fdf2.otf`, loaded as `Roobert`.
+- **Characteristics**: Clean, technical, wide display rhythm with a calm editorial silhouette.
 - **Hierarchy Scale**:
-  - `Display / Hero`: `text-5xl` to `text-7xl` (`font-bold` / `font-black`, leading tight: `1.05 - 1.1`, tracking tight: `-0.02em`)
-  - `H1 / Section`: `text-3xl` to `text-4xl` (`font-extrabold`, leading: `1.15`)
-  - `H2 / Component`: `text-xl` to `text-2xl` (`font-bold`)
+  - `Display / Hero`: `text-5xl` to `text-7xl` (`font-normal`, leading `1.08`, tracking `-0.035em`)
+  - `H1 / Section`: `text-3xl` to `text-4xl` (`font-normal`, leading `1.1`)
+  - `H2 / Component`: `text-xl` to `text-2xl` (`font-medium`)
 
 ### Secondary Font: **Google Sans Flex** (Sans-Serif)
 - **Role**: Body copy, descriptions, navigation links, button text, card content (`.font-secondary`, `.font-sans`).
@@ -74,12 +77,12 @@ This system establishes the visual standards, token definitions, typography, geo
 ## 4. Geometric & Layout Components
 
 ### A. The Modular Grid System (`.builder-grid`)
-- Backgrounds feature an architectural square grid (cell sizes: `40px` or `48px`).
+  - Backgrounds feature an architectural square grid (cell sizes: `48px`, with `240px` major divisions in `.blueprint-grid`).
 - Used on hero headers, section dividers, and featured callout banners.
 - Both dark-grid (`bg-grid-dark`) and orange-grid (`bg-grid-orange`) variants are supported.
 
 ### B. Builder Mosaics (Stepped Blocks)
-- Clustered or stepped square blocks (e.g. 2x2, 3x1, L-shaped) of `#FF9900` and `#161F2E`.
+- Clustered or stepped square blocks (e.g. 2x2, 3x1, L-shaped) of `#FF9900` and `#151515`.
 - Corners on mosaic blocks are strictly geometric (`rounded-none` or sharp `0px` radius) to maintain the pixel-brick aesthetic.
 
 ### C. The 7x7 Builder Chip Glyph
@@ -105,12 +108,12 @@ This system establishes the visual standards, token definitions, typography, geo
 ## 5. Component Standards for Agents & Developers
 
 1. **Buttons**:
-   - `Primary / Glow`: Background `#FF9900` text `#0A0E17`, bold font, crisp border or subtle warm shadow.
-   - `Technical / Outline`: Transparent background, 1px border `rgba(255, 153, 0, 0.4)`, hover border `#FF9900`.
-   - `Secondary / Dark`: Background `#161F2E`, text white, 1px border `slate-800`.
+   - `Primary`: Background `#FF9900`, text `#0D0D0D`, bold font, crisp square edge.
+   - `Technical / Outline`: Transparent background, 1px neutral border, hover border `#FF9900`.
+   - `Secondary / Dark`: Background `#151515`, text white, 1px neutral border.
 2. **Cards**:
-   - Background `#161F2E` with 70% opacity and backdrop blur.
-   - 1px border `rgba(255, 153, 0, 0.15)`, transitioning to `0.4` on hover with a subtle lift.
+   - Background `#151515`; avoid heavy gradients, shadows, and glass effects.
+   - 1px neutral border, transitioning to a restrained orange edge on hover with a subtle lift.
 3. **Badges**:
    - Square or subtly rounded (`rounded-sm` or `rounded-md`), monospace uppercase text, 1px technical border.
 

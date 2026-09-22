@@ -19,7 +19,7 @@ export function EventCard({ event, className, bordered = true }: EventCardProps)
   return (
     <Card
       className={cn(
-        "flex flex-col h-full bg-[#0A0E17] hover:bg-[#161F2E]/40 transition-colors duration-200 rounded-none group",
+        "flex flex-col h-full bg-[#0D0D0D] hover:bg-[#151515]/40 transition-colors duration-200 rounded-none group",
         bordered ? "border border-white/10 hover:border-[#FF9900]/50" : "border-0",
         className
       )}
@@ -68,7 +68,7 @@ export function EventCard({ event, className, bordered = true }: EventCardProps)
           {event.tags.slice(0, 4).map((tag) => (
             <span
               key={tag}
-              className="text-xs font-mono bg-[#0A0E17] text-slate-200 border border-white/10 px-2 py-0.5"
+              className="text-xs font-mono bg-[#0D0D0D] text-slate-200 border border-white/10 px-2 py-0.5"
             >
               #{tag}
             </span>
