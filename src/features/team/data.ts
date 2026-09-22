@@ -33,16 +33,6 @@ export const MOCK_TEAM: TeamMember[] = [
     linkedin: 'https://www.linkedin.com/in/eranga-kavisanka-7249592a8/',
   },
   {
-    id: 'vaseegaran',
-    name: 'Vaseegaran',
-    role: 'Community & Outreach Lead',
-    faculty: 'Faculty of Engineering',
-    avatarUrl: '/team/vaseegaran.jpg',
-    bio: 'Driving campus engagement, inter-faculty collaborations, student outreach, and connecting USJ builders with the wider AWS community across Sri Lanka.',
-
-    linkedin: 'https://www.linkedin.com/in/vasegaran-uthayathas-23a3932b1/',
-  },
-  {
     id: 'vishishta',
     name: 'Vishishta',
     role: 'Media & Communication Lead',
@@ -51,6 +41,16 @@ export const MOCK_TEAM: TeamMember[] = [
     bio: 'Managing brand communications, creative digital media, event coverage, and storytelling across digital channels for the USJ builder community.',
     certifications: ['AWS Cloud Practitioner'],
     linkedin: 'https://www.linkedin.com/in/vishishta-dilsara-14059a348/',
+  },
+  {
+    id: 'vaseegaran',
+    name: 'Vaseegaran',
+    role: 'Community & Outreach Lead',
+    faculty: 'Faculty of Engineering',
+    avatarUrl: '/team/vaseegaran.jpg',
+    bio: 'Driving campus engagement, inter-faculty collaborations, student outreach, and connecting USJ builders with the wider AWS community across Sri Lanka.',
+
+    linkedin: 'https://www.linkedin.com/in/vasegaran-uthayathas-23a3932b1/',
   },
   {
     id: 'karthigan',
