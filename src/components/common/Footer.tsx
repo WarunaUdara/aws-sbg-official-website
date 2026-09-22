@@ -7,111 +7,10 @@ import { Container } from "./Container"
 import { SITE_CONFIG, NAV_LINKS } from "@/lib/constants"
 import { cn } from "@/lib/utils"
 
-/**
- * Graphic Tile 1: Stepped Builder Block Mosaic
- * Alternating AWS Orange (#FF9900), Pure White (#FFFFFF), and Obsidian (#0D0D0D)
- */
-function AwsSteppedBlockTile({ className }: { className?: string }) {
-  return (
-    <div
-      className={cn(
-        "w-full h-full grid grid-cols-4 grid-rows-4 gap-[1px] bg-white/10 p-[1px] select-none",
-        className
-      )}
-      aria-hidden="true"
-    >
-      <div className="bg-[#FF9900]" />
-      <div className="bg-[#0D0D0D]" />
-      <div className="bg-[#FF9900]" />
-      <div className="bg-[#0D0D0D]" />
-
-      <div className="bg-[#0D0D0D]" />
-      <div className="bg-[#FF9900]" />
-      <div className="bg-white" />
-      <div className="bg-[#FF9900]" />
-
-      <div className="bg-[#FF9900]" />
-      <div className="bg-white" />
-      <div className="bg-[#0D0D0D]" />
-      <div className="bg-[#FF9900]" />
-
-      <div className="bg-[#0D0D0D]" />
-      <div className="bg-[#FF9900]" />
-      <div className="bg-[#FF9900]" />
-      <div className="bg-white" />
-    </div>
-  )
-}
-
-/**
- * Graphic Tile 2: Digital Architecture Signal Lines
- * Horizontal cloud telemetry & data bus stripes in AWS builder colors
- */
-function AwsSignalBarsTile({ className }: { className?: string }) {
-  return (
-    <div
-      className={cn(
-        "w-full h-full flex flex-col justify-between p-2 sm:p-2.5 bg-[#0D0D0D] select-none",
-        className
-      )}
-      aria-hidden="true"
-    >
-      <div className="h-1.5 w-full bg-[#FF9900]" />
-      <div className="h-1.5 w-3/4 bg-white/90" />
-      <div className="h-1.5 w-full flex gap-1">
-        <div className="h-full w-2/3 bg-[#FF9900]" />
-        <div className="h-full w-1/3 bg-white" />
-      </div>
-      <div className="h-1.5 w-1/2 bg-[#FF9900]" />
-      <div className="h-1.5 w-full flex gap-1">
-        <div className="h-full w-1/4 bg-white/90" />
-        <div className="h-full w-3/4 bg-[#FF9900]" />
-      </div>
-      <div className="h-1.5 w-5/6 bg-[#FF9900]" />
-    </div>
-  )
-}
-
-/**
- * Graphic Tile 3: Pixel Matrix Mosaic
- * Dense generative pixel matrix recreating the digital corner art
- */
-function AwsPixelMosaicTile({ className }: { className?: string }) {
-  const cells = [
-    1, 0, 1, 1, 0, 2,
-    0, 1, 0, 2, 1, 0,
-    1, 2, 0, 0, 1, 1,
-    0, 1, 1, 1, 0, 2,
-    2, 0, 1, 0, 1, 0,
-    1, 1, 0, 2, 0, 1,
-  ] // 1 = #FF9900, 2 = white, 0 = black
-  return (
-    <div
-      className={cn(
-        "w-full h-full grid grid-cols-6 grid-rows-6 gap-[1px] bg-white/10 p-[1px] select-none",
-        className
-      )}
-      aria-hidden="true"
-    >
-      {cells.map((v, i) => (
-        <div
-          key={i}
-          className={cn(
-            "w-full h-full",
-            v === 1 && "bg-[#FF9900]",
-            v === 2 && "bg-white",
-            v === 0 && "bg-[#0D0D0D]"
-          )}
-        />
-      ))}
-    </div>
-  )
-}
-
 export function Footer() {
   return (
     <footer className="w-full border-t border-white/10 bg-[#0A0A0A] text-slate-300 relative overflow-hidden">
-      {/* 1. Top Architectural Tile Grid Strip */}
+      {/* 1. Top Architectural Tile Grid Strip (Plain Line Squares) */}
       <div className="w-full border-b border-white/10 bg-[#0D0D0D]/60 grid grid-cols-6 sm:grid-cols-8 md:grid-cols-12 overflow-hidden">
         {Array.from({ length: 12 }).map((_, i) => (
           <div
@@ -131,7 +30,7 @@ export function Footer() {
         ))}
       </div>
 
-      {/* 2. Top Banner Row with Brand Corners */}
+      {/* 2. Brand & Affiliation Row */}
       <div className="border-b border-white/10 bg-[#121212]/40">
         <Container size="lg" className="py-6 flex flex-col sm:flex-row items-center justify-between gap-4">
           <BuilderBrandBadge size="md" />
@@ -142,23 +41,19 @@ export function Footer() {
         </Container>
       </div>
 
-      {/* 3. Main Footer Content with Left Flank of Design Tiles */}
+      {/* 3. Main Footer Content with Left Flank of Plain Line Squares */}
       <Container size="lg" className="py-12 md:py-16">
         <div className="flex flex-col lg:flex-row gap-8 lg:gap-12">
-          {/* Left Flank Graphic Tile Column (Render-style stepped architectural blocks) */}
-          <div className="hidden lg:flex flex-col border border-white/10 w-24 xl:w-28 shrink-0 bg-[#0D0D0D] divide-y divide-white/10 self-start shadow-xl">
-            <div className="w-full aspect-square p-2 bg-[#0D0D0D]">
-              <AwsSteppedBlockTile />
-            </div>
-            <div className="w-full aspect-square p-2 bg-[#0D0D0D]">
-              <AwsSignalBarsTile />
-            </div>
-            <div className="w-full aspect-square p-2 bg-[#0D0D0D]">
-              <AwsPixelMosaicTile />
-            </div>
-            <div className="w-full aspect-square p-2 bg-[#0D0D0D] flex items-center justify-center hover:bg-white/[0.03] transition-colors">
-              <span className="text-[#FF9900]/40 font-mono text-xs select-none">+</span>
-            </div>
+          {/* Left Flank: Plain Line Squares (Wireframe Architectural Tiles) */}
+          <div className="hidden lg:flex flex-col border border-white/10 w-16 xl:w-20 shrink-0 bg-[#0D0D0D] divide-y divide-white/10 self-start shadow-xl">
+            {Array.from({ length: 4 }).map((_, i) => (
+              <div
+                key={i}
+                className="w-full aspect-square border-white/10 hover:bg-white/[0.02] transition-colors flex items-center justify-center"
+              >
+                <span className="text-white/20 font-mono text-[10px] select-none">+</span>
+              </div>
+            ))}
           </div>
 
           {/* Main Footer Navigation Columns */}
@@ -290,40 +185,24 @@ export function Footer() {
         </div>
       </Container>
 
-      {/* 4. Bottom Architectural Tile Grid Strip (Render-style) */}
+      {/* 4. Bottom Architectural Tile Grid Strip (Plain Line Squares) */}
       <div className="w-full border-t border-b border-white/10 bg-[#0D0D0D] grid grid-cols-6 sm:grid-cols-8 md:grid-cols-12 overflow-hidden">
-        {/* Tile 1: Stepped Builder Block */}
-        <div className="h-14 sm:h-16 md:h-20 border-r border-white/10 p-1.5 sm:p-2 bg-[#0D0D0D]">
-          <AwsSteppedBlockTile />
-        </div>
-
-        {/* Tile 2: Signal Bars */}
-        <div className="h-14 sm:h-16 md:h-20 border-r border-white/10 p-1.5 sm:p-2 bg-[#0D0D0D]">
-          <AwsSignalBarsTile />
-        </div>
-
-        {/* Tile 3: Pixel Mosaic (visible on sm+) */}
-        <div className="h-14 sm:h-16 md:h-20 border-r border-white/10 p-1.5 sm:p-2 bg-[#0D0D0D] hidden sm:block">
-          <AwsPixelMosaicTile />
-        </div>
-
-        {/* Middle Empty Grid Tiles with subtle hover */}
-        {Array.from({ length: 8 }).map((_, i) => (
+        {Array.from({ length: 12 }).map((_, i) => (
           <div
             key={i}
             className={cn(
-              "h-14 sm:h-16 md:h-20 border-r border-white/10 transition-colors hover:bg-[#FF9900]/[0.03]",
-              // Responsive col control so total col count equals grid-cols definition
-              i >= 3 && "hidden sm:block",
-              i >= 5 && "hidden md:block"
+              "h-12 sm:h-14 md:h-16 border-r border-white/10 transition-colors hover:bg-white/[0.02] flex items-center justify-center",
+              i >= 6 && "hidden sm:block",
+              i >= 8 && "hidden md:block"
             )}
-          />
+          >
+            {(i === 0 || i === 11) && (
+              <span className="text-white/15 font-mono text-[10px] select-none hidden sm:inline">
+                +
+              </span>
+            )}
+          </div>
         ))}
-
-        {/* Far Right Tile: Pixel Mosaic corner anchor */}
-        <div className="h-14 sm:h-16 md:h-20 border-l sm:border-l-0 border-r border-white/10 p-1.5 sm:p-2 bg-[#0D0D0D]">
-          <AwsPixelMosaicTile />
-        </div>
       </div>
 
       {/* 5. Bottom Sub-Footer Bar */}
