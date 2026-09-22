@@ -15,7 +15,7 @@ function PathwayCornerTiles() {
           {Array.from({ length: tileCount }).map((_, tileIndex) => (
             <span
               key={`${rowIndex}-${tileIndex}`}
-              className="size-20 border border-white/10 xl:size-32"
+              className="size-16 shrink-0 border border-white/10"
             />
           ))}
         </div>
@@ -168,7 +168,7 @@ export function LearningTracks() {
     <section className="py-20 sm:py-24 bg-[#0D0D0D] border-b border-white/10 relative">
       <Container size="lg">
         {/* Section Header */}
-        <div className="relative mb-12 min-h-0 lg:min-h-80 lg:pt-12">
+        <div className="relative mb-12">
           <div className="relative z-10 max-w-2xl space-y-3">
             <div className="inline-flex items-center gap-2 text-xs font-mono uppercase tracking-wider text-[#FF9900]">
               <span className="w-2 h-2 bg-[#FF9900]" />
