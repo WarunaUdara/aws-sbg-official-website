@@ -8,7 +8,7 @@ function PathwayCornerTiles() {
   return (
     <div
       aria-hidden="true"
-      className="pointer-events-none absolute right-0 top-20 hidden flex-col items-end opacity-80 sm:top-24 lg:flex"
+      className="pointer-events-none absolute right-0 top-0 hidden flex-col items-end opacity-80 lg:flex"
     >
       {PATHWAY_TILE_ROWS.map((tileCount, rowIndex) => (
         <div key={tileCount} className="flex">
