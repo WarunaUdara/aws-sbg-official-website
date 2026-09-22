@@ -209,12 +209,12 @@ When multiple agents or developers collaborate on the same repository:
    git status --short
    ```
    Acknowledge any pre-existing uncommitted changes and leave them untouched.
-2. **Synchronize upstream regularly**:
+2. **Synchronize upstream before work and before publishing**:
    ```bash
    git fetch origin main
    git rebase origin/main
    ```
-   Keep the feature branch aligned with `main` to eliminate late merge conflicts.
+   Run this at the start of every task before modifying files, and repeat it immediately before staging, committing, or pushing. Keep the feature branch aligned with the latest `main` so parallel agents can merge without avoidable late conflicts. If uncommitted work is present, preserve it with a temporary stash or `git rebase --autostash origin/main`; never discard it.
 3. **Resolve conflicts cleanly**:
    If rebase conflicts arise, inspect both sides, integrate the intended changes, re-run tests, and continue rebase (`git rebase --continue`).
 
